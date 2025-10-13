@@ -1,421 +1,339 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jagriti Sood — Portfolio</title>
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Tailwind config (adds custom dark palette and container)
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f7f9fc',
-              100: '#eef2f7',
-              900: '#0b0b0c',
-              primary: '#0ea5a4' // teal-ish if needed
-            },
-            darkbg: '#0b0b0f',
-            card: '#111217',
-            accent: '#2b2f36',
-            soft: '#111214'
-          },
-          fontFamily: {
-            inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagriti Sood - UX/UI Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root { color-scheme: dark; }
-    html, body { height: 100%; }
-    body {
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg,#050506 0%, #08080a 100%);
-      color: #e6eef8;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* subtle glass card outline like screenshot */
-    .glass {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 6px 18px rgba(2,4,8,0.6);
-    }
-
-    /* placeholder diagonal lines for project thumbnails to mimic design */
-    .thumb-placeholder {
-      background-image: repeating-linear-gradient(
-        -45deg,
-        rgba(255,255,255,0.02) 0,
-        rgba(255,255,255,0.02) 20px,
-        rgba(255,255,255,0.01) 20px,
-        rgba(255,255,255,0.01) 40px
-      );
-    }
-
-    /* small accent dot */
-    .accent-dot {
-      width: 10px; height: 10px; border-radius: 50%;
-    }
-
-    /* Nav link underline effect */
-    .nav-link {
-      position: relative;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0; right: 0; bottom: -6px;
-      height: 2px;
-      background: rgba(255,255,255,0.06);
-      transform-origin: left;
-      transform: scaleX(0);
-      transition: transform .25s ease;
-    }
-    .nav-link:hover::after { transform: scaleX(1); }
-
-    /* scroll reveal base */
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* big faint watermark word in footer */
-    .watermark {
-      font-weight: 800;
-      font-size: 6rem;
-      letter-spacing: 0.06em;
-      color: rgba(255,255,255,0.03);
-      pointer-events: none;
-      user-select: none;
-    }
-
-    @media (max-width: 640px) {
-      .watermark { font-size: 3.2rem; }
-    }
-  </style>
+    </script>
 </head>
-<body>
+<body class="bg-black text-white font-inter overflow-x-hidden">
 
-  <!-- Container -->
-  <div class="max-w-[1100px] mx-auto px-6 py-10">
-
-    <!-- NAV -->
-    <header class="flex items-center justify-between mb-8">
-      <div class="flex items-center gap-3">
-        <div class="text-white font-extrabold tracking-wider">Jagriti Sood</div>
-      </div>
-
-      <nav class="hidden md:flex items-center gap-6 text-sm text-gray-300">
-        <a class="nav-link" href="#work">Work</a>
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#resume">Resume</a>
-        <a class="nav-link" href="#process">Design Process</a>
-        <a class="nav-link" href="#contact" id="contactNav">Contact</a>
-      </nav>
-
-      <div class="md:hidden">
-        <!-- simple mobile nav - toggling can be added later if needed -->
-        <button class="px-3 py-1 bg-[#0ea5a4] text-white rounded-md text-sm">Menu</button>
-      </div>
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-lg font-bold text-white">Jagriti Sood</div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm text-gray-300">
+                <a href="#" class="hover:text-white transition">Work</a>
+                <a href="#" class="hover:text-white transition">About</a>
+                <a href="#" class="hover:text-white transition">Resume</a>
+                <a href="#" class="hover:text-white transition">Beyond UX</a>
+            </nav>
+            <div class="flex items-center">
+                <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition">Contact</a>
+                <button class="md:hidden ml-4 bg-blue-500 px-3 py-2 rounded text-sm text-white">Menu</button>
+            </div>
+        </div>
     </header>
 
-    <!-- HERO -->
-    <section class="grid md:grid-cols-2 gap-10 items-start mb-12">
-      <div class="space-y-6">
-        <div class="text-xs text-teal-300 uppercase tracking-wider">Who I am</div>
-        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-          Hi, I'm Jagriti, and I design <span class="text-teal-400">like it's my superpower.</span>
-        </h1>
-        <p class="text-gray-300 max-w-xl">
-          From zero-to-systems, I build digital tools that work hard and feel simple. I craft bold UI and reliable UX — that’s my kind of success.
-        </p>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <p class="text-blue-400 text-sm font-medium uppercase tracking-wider">WHO I AM</p>
+                        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+                            Hi, I'm Jagriti, and I design<br>
+                            <span class="text-blue-400">like it's my superpower.</span>
+                        </h1>
+                        <p class="text-gray-300 text-lg leading-relaxed max-w-xl">
+                            From zero-to-system, I build digital tools that work hard<br>
+                            and feel simple. If users love it and the devs don't cry,<br>
+                            that's my kind of success.
+                        </p>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <button class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-medium">
+                            View Work →
+                        </button>
+                        <button class="border border-gray-600 text-gray-300 px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+                            Download CV
+                        </button>
+                    </div>
 
-        <div class="flex gap-3">
-          <a href="#work" class="inline-flex items-center gap-2 px-4 py-2 rounded-md glass text-white text-sm font-medium shadow">
-            View Work
-          </a>
-          <a href="#resume" class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-white/10 text-sm text-gray-200">Download CV</a>
-        </div>
+                    <!-- Project Preview -->
+                    <div class="space-y-4">
+                        <p class="text-gray-400 text-sm uppercase tracking-wide">A sneak peek into my Projects</p>
+                        <div class="flex gap-3">
+                            <div class="w-1/3 h-20 bg-gray-800 rounded-lg overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=200&fit=crop" 
+                                     alt="Project" class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-1/3 h-20 bg-gray-800 rounded-lg overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop" 
+                                     alt="Project" class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-1/3 h-20 bg-gray-800 rounded-lg overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=200&fit=crop" 
+                                     alt="Project" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- small projects thumbnails like screenshot -->
-        <div class="mt-6">
-          <div class="text-xs text-gray-400 uppercase mb-3">A sneak peek into my Projects</div>
-          <div class="flex gap-3">
-            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="proj1" class="w-1/3 rounded-md object-cover h-20">
-            <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="proj2" class="w-1/3 rounded-md object-cover h-20">
-            <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="proj3" class="w-1/3 rounded-md object-cover h-20">
-          </div>
-        </div>
-      </div>
-
-      <div class="hidden md:block">
-        <!-- decorative card like screenshot -->
-        <div class="glass rounded-xl p-6">
-          <div class="h-64 rounded-lg thumb-placeholder overflow-hidden flex items-center justify-center">
-            <!-- optional hero visual -->
-            <div class="text-gray-400/60 text-sm">Hero Project Thumbnail</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORK SECTION -->
-    <section id="work" class="mb-12">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold">My Favourite Problem-Solving Adventures</h2>
-        <a href="#work" class="text-sm bg-[#0ea5a4] px-3 py-1 rounded-md text-white">View All</a>
-      </div>
-
-      <div class="grid gap-6">
-        <!-- project card -->
-        <article class="glass rounded-lg p-6 grid md:grid-cols-3 gap-6 reveal">
-          <div class="md:col-span-2 space-y-3">
-            <h3 class="text-lg font-semibold">101 Healthcare Website</h3>
-            <p class="text-gray-300 text-sm">
-              Designed a responsive website for a healthcare startup focused on clarity, trust and problem-free navigation.
-            </p>
-            <a class="inline-block mt-3 text-sm px-3 py-2 bg-transparent border border-white/6 rounded text-gray-100">View Case Study</a>
-          </div>
-          <div class="thumb-placeholder rounded-lg h-40 md:h-full"></div>
-        </article>
-
-        <article class="glass rounded-lg p-6 grid md:grid-cols-3 gap-6 reveal">
-          <div class="md:col-span-2 space-y-3">
-            <h3 class="text-lg font-semibold">MapleCode Innovations</h3>
-            <p class="text-gray-300 text-sm">
-              Built an identity for a tech-forward company, blending visual storytelling with functional design.
-            </p>
-            <a class="inline-block mt-3 text-sm px-3 py-2 bg-transparent border border-white/6 rounded text-gray-100">View Case Study</a>
-          </div>
-          <div class="thumb-placeholder rounded-lg h-40 md:h-full"></div>
-        </article>
-
-        <article class="glass rounded-lg p-6 grid md:grid-cols-3 gap-6 reveal">
-          <div class="md:col-span-2 space-y-3">
-            <h3 class="text-lg font-semibold">Campaigns by Source Digital</h3>
-            <p class="text-gray-300 text-sm">
-              Architected a marketing & scheduling system with a friendly cross-device experience.
-            </p>
-            <a class="inline-block mt-3 text-sm px-3 py-2 bg-transparent border border-white/6 rounded text-gray-100">View Case Study</a>
-          </div>
-          <div class="thumb-placeholder rounded-lg h-40 md:h-full"></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- DESIGN PROCESS -->
-    <section id="process" class="mb-12 reveal">
-      <h2 class="text-2xl font-bold mb-4">My Design Process: From Concept to Completion</h2>
-      <p class="text-gray-300 max-w-2xl mb-6">
-        Every project is unique, but the path to great design is built on a clear and thoughtful approach.
-      </p>
-
-      <div class="grid md:grid-cols-3 gap-4">
-        <div class="glass p-4 rounded-md">
-          <div class="text-xs font-semibold text-teal-300">01. Discover</div>
-          <p class="text-gray-300 text-sm mt-2">Deep research into user needs, business goals, and industry context.</p>
-        </div>
-        <div class="glass p-4 rounded-md">
-          <div class="text-xs font-semibold text-teal-300">02. Define</div>
-          <p class="text-gray-300 text-sm mt-2">Synthesize insights into a clear problem statement and user journeys.</p>
-        </div>
-        <div class="glass p-4 rounded-md">
-          <div class="text-xs font-semibold text-teal-300">03. Dream</div>
-          <p class="text-gray-300 text-sm mt-2">Explore creative solutions and prototype ideas rapidly.</p>
-        </div>
-        <div class="glass p-4 rounded-md">
-          <div class="text-xs font-semibold text-teal-300">04. Design</div>
-          <p class="text-gray-300 text-sm mt-2">Translate concepts into wireframes and polished visuals.</p>
-        </div>
-        <div class="glass p-4 rounded-md">
-          <div class="text-xs font-semibold text-teal-300">05. Develop</div>
-          <p class="text-gray-300 text-sm mt-2">Work closely with engineers to ensure a smooth handoff.</p>
-        </div>
-        <div class="glass p-4 rounded-md">
-          <div class="text-xs font-semibold text-teal-300">06. Deliver</div>
-          <p class="text-gray-300 text-sm mt-2">Iterate based on feedback, deliver the final product and measure success.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="grid md:grid-cols-3 gap-6 items-center mb-12 reveal">
-      <div class="md:col-span-2">
-        <h3 class="text-2xl font-bold mb-3">Hello there! I'm Jagriti Sood.</h3>
-        <p class="text-gray-300">
-          A UX/UI designer with 8+ years of experience crafting delightful digital experiences from strategy to pixel-perfect execution. I focus on accessible, thoughtful interfaces that drive clarity and impact.
-        </p>
-
-        <div class="mt-6">
-          <a href="#contact" class="px-4 py-2 rounded-md glass">Get in Touch</a>
-        </div>
-      </div>
-
-      <div>
-        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4"
-             alt="Jagriti portrait"
-             class="rounded-lg shadow-lg object-cover w-full h-64">
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="mb-12 reveal">
-      <h3 class="text-2xl font-bold mb-6">Professional Endorsements</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="glass p-5 rounded-md">
-          <p class="text-gray-300 text-sm">"Jagriti creates insight-driven, user-centered solutions that move metrics."</p>
-          <div class="flex items-center gap-3 mt-4">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-500/30 to-indigo-700/25"></div>
-            <div class="text-sm">
-              <div class="font-semibold">Vishal Sharma</div>
-              <div class="text-xs text-gray-400">CEO, 101 Healthcare</div>
+                <!-- Right Side - Hero Image/Card -->
+                <div class="hidden lg:block">
+                    <div class="bg-gray-900/30 border border-gray-800 rounded-2xl p-6 backdrop-blur-sm">
+                        <div class="h-80 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl"></div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-
-        <div class="glass p-5 rounded-md">
-          <p class="text-gray-300 text-sm">"Jagriti's ability to translate complex ideas into delightful, usable products is exceptional."</p>
-          <div class="flex items-center gap-3 mt-4">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500/20 to-pink-700/25"></div>
-            <div class="text-sm">
-              <div class="font-semibold">Aakash Roy</div>
-              <div class="text-xs text-gray-400">Founder, MapleCode</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="glass p-5 rounded-md">
-          <p class="text-gray-300 text-sm">"A brilliant designer and thoughtful collaborator — clear communicator and excellent craft."</p>
-          <div class="flex items-center gap-3 mt-4">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-500/20 to-yellow-700/25"></div>
-            <div class="text-sm">
-              <div class="font-semibold">Michael Philips</div>
-              <div class="text-xs text-gray-400">Product, Source Digital</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="mb-12 reveal">
-      <h2 class="text-2xl font-bold mb-4">Contact</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <form id="contactForm" class="glass p-6 rounded-lg space-y-4">
-          <div>
-            <label class="text-sm text-gray-300">Name</label>
-            <input name="from_name" required class="mt-1 w-full bg-transparent border border-white/6 rounded px-3 py-2 outline-none" />
-          </div>
-
-          <div>
-            <label class="text-sm text-gray-300">Email</label>
-            <input type="email" name="reply_to" required class="mt-1 w-full bg-transparent border border-white/6 rounded px-3 py-2 outline-none" />
-          </div>
-
-          <div>
-            <label class="text-sm text-gray-300">Message</label>
-            <textarea name="message" rows="5" required class="mt-1 w-full bg-transparent border border-white/6 rounded px-3 py-2 outline-none"></textarea>
-          </div>
-
-          <div>
-            <button type="submit" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#0ea5a4] text-black font-medium">Send Message</button>
-            <span id="formStatus" class="text-sm text-gray-300 ml-3"></span>
-          </div>
-        </form>
-
-        <div class="glass p-6 rounded-lg">
-          <h4 class="font-semibold">Get in touch</h4>
-          <p class="text-gray-300 text-sm mt-2">Prefer email? <a class="text-teal-300" href="mailto:hello@jagritisood.com">hello@jagritisood.com</a></p>
-
-          <div class="mt-6">
-            <div class="text-xs text-gray-400">Follow</div>
-            <div class="flex gap-3 mt-3">
-              <a href="#" class="text-gray-300 text-sm">Dribbble</a>
-              <a href="#" class="text-gray-300 text-sm">LinkedIn</a>
-              <a href="#" class="text-gray-300 text-sm">Twitter</a>
+    <!-- Work Section -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold">My Favourite Problem-Solving Adventures</h2>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition">
+                    View All
+                </button>
             </div>
-          </div>
+
+            <div class="space-y-6">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-2xl p-8 grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 space-y-4">
+                        <h3 class="text-xl font-semibold">101 Healthcare Website</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Designed a responsive website for a healthcare startup focused on clarity, 
+                            trust and problem-free navigation. Built with accessibility and user experience at the forefront.
+                        </p>
+                        <button class="border border-gray-700 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition">
+                            View Case Study
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl h-48 lg:h-full"></div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-2xl p-8 grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 space-y-4">
+                        <h3 class="text-xl font-semibold">MapleCode Innovations</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Built an identity for a tech-forward company, blending visual storytelling 
+                            with functional design principles for maximum impact.
+                        </p>
+                        <button class="border border-gray-700 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition">
+                            View Case Study
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl h-48 lg:h-full"></div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-2xl p-8 grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 space-y-4">
+                        <h3 class="text-xl font-semibold">Campaigns by Source Digital</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Architected a marketing & scheduling system with a friendly cross-device experience 
+                            that increased user engagement by 150%.
+                        </p>
+                        <button class="border border-gray-700 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition">
+                            View Case Study
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl h-48 lg:h-full"></div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="mt-12 py-12 relative">
-      <div class="flex items-center justify-between">
-        <div class="text-sm text-gray-400">© 2025 Jagriti Sood. Built with ❤️</div>
-        <div class="text-sm text-gray-400">Made in India</div>
-      </div>
+    <!-- Design Process Section -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">My Design Process: From Concept to Completion</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                    Every project is unique, but the path to great design is built on a clear and thoughtful approach.
+                </p>
+            </div>
 
-      <div class="mt-10 text-center">
-        <div class="watermark">JAGRITI SOOD</div>
-      </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
+                    <div class="text-blue-400 text-sm font-semibold mb-3">01. DISCOVER</div>
+                    <p class="text-gray-300 leading-relaxed">Deep research into user needs, business goals, and industry context.</p>
+                </div>
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
+                    <div class="text-blue-400 text-sm font-semibold mb-3">02. DEFINE</div>
+                    <p class="text-gray-300 leading-relaxed">Synthesize insights into a clear problem statement and user journeys.</p>
+                </div>
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
+                    <div class="text-blue-400 text-sm font-semibold mb-3">03. DREAM</div>
+                    <p class="text-gray-300 leading-relaxed">Explore creative solutions and prototype ideas rapidly.</p>
+                </div>
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
+                    <div class="text-blue-400 text-sm font-semibold mb-3">04. DESIGN</div>
+                    <p class="text-gray-300 leading-relaxed">Translate concepts into wireframes and polished visuals.</p>
+                </div>
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
+                    <div class="text-blue-400 text-sm font-semibold mb-3">05. DEVELOP</div>
+                    <p class="text-gray-300 leading-relaxed">Work closely with engineers to ensure a smooth handoff.</p>
+                </div>
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
+                    <div class="text-blue-400 text-sm font-semibold mb-3">06. DELIVER</div>
+                    <p class="text-gray-300 leading-relaxed">Iterate based on feedback, deliver the final product and measure success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-3 gap-12 items-start">
+                <div class="lg:col-span-2 space-y-6">
+                    <h2 class="text-3xl font-bold">Hello there! I'm Jagriti Sood.</h2>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        A UX/UI designer with 8+ years of experience crafting delightful digital experiences 
+                        from strategy to pixel-perfect execution. I focus on accessible, thoughtful interfaces 
+                        that drive clarity and impact.
+                    </p>
+                    <button class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
+                        Get in Touch
+                    </button>
+                </div>
+                <div>
+                    <div class="w-full h-80 bg-gray-800 rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop" 
+                             alt="Jagriti Sood" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12">Professional Endorsements</h2>
+            <p class="text-gray-400 mb-8">What people say about working with me.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        "Jagriti creates insight-driven, user-centered solutions that move metrics."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Vishal Sharma</div>
+                            <div class="text-gray-400 text-sm">CEO, 101 Healthcare</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        "Jagriti's ability to translate complex ideas into delightful, usable products is exceptional."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-600 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Aakash Roy</div>
+                            <div class="text-gray-400 text-sm">Founder, MapleCode</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        "A brilliant designer and thoughtful collaborator — clear communicator and excellent craft."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-red-600 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Michael Philips</div>
+                            <div class="text-gray-400 text-sm">Product, Source Digital</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Navigation -->
+            <nav class="flex justify-center items-center space-x-6 text-gray-300 text-base mb-20">
+                <a href="#" class="hover:text-white transition">Home</a>
+                <span class="text-gray-500">·</span>
+                <a href="#" class="hover:text-white transition">Work</a>
+                <span class="text-gray-500">·</span>
+                <a href="#" class="hover:text-white transition">About</a>
+                <span class="text-gray-500">·</span>
+                <a href="#" class="hover:text-white transition">Resume</a>
+                <span class="text-gray-500">·</span>
+                <a href="#" class="hover:text-white transition">Beyond UX</a>
+            </nav>
+
+
+            <!-- Large Watermark - Gradient opacity effect -->
+            <div class="flex justify-center items-center mb-16">
+            <div class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black bg-gradient-to-b from-gray-600 to-transparent bg-clip-text text-transparent select-none tracking-[0.2em] leading-none text-center transform scale-x-110">
+                JAGRITI SOOD
+            </div>
+            </div>
+
+            <div class="text-center text-gray-400 text-sm">
+                © 2025 All rights reserved.
+            </div>
+        </div>
     </footer>
 
-  </div>
-
-  <!-- EmailJS SDK (for contact form) -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      // Initialize EmailJS: replace with your user ID (public key)
-      // sign up at https://www.emailjs.com/ -> get user id -> add here
-      emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
-    })();
-  </script>
-
-  <!-- Minimal JS: scroll reveal + form submit -->
-  <script>
-    // Smooth on-scroll reveal using IntersectionObserver
-    document.addEventListener('DOMContentLoaded', function () {
-      const revealEls = document.querySelectorAll('.reveal');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('show');
-            io.unobserve(e.target);
-          }
+    <!-- Smooth Scroll & Animation Script -->
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
-      }, { threshold: 0.12 });
 
-      revealEls.forEach(el => io.observe(el));
-    });
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    // Contact form using EmailJS
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      status.textContent = "Sending...";
-
-      // Replace 'service_xxx' and 'template_xxx' with your EmailJS service & template IDs
-      emailjs.sendForm('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID', this)
-        .then(function() {
-          status.textContent = "Message sent — thank you!";
-          form.reset();
-        }, function(error) {
-          console.error('EmailJS error', error);
-          status.textContent = "Oops — something went wrong. Please try again.";
+        // Apply fade-in effect to sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section > div');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'all 0.8s ease';
+                observer.observe(section);
+            });
         });
-    });
-  </script>
-
+    </script>
 </body>
 </html>
