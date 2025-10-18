@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jagriti Sood Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Moodak&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .font-moodak { font-family: 'Moodak', cursive; }
+    .font-inter { font-family: 'Inter', Arial, sans-serif; }
+  </style>
+</head>
+<body class="bg-[#18171A] text-white font-inter">
+
+  <!-- Header -->
+  <header class="w-full flex items-center justify-between px-8 py-4 bg-[#151417]">
+    <a href="./index.html" ><div class="font-moodak text-white text-2xl font-bold">Jagriti Sood</div></a>
+    <nav class="flex items-center gap-8">
+      <a href="./work.html" class="text-white text-base hover:underline">Work</a>
+      <a href="./about.html" class="text-white text-base hover:underline">About</a>
+      <a href="./resume.html" class="text-white text-base hover:underline">Resume</a>
+      <a href="./beyond-uiux.html" class="text-white text-base hover:underline">Beyond UX</a>
+      <button class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95" id="contact-btn">Contact</button>
+    </nav>
+  </header>
+
+  <!-- Footer -->
+  <footer class="w-full bg-[#18171A] border-t border-[#23232a] py-10">
+    <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
+      <nav class="flex gap-8 mb-4 text-gray-300 text-base">
+        <a href="./index.html">Home</a>
+        <a href="./work.html">Work</a>
+        <a href="./about.html">About</a>
+        <a href="./resume.html">Resume</a>
+        <a href="./beyond-uiux.html">Beyond UX</a>
+      </nav>
+      <div class="relative w-full flex justify-center mb-2 opacity-10 text-[5rem] tracking-widest font-bold">JAGRITI SOOD</div>
+      <p class="text-gray-500 text-sm mt-2">&copy; 2025 All rights reserved. Made in Framer</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple Contact Button Animation
+    const btn = document.getElementById('contact-btn');
+    btn && btn.addEventListener('click', () => {
+      btn.classList.add('scale-105');
+      setTimeout(() => btn.classList.remove('scale-105'), 150);
+    });
+  </script>
+</body>
+</html>

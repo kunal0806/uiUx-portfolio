@@ -1,339 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jagriti Sood - UX/UI Designer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8">
+  <title>Jagriti Sood Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Moodak&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .font-moodak { font-family: 'Moodak', cursive; }
+    .font-inter { font-family: 'Inter', Arial, sans-serif; }
+  </style>
 </head>
-<body class="bg-black text-white font-inter overflow-x-hidden">
+<body class="bg-[#18171A] text-white font-inter">
 
-    <!-- Header -->
-    <header class="fixed top-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800/50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="text-lg font-bold text-white">Jagriti Sood</div>
-            <nav class="hidden md:flex items-center space-x-8 text-sm text-gray-300">
-                <a href="#" class="hover:text-white transition">Work</a>
-                <a href="#" class="hover:text-white transition">About</a>
-                <a href="#" class="hover:text-white transition">Resume</a>
-                <a href="#" class="hover:text-white transition">Beyond UX</a>
-            </nav>
-            <div class="flex items-center">
-                <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition">Contact</a>
-                <button class="md:hidden ml-4 bg-blue-500 px-3 py-2 rounded text-sm text-white">Menu</button>
-            </div>
+  <!-- Header -->
+  <header class="w-full flex items-center justify-between px-8 py-4 bg-[#151417]">
+    <a href="./index.html" ><div class="font-moodak text-white text-2xl font-bold">Jagriti Sood</div></a> 
+    <nav class="flex items-center gap-8">
+      <a href="./work.html" class="text-white text-base hover:underline">Work</a>
+      <a href="./about.html" class="text-white text-base hover:underline">About</a>
+      <a href="./resume.html" class="text-white text-base hover:underline">Resume</a>
+      <a href="./beyond-uiux.html" class="text-white text-base hover:underline">Beyond UX</a>
+      <button class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95" id="contact-btn">Contact</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="px-8 py-20 bg-[#18171A] min-h-[400px] flex flex-col items-start max-w-5xl mx-auto">
+    <span class="inline-block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">WHO I AM</span>
+    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">Hi, I’m Jagriti, and I design<br>like it’s my superpower.</h1>
+    <p class="text-gray-400 text-lg max-w-2xl mb-10">
+      From zero-to-system, I build digital tools that work hard and feel simple. If users love it <em>and</em> the devs don’t cry, that’s my kind of success.
+    </p>
+    <div class="flex gap-4">
+      <a href="#" class="px-6 py-3 rounded bg-blue-500 text-white shadow hover:bg-blue-600 transition">View Work</a>
+      <a href="#" class="px-6 py-3 rounded bg-[#23232a] text-white shadow hover:bg-[#333] transition">Download CV</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="px-8 py-20 bg-[#18171A] flex flex-col md:flex-row gap-10 items-center max-w-5xl mx-auto">
+    <div class="flex-1">
+      <span class="inline-block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">ABOUT ME</span>
+      <h2 class="text-3xl font-bold mb-4">Hello there!<br>I'm the Jagriti Sood.</h2>
+      <p class="text-gray-300 mb-3">A UX/UI designer with 5+ years of experience turning complex systems into simple, human-centered interfaces. My work spans industries like healthcare, ad tech, and digital platforms, always grounded in strategy, empathy, and purpose-driven design.</p>
+      <p class="text-gray-300 mb-3">But creativity doesn’t end at the screen. Outside of UX, I craft hand-poured candles, a reminder that great design can take many forms. Whether I’m shaping a user journey or blending a new fragrance, I believe in creating experiences that feel intuitive, thoughtful, and beautiful.</p>
+      <a href="#" class="inline-block mt-4 px-6 py-3 rounded bg-blue-500 text-white shadow hover:bg-blue-600 transition">Get in Touch</a>
+    </div>
+    <img src="ABOUT_PROFILE_IMAGE.jpg" alt="Profile" class="w-[340px] h-[340px] object-cover rounded-2xl shadow-lg border border-[#23232a]">
+  </section>
+
+  <!-- Sneak Peek Projects -->
+  <section class="px-8 pt-16 pb-24 bg-[#18171A] max-w-5xl mx-auto">
+    <h2 class="text-2xl font-bold mb-2">A sneak peek into my Projects</h2>
+    <p class="text-gray-300 text-base mb-10 max-w-xl">
+      Curious to see what I’ve been building? Here’s a glimpse. Dive into my full case studies to explore the details behind each design.
+    </p>
+    <div class="flex gap-8 flex-wrap">
+      <div class="relative rounded-2xl overflow-hidden w-[320px] h-[240px] shadow-lg">
+        <img src="PROJECT1.jpg" alt="Maplecode" class="w-full h-full object-cover"/>
+        <span class="absolute top-4 left-4 bg-[#23232a] text-xs text-gray-200 px-3 py-1 rounded font-medium">MAPLECODE INNOVATIONS</span>
+        <span class="absolute bottom-4 left-4 bg-[#23232a] text-xs text-gray-300 px-3 py-1 rounded">SUPAPRICE</span>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden w-[220px] h-[240px] shadow-lg">
+        <img src="PROJECT2.jpg" alt="Supaprice" class="w-full h-full object-cover"/>
+        <span class="absolute bottom-4 left-4 bg-[#23232a] text-xs text-gray-300 px-3 py-1 rounded">SUPAPRICE</span>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden w-[320px] h-[240px] shadow-lg">
+        <img src="PROJECT3.jpg" alt="Ipad Pro" class="w-full h-full object-cover"/>
+        <span class="absolute bottom-4 left-4 bg-[#23232a] text-xs text-gray-300 px-3 py-1 rounded">SUPAPRICE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Problem-Solving Adventures -->
+  <section class="px-8 py-14 bg-[#18171A] max-w-5xl mx-auto flex items-center justify-between">
+    <div>
+      <span class="inline-block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">WORK</span>
+      <h2 class="text-3xl font-bold mb-2">My Favourite Problem-Solving Adventures</h2>
+      <p class="text-gray-300 max-w-lg">
+        Get a closer look at the projects where I rolled up my sleeves, asked the right questions, and made complexity feel simple.
+      </p>
+    </div>
+    <a href="#" class="px-6 py-3 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition">View All</a>
+  </section>
+
+  <!-- Case Study Cards -->
+  <section class="px-8 py-10 bg-[#18171A] max-w-5xl mx-auto flex flex-col gap-8">
+    <div class="flex bg-[#1b1b1f] rounded-2xl p-8 gap-8 shadow">
+      <div class="flex-1">
+        <span class="block mb-2 text-xs bg-[#23232a] text-gray-300 rounded px-2 py-1">UX RESEARCH, WIREFRAMING & PROTOTYPING, VISUAL UI DESIGN</span>
+        <h3 class="text-2xl font-bold mb-2">101 Healthcare Website</h3>
+        <p class="text-gray-400 mb-4">Designed a responsive website for a healthcare startup, focused on clarity, trust, and patient-first navigation.</p>
+        <a href="#" class="px-5 py-2 rounded bg-[#23232a] text-white font-medium shadow hover:bg-[#333] transition">View Case Study</a>
+      </div>
+      <div class="flex-1 bg-[#23232a] rounded-2xl flex items-center justify-center">
+        <!-- Placeholder for pattern/image -->
+        <div class="h-[200px] w-full rounded-2xl bg-gradient-to-br from-[#222228] to-[#23232a] opacity-40"></div>
+      </div>
+    </div>
+    <!-- Add more case study cards below by repeating the div above -->
+  </section>
+
+  <!-- Design Process -->
+  <section class="px-8 py-14 bg-[#18171A] max-w-5xl mx-auto">
+    <span class="block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">PROCESS</span>
+    <h2 class="text-3xl font-bold mb-2">My Design Process: From Concept to Completion</h2>
+    <p class="text-gray-300 mb-10">Every project is unique, but the path to great design is built on a clear and thoughtful approach.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-[#1b1b1f] p-6 rounded-2xl">
+        <span class="block text-lg font-bold mb-2">01. DISCOVER</span>
+        <p class="text-gray-400">I dive deep into user needs, business goals, and industry context through research, interviews, and market analysis.</p>
+      </div>
+      <div class="bg-[#1b1b1f] p-6 rounded-2xl">
+        <span class="block text-lg font-bold mb-2">02. DEFINE</span>
+        <p class="text-gray-400">I synthesize insights to craft a clear problem statement, identify pain points, and outline key user journeys.</p>
+      </div>
+      <div class="bg-[#1b1b1f] p-6 rounded-2xl">
+        <span class="block text-lg font-bold mb-2">03. DREAM</span>
+        <p class="text-gray-400">This is where ideas spark. I explore creative solutions and brainstorm features that could truly elevate the user experience.</p>
+      </div>
+      <div class="bg-[#1b1b1f] p-6 rounded-2xl">
+        <span class="block text-lg font-bold mb-2">04. DESIGN</span>
+        <p class="text-gray-400">I translate concepts into wireframes, flows, and visual UI designs, balancing functionality, usability, and aesthetics.</p>
+      </div>
+      <div class="bg-[#1b1b1f] p-6 rounded-2xl">
+        <span class="block text-lg font-bold mb-2">04. DEVELOP</span>
+        <p class="text-gray-400">I work closely with developers to ensure smooth handoff, maintain design integrity, and align UX with technical feasibility.</p>
+      </div>
+      <div class="bg-[#1b1b1f] p-6 rounded-2xl">
+        <span class="block text-lg font-bold mb-2">04. DELIVER</span>
+        <p class="text-gray-400">I validate through testing, iterate based on feedback, and ensure the final product delivers on both user and business goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Endorsements -->
+  <section class="px-8 py-16 bg-[#18171A] max-w-5xl mx-auto">
+    <span class="block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">RECOMMENDATIONS</span>
+    <h2 class="text-3xl font-bold mb-2">Professional Endorsements</h2>
+    <p class="text-gray-300 mb-8">Recommendations from my previous employers who’ve seen my work in action.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Endorsement 1 -->
+      <div class="bg-[#1b1b1f] p-6 rounded-2xl shadow">
+        <span class="text-gray-500 text-2xl mb-4 block">“</span>
+        <p class="text-gray-300 mb-6">Jagriti’s creative insight, user-centered approach, and ability to turn complex healthcare needs into simple, intuitive interfaces made a lasting impact on our product’s success.</p>
+        <div class="flex items-center gap-2">
+          <img src="ENDORSE1.jpg" alt="Vishal Sharma" class="w-8 h-8 object-cover rounded-full border border-[#23232a]">
+          <div>
+            <p class="font-bold text-sm">Vishal Sharma</p>
+            <p class="text-xs text-gray-400">CEO, 101 Healthcare</p>
+          </div>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="pt-32 pb-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-12 items-start">
-                <div class="space-y-8">
-                    <div class="space-y-6">
-                        <p class="text-blue-400 text-sm font-medium uppercase tracking-wider">WHO I AM</p>
-                        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                            Hi, I'm Jagriti, and I design<br>
-                            <span class="text-blue-400">like it's my superpower.</span>
-                        </h1>
-                        <p class="text-gray-300 text-lg leading-relaxed max-w-xl">
-                            From zero-to-system, I build digital tools that work hard<br>
-                            and feel simple. If users love it and the devs don't cry,<br>
-                            that's my kind of success.
-                        </p>
-                    </div>
-                    
-                    <div class="flex gap-4">
-                        <button class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-medium">
-                            View Work →
-                        </button>
-                        <button class="border border-gray-600 text-gray-300 px-6 py-3 rounded-lg hover:bg-gray-800 transition">
-                            Download CV
-                        </button>
-                    </div>
-
-                    <!-- Project Preview -->
-                    <div class="space-y-4">
-                        <p class="text-gray-400 text-sm uppercase tracking-wide">A sneak peek into my Projects</p>
-                        <div class="flex gap-3">
-                            <div class="w-1/3 h-20 bg-gray-800 rounded-lg overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=200&fit=crop" 
-                                     alt="Project" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-1/3 h-20 bg-gray-800 rounded-lg overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop" 
-                                     alt="Project" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-1/3 h-20 bg-gray-800 rounded-lg overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=200&fit=crop" 
-                                     alt="Project" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Side - Hero Image/Card -->
-                <div class="hidden lg:block">
-                    <div class="bg-gray-900/30 border border-gray-800 rounded-2xl p-6 backdrop-blur-sm">
-                        <div class="h-80 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl"></div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <!-- Endorsement 2 -->
+      <div class="bg-[#1b1b1f] p-6 rounded-2xl shadow">
+        <span class="text-gray-500 text-2xl mb-4 block">“</span>
+        <p class="text-gray-300 mb-6">Jagriti’s ability to translate complex ideas into intuitive, visually consistent designs made a huge impact at MapleCode. She approached every project with clarity, empathy, and precision.</p>
+        <div class="flex items-center gap-2">
+          <img src="ENDORSE2.jpg" alt="Akshay" class="w-8 h-8 object-cover rounded-full border border-[#23232a]">
+          <div>
+            <p class="font-bold text-sm">Akshay</p>
+            <p class="text-xs text-gray-400">Founder, MapleCode Innovations</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Work Section -->
-    <section class="py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-center mb-12">
-                <h2 class="text-3xl font-bold">My Favourite Problem-Solving Adventures</h2>
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition">
-                    View All
-                </button>
-            </div>
-
-            <div class="space-y-6">
-                <!-- Project Card 1 -->
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-2xl p-8 grid lg:grid-cols-3 gap-8">
-                    <div class="lg:col-span-2 space-y-4">
-                        <h3 class="text-xl font-semibold">101 Healthcare Website</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            Designed a responsive website for a healthcare startup focused on clarity, 
-                            trust and problem-free navigation. Built with accessibility and user experience at the forefront.
-                        </p>
-                        <button class="border border-gray-700 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition">
-                            View Case Study
-                        </button>
-                    </div>
-                    <div class="bg-gray-800 rounded-xl h-48 lg:h-full"></div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-2xl p-8 grid lg:grid-cols-3 gap-8">
-                    <div class="lg:col-span-2 space-y-4">
-                        <h3 class="text-xl font-semibold">MapleCode Innovations</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            Built an identity for a tech-forward company, blending visual storytelling 
-                            with functional design principles for maximum impact.
-                        </p>
-                        <button class="border border-gray-700 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition">
-                            View Case Study
-                        </button>
-                    </div>
-                    <div class="bg-gray-800 rounded-xl h-48 lg:h-full"></div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-2xl p-8 grid lg:grid-cols-3 gap-8">
-                    <div class="lg:col-span-2 space-y-4">
-                        <h3 class="text-xl font-semibold">Campaigns by Source Digital</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            Architected a marketing & scheduling system with a friendly cross-device experience 
-                            that increased user engagement by 150%.
-                        </p>
-                        <button class="border border-gray-700 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition">
-                            View Case Study
-                        </button>
-                    </div>
-                    <div class="bg-gray-800 rounded-xl h-48 lg:h-full"></div>
-                </div>
-            </div>
+      </div>
+      <!-- Endorsement 3 -->
+      <div class="bg-[#1b1b1f] p-6 rounded-2xl shadow">
+        <span class="text-gray-500 text-2xl mb-4 block">“</span>
+        <p class="text-gray-300 mb-6">Jagriti’s attention to detail, strong understanding of UX principles, and dedication to creating meaningful product experiences made her an invaluable member of our team.</p>
+        <div class="flex items-center gap-2">
+          <img src="ENDORSE3.jpg" alt="Michael Phillips" class="w-8 h-8 object-cover rounded-full border border-[#23232a]">
+          <div>
+            <p class="font-bold text-sm">Michael Phillips</p>
+            <p class="text-xs text-gray-400">Co-Founder, Source</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Design Process Section -->
-    <section class="py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">My Design Process: From Concept to Completion</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                    Every project is unique, but the path to great design is built on a clear and thoughtful approach.
-                </p>
-            </div>
+  <!-- Footer -->
+  <footer class="w-full bg-[#18171A] border-t border-[#23232a] py-10">
+    <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
+      <nav class="flex gap-8 mb-4 text-gray-300 text-base">
+        <a href="./index.html">Home</a>
+        <a href="./work.html">Work</a>
+        <a href="./about.html">About</a>
+        <a href="./resume.html">Resume</a>
+        <a href="./beyond-uiux.html">Beyond UX</a>
+      </nav>
+      <div class="relative w-full flex justify-center mb-2 opacity-10 text-[5rem] tracking-widest font-bold">JAGRITI SOOD</div>
+      <p class="text-gray-500 text-sm mt-2">&copy; 2025 All rights reserved. Made in Framer</p>
+    </div>
+  </footer>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
-                    <div class="text-blue-400 text-sm font-semibold mb-3">01. DISCOVER</div>
-                    <p class="text-gray-300 leading-relaxed">Deep research into user needs, business goals, and industry context.</p>
-                </div>
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
-                    <div class="text-blue-400 text-sm font-semibold mb-3">02. DEFINE</div>
-                    <p class="text-gray-300 leading-relaxed">Synthesize insights into a clear problem statement and user journeys.</p>
-                </div>
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
-                    <div class="text-blue-400 text-sm font-semibold mb-3">03. DREAM</div>
-                    <p class="text-gray-300 leading-relaxed">Explore creative solutions and prototype ideas rapidly.</p>
-                </div>
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
-                    <div class="text-blue-400 text-sm font-semibold mb-3">04. DESIGN</div>
-                    <p class="text-gray-300 leading-relaxed">Translate concepts into wireframes and polished visuals.</p>
-                </div>
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
-                    <div class="text-blue-400 text-sm font-semibold mb-3">05. DEVELOP</div>
-                    <p class="text-gray-300 leading-relaxed">Work closely with engineers to ensure a smooth handoff.</p>
-                </div>
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
-                    <div class="text-blue-400 text-sm font-semibold mb-3">06. DELIVER</div>
-                    <p class="text-gray-300 leading-relaxed">Iterate based on feedback, deliver the final product and measure success.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-3 gap-12 items-start">
-                <div class="lg:col-span-2 space-y-6">
-                    <h2 class="text-3xl font-bold">Hello there! I'm Jagriti Sood.</h2>
-                    <p class="text-gray-300 text-lg leading-relaxed">
-                        A UX/UI designer with 8+ years of experience crafting delightful digital experiences 
-                        from strategy to pixel-perfect execution. I focus on accessible, thoughtful interfaces 
-                        that drive clarity and impact.
-                    </p>
-                    <button class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
-                        Get in Touch
-                    </button>
-                </div>
-                <div>
-                    <div class="w-full h-80 bg-gray-800 rounded-2xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop" 
-                             alt="Jagriti Sood" class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12">Professional Endorsements</h2>
-            <p class="text-gray-400 mb-8">What people say about working with me.</p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        "Jagriti creates insight-driven, user-centered solutions that move metrics."
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full"></div>
-                        <div>
-                            <div class="font-semibold">Vishal Sharma</div>
-                            <div class="text-gray-400 text-sm">CEO, 101 Healthcare</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        "Jagriti's ability to translate complex ideas into delightful, usable products is exceptional."
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-600 rounded-full"></div>
-                        <div>
-                            <div class="font-semibold">Aakash Roy</div>
-                            <div class="text-gray-400 text-sm">Founder, MapleCode</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-900/20 border border-gray-800/50 rounded-xl p-6">
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        "A brilliant designer and thoughtful collaborator — clear communicator and excellent craft."
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-red-600 rounded-full"></div>
-                        <div>
-                            <div class="font-semibold">Michael Philips</div>
-                            <div class="text-gray-400 text-sm">Product, Source Digital</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <!-- Navigation -->
-            <nav class="flex justify-center items-center space-x-6 text-gray-300 text-base mb-20">
-                <a href="#" class="hover:text-white transition">Home</a>
-                <span class="text-gray-500">·</span>
-                <a href="#" class="hover:text-white transition">Work</a>
-                <span class="text-gray-500">·</span>
-                <a href="#" class="hover:text-white transition">About</a>
-                <span class="text-gray-500">·</span>
-                <a href="#" class="hover:text-white transition">Resume</a>
-                <span class="text-gray-500">·</span>
-                <a href="#" class="hover:text-white transition">Beyond UX</a>
-            </nav>
-
-
-            <!-- Large Watermark - Gradient opacity effect -->
-            <div class="flex justify-center items-center mb-16">
-            <div class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black bg-gradient-to-b from-gray-600 to-transparent bg-clip-text text-transparent select-none tracking-[0.2em] leading-none text-center transform scale-x-110">
-                JAGRITI SOOD
-            </div>
-            </div>
-
-            <div class="text-center text-gray-400 text-sm">
-                © 2025 All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Smooth Scroll & Animation Script -->
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Apply fade-in effect to sections
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section > div');
-            sections.forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(30px)';
-                section.style.transition = 'all 0.8s ease';
-                observer.observe(section);
-            });
-        });
-    </script>
+  <script>
+    // Simple Contact Button Animation
+    const btn = document.getElementById('contact-btn');
+    btn && btn.addEventListener('click', () => {
+      btn.classList.add('scale-105');
+      setTimeout(() => btn.classList.remove('scale-105'), 150);
+    });
+  </script>
 </body>
 </html>
