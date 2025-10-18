@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Jagriti Sood Portfolio</title>
+  <title>Contact — Jagriti Sood</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Moodak&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script> <!-- icons -->
   <style>
     .font-moodak { font-family: 'Moodak', cursive; }
     .font-inter { font-family: 'Inter', Arial, sans-serif; }
@@ -16,15 +17,51 @@
 
   <!-- Header -->
   <header class="w-full flex items-center justify-between px-8 py-4 bg-[#151417]">
-    <a href="./index.html" ><div class="font-moodak text-white text-2xl font-bold">Jagriti Sood</div></a>
+    <a href="./index.html"><div class="font-moodak text-white text-2xl font-bold">Jagriti Sood</div></a>
     <nav class="flex items-center gap-8">
       <a href="./work.html" class="text-white text-base hover:underline">Work</a>
       <a href="./about.html" class="text-white text-base hover:underline">About</a>
       <a href="./resume.html" class="text-white text-base hover:underline">Resume</a>
       <a href="./beyond-uiux.html" class="text-white text-base hover:underline">Beyond UX</a>
-      <button class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95" id="contact-btn">Contact</button>
+      <a href="./contact.html" class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95">Contact</a>
     </nav>
   </header>
+
+  <!-- Contact Section -->
+  <section class="flex flex-col items-center justify-center text-center min-h-[80vh] px-6">
+    <h1 class="text-4xl md:text-5xl font-moodak font-bold mb-6">Let's Connect</h1>
+    <p class="text-gray-400 max-w-md mb-10">
+      Designer • Storyteller • Dreamer  
+      <br>Based in India — crafting digital experiences.
+    </p>
+
+    <!-- Animated Social Icons -->
+    <div class="flex gap-10 mt-4">
+      <!-- Email -->
+      <a href="mailto:hello@jagritisood.com"
+         class="group relative text-gray-300 hover:text-blue-400 transition transform hover:scale-110">
+        <i class="ph ph-envelope-simple text-4xl"></i>
+        <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition">Email</span>
+      </a>
+      <!-- Twitter -->
+      <a href="https://twitter.com/"
+         target="_blank"
+         class="group relative text-gray-300 hover:text-blue-400 transition transform hover:scale-110">
+        <i class="ph ph-twitter-logo text-4xl"></i>
+        <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition">Twitter</span>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/"
+         target="_blank"
+         class="group relative text-gray-300 hover:text-blue-400 transition transform hover:scale-110">
+        <i class="ph ph-linkedin-logo text-4xl"></i>
+        <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition">LinkedIn</span>
+      </a>
+    </div>
+
+    <!-- Floating subtle text -->
+    <div class="mt-20 opacity-10 text-[4rem] tracking-widest font-bold select-none">JAGRITI SOOD</div>
+  </section>
 
   <!-- Footer -->
   <footer class="w-full bg-[#18171A] border-t border-[#23232a] py-10">
@@ -36,18 +73,8 @@
         <a href="./resume.html">Resume</a>
         <a href="./beyond-uiux.html">Beyond UX</a>
       </nav>
-      <div class="relative w-full flex justify-center mb-2 opacity-10 text-[5rem] tracking-widest font-bold">JAGRITI SOOD</div>
-      <p class="text-gray-500 text-sm mt-2">&copy; 2025 All rights reserved. Made in Framer</p>
+      <p class="text-gray-500 text-sm mt-2">&copy; 2025 All rights reserved. </p>
     </div>
   </footer>
-
-  <script>
-    // Simple Contact Button Animation
-    const btn = document.getElementById('contact-btn');
-    btn && btn.addEventListener('click', () => {
-      btn.classList.add('scale-105');
-      setTimeout(() => btn.classList.remove('scale-105'), 150);
-    });
-  </script>
 </body>
 </html>
