@@ -2,29 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Jagriti Sood Portfolio</title>
+  <title>Beyond UX – Jagriti Sood Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Tailwind CSS CDN -->
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     .font-Modak { font-family: 'Modak', cursive; }
     .font-inter { font-family: 'Inter', Arial, sans-serif; }
+    .section { max-width: 1000px; margin: 0 auto; padding: 4rem 1rem; }
+    .title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
   </style>
 </head>
 <body class="bg-[#18171A] text-white font-inter">
 
   <!-- Header -->
-  <header class="w-full flex items-center justify-between px-8 py-4 bg-[#151417]">
-    <a href="./index.html" ><div class="font-Modak text-white text-2xl font-bold">Jagriti Sood</div></a>
+  <header class="w-full flex items-center justify-between px-8 py-4 bg-[#151417] sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
+    <a href="./index.html"><div class="font-Modak text-white text-2xl font-bold">Jagriti Sood</div></a>
     <nav class="flex items-center gap-8">
-      <a href="./work.html" class="text-white text-base hover:underline">Work</a>
-      <a href="./about.html" class="text-white text-base hover:underline">About</a>
-      <a href="./resume.html" class="text-white text-base hover:underline">Resume</a>
-      <a href="./beyond-uiux.html" class="text-white text-base hover:underline">Beyond UX</a>
-      <button class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95" id="contact-btn">Contact</button>
+      <a href="./work.html" class="text-white hover:underline">Work</a>
+      <a href="./about.html" class="text-white hover:underline">About</a>
+      <a href="./resume.html" class="text-white hover:underline">Resume</a>
+      <a href="./beyond-uiux.html" class="text-blue-400 font-semibold">Beyond UX</a>
+      <a href="./contact.html" class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition">Contact</a>
     </nav>
   </header>
+
+  <!-- Hero Section -->
+  <section class="text-center px-6 py-24" data-aos="fade-up">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4">Beyond the Screen, <br><span class="text-blue-400">Creativity Lives Everywhere</span></h1>
+    <p class="text-gray-400 text-lg max-w-3xl mx-auto">
+      When I’m not designing digital experiences, I explore the art of creating in other forms — candles, colors, light, and life.  
+      These are the moments that keep me inspired, grounded, and connected to emotion.
+    </p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section" data-aos="fade-up">
+    <h2 class="title text-center mb-10">My Creative Escapes</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-[#1b1b1f] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="CANDLE_ART.jpg" alt="Candle Making" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-lg font-bold mb-2 text-blue-300">Candle Crafting</h3>
+          <p class="text-gray-400 text-sm">
+            I hand-pour soy candles, blending fragrances that tell stories of calm, focus, and nostalgia.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-[#1b1b1f] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="PHOTOGRAPHY.jpg" alt="Photography" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-lg font-bold mb-2 text-blue-300">Photography</h3>
+          <p class="text-gray-400 text-sm">
+            Capturing textures, light, and fleeting moments reminds me how emotion exists in details.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-[#1b1b1f] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="ILLUSTRATION.jpg" alt="Illustration" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-lg font-bold mb-2 text-blue-300">Illustration & Sketching</h3>
+          <p class="text-gray-400 text-sm">
+            I sketch characters and moods to stay close to storytelling — the heart of great design.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-[#1b1b1f] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="JOURNALING.jpg" alt="Journaling" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-lg font-bold mb-2 text-blue-300">Journaling</h3>
+          <p class="text-gray-400 text-sm">
+            Writing down my thoughts keeps my creativity grounded — reflection fuels clarity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-[#1b1b1f] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="TRAVEL.jpg" alt="Travel" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-lg font-bold mb-2 text-blue-300">Travel & Culture</h3>
+          <p class="text-gray-400 text-sm">
+            Discovering places, art, and people inspires empathy — the foundation of my UX practice.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-[#1b1b1f] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="CRAFTS.jpg" alt="DIY Crafts" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-lg font-bold mb-2 text-blue-300">DIY Crafts</h3>
+          <p class="text-gray-400 text-sm">
+            Creating something tangible brings joy — it reminds me design is about feeling, not pixels.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflection Section -->
+  <section class="section text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Why It Matters</h2>
+    <p class="text-gray-400 max-w-3xl mx-auto mb-6">
+      These creative explorations shape my approach to UX — they keep empathy alive, remind me to slow down, and help me see beauty in imperfection.  
+      Whether I’m blending wax or designing an interface, the intention is the same: to craft experiences that feel human.
+    </p>
+    <a href="./work.html" class="px-8 py-3 bg-blue-500 rounded text-white hover:bg-blue-600 transition">← Back to Work</a>
+  </section>
 
   <!-- Footer -->
   <footer class="w-full bg-[#18171A] border-t border-[#23232a] py-10">
@@ -37,9 +136,12 @@
         <a href="./beyond-uiux.html">Beyond UX</a>
       </nav>
       <div class="relative w-full flex justify-center mb-2 opacity-10 text-[5rem] tracking-widest font-bold">JAGRITI SOOD</div>
-      <p class="text-gray-500 text-sm mt-2">&copy; 2025 All rights reserved. </p>
+      <p class="text-gray-500 text-sm mt-2">&copy; 2025 All rights reserved.</p>
     </div>
   </footer>
-  <script src="./assets/js/script.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000, easing: 'ease-out-cubic', once: true });</script>
 </body>
 </html>
