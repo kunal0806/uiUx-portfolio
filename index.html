@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Jagriti Sood Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,465 +10,358 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
     <!-- AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <style>
-      .font-Modak {
-        font-family: "Modak", cursive;
-      }
-      .font-inter {
-        font-family: "Inter", Arial, sans-serif;
-      }
-
-      /* Smooth Scroll */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Hero Fade-Up Animation */
-      @keyframes fadeUp {
-        0% {
-          opacity: 0;
-          transform: translateY(20px);
-          filter: blur(6px);
+        .font-Modak {
+            font-family: "Modak", cursive;
         }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-          filter: blur(0);
-        }
-      }
-      .hero-animate > * {
-        animation: fadeUp 1s ease-out forwards;
-        opacity: 0;
-      }
-      .hero-animate > *:nth-child(1) {
-        animation-delay: 0.2s;
-      }
-      .hero-animate > *:nth-child(2) {
-        animation-delay: 0.4s;
-      }
-      .hero-animate > *:nth-child(3) {
-        animation-delay: 0.6s;
-      }
-      .hero-animate > *:nth-child(4) {
-        animation-delay: 0.8s;
-      }
 
-      /* Project Card Hover */
-      .project-card {
-        transition:
-          transform 0.5s ease,
-          box-shadow 0.4s ease;
-      }
-      .project-card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-      }
+        .font-inter {
+            font-family: "Inter", Arial, sans-serif;
+        }
 
-      /* Section Title Reveal */
-      @keyframes textReveal {
-        0% {
-          opacity: 0;
-          transform: translateY(20px);
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
+
+        /* Hero Fade-Up Animation */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(6px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
         }
-      }
-      .reveal-title {
-        animation: textReveal 1s ease-out forwards;
-        opacity: 0;
-      }
+
+        .hero-animate>* {
+            animation: fadeUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .hero-animate>*:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .hero-animate>*:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .hero-animate>*:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .hero-animate>*:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        /* Project Card Hover */
+        .project-card {
+            transition:
+                transform 0.5s ease,
+                box-shadow 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Section Title Reveal */
+        @keyframes textReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal-title {
+            animation: textReveal 1s ease-out forwards;
+            opacity: 0;
+        }
     </style>
-  </head>
+</head>
 
-  <body class="bg-[#18171A] text-white font-inter">
+<body class="bg-[#18171A] text-white font-inter">
     <!-- Header -->
-    <header
-      class="w-full flex items-center justify-between px-8 py-4 bg-[#151417] sticky top-0 z-50 backdrop-blur-md bg-opacity-90"
-    >
-      <a href="./index.html"
-        ><div class="font-Modak text-white text-2xl font-bold">
-          Jagriti Sood
-        </div></a
-      >
-      <nav class="flex items-center gap-8">
-        <a href="./work.html" class="text-white text-base hover:underline"
-          >Work</a
-        >
-        <a href="./about.html" class="text-white text-base hover:underline"
-          >About</a
-        >
-        <a href="./resume.html" class="text-white text-base hover:underline"
-          >Resume</a
-        >
-        <a
-          href="./beyond-uiux.html"
-          class="text-white text-base hover:underline"
-          >Beyond UX</a
-        >
-        <button
-          class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95"
-          id="contact-btn"
-        >
-          Contact
-        </button>
-      </nav>
+    <header class="w-full flex items-center justify-between px-8 py-4 bg-[#151417] sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
+        <a href="./index.html">
+            <div class="font-Modak text-white text-2xl font-bold">
+                Jagriti Sood
+            </div>
+        </a>
+        <nav class="flex items-center gap-8">
+            <a href="./work.html" class="text-white text-base hover:underline">Work</a>
+            <a href="./about.html" class="text-white text-base hover:underline">About</a>
+            <a href="./resume.html" class="text-white text-base hover:underline">Resume</a>
+            <a href="./beyond-uiux.html" class="text-white text-base hover:underline">Beyond UX</a>
+            <button class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95" id="contact-btn">
+                Contact
+            </button>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section
-      class="px-8 py-20 bg-[#18171A] min-h-[100px] flex flex-col items-start max-w-5xl mx-auto hero-animate"
-    >
-      <span
-        class="inline-block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200"
-        >WHO I AM</span
-      >
-      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-        Hi, I’m Jagriti, and I design<br />like it’s my superpower.
-      </h1>
-      <p class="text-gray-400 text-lg max-w-2xl mb-10">
-        From zero-to-system, I build digital tools that work hard and feel
-        simple. If users love it <em>and</em> the devs don’t cry, <br />that’s
-        my kind of success.
-      </p>
-      <div class="flex gap-4">
-        <a
-          href="./work.html"
-          class="px-6 py-3 rounded bg-blue-500 text-white shadow hover:bg-blue-600 transition"
-          >View Work</a
-        >
-        <a
-          href="./assets/files/Jagriti-Sood-Resume.pdf"
-          download
-          class="px-6 py-3 rounded bg-[#23232a] text-white shadow hover:bg-[#333] transition"
-          >Download CV</a
-        >
-      </div>
+    <section class="px-8 py-20 bg-[#18171A] min-h-[100px] flex flex-col items-start max-w-5xl mx-auto hero-animate">
+        <span class="inline-block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">WHO I AM</span>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            Hi, I’m Jagriti, and I design<br />like it’s my superpower.
+        </h1>
+        <p class="text-gray-400 text-lg max-w-2xl mb-10">
+            From zero-to-system, I build digital tools that work hard and feel
+            simple. If users love it <em>and</em> the devs don’t cry, <br />that’s
+            my kind of success.
+        </p>
+        <div class="flex gap-4">
+            <a href="./work.html" class="px-6 py-3 rounded bg-blue-500 text-white shadow hover:bg-blue-600 transition">View Work</a>
+            <a href="./assets/files/Jagriti-Sood-Resume.pdf" download class="px-6 py-3 rounded bg-[#23232a] text-white shadow hover:bg-[#333] transition">Download CV</a>
+        </div>
     </section>
 
     <!-- Sneak Peek Projects -->
-    <section
-      class="px-8 pt-16 pb-24 bg-[#18171A] max-w-5xl mx-auto"
-      data-aos="fade-up"
-    >
-      <h2 class="text-2xl font-bold mb-2 reveal-title">
-        A sneak peek into my Projects
-      </h2>
-      <p class="text-gray-300 text-base mb-10 max-w-xl">
-        Curious to see what I’ve been building? Here’s a glimpse. Dive into my
-        full case studies to explore the details behind each design.
-      </p>
-      <div class="flex gap-8 flex-wrap">
-        <!-- Project Card 1 -->
-        <div
-          class="relative rounded-2xl overflow-hidden w-[320px] h-[240px] shadow-lg flex items-center justify-center bg-gradient-to-tr from-indigo-500 to-purple-500 text-white text-4xl font-bold cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-2xl"
-        >
-          <span>MI</span>
-          <!-- Initials -->
-          <span
-            class="absolute top-4 left-4 bg-black/70 text-xs text-gray-200 px-3 py-1 rounded font-medium"
-            >MAPLECODE INNOVATIONS</span
-          >
-        </div>
+    <section class="px-8 pt-16 pb-24 bg-[#18171A] max-w-5xl mx-auto" data-aos="fade-up">
+        <h2 class="text-2xl font-bold mb-2 reveal-title">
+            A sneak peek into my Projects
+        </h2>
+        <p class="text-gray-300 text-base mb-10 max-w-xl">
+            Curious to see what I’ve been building? Here’s a glimpse. Dive into my
+            full case studies to explore the details behind each design.
+        </p>
+        <div class="flex gap-8 flex-wrap">
+            <!-- Project Card 1 -->
+            <div class="relative rounded-2xl overflow-hidden w-[320px] h-[240px] shadow-lg flex items-center justify-center bg-gradient-to-tr from-indigo-500 to-purple-500 text-white text-4xl font-bold cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <span>MI</span>
+                <!-- Initials -->
+                <span class="absolute top-4 left-4 bg-black/70 text-xs text-gray-200 px-3 py-1 rounded font-medium">MAPLECODE INNOVATIONS</span>
+            </div>
 
-        <!-- Project Card 2 -->
-        <div
-          class="relative rounded-2xl overflow-hidden w-[220px] h-[240px] shadow-lg flex items-center justify-center bg-gradient-to-tr from-green-400 to-teal-500 text-white text-4xl font-bold cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-2xl"
-        >
-          <span>SP</span>
-          <span
-            class="absolute bottom-4 left-4 bg-black/70 text-xs text-gray-200 px-3 py-1 rounded font-medium"
-            >SUPAPRICE</span
-          >
-        </div>
+            <!-- Project Card 2 -->
+            <div class="relative rounded-2xl overflow-hidden w-[220px] h-[240px] shadow-lg flex items-center justify-center bg-gradient-to-tr from-green-400 to-teal-500 text-white text-4xl font-bold cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <span>SP</span>
+                <span class="absolute bottom-4 left-4 bg-black/70 text-xs text-gray-200 px-3 py-1 rounded font-medium">SUPAPRICE</span>
+            </div>
 
-        <!-- Project Card 3 -->
-        <div
-          class="relative rounded-2xl overflow-hidden w-[320px] h-[240px] shadow-lg flex items-center justify-center bg-gradient-to-tr from-pink-500 to-red-500 text-white text-4xl font-bold cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-2xl"
-        >
-          <span>UX</span>
-          <span
-            class="absolute bottom-4 left-4 bg-black/70 text-xs text-gray-200 px-3 py-1 rounded font-medium"
-            >UX STUDY</span
-          >
+            <!-- Project Card 3 -->
+            <div class="relative rounded-2xl overflow-hidden w-[320px] h-[240px] shadow-lg flex items-center justify-center bg-gradient-to-tr from-pink-500 to-red-500 text-white text-4xl font-bold cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <span>UX</span>
+                <span class="absolute bottom-4 left-4 bg-black/70 text-xs text-gray-200 px-3 py-1 rounded font-medium">UX STUDY</span>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Work Problem-Solving Adventures -->
-    <section
-      class="px-8 py-14 bg-[#18171A] max-w-5xl mx-auto flex items-center justify-between"
-      data-aos="fade-up"
-    >
-      <div>
-        <span
-          class="inline-block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200"
-          >WORK</span
-        >
-        <h2 class="text-3xl font-bold mb-2 reveal-title">
-          My Favourite Problem-Solving Adventures
-        </h2>
-        <p class="text-gray-300 max-w-lg">
-          Get a closer look at the projects where I rolled up my sleeves, asked
-          the right questions, and made complexity feel simple.
-        </p>
-      </div>
-      <a
-        href="./work.html"
-        class="px-6 py-3 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition"
-        >View All</a
-      >
+    <section class="px-8 py-14 bg-[#18171A] max-w-5xl mx-auto flex items-center justify-between" data-aos="fade-up">
+        <div>
+            <span class="inline-block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">WORK</span>
+            <h2 class="text-3xl font-bold mb-2 reveal-title">
+                My Favourite Problem-Solving Adventures
+            </h2>
+            <p class="text-gray-300 max-w-lg">
+                Get a closer look at the projects where I rolled up my sleeves, asked
+                the right questions, and made complexity feel simple.
+            </p>
+        </div>
+        <a href="./work.html" class="px-6 py-3 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition">View All</a>
+
+        <!-- Case Study Cards -->
+        <section class="px-8 py-10 bg-[#18171A] max-w-5xl mx-auto flex flex-col gap-8" data-aos="fade-up">
+            <div class="flex bg-[#1b1b1f] rounded-2xl p-8 gap-8 shadow project-card">
+                <div class="flex-1">
+                    <span class="block mb-2 text-xs bg-[#23232a] text-gray-300 rounded px-2 py-1">UX RESEARCH, WIREFRAMING & PROTOTYPING</span>
+                    <h3 class="text-2xl font-bold mb-2">101 Healthcare Website</h3>
+                    <p class="text-gray-400 mb-4">
+                        Designed a responsive website for a healthcare startup, focused on
+                        clarity, trust, and patient-first navigation.
+                    </p>
+                    <a href="#" class="px-5 py-2 rounded bg-[#23232a] text-white font-medium shadow hover:bg-[#333] transition">View Case Study</a>
+                </div>
+                <div class="flex-1 bg-[#23232a] rounded-2xl flex items-center justify-center">
+                    <div class="h-[200px] w-full rounded-2xl bg-gradient-to-br from-[#222228] to-[#23232a] opacity-40"></div>
+                </div>
+            </div>
+        </section>
     </section>
     <!-- About Section -->
-    <section
-      class="px-8 py-20 bg-[#18171A] flex flex-col md:flex-row gap-10 items-center max-w-5xl mx-auto"
-      data-aos="fade-up"
-    >
-      <div class="flex-1">
-        <span
-          class="inline-block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200"
-          >ABOUT ME</span
-        >
-        <h2 class="text-3xl font-bold mb-4">
-          Hello there!<br />I'm the Jagriti Sood.
-        </h2>
-        <p class="text-gray-300 mb-3">
-          A UX/UI designer with 5+ years of experience turning complex systems
-          into simple, human-centered interfaces. My work spans industries like
-          healthcare, ad tech, and digital platforms, always grounded in
-          strategy, empathy, and purpose-driven design.
-        </p>
-        <p class="text-gray-300 mb-3">
-          But creativity doesn’t end at the screen. Outside of UX, I craft
-          hand-poured candles, a reminder that great design can take many forms.
-          Whether I’m shaping a user journey or blending a new fragrance, I
-          believe in creating experiences that feel intuitive, thoughtful, and
-          beautiful.
-        </p>
-        <a
-          href="./contact.html"
-          class="inline-block mt-4 px-6 py-3 rounded bg-blue-500 text-white shadow hover:bg-blue-600 transition"
-          >Get in Touch</a
-        >
-      </div>
-      <img
-        src="./assets/images/about/my-pic.JPG"
-        alt="Profile"
-        class="w-[340px] h-[340px] object-cover rounded-2xl shadow-lg border border-[#23232a]"
-      />
+    <section class="px-8 py-20 bg-[#18171A] flex flex-col md:flex-row gap-10 items-center max-w-5xl mx-auto" data-aos="fade-up">
+        <div class="flex-1">
+            <span class="inline-block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">ABOUT ME</span>
+            <h2 class="text-3xl font-bold mb-4">
+                Hello there!<br />I'm the Jagriti Sood.
+            </h2>
+            <p class="text-gray-300 mb-3">
+                A UX/UI designer with 5+ years of experience turning complex systems
+                into simple, human-centered interfaces. My work spans industries like
+                healthcare, ad tech, and digital platforms, always grounded in
+                strategy, empathy, and purpose-driven design.
+            </p>
+            <p class="text-gray-300 mb-3">
+                But creativity doesn’t end at the screen. Outside of UX, I craft
+                hand-poured candles, a reminder that great design can take many forms.
+                Whether I’m shaping a user journey or blending a new fragrance, I
+                believe in creating experiences that feel intuitive, thoughtful, and
+                beautiful.
+            </p>
+            <a href="./contact.html" class="inline-block mt-4 px-6 py-3 rounded bg-blue-500 text-white shadow hover:bg-blue-600 transition">Get in Touch</a>
+        </div>
+        <img src="./assets/images/about/my-pic.JPG" alt="Profile" class="w-[340px] h-[340px] object-cover rounded-2xl shadow-lg border border-[#23232a]" />
     </section>
 
-    <!-- Case Study Cards -->
-    <section
-      class="px-8 py-10 bg-[#18171A] max-w-5xl mx-auto flex flex-col gap-8"
-      data-aos="fade-up"
-    >
-      <div class="flex bg-[#1b1b1f] rounded-2xl p-8 gap-8 shadow project-card">
-        <div class="flex-1">
-          <span
-            class="block mb-2 text-xs bg-[#23232a] text-gray-300 rounded px-2 py-1"
-            >UX RESEARCH, WIREFRAMING & PROTOTYPING</span
-          >
-          <h3 class="text-2xl font-bold mb-2">101 Healthcare Website</h3>
-          <p class="text-gray-400 mb-4">
-            Designed a responsive website for a healthcare startup, focused on
-            clarity, trust, and patient-first navigation.
-          </p>
-          <a
-            href="#"
-            class="px-5 py-2 rounded bg-[#23232a] text-white font-medium shadow hover:bg-[#333] transition"
-            >View Case Study</a
-          >
-        </div>
-        <div
-          class="flex-1 bg-[#23232a] rounded-2xl flex items-center justify-center"
-        >
-          <div
-            class="h-[200px] w-full rounded-2xl bg-gradient-to-br from-[#222228] to-[#23232a] opacity-40"
-          ></div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Design Process -->
-    <section
-      class="px-8 py-14 bg-[#18171A] max-w-5xl mx-auto"
-      data-aos="fade-up"
-    >
-      <span
-        class="block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200"
-        >PROCESS</span
-      >
-      <h2 class="text-3xl font-bold mb-2 reveal-title">
-        My Design Process: From Concept to Completion
-      </h2>
-      <p class="text-gray-300 mb-10">
-        Every project is unique, but the path to great design is built on a
-        clear and thoughtful approach.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-[#1b1b1f] p-6 rounded-2xl" data-aos="fade-up">
-          <span class="block text-lg font-bold mb-2">01. DISCOVER</span>
-          <p class="text-gray-400">
-            I dive deep into user needs, business goals, and industry context
-            through research and interviews.
-          </p>
+    <section class="px-8 py-14 bg-[#18171A] max-w-5xl mx-auto" data-aos="fade-up">
+        <span class="block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">PROCESS</span>
+        <h2 class="text-3xl font-bold mb-2 reveal-title">
+            My Design Process: From Concept to Completion
+        </h2>
+        <p class="text-gray-300 mb-10">
+            Every project is unique, but the path to great design is built on a
+            clear and thoughtful approach.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-[#1b1b1f] p-6 rounded-2xl" data-aos="fade-up">
+                <span class="block text-lg font-bold mb-2">01. DISCOVER</span>
+                <p class="text-gray-400">
+                    I dive deep into user needs, business goals, and industry context
+                    through research and interviews.
+                </p>
+            </div>
+            <div class="bg-[#1b1b1f] p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                <span class="block text-lg font-bold mb-2">02. DEFINE</span>
+                <p class="text-gray-400">
+                    I synthesize insights to craft a clear problem statement, identify
+                    pain points, and outline key user journeys.
+                </p>
+            </div>
+            <div class="bg-[#1b1b1f] p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                <span class="block text-lg font-bold mb-2">03. DREAM</span>
+                <p class="text-gray-400">
+                    This is where ideas spark. I explore creative solutions and
+                    brainstorm features that elevate the experience.
+                </p>
+            </div>
+            <div class="bg-[#1b1b1f] p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                <span class="block text-lg font-bold mb-2">04. DESIGN</span>
+                <p class="text-gray-400">
+                    I translate concepts into wireframes, flows, and UI designs,
+                    balancing functionality and aesthetics.
+                </p>
+            </div>
         </div>
-        <div
-          class="bg-[#1b1b1f] p-6 rounded-2xl"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <span class="block text-lg font-bold mb-2">02. DEFINE</span>
-          <p class="text-gray-400">
-            I synthesize insights to craft a clear problem statement, identify
-            pain points, and outline key user journeys.
-          </p>
-        </div>
-        <div
-          class="bg-[#1b1b1f] p-6 rounded-2xl"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <span class="block text-lg font-bold mb-2">03. DREAM</span>
-          <p class="text-gray-400">
-            This is where ideas spark. I explore creative solutions and
-            brainstorm features that elevate the experience.
-          </p>
-        </div>
-        <div
-          class="bg-[#1b1b1f] p-6 rounded-2xl"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <span class="block text-lg font-bold mb-2">04. DESIGN</span>
-          <p class="text-gray-400">
-            I translate concepts into wireframes, flows, and UI designs,
-            balancing functionality and aesthetics.
-          </p>
-        </div>
-      </div>
     </section>
 
     <!-- Recommendations -->
-    <section
-      class="px-8 py-16 bg-[#18171A] max-w-5xl mx-auto"
-      data-aos="fade-up"
-    >
-      <span
-        class="block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200"
-        >RECOMMENDATIONS</span
-      >
-      <h2 class="text-3xl font-bold mb-2 reveal-title">
-        Professional Endorsements
-      </h2>
-      <p class="text-gray-300 mb-8">
-        Recommendations from my previous employers who’ve seen my work in
-        action.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Testimonial 1 -->
-        <div class="bg-[#1b1b1f] p-6 rounded-2xl shadow project-card">
-          <span class="text-gray-500 text-2xl mb-4 block">“</span>
-          <p class="text-gray-300 mb-6">
-            Jagriti’s creative insight and user-centered approach made a lasting
-            impact on our product’s success.
-          </p>
-          <div class="flex items-center gap-3">
-            <div
-              class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-sm font-semibold text-white"
-            >
-              VS
+    <section class="px-8 py-16 bg-[#18171A] max-w-5xl mx-auto" data-aos="fade-up">
+        <span class="block mb-6 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">RECOMMENDATIONS</span>
+        <h2 class="text-3xl font-bold mb-2 reveal-title">
+            Professional Endorsements
+        </h2>
+        <p class="text-gray-300 mb-8">
+            Recommendations from my previous employers who’ve seen my work in
+            action.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-[#1b1b1f] p-6 rounded-2xl shadow project-card">
+                <span class="text-gray-500 text-2xl mb-4 block">“</span>
+                <p class="text-gray-300 mb-6">
+                    Jagriti’s creative insight and user-centered approach made a lasting
+                    impact on our product’s success.
+                </p>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-sm font-semibold text-white">
+                        VS
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm">Vishal Sharma</p>
+                        <p class="text-xs text-gray-400">CEO, 101 Healthcare</p>
+                    </div>
+                </div>
             </div>
-            <div>
-              <p class="font-bold text-sm">Vishal Sharma</p>
-              <p class="text-xs text-gray-400">CEO, 101 Healthcare</p>
-            </div>
-          </div>
-        </div>
 
-        <!-- Testimonial 2 -->
-        <div class="bg-[#1b1b1f] p-6 rounded-2xl shadow project-card">
-          <span class="text-gray-500 text-2xl mb-4 block">“</span>
-          <p class="text-gray-300 mb-6">
-            Her ability to translate complex ideas into intuitive, consistent
-            designs was transformative at MapleCode.
-          </p>
-          <div class="flex items-center gap-3">
-            <div
-              class="w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center text-sm font-semibold text-white"
-            >
-              AK
+            <!-- Testimonial 2 -->
+            <div class="bg-[#1b1b1f] p-6 rounded-2xl shadow project-card">
+                <span class="text-gray-500 text-2xl mb-4 block">“</span>
+                <p class="text-gray-300 mb-6">
+                    Her ability to translate complex ideas into intuitive, consistent
+                    designs was transformative at MapleCode.
+                </p>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center text-sm font-semibold text-white">
+                        AK
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm">Akshay</p>
+                        <p class="text-xs text-gray-400">
+                            Founder, MapleCode Innovations
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div>
-              <p class="font-bold text-sm">Akshay</p>
-              <p class="text-xs text-gray-400">
-                Founder, MapleCode Innovations
-              </p>
-            </div>
-          </div>
-        </div>
 
-        <!-- Testimonial 3 -->
-        <div class="bg-[#1b1b1f] p-6 rounded-2xl shadow project-card">
-          <span class="text-gray-500 text-2xl mb-4 block">“</span>
-          <p class="text-gray-300 mb-6">
-            Jagriti’s attention to detail and passion for design made her an
-            invaluable part of our team.
-          </p>
-          <div class="flex items-center gap-3">
-            <div
-              class="w-8 h-8 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-sm font-semibold text-white"
-            >
-              MP
+            <!-- Testimonial 3 -->
+            <div class="bg-[#1b1b1f] p-6 rounded-2xl shadow project-card">
+                <span class="text-gray-500 text-2xl mb-4 block">“</span>
+                <p class="text-gray-300 mb-6">
+                    Jagriti’s attention to detail and passion for design made her an
+                    invaluable part of our team.
+                </p>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-sm font-semibold text-white">
+                        MP
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm">Michael Phillips</p>
+                        <p class="text-xs text-gray-400">Co-Founder, Source</p>
+                    </div>
+                </div>
             </div>
-            <div>
-              <p class="font-bold text-sm">Michael Phillips</p>
-              <p class="text-xs text-gray-400">Co-Founder, Source</p>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Footer -->
     <footer class="w-full bg-[#18171A] border-t border-[#23232a] py-10">
-      <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
-        <nav class="flex gap-8 mb-4 text-gray-300 text-base">
-          <a href="./index.html">Home</a>
-          <a href="./work.html">Work</a>
-          <a href="./about.html">About</a>
-          <a href="./resume.html">Resume</a>
-          <a href="./beyond-uiux.html">Beyond UX</a>
-        </nav>
-        <div
-          class="relative w-full flex justify-center mb-2 opacity-10 text-[5rem] tracking-widest font-bold"
-        >
-          JAGRITI SOOD
+        <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
+            <nav class="flex gap-8 mb-4 text-gray-300 text-base">
+                <a href="./index.html">Home</a>
+                <a href="./work.html">Work</a>
+                <a href="./about.html">About</a>
+                <a href="./resume.html">Resume</a>
+                <a href="./beyond-uiux.html">Beyond UX</a>
+            </nav>
+            <div class="relative w-full flex justify-center mb-2 opacity-10 text-[5rem] tracking-widest font-bold">
+                JAGRITI SOOD
+            </div>
+            <p class="text-gray-500 text-sm mt-2">
+                &copy; 2025 All rights reserved.
+            </p>
         </div>
-        <p class="text-gray-500 text-sm mt-2">
-          &copy; 2025 All rights reserved.
-        </p>
-      </div>
     </footer>
 
     <!-- JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({
-        duration: 1000,
-        easing: "ease-out-cubic",
-        once: true,
-      });
+        AOS.init({
+            duration: 1000,
+            easing: "ease-out-cubic",
+            once: true,
+        });
     </script>
-  </body>
+</body>
+
 </html>

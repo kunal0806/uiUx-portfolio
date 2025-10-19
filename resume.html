@@ -1,169 +1,134 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Resume — Jagriti Sood</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
     <style>
-      .font-Modak {
-        font-family: "Modak", cursive;
-      }
-      .font-inter {
-        font-family: "Inter", Arial, sans-serif;
-      }
-
-      /* Glow Gradient Background */
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background:
-          radial-gradient(
-            circle at 20% 30%,
-            rgba(59, 130, 246, 0.15),
-            transparent 60%
-          ),
-          radial-gradient(
-            circle at 80% 70%,
-            rgba(236, 72, 153, 0.1),
-            transparent 60%
-          );
-        z-index: 0;
-      }
-
-      /* Glass Effect */
-      .glass {
-        backdrop-filter: blur(18px) saturate(140%);
-        -webkit-backdrop-filter: blur(18px) saturate(140%);
-        background-color: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
+        .font-Modak {
+            font-family: "Modak", cursive;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .animate-fadeInUp {
-        animation: fadeInUp 0.8s ease forwards;
-      }
 
-      iframe::-webkit-scrollbar {
-        display: none;
-      }
+        .font-inter {
+            font-family: "Inter", Arial, sans-serif;
+        }
+
+        /* Glow Gradient Background */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%,
+                    rgba(59, 130, 246, 0.15),
+                    transparent 60%),
+                radial-gradient(circle at 80% 70%,
+                    rgba(236, 72, 153, 0.1),
+                    transparent 60%);
+            z-index: 0;
+        }
+
+        /* Glass Effect */
+        .glass {
+            backdrop-filter: blur(18px) saturate(140%);
+            -webkit-backdrop-filter: blur(18px) saturate(140%);
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        iframe::-webkit-scrollbar {
+            display: none;
+        }
     </style>
-  </head>
+</head>
 
-  <body class="bg-[#18171A] text-white font-inter relative overflow-x-hidden">
+<body class="bg-[#18171A] text-white font-inter relative overflow-x-hidden">
     <!-- Header -->
-    <header
-      class="w-full flex items-center justify-between px-8 py-4 bg-[#151417] z-10 relative"
-    >
-      <a href="./index.html"
-        ><div class="font-Modak text-white text-2xl font-bold">
-          Jagriti Sood
-        </div></a
-      >
-      <nav class="flex items-center gap-8">
-        <a href="./work.html" class="text-white text-base hover:underline"
-          >Work</a
-        >
-        <a href="./about.html" class="text-white text-base hover:underline"
-          >About</a
-        >
-        <a
-          href="./resume.html"
-          class="text-white text-base underline underline-offset-4 decoration-blue-500"
-          >Resume</a
-        >
-        <a
-          href="./beyond-uiux.html"
-          class="text-white text-base hover:underline"
-          >Beyond UX</a
-        >
-        <a
-          href="./contact.html"
-          class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95"
-          >Contact</a
-        >
-      </nav>
+    <header class="w-full flex items-center justify-between px-8 py-4 bg-[#151417] z-10 relative">
+        <a href="./index.html">
+            <div class="font-Modak text-white text-2xl font-bold">
+                Jagriti Sood
+            </div>
+        </a>
+        <nav class="flex items-center gap-8">
+            <a href="./work.html" class="text-white text-base hover:underline">Work</a>
+            <a href="./about.html" class="text-white text-base hover:underline">About</a>
+            <a href="./resume.html" class="text-white text-base underline underline-offset-4 decoration-blue-500">Resume</a>
+            <a href="./beyond-uiux.html" class="text-white text-base hover:underline">Beyond UX</a>
+            <a href="./contact.html" class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95">Contact</a>
+        </nav>
     </header>
 
     <!-- Resume Section -->
     <section class="max-w-5xl mx-auto px-6 py-20 text-center relative z-10">
-      <div class="animate-fadeInUp">
-        <h1 class="text-5xl md:text-6xl font-bold font-Modak mb-4">
-          My Resume
-        </h1>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
-          A journey of design, creativity, and problem solving.<br />
-          Download or preview my professional resume below.
-        </p>
-      </div>
+        <div class="animate-fadeInUp">
+            <h1 class="text-5xl md:text-6xl font-bold font-Modak mb-4">
+                My Resume
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+                A journey of design, creativity, and problem solving.<br />
+                Download or preview my professional resume below.
+            </p>
+        </div>
 
-      <!-- Buttons -->
-      <div class="flex justify-center gap-6 mb-14 animate-fadeInUp">
-        <a
-          href="./assets/files/Jagriti-Sood-Resume.pdf"
-          download
-          class="px-8 py-3 rounded-full bg-gradient-to-r from-blue-500 to-pink-500 font-medium shadow-lg hover:scale-105 hover:shadow-blue-500/30 transition-transform duration-300"
-        >
-          📄 Download Resume
-        </a>
-      </div>
+        <!-- Buttons -->
+        <div class="flex justify-center gap-6 mb-14 animate-fadeInUp">
+            <a href="./assets/files/Jagriti-Sood-Resume.pdf" download class="px-8 py-3 rounded-full bg-gradient-to-r from-blue-500 to-pink-500 font-medium shadow-lg hover:scale-105 hover:shadow-blue-500/30 transition-transform duration-300">
+                📄 Download Resume
+            </a>
+        </div>
 
-      <!-- Resume Preview (Glassmorphic Card) -->
-      <div
-        class="glass rounded-3xl overflow-hidden border border-[#23232a] animate-fadeInUp shadow-2xl"
-      >
-        <iframe
-          src="./assets/files/Jagriti-Sood-Resume.pdf"
-          width="100%"
-          height="850px"
-          class="border-none rounded-3xl"
-        >
-        </iframe>
-      </div>
+        <!-- Resume Preview (Glassmorphic Card) -->
+        <div class="glass rounded-3xl overflow-hidden border border-[#23232a] animate-fadeInUp shadow-2xl">
+            <iframe src="./assets/files/Jagriti-Sood-Resume.pdf" width="100%" height="850px" class="border-none rounded-3xl">
+            </iframe>
+        </div>
 
-      <!-- Floating Signature or Tagline -->
-      <div
-        class="mt-16 text-gray-500 text-sm tracking-wider uppercase animate-fadeInUp"
-      >
-        — Crafted with ❤️ by <span class="text-blue-400">Jagriti Sood</span>
-      </div>
+        <!-- Floating Signature or Tagline -->
+        <div class="mt-16 text-gray-500 text-sm tracking-wider uppercase animate-fadeInUp">
+            — Crafted with ❤️ by <span class="text-blue-400">Jagriti Sood</span>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer
-      class="w-full bg-[#18171A]/80 border-t border-[#23232a] py-10 relative z-10"
-    >
-      <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
-        <nav class="flex gap-8 mb-4 text-gray-300 text-base">
-          <a href="./index.html">Home</a>
-          <a href="./work.html">Work</a>
-          <a href="./about.html">About</a>
-          <a href="./resume.html">Resume</a>
-          <a href="./beyond-uiux.html">Beyond UX</a>
-        </nav>
-        <p class="text-gray-500 text-sm mt-2">
-          &copy; 2025 All rights reserved. Made in Framer
-        </p>
-      </div>
+    <footer class="w-full bg-[#18171A]/80 border-t border-[#23232a] py-10 relative z-10">
+        <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
+            <nav class="flex gap-8 mb-4 text-gray-300 text-base">
+                <a href="./index.html">Home</a>
+                <a href="./work.html">Work</a>
+                <a href="./about.html">About</a>
+                <a href="./resume.html">Resume</a>
+                <a href="./beyond-uiux.html">Beyond UX</a>
+            </nav>
+            <p class="text-gray-500 text-sm mt-2">
+                &copy; 2025 All rights reserved. Made in Framer
+            </p>
+        </div>
     </footer>
-  </body>
+</body>
+
 </html>
