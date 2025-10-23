@@ -2,164 +2,954 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Campaigns Case Study – Jagriti Sood Portfolio</title>
+    <title>Campaigns – Ad Scheduling Platform | Jagriti Sood</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A cinematic case study of Campaigns ad scheduling platform by Jagriti Sood" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+      :root {
+        --primary: #8b5cf6;
+        --primary-dark: #7c3aed;
+        --accent: #06d6a0;
+        --dark: #0f0f13;
+        --darker: #0a0a0c;
+        --light: #f8fafc;
+        --gray: #94a3b8;
+      }
+      
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        background-color: var(--darker);
+        color: var(--light);
+        overflow-x: hidden;
+      }
+
       .font-Modak {
         font-family: "Modak", cursive;
       }
 
       .font-inter {
-        font-family: "Inter", sans-serif;
+        font-family: "Inter", Arial, sans-serif;
       }
 
       .section {
-        max-width: 1000px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 5rem 1rem;
+        padding: 6rem 2rem;
       }
 
-      .title {
-        font-size: 2rem;
-        font-weight: 700;
+      .section-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 3rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        border-radius: 2px;
+      }
+
+      .project-hero {
+        background: 
+          linear-gradient(rgba(15, 15, 19, 0.7), rgba(15, 15, 19, 0.9)),
+          url("PROJECT3.jpg") center/cover no-repeat;
+        height: 100vh;
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.2), transparent 70%);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 0 2rem;
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 800;
         margin-bottom: 1.5rem;
+        background: linear-gradient(90deg, #fff, var(--gray));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.1;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        color: var(--gray);
+        margin-bottom: 2rem;
+        font-weight: 300;
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0) translateX(-50%);
+        }
+        40% {
+          transform: translateY(-10px) translateX(-50%);
+        }
+        60% {
+          transform: translateY(-5px) translateX(-50%);
+        }
+      }
+
+      .card {
+        background: rgba(30, 30, 36, 0.7);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 2rem;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 214, 160, 0.1));
+        border: 1px solid rgba(139, 92, 246, 0.2);
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stat-label {
+        color: var(--gray);
+        font-size: 1rem;
+      }
+
+      .user-persona {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .persona-card {
+        flex: 1;
+        min-width: 300px;
+        padding: 2rem;
+        border-radius: 12px;
+        background: rgba(40, 40, 48, 0.7);
+        border-left: 4px solid var(--primary);
+      }
+
+      .persona-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .persona-role {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .process-step {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .process-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 60px;
+        left: 30px;
+        width: 2px;
+        height: calc(100% - 40px);
+        background: rgba(139, 92, 246, 0.3);
+      }
+
+      .step-number {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        z-index: 1;
+      }
+
+      .step-content {
+        flex: 1;
+      }
+
+      .step-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .gallery-item {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.03);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--light);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .nav-dots {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+      }
+
+      .nav-dot {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        margin: 15px 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .nav-dot.active {
+        background: var(--primary);
+        transform: scale(1.3);
+      }
+
+      .user-flow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+        justify-content: center;
+      }
+
+      .flow-step {
+        background: rgba(139, 92, 246, 0.1);
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        flex: 1;
+        min-width: 150px;
+        transition: all 0.3s ease;
+      }
+
+      .flow-step:hover {
+        transform: translateY(-5px);
+        background: rgba(139, 92, 246, 0.2);
+      }
+
+      .flow-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .status-indicator {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .status-live {
+        background: rgba(6, 214, 160, 0.2);
+        color: var(--accent);
+        border: 1px solid rgba(6, 214, 160, 0.3);
+      }
+
+      .status-paused {
+        background: rgba(251, 191, 36, 0.2);
+        color: #fbbf24;
+        border: 1px solid rgba(251, 191, 36, 0.3);
+      }
+
+      .status-ended {
+        background: rgba(239, 68, 68, 0.2);
+        color: #ef4444;
+        border: 1px solid rgba(239, 68, 68, 0.3);
+      }
+
+      .status-not-started {
+        background: rgba(148, 163, 184, 0.2);
+        color: var(--gray);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        
+        .section-title {
+          font-size: 2.2rem;
+        }
+        
+        .section {
+          padding: 4rem 1.5rem;
+        }
+        
+        .nav-dots {
+          display: none;
+        }
+        
+        .user-flow {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
 
-  <body class="bg-[#18171A] text-white font-inter">
-    <header></header>
+  <body>
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+      <a href="#overview" class="nav-dot active"></a>
+      <a href="#problem" class="nav-dot"></a>
+      <a href="#users" class="nav-dot"></a>
+      <a href="#solutions" class="nav-dot"></a>
+      <a href="#process" class="nav-dot"></a>
+      <a href="#outcomes" class="nav-dot"></a>
+      <a href="#learnings" class="nav-dot"></a>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="section text-center" data-aos="fade-up">
-      <h1 class="text-5xl font-bold mb-6">Campaigns</h1>
-      <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
-        Redefining how users create, manage, and monitor ad campaigns through an
-        intuitive, automated experience.
-      </p>
-    </section>
-
-    <!-- Project Overview -->
-    <section class="section" data-aos="fade-up">
-      <h2 class="title">Project Overview</h2>
-      <p class="text-gray-400 leading-relaxed">
-        The Campaigns project aimed to simplify the process of creating
-        marketing campaigns in a SaaS product. The challenge was to design a
-        dashboard where marketers could easily configure campaign types, pacing,
-        budgets, and creative assets — all while maintaining full visibility of
-        performance in real time.
-      </p>
-    </section>
-
-    <!-- Problem Statement -->
-    <section class="section bg-[#1E1D22] rounded-2xl" data-aos="fade-up">
-      <h2 class="title">Problem Statement</h2>
-      <p class="text-gray-300 leading-relaxed">
-        Existing workflows were fragmented across multiple tools, causing
-        inefficiency, data loss, and confusion. Users needed a unified solution
-        that could reduce setup time while ensuring better campaign control.
-      </p>
-    </section>
-
-    <!-- Research & Personas -->
-    <section class="section" data-aos="fade-up">
-      <h2 class="title">Research & Personas</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-[#1C1B1F] p-6 rounded-xl">
-          <h3 class="text-xl font-semibold mb-3">Marketing Manager</h3>
-          <p class="text-gray-400">
-            Needs quick setup and automated pacing control to focus on strategy,
-            not manual monitoring.
-          </p>
+    <!-- Hero -->
+    <div class="project-hero">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="hero-title">Campaigns</h1>
+        <p class="hero-subtitle">Your Central Hub for Smarter Ad Scheduling</p>
+        <div class="flex flex-wrap gap-4 justify-center mt-8">
+          <a href="#overview" class="btn btn-primary">Explore Case Study</a>
+          <a href="./work.html" class="btn btn-outline">Back to Portfolio</a>
         </div>
-        <div class="bg-[#1C1B1F] p-6 rounded-xl">
-          <h3 class="text-xl font-semibold mb-3">Performance Analyst</h3>
-          <p class="text-gray-400">
-            Requires clear performance insights and easy data export for
-            decision-making.
-          </p>
+      </div>
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <section id="overview" class="section" data-aos="fade-up">
+      <h2 class="section-title">Project Overview</h2>
+      <div class="card">
+        <p class="text-gray-300 mb-6 text-lg leading-relaxed">
+          Campaigns is a sophisticated SaaS platform that redefines how marketing teams create, manage, and monitor ad campaigns through an intuitive, automated experience. I designed a central hub that brings flexibility, clarity, and user control to complex ad scheduling workflows.
+        </p>
+        <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-purple-500">
+          <p class="text-white font-semibold">Goal: Build a smarter ad scheduling system that automates pacing while maintaining user control and flexibility for temporary changes.</p>
+        </div>
+        
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center p-4">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-900/30 flex items-center justify-center">
+              <i class="fas fa-calendar-alt text-purple-400 text-2xl"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Role</h3>
+            <p class="text-gray-400">Lead Product Designer</p>
+          </div>
+          <div class="text-center p-4">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-900/30 flex items-center justify-center">
+              <i class="fas fa-tasks text-green-400 text-2xl"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Focus</h3>
+            <p class="text-gray-400">UX Strategy, Workflow Design, Automation</p>
+          </div>
+          <div class="text-center p-4">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-900/30 flex items-center justify-center">
+              <i class="fas fa-clock text-blue-400 text-2xl"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Timeline</h3>
+            <p class="text-gray-400">10 Weeks</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section id="problem" class="section" data-aos="fade-up">
+      <h2 class="section-title">The Challenge</h2>
+      <div class="card">
+        <p class="text-gray-300 mb-6 text-lg">
+          Marketing teams were struggling with fragmented workflows across multiple tools, causing inefficiency, data inconsistencies, and campaign delivery issues.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-red-900/20 p-5 rounded-lg border border-red-800/30">
+            <div class="flex items-center mb-3">
+              <div class="w-10 h-10 rounded-full bg-red-800/40 flex items-center justify-center mr-3">
+                <i class="fas fa-puzzle-piece text-red-400"></i>
+              </div>
+              <h3 class="font-bold text-lg">Fragmented Workflows</h3>
+            </div>
+            <p class="text-gray-300">Campaign management was scattered across multiple tools with no centralized dashboard for tracking pacing or temporary changes.</p>
+          </div>
+          
+          <div class="bg-yellow-900/20 p-5 rounded-lg border border-yellow-800/30">
+            <div class="flex items-center mb-3">
+              <div class="w-10 h-10 rounded-full bg-yellow-800/40 flex items-center justify-center mr-3">
+                <i class="fas fa-hand-paper text-yellow-400"></i>
+              </div>
+              <h3 class="font-bold text-lg">Manual Management</h3>
+            </div>
+            <p class="text-gray-300">Teams wasted significant time manually managing campaigns across platforms with no automation for pacing logic.</p>
+          </div>
+          
+          <div class="bg-blue-900/20 p-5 rounded-lg border border-blue-800/30">
+            <div class="flex items-center mb-3">
+              <div class="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center mr-3">
+                <i class="fas fa-exchange-alt text-blue-400"></i>
+              </div>
+              <h3 class="font-bold text-lg">Inflexible Systems</h3>
+            </div>
+            <p class="text-gray-300">Existing solutions didn't allow for temporary campaign adjustments without disrupting the overall delivery timeline.</p>
+          </div>
+          
+          <div class="bg-purple-900/20 p-5 rounded-lg border border-purple-800/30">
+            <div class="flex items-center mb-3">
+              <div class="w-10 h-10 rounded-full bg-purple-800/40 flex items-center justify-center mr-3">
+                <i class="fas fa-chart-line text-purple-400"></i>
+              </div>
+              <h3 class="font-bold text-lg">Visibility Issues</h3>
+            </div>
+            <p class="text-gray-300">Difficult to scale when schedules changed frequently and present clear timelines to clients and stakeholders.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Users -->
+    <section id="users" class="section" data-aos="fade-up">
+      <h2 class="section-title">User Personas</h2>
+      <div class="card">
+        <p class="text-gray-300 mb-6 text-lg">
+          The platform needed to serve diverse users across agencies, marketing teams, and freelancers with varying levels of technical expertise.
+        </p>
+        
+        <div class="user-persona">
+          <div class="persona-card" data-aos="fade-right" data-aos-delay="100">
+            <div class="persona-name">Louis Clarke</div>
+            <div class="persona-role">Digital Marketing Manager</div>
+            <p class="text-gray-300 mb-4">37 years old, Head of Client Performance at a mid-sized marketing agency managing 30+ campaigns simultaneously.</p>
+            <div class="bg-purple-900/20 p-3 rounded">
+              <h4 class="font-semibold text-purple-300 mb-1">Goals & Needs</h4>
+              <ul class="text-gray-300 list-disc ml-5">
+                <li>Streamline day-to-day ad scheduling for his team</li>
+                <li>Automate campaign pacing across platforms</li>
+                <li>Tools that offer control without micromanagement</li>
+              </ul>
+            </div>
+            <div class="mt-4 p-3 bg-gray-800 rounded-lg">
+              <p class="text-gray-300 italic">"We can't afford to miss pacing goals. But we also need room to adjust when clients call last-minute."</p>
+            </div>
+          </div>
+          
+          <div class="persona-card" data-aos="fade-right" data-aos-delay="200">
+            <div class="persona-name">Sarah Thompson</div>
+            <div class="persona-role">Senior Digital Strategist</div>
+            <p class="text-gray-300 mb-4">34 years old, leading performance campaigns for a national retail brand with multiple product categories and launch windows.</p>
+            <div class="bg-green-900/20 p-3 rounded">
+              <h4 class="font-semibold text-green-300 mb-1">Goals & Needs</h4>
+              <ul class="text-gray-300 list-disc ml-5">
+                <li>Present clear timelines to clients and stakeholders</li>
+                <li>Flexible scheduling for overlapping campaigns</li>
+                <li>Short-term overrides without disrupting delivery</li>
+              </ul>
+            </div>
+            <div class="mt-4 p-3 bg-gray-800 rounded-lg">
+              <p class="text-gray-300 italic">"Sometimes I just need to boost a campaign for 3 days. I don't want to rebuild everything just for that."</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-8 bg-gray-800 p-5 rounded-lg">
+          <h3 class="font-bold text-xl mb-3 text-white">User Journey</h3>
+          <div class="user-flow">
+            <div class="flow-step">
+              <div class="flow-icon">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+              <h4 class="font-semibold">Create Campaign</h4>
+              <p class="text-gray-400 text-sm mt-2">"This is where everything starts. I need to make sure it's set up right."</p>
+            </div>
+            <div class="flow-step">
+              <div class="flow-icon">
+                <i class="fas fa-calendar-week"></i>
+              </div>
+              <h4 class="font-semibold">Choose Frequency</h4>
+              <p class="text-gray-400 text-sm mt-2">"I want to choose the best pacing for this campaign's timeline."</p>
+            </div>
+            <div class="flow-step">
+              <div class="flow-icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h4 class="font-semibold">Set Impressions</h4>
+              <p class="text-gray-400 text-sm mt-2">"I need to control how much is delivered and when."</p>
+            </div>
+            <div class="flow-step">
+              <div class="flow-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h4 class="font-semibold">Launch Campaign</h4>
+              <p class="text-gray-400 text-sm mt-2">"Let's go live. I want to see this working!"</p>
+            </div>
+            <div class="flow-step">
+              <div class="flow-icon">
+                <i class="fas fa-sliders-h"></i>
+              </div>
+              <h4 class="font-semibold">Apply Adjustments</h4>
+              <p class="text-gray-400 text-sm mt-2">"I just want to change the pacing for a few days without affecting the rest."</p>
+            </div>
+            <div class="flow-step">
+              <div class="flow-icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <h4 class="font-semibold">Monitor & Track</h4>
+              <p class="text-gray-400 text-sm mt-2">"Is everything working the way I planned?"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions -->
+    <section id="solutions" class="section" data-aos="fade-up">
+      <h2 class="section-title">Design Solutions</h2>
+      <div class="card">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="flex items-start mb-6">
+              <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="fas fa-tachometer-alt text-purple-400"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-2">Centralized Dashboard</h3>
+                <p class="text-gray-300">Created a unified hub for managing all campaigns with real-time pacing visualization and status indicators.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start mb-6">
+              <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="fas fa-robot text-green-400"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-2">Smart Automation</h3>
+                <p class="text-gray-300">Implemented intelligent pacing logic that automates delivery while allowing manual overrides when needed.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="fas fa-exchange-alt text-blue-400"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-2">Flexible Scheduling</h3>
+                <p class="text-gray-300">Designed temporary schedule adjustments that don't disrupt the overall campaign timeline.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex items-start mb-6">
+              <div class="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="fas fa-eye text-yellow-400"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-2">Visual Timeline</h3>
+                <p class="text-gray-300">Developed an intuitive visual timeline for easy campaign tracking and client presentations.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start mb-6">
+              <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="fas fa-bolt text-red-400"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-2">Quick Actions</h3>
+                <p class="text-gray-300">Enabled rapid campaign modifications with one-click adjustments and temporary overrides.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="fas fa-check-double text-indigo-400"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-2">Verified Delivery</h3>
+                <p class="text-gray-300">Built in delivery verification to ensure 100% compliance with campaign dates and prevent overspending.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-8 bg-gray-800 p-5 rounded-lg">
+          <h3 class="font-bold text-xl mb-3 text-white">Campaign Status System</h3>
+          <div class="flex flex-wrap">
+            <span class="status-indicator status-not-started">
+              <i class="fas fa-circle mr-2"></i>Not Started
+            </span>
+            <span class="status-indicator status-live">
+              <i class="fas fa-play-circle mr-2"></i>Live
+            </span>
+            <span class="status-indicator status-paused">
+              <i class="fas fa-pause-circle mr-2"></i>Paused
+            </span>
+            <span class="status-indicator status-ended">
+              <i class="fas fa-stop-circle mr-2"></i>Ended
+            </span>
+          </div>
+          <p class="text-gray-300 mt-4">Clear visual indicators help users quickly understand campaign status at a glance, reducing cognitive load and potential errors.</p>
         </div>
       </div>
     </section>
 
     <!-- Design Process -->
-    <section class="section bg-[#1E1D22] rounded-2xl" data-aos="fade-up">
-      <h2 class="title">Design Process</h2>
-      <ul class="list-disc text-gray-400 pl-6 space-y-2">
-        <li>User interviews and workflow mapping</li>
-        <li>Identifying pain points in campaign setup</li>
-        <li>Wireframing automation logic and dashboard layout</li>
-        <li>Usability testing and iteration</li>
-      </ul>
-    </section>
-
-    <!-- Wireframes & Visuals -->
-    <section class="section" data-aos="fade-up">
-      <h2 class="title">Wireframes & Visual Exploration</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <img
-          src="./assets/images/campaigns/wireframe1.jpg"
-          alt="Wireframe 1"
-          class="rounded-xl shadow-lg"
-        />
-        <img
-          src="./assets/images/campaigns/wireframe2.jpg"
-          alt="Wireframe 2"
-          class="rounded-xl shadow-lg"
-        />
+    <section id="process" class="section" data-aos="fade-up">
+      <h2 class="section-title">Design Process</h2>
+      <div class="card">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">Research & Discovery</h3>
+            <p class="text-gray-300 mb-4">Conducted user interviews with marketing professionals to understand pain points in existing campaign management workflows.</p>
+            <div class="bg-gray-800 p-4 rounded-lg">
+              <h4 class="font-semibold text-white mb-2">Key Insights</h4>
+              <ul class="text-gray-300 list-disc ml-5">
+                <li>Teams spent 15+ hours weekly on manual campaign adjustments</li>
+                <li>40% of campaigns experienced delivery issues due to manual errors</li>
+                <li>Users needed both automation and manual control in balance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">Wireframing & User Flows</h3>
+            <p class="text-gray-300 mb-4">Mapped complex scheduling logic into intuitive user flows and created wireframes to test the core concepts.</p>
+            <div class="bg-gray-800 p-4 rounded-lg">
+              <h4 class="font-semibold text-white mb-2">Approach</h4>
+              <ul class="text-gray-300 list-disc ml-5">
+                <li>Focused on simplifying the campaign creation process</li>
+                <li>Designed flexible pacing options (daily/weekly)</li>
+                <li>Created visual timeline for at-a-glance campaign status</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title">Prototyping & Testing</h3>
+            <p class="text-gray-300 mb-4">Built interactive prototypes and conducted usability testing with target users to refine the automation logic and interface.</p>
+            <div class="bg-gray-800 p-4 rounded-lg">
+              <h4 class="font-semibold text-white mb-2">Tools & Methods</h4>
+              <ul class="text-gray-300 list-disc ml-5">
+                <li>Figma for high-fidelity prototyping</li>
+                <li>User testing with marketing managers and strategists</li>
+                <li>Iterative design based on scheduling complexity feedback</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 class="step-title">Visual Design & Implementation</h3>
+            <p class="text-gray-300 mb-4">Developed a comprehensive design system and worked closely with developers to ensure accurate implementation of complex scheduling logic.</p>
+            <div class="bg-gray-800 p-4 rounded-lg">
+              <h4 class="font-semibold text-white mb-2">Design System</h4>
+              <ul class="text-gray-300 list-disc ml-5">
+                <li>Purple-accented color scheme for a premium SaaS feel</li>
+                <li>Clear typography hierarchy for complex data presentation</li>
+                <li>Custom iconography for campaign status and actions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Final Design -->
-    <section class="section bg-[#1E1D22] rounded-2xl" data-aos="fade-up">
-      <h2 class="title">Final Design</h2>
-      <p class="text-gray-400 mb-6">
-        The final design introduced a clean dashboard interface with a visual
-        progress tracker, live preview, and AI-assisted pacing automation.
-      </p>
-      <img
-        src="./assets/images/campaigns/final.jpg"
-        alt="Final Design"
-        class="rounded-2xl shadow-xl"
-      />
-    </section>
-
     <!-- Outcomes -->
-    <section class="section" data-aos="fade-up">
-      <h2 class="title">Key Outcomes</h2>
-      <ul class="list-disc text-gray-400 pl-6 space-y-2">
-        <li>60% faster campaign setup time</li>
-        <li>Improved collaboration between design and marketing teams</li>
-        <li>Automated pacing reduced manual tracking errors by 40%</li>
-      </ul>
+    <section id="outcomes" class="section" data-aos="fade-up">
+      <h2 class="section-title">Outcomes & Impact</h2>
+      <div class="card">
+        <p class="text-gray-300 mb-8 text-lg text-center">The Campaigns platform delivered significant efficiency gains and improved campaign performance for marketing teams</p>
+        
+        <div class="stats-grid">
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="stat-number">60%</div>
+            <div class="stat-label">Faster campaign setup time</div>
+          </div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-number">40%</div>
+            <div class="stat-label">Reduction in manual tracking errors</div>
+          </div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Verified delivery within campaign dates</div>
+          </div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Hours saved weekly per team</div>
+          </div>
+        </div>
+        
+        <div class="mt-12">
+          <h3 class="text-2xl font-bold mb-6 text-center">User Feedback</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mr-4">
+                  <i class="fas fa-user text-purple-400"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold">Marketing Agency Team</h4>
+                  <p class="text-gray-400 text-sm">Mid-sized digital agency</p>
+                </div>
+              </div>
+              <p class="text-gray-300 italic">"The automated pacing with manual override capability has been a game-changer. We can now respond to client requests in minutes instead of hours, without risking delivery goals."</p>
+            </div>
+            
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mr-4">
+                  <i class="fas fa-user text-green-400"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold">Client Feedback</h4>
+                  <p class="text-gray-400 text-sm">National retail brand</p>
+                </div>
+              </div>
+              <p class="text-gray-300 italic">"It felt like the system thought ahead for us. The visual timeline made it easy to understand our campaign flow, and we never had to worry about missing important dates."</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Quote -->
+    <!-- Learnings -->
+    <section id="learnings" class="section" data-aos="fade-up">
+      <h2 class="section-title">What I Learned</h2>
+      <div class="card">
+        <p class="text-gray-300 mb-6 text-lg leading-relaxed">
+          Designing automation systems requires balancing efficiency with user control. The most successful solutions empower users rather than replace them.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-gray-800 p-5 rounded-lg">
+            <div class="w-14 h-14 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+              <i class="fas fa-robot text-purple-400 text-xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">Automation with Control</h3>
+            <p class="text-gray-300">Users embrace automation when they maintain ultimate control and can easily override system decisions.</p>
+          </div>
+          
+          <div class="bg-gray-800 p-5 rounded-lg">
+            <div class="w-14 h-14 rounded-full bg-green-500/20 flex items-center justify-center mb-4">
+              <i class="fas fa-project-diagram text-green-400 text-xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">Complexity Made Simple</h3>
+            <p class="text-gray-300">The most sophisticated systems should feel intuitive, hiding complexity while making powerful features accessible.</p>
+          </div>
+          
+          <div class="bg-gray-800 p-5 rounded-lg">
+            <div class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center mb-4">
+              <i class="fas fa-eye text-blue-400 text-xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-3">Visual Communication</h3>
+            <p class="text-gray-300">In data-heavy applications, visual timelines and status indicators dramatically improve user understanding and confidence.</p>
+          </div>
+        </div>
+        
+        <div class="mt-8 p-5 bg-purple-900/20 rounded-lg border border-purple-800/30">
+          <h3 class="font-bold text-xl mb-3 text-purple-300">Key Takeaway</h3>
+          <p class="text-gray-300">In automation design, trust is built through transparency. Users need to understand what the system is doing and why, with clear paths to intervene when their expertise diverges from the automated logic.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
     <section class="section text-center" data-aos="fade-up">
-      <blockquote class="text-2xl italic text-gray-300 max-w-3xl mx-auto">
-        "Design is not just what it looks like and feels like. Design is how it
-        works."
-      </blockquote>
-      <p class="mt-3 text-gray-500">– Steve Jobs</p>
+      <div class="card max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Ready to transform complex workflows?</h2>
+        <p class="text-gray-300 mb-8">Let's collaborate to create intuitive experiences that balance automation with user control.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="./work.html" class="btn btn-outline">
+            <i class="fas fa-arrow-left mr-2"></i> Back to Portfolio
+          </a>
+          <a href="./contact.html" class="btn btn-primary">
+            <i class="fas fa-envelope mr-2"></i> Discuss a Project
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
     <footer></footer>
-    <script src="assets/js/include.js"></script>
-    <script src="assets/js/script.js"></script>
 
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
         duration: 1000,
         easing: "ease-out-cubic",
         once: true,
+        offset: 50
+      });
+      
+      // Navigation dots functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+        const navDots = document.querySelectorAll('.nav-dot');
+        
+        // Update active nav dot on scroll
+        window.addEventListener('scroll', function() {
+          let current = '';
+          
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 200)) {
+              current = section.getAttribute('id');
+            }
+          });
+          
+          navDots.forEach(dot => {
+            dot.classList.remove('active');
+            if (dot.getAttribute('href').substring(1) === current) {
+              dot.classList.add('active');
+            }
+          });
+        });
+        
+        // Smooth scrolling for nav dots
+        navDots.forEach(dot => {
+          dot.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            window.scrollTo({
+              top: targetSection.offsetTop - 50,
+              behavior: 'smooth'
+            });
+          });
+        });
       });
     </script>
   </body>
