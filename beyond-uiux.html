@@ -1,195 +1,348 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <title>Beyond UX – Jagriti Sood Portfolio</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jagriti Sood's handcrafted candle collection - where creativity extends beyond digital design" />
 
-    <!-- Tailwind CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Fonts -->
+    
+    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
       :root {
-        --bg: #0f0e10;
-        --panel: #121214;
-        --accent: #ffb86b;
-        --muted: #9aa0a6;
+        --primary: #3b82f6;
+        --primary-dark: #1d4ed8;
+        --accent: #10b981;
+        --amber: #f59e0b;
+        --dark: #0f0f13;
+        --darker: #0a0a0c;
+        --light: #f8fafc;
+        --gray: #94a3b8;
       }
-
-      html,
+      
       body {
-        height: 100%;
-      }
-
-      body {
-        background: var(--bg);
-        color: #fff;
-        font-family:
-          Inter,
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          Roboto,
-          "Helvetica Neue",
-          Arial;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        line-height: 1.4;
-        overflow-y: scroll;
+        font-family: "Inter", Arial, sans-serif;
+        background-color: var(--darker);
+        color: var(--light);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
       }
 
       .font-Modak {
         font-family: "Modak", cursive;
       }
 
-      /* ========== HERO ========== */
-      .hero {
+      .font-inter {
+        font-family: "Inter", Arial, sans-serif;
+      }
+
+      .section {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 6rem 2rem;
+      }
+
+      .section-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 3rem;
         position: relative;
-        height: min(92vh, 920px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--amber), var(--accent));
+        border-radius: 2px;
+      }
+
+      .hero-bg {
+        background: 
+          radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.15), transparent 25%),
+          radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15), transparent 25%),
+          radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.1), transparent 25%),
+          linear-gradient(var(--darker), var(--dark));
+        position: relative;
         overflow: hidden;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
       }
 
-      /* slideshow container */
-      .hero-slides {
+      .floating-shapes {
         position: absolute;
-        inset: 0;
-        display: block;
-        z-index: 0;
-        pointer-events: none;
-      }
-
-      .hero-slide {
-        position: absolute;
-        inset: 0;
         width: 100%;
         height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        transform: scale(1.04);
-        transition:
-          opacity 1.2s ease,
-          transform 6s ease;
-        filter: contrast(0.95) saturate(0.9) brightness(0.85);
-        will-change: opacity, transform;
+        top: 0;
+        left: 0;
+        z-index: 0;
       }
 
-      .hero-slide.active {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      /* cinematic vignette + glow */
-      .hero::before {
-        content: "";
+      .shape {
         position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          ellipse at 50% 35%,
-          rgba(255, 200, 150, 0.06) 0%,
-          rgba(0, 0, 0, 0.55) 40%,
-          rgba(0, 0, 0, 0.85) 100%
-        );
-        z-index: 1;
-        pointer-events: none;
+        border-radius: 50%;
+        background: linear-gradient(45deg, var(--amber), var(--accent));
+        opacity: 0.1;
+        filter: blur(40px);
       }
 
-      /* flicker overlay (subtle) */
-      .flicker {
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        pointer-events: none;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 210, 160, 0.02),
-          rgba(0, 0, 0, 0)
-        );
-        mix-blend-mode: screen;
-        animation: softFlicker 6s linear infinite;
-        opacity: 0.28;
+      .shape-1 {
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        left: 5%;
+        animation: float 15s ease-in-out infinite;
       }
 
-      @keyframes softFlicker {
-        0% {
-          opacity: 0.26;
-        }
+      .shape-2 {
+        width: 200px;
+        height: 200px;
+        top: 60%;
+        right: 10%;
+        animation: float 12s ease-in-out infinite reverse;
+      }
 
-        20% {
-          opacity: 0.34;
-        }
+      .shape-3 {
+        width: 150px;
+        height: 150px;
+        bottom: 20%;
+        left: 20%;
+        animation: float 18s ease-in-out infinite;
+      }
 
-        40% {
-          opacity: 0.22;
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg);
         }
-
-        60% {
-          opacity: 0.3;
-        }
-
-        80% {
-          opacity: 0.24;
-        }
-
-        100% {
-          opacity: 0.26;
+        50% {
+          transform: translateY(-20px) rotate(10deg);
         }
       }
 
-      /* headline surface (content) */
-      .hero-content {
-        position: relative;
-        z-index: 3;
-        text-align: center;
-        max-width: 1100px;
-        padding: 2rem;
-        margin: 0 1rem;
+      .card {
+        background: rgba(30, 30, 36, 0.7);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      .tag {
-        display: inline-block;
-        background: rgba(0, 0, 0, 0.35);
-        padding: 0.35rem 0.75rem;
-        border-radius: 999px;
-        color: var(--muted);
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        border-radius: 50px;
         font-weight: 600;
-        font-size: 0.95rem;
-        backdrop-filter: blur(6px);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        gap: 0.5rem;
+      }
+
+      .btn-primary {
+        background: linear-gradient(90deg, var(--amber), #d97706);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--light);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .nav-dots {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+      }
+
+      .nav-dot {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        margin: 15px 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .nav-dot.active {
+        background: var(--amber);
+        transform: scale(1.3);
+      }
+
+      /* Gallery Styles */
+      .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        background: rgba(30, 30, 36, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        border-color: rgba(245, 158, 11, 0.3);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        background: linear-gradient(transparent, rgba(15, 15, 19, 0.95));
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .candle-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        background: rgba(245, 158, 11, 0.1);
+        color: var(--amber);
+        border: 1px solid rgba(245, 158, 11, 0.3);
         margin-bottom: 1rem;
       }
 
-      .hero h1 {
-        font-size: clamp(2.1rem, 5vw, 3.6rem);
-        line-height: 1.02;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin: 0 0 0.6rem;
-        background: linear-gradient(90deg, #fff 0%, #fffbf5 40%, #ffddb8 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        text-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+      .scent-profile {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
       }
 
-      .hero p.lead {
-        color: #d1d5db;
-        font-size: clamp(1rem, 1.4vw, 1.15rem);
-        max-width: 820px;
-        margin: 0 auto;
+      .scent-note {
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
-      /* subtle pseudo-line shimmer on title */
+      .quote-box {
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(16, 185, 129, 0.1));
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 3rem;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .quote-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 30% 30%, rgba(245, 158, 11, 0.05), transparent 50%);
+        z-index: 0;
+      }
+
+      .quote-mark {
+        font-size: 4rem;
+        color: var(--amber);
+        opacity: 0.3;
+        line-height: 1;
+        margin-bottom: -1.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2.2rem;
+        }
+        
+        .section {
+          padding: 4rem 1.5rem;
+        }
+        
+        .nav-dots {
+          display: none;
+        }
+        
+        .hero-bg {
+          padding: 4rem 1.5rem;
+        }
+        
+        .gallery-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Hero Animation */
+      .hero-content {
+        position: relative;
+        z-index: 10;
+      }
+
       .title-shimmer {
         position: relative;
         display: inline-block;
@@ -217,731 +370,440 @@
           transform: translateX(110%);
         }
       }
-
-      /* slideshow controls */
-      .slideshow-controls {
-        position: absolute;
-        z-index: 4;
-        right: 2rem;
-        bottom: 1.6rem;
-        display: flex;
-        gap: 0.6rem;
-        align-items: center;
-        background: rgba(0, 0, 0, 0.24);
-        padding: 0.35rem;
-        border-radius: 999px;
-        backdrop-filter: blur(6px);
-      }
-
-      .control-btn {
-        width: 38px;
-        height: 38px;
-        border-radius: 8px;
-        border: 0;
-        display: inline-grid;
-        place-items: center;
-        background: rgba(255, 255, 255, 0.04);
-        cursor: pointer;
-        color: #fff;
-        font-weight: 600;
-      }
-
-      .control-btn:hover {
-        transform: translateY(-2px);
-      }
-
-      /* ========== GALLERY ========== */
-      .wrap {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3rem 1rem;
-      }
-
-      /* masonry-like stack using columns */
-      .masonry {
-        column-count: 2;
-        column-gap: 1rem;
-      }
-
-      @media (min-width: 1100px) {
-        .masonry {
-          column-count: 2;
-        }
-      }
-
-      @media (max-width: 900px) {
-        .masonry {
-          column-count: 1;
-        }
-      }
-
-      .masonry-item {
-        break-inside: avoid;
-        margin-bottom: 1rem;
-        position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-        transform-origin: center center;
-        transition:
-          transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1),
-          box-shadow 0.35s ease;
-        will-change: transform;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.03),
-          rgba(0, 0, 0, 0.06)
-        );
-      }
-
-      .masonry-item img {
-        width: 100%;
-        display: block;
-        height: auto;
-        transition:
-          transform 0.9s ease,
-          filter 0.45s ease;
-        transform-origin: center center;
-      }
-
-      .masonry-item:hover {
-        transform: translateY(-6px) scale(1.01);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-      }
-
-      .masonry-item .caption {
-        position: absolute;
-        left: 1rem;
-        bottom: 1rem;
-        z-index: 6;
-        background: linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.48),
-          rgba(0, 0, 0, 0.36)
-        );
-        padding: 0.5rem 0.9rem;
-        border-radius: 999px;
-        font-weight: 700;
-        color: #fff;
-        opacity: 0;
-        transform: translateY(8px);
-        transition:
-          opacity 0.35s ease,
-          transform 0.35s ease;
-        backdrop-filter: blur(6px);
-      }
-
-      .masonry-item:hover .caption {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* small tilt effect tracked with pointermove */
-      .tilt {
-        transform-style: preserve-3d;
-        perspective: 1200px;
-      }
-
-      /* fade-in from below when entering viewport */
-      .reveal {
-        opacity: 0;
-        transform: translateY(20px) scale(0.995);
-        transition:
-          opacity 0.9s ease,
-          transform 0.9s cubic-bezier(0.2, 0.9, 0.3, 1);
-      }
-
-      .reveal.visible {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-
-      /* CTA / quote box */
-      .quote-box {
-        background: linear-gradient(
-          180deg,
-          rgba(20, 16, 12, 0.4),
-          rgba(16, 14, 12, 0.6)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.04);
-        padding: 2rem;
-        border-radius: 14px;
-      }
-
-      /* moving watermark */
-      .watermark {
-        position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 8vh;
-        z-index: 0;
-        font-size: 6.4rem;
-        color: rgba(255, 255, 255, 0.03);
-        font-weight: 900;
-        letter-spacing: 0.9rem;
-        pointer-events: none;
-        animation: pan 24s linear infinite;
-      }
-
-      @keyframes pan {
-        0% {
-          transform: translate3d(-50%, -2px, 0);
-        }
-
-        50% {
-          transform: translate3d(-50%, 6px, 0);
-        }
-
-        100% {
-          transform: translate3d(-50%, -2px, 0);
-        }
-      }
-
-      /* tiny responsive tweaks */
-      @media (max-width: 640px) {
-        .slideshow-controls {
-          right: 1rem;
-          bottom: 0.9rem;
-        }
-
-        .watermark {
-          font-size: 3.2rem;
-          bottom: 6vh;
-          letter-spacing: 0.35rem;
-        }
-      }
-
-      /* reduced motion protection */
-      @media (prefers-reduced-motion: reduce) {
-        .hero-slide,
-        .flicker,
-        .title-shimmer,
-        .watermark {
-          animation: none !important;
-          transition: none !important;
-        }
-      }
     </style>
   </head>
 
   <body>
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+      <a href="#hero" class="nav-dot active"></a>
+      <a href="#story" class="nav-dot"></a>
+      <a href="#gallery" class="nav-dot"></a>
+      <a href="#connect" class="nav-dot"></a>
+    </div>
+
+    <!-- Header -->
     <header></header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-slides" aria-hidden="true">
-        <!-- using the first six images for cinematic hero -->
-        <div
-          class="hero-slide"
-          style="
-            background-image: url(&quot;./assets/images/havens/beyond-pic-1.jpg&quot;);
-          "
-        ></div>
-        <div
-          class="hero-slide"
-          style="
-            background-image: url(&quot;./assets/images/havens/beyond-pic-2.jpg&quot;);
-          "
-        ></div>
-        <div
-          class="hero-slide"
-          style="
-            background-image: url(&quot;./assets/images/havens/beyond-pic-3.jpg&quot;);
-          "
-        ></div>
-        <div
-          class="hero-slide"
-          style="
-            background-image: url(&quot;./assets/images/havens/beyond-pic-4.jpg&quot;);
-          "
-        ></div>
-        <div
-          class="hero-slide"
-          style="
-            background-image: url(&quot;./assets/images/havens/beyond-pic-5.jpg&quot;);
-          "
-        ></div>
-        <div
-          class="hero-slide"
-          style="
-            background-image: url(&quot;./assets/images/havens/beyond-pic-6.jpg&quot;);
-          "
-        ></div>
+    <!-- Hero -->
+    <section id="hero" class="hero-bg px-8 py-32 text-center relative min-h-screen flex items-center justify-center">
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
       </div>
-
-      <div class="flicker" aria-hidden="true"></div>
-
-      <div class="hero-content">
-        <div class="tag">Beyond UX — Handcrafted Objects</div>
-        <h1 class="title-shimmer">
-          Beyond UX
-          <span class="sr-only">— Jagriti Sood</span>
+      
+      <div class="hero-content max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+        <span class="candle-tag">
+          <i class="fas fa-fire mr-2"></i> Handcrafted Candles & Objects
+        </span>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight title-shimmer">
+          Beyond <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-green-400">UX</span>
         </h1>
-        <p class="lead mt-4 max-w-3xl mx-auto">
-          Because creativity doesn’t end at UX — it continues in color, scent,
-          and form. I take the same design care to make handcrafted candles and
-          objects that carry a story.
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
+          Where digital design meets tangible craft. Each hand-poured candle tells a story of scent, texture, and emotion — created with the same thoughtful approach I bring to user experiences.
         </p>
-
-        <div class="mt-6 flex items-center justify-center gap-3">
-          <a
-            href="#gallery"
-            class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-[#2d2b2f] to-[#1a1a1c] border border-white/6 text-sm font-semibold hover:scale-[1.01] transition-shadow"
-          >
-            Explore the Collection
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="#gallery" class="btn btn-primary explore-btn">
+            <i class="fas fa-eye"></i> Explore Collection
           </a>
-          <button
-            id="playPause"
-            class="ml-2 inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white/6 hover:bg-white/9 transition"
-          >
-            Pause
-          </button>
+          <a href="#story" class="btn btn-outline">
+            <i class="fas fa-book-open"></i> The Story
+          </a>
         </div>
       </div>
-
-      <!-- controls -->
-      <div class="slideshow-controls" aria-hidden="false">
-        <button id="prevBtn" class="control-btn" title="Previous">◀</button>
-        <button id="nextBtn" class="control-btn" title="Next">▶</button>
+      
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <i class="fas fa-chevron-down text-2xl text-gray-500"></i>
       </div>
     </section>
 
-    <!-- WRAP -->
-    <main class="wrap">
-      <!-- Story -->
-      <section class="grid md:grid-cols-2 gap-8 items-center mb-10">
-        <div class="reveal">
-          <h2 class="text-3xl font-semibold">The Other Side of My Craft</h2>
-          <p class="mt-4 text-gray-300">
-            I pour, mix, and sculpt by hand, every piece one of a kind. What
-            started as a quiet hobby became a reflection of how I see design:
-            thoughtful, detailed, and full of feeling. Each object is considered
-            — from scent maps to material balance — the same thinking I bring to
-            interface design.
-          </p>
-        </div>
-
-        <div class="reveal">
-          <!-- small stacked photographic animation using CSS transform -->
-          <div
-            class="relative w-full h-80 rounded-2xl overflow-hidden"
-            aria-hidden="true"
-          >
-            <img
-              src="./assets/images/havens/beyond-pic-7.jpg"
-              loading="lazy"
-              alt=""
-              class="absolute left-6 top-8 w-[78%] h-[78%] object-cover rounded-xl shadow-lg transform rotate-1"
-            />
-            <img
-              src="./assets/images/havens/beyond-pic-8.jpg"
-              loading="lazy"
-              alt=""
-              class="absolute right-6 bottom-6 w-[82%] h-[82%] object-cover rounded-xl shadow-2xl transform -rotate-1"
-            />
+    <!-- Story -->
+    <section id="story" class="section">
+      <div class="card">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <h2 class="section-title">From Pixels to Wax</h2>
+            <p class="text-gray-300 mb-4 text-lg leading-relaxed">
+              My journey into candle making began as a creative escape from screens — a way to engage my senses in the physical world. What started as a hobby quickly evolved into a parallel creative practice.
+            </p>
+            <p class="text-gray-300 mb-6 text-lg leading-relaxed">
+              I approach each candle with the same design thinking I apply to digital products: understanding the user (or in this case, the experiencer), mapping emotional journeys through scent, and crafting beautiful, functional objects that bring joy and comfort.
+            </p>
+            <div class="bg-gray-800/50 p-6 rounded-xl border-l-4 border-amber-500">
+              <p class="text-gray-300 italic text-lg">
+                "In both interfaces and candles, I design for emotion — creating experiences that resonate beyond the visual."
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4" data-aos="fade-left" data-aos-delay="200">
+            <div class="space-y-4">
+              <div class="rounded-2xl overflow-hidden aspect-square">
+                <img src="./assets/images/havens/beyond-pic-7.jpg" alt="Candle making process" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+              </div>
+              <div class="rounded-2xl overflow-hidden aspect-square">
+                <img src="./assets/images/havens/beyond-pic-8.jpg" alt="Candle details" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+              </div>
+            </div>
+            <div class="space-y-4 mt-8">
+              <div class="rounded-2xl overflow-hidden aspect-square">
+                <img src="./assets/images/havens/beyond-pic-9.jpg" alt="Candle collection" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+              </div>
+              <div class="rounded-2xl overflow-hidden aspect-square">
+                <img src="./assets/images/havens/beyond-pic-10.jpg" alt="Candle lighting" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- GALLERY -->
-      <section id="gallery" class="mb-12">
-        <div class="mb-6">
-          <h3 class="text-3xl font-bold">Selected Handcrafted Candles</h3>
-          <p class="text-gray-400 mt-2">
-            Large, cinematic images — hover to reveal the candle name.
-          </p>
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <h2 class="section-title text-center">The Collection</h2>
+      <p class="text-gray-300 text-center text-lg max-w-2xl mx-auto mb-12">
+        Fifteen unique candles, each with its own personality and scent story. Hover to discover their character.
+      </p>
+      
+      <div class="gallery-container">
+        <!-- Candle 1 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+          <img src="./assets/images/havens/beyond-pic-1.jpg" alt="Amber Drift" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Amber Drift</span>
+            <h3 class="text-xl font-bold mb-2">Warm & Earthy</h3>
+            <p class="text-gray-300 text-sm mb-3">A comforting blend that feels like coming home</p>
+            <div class="scent-profile">
+              <span class="scent-note">Amber</span>
+              <span class="scent-note">Sandalwood</span>
+              <span class="scent-note">Vanilla</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Candle 2 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
+          <img src="./assets/images/havens/beyond-pic-2.jpg" alt="Sea Glass" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Sea Glass</span>
+            <h3 class="text-xl font-bold mb-2">Fresh & Oceanic</h3>
+            <p class="text-gray-300 text-sm mb-3">Evokes coastal mornings and salty breezes</p>
+            <div class="scent-profile">
+              <span class="scent-note">Sea Salt</span>
+              <span class="scent-note">Driftwood</span>
+              <span class="scent-note">Ozone</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Candle 3 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+          <img src="./assets/images/havens/beyond-pic-3.jpg" alt="Citrus Bloom" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Citrus Bloom</span>
+            <h3 class="text-xl font-bold mb-2">Zesty & Uplifting</h3>
+            <p class="text-gray-300 text-sm mb-3">Brightens any space with vibrant energy</p>
+            <div class="scent-profile">
+              <span class="scent-note">Bergamot</span>
+              <span class="scent-note">Lemon</span>
+              <span class="scent-note">Orange Blossom</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Candle 4 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
+          <img src="./assets/images/havens/beyond-pic-4.jpg" alt="Winter Hearth" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Winter Hearth</span>
+            <h3 class="text-xl font-bold mb-2">Cozy & Spiced</h3>
+            <p class="text-gray-300 text-sm mb-3">The scent of crackling fires and warm blankets</p>
+            <div class="scent-profile">
+              <span class="scent-note">Cinnamon</span>
+              <span class="scent-note">Clove</span>
+              <span class="scent-note">Smoked Wood</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Candle 5 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+          <img src="./assets/images/havens/beyond-pic-5.jpg" alt="Sandalwood Noir" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Sandalwood Noir</span>
+            <h3 class="text-xl font-bold mb-2">Mysterious & Rich</h3>
+            <p class="text-gray-300 text-sm mb-3">Deep, complex, and utterly captivating</p>
+            <div class="scent-profile">
+              <span class="scent-note">Sandalwood</span>
+              <span class="scent-note">Patchouli</span>
+              <span class="scent-note">Dark Amber</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Candle 6 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="350">
+          <img src="./assets/images/havens/beyond-pic-6.jpg" alt="Herbal Garden" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Herbal Garden</span>
+            <h3 class="text-xl font-bold mb-2">Green & Revitalizing</h3>
+            <p class="text-gray-300 text-sm mb-3">Fresh-picked herbs and earthy tones</p>
+            <div class="scent-profile">
+              <span class="scent-note">Lavender</span>
+              <span class="scent-note">Rosemary</span>
+              <span class="scent-note">Mint</span>
+            </div>
+          </div>
         </div>
 
-        <div class="masonry">
-          <!-- I built each item to use your provided filenames. They lazy-load and reveal when scrolled into view -->
-          <!-- 1 -->
-          <figure class="masonry-item reveal tilt" data-name="Amber Drift">
-            <img
-              data-src="./assets/images/havens/beyond-pic-1.jpg"
-              alt="Amber Drift"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Amber Drift</figcaption>
-          </figure>
-
-          <!-- 2 -->
-          <figure class="masonry-item reveal tilt" data-name="Sea Glass">
-            <img
-              data-src="./assets/images/havens/beyond-pic-2.jpg"
-              alt="Sea Glass"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Sea Glass</figcaption>
-          </figure>
-
-          <!-- 3 -->
-          <figure class="masonry-item reveal tilt" data-name="Citrus Bloom">
-            <img
-              data-src="./assets/images/havens/beyond-pic-3.jpg"
-              alt="Citrus Bloom"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Citrus Bloom</figcaption>
-          </figure>
-
-          <!-- 4 -->
-          <figure class="masonry-item reveal tilt" data-name="Winter Hearth">
-            <img
-              data-src="./assets/images/havens/beyond-pic-4.jpg"
-              alt="Winter Hearth"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Winter Hearth</figcaption>
-          </figure>
-
-          <!-- 5 -->
-          <figure class="masonry-item reveal tilt" data-name="Sandalwood Noir">
-            <img
-              data-src="./assets/images/havens/beyond-pic-5.jpg"
-              alt="Sandalwood Noir"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Sandalwood Noir</figcaption>
-          </figure>
-
-          <!-- 6 -->
-          <figure class="masonry-item reveal tilt" data-name="Herbal Garden">
-            <img
-              data-src="./assets/images/havens/beyond-pic-6.jpg"
-              alt="Herbal Garden"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Herbal Garden</figcaption>
-          </figure>
-
-          <!-- 7 -->
-          <figure class="masonry-item reveal tilt" data-name="Porcelain Glow">
-            <img
-              data-src="./assets/images/havens/beyond-pic-7.jpg"
-              alt="Porcelain Glow"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Porcelain Glow</figcaption>
-          </figure>
-
-          <!-- 8 -->
-          <figure class="masonry-item reveal tilt" data-name="Forest Ember">
-            <img
-              data-src="./assets/images/havens/beyond-pic-8.jpg"
-              alt="Forest Ember"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Forest Ember</figcaption>
-          </figure>
-
-          <!-- 9 -->
-          <figure class="masonry-item reveal tilt" data-name="Porcelain Glow 2">
-            <img
-              data-src="./assets/images/havens/beyond-pic-9.jpg"
-              alt="Porcelain Glow 2"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Porcelain Glow 2</figcaption>
-          </figure>
-
-          <!-- 10 -->
-          <figure class="masonry-item reveal tilt" data-name="Amber Drift 2">
-            <img
-              data-src="./assets/images/havens/beyond-pic-11.jpg"
-              alt="Amber Drift 2"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Amber Drift 2</figcaption>
-          </figure>
-
-          <!-- 11 -->
-          <figure class="masonry-item reveal tilt" data-name="Sea Glass 2">
-            <img
-              data-src="./assets/images/havens/beyond-pic-12.jpg"
-              alt="Sea Glass 2"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Sea Glass 2</figcaption>
-          </figure>
-
-          <!-- 12 -->
-          <figure class="masonry-item reveal tilt" data-name="Citrus Bloom 2">
-            <img
-              data-src="./assets/images/havens/beyond-pic-13.jpg"
-              alt="Citrus Bloom 2"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Citrus Bloom 2</figcaption>
-          </figure>
-
-          <!-- 13 -->
-          <figure class="masonry-item reveal tilt" data-name="Winter Hearth 2">
-            <img
-              data-src="./assets/images/havens/beyond-pic-14.jpg"
-              alt="Winter Hearth 2"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Winter Hearth 2</figcaption>
-          </figure>
-
-          <!-- 14 -->
-          <figure
-            class="masonry-item reveal tilt"
-            data-name="Sandalwood Noir 2"
-          >
-            <img
-              data-src="./assets/images/havens/beyond-pic-15.jpg"
-              alt="Sandalwood Noir 2"
-              class="lozad"
-              loading="lazy"
-            />
-            <figcaption class="caption">Sandalwood Noir 2</figcaption>
-          </figure>
-
-          <!-- you can add more items here if needed -->
+        <!-- Continue with remaining 9 candles in similar pattern -->
+        <!-- Candle 7 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+          <img src="./assets/images/havens/beyond-pic-7.jpg" alt="Porcelain Glow" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Porcelain Glow</span>
+            <h3 class="text-xl font-bold mb-2">Clean & Delicate</h3>
+            <p class="text-gray-300 text-sm mb-3">Subtle elegance in scent and form</p>
+            <div class="scent-profile">
+              <span class="scent-note">White Tea</span>
+              <span class="scent-note">Pear</span>
+              <span class="scent-note">Musk</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Quote + CTA -->
-        <div class="mt-10 quote-box reveal">
-          <div class="md:flex md:justify-between md:items-center">
+        <!-- Candle 8 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
+          <img src="./assets/images/havens/beyond-pic-8.jpg" alt="Forest Ember" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Forest Ember</span>
+            <h3 class="text-xl font-bold mb-2">Woodsy & Warm</h3>
+            <p class="text-gray-300 text-sm mb-3">Campfire memories and pine forests</p>
+            <div class="scent-profile">
+              <span class="scent-note">Pine</span>
+              <span class="scent-note">Cedar</span>
+              <span class="scent-note">Smoke</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Candle 9 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+          <img src="./assets/images/havens/beyond-pic-9.jpg" alt="Golden Hour" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Golden Hour</span>
+            <h3 class="text-xl font-bold mb-2">Warm & Honeyed</h3>
+            <p class="text-gray-300 text-sm mb-3">The golden light of sunset captured in scent</p>
+            <div class="scent-profile">
+              <span class="scent-note">Honey</span>
+              <span class="scent-note">Amber</span>
+              <span class="scent-note">Orange</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Candle 10 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
+          <img src="./assets/images/havens/beyond-pic-10.jpg" alt="Midnight Bloom" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Midnight Bloom</span>
+            <h3 class="text-xl font-bold mb-2">Floral & Mysterious</h3>
+            <p class="text-gray-300 text-sm mb-3">Night-blooming flowers under moonlight</p>
+            <div class="scent-profile">
+              <span class="scent-note">Jasmine</span>
+              <span class="scent-note">Tuberose</span>
+              <span class="scent-note">Musk</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Candle 11 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+          <img src="./assets/images/havens/beyond-pic-11.jpg" alt="Coastal Mist" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Coastal Mist</span>
+            <h3 class="text-xl font-bold mb-2">Fresh & Aquatic</h3>
+            <p class="text-gray-300 text-sm mb-3">Ocean spray and morning fog</p>
+            <div class="scent-profile">
+              <span class="scent-note">Sea Breeze</span>
+              <span class="scent-note">Mineral</span>
+              <span class="scent-note">Green Notes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Candle 12 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="350">
+          <img src="./assets/images/havens/beyond-pic-12.jpg" alt="Spiced Chai" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Spiced Chai</span>
+            <h3 class="text-xl font-bold mb-2">Warm & Spiced</h3>
+            <p class="text-gray-300 text-sm mb-3">Comforting blend of tea and spices</p>
+            <div class="scent-profile">
+              <span class="scent-note">Black Tea</span>
+              <span class="scent-note">Cardamom</span>
+              <span class="scent-note">Ginger</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Candle 13 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+          <img src="./assets/images/havens/beyond-pic-13.jpg" alt="Vanilla Cloud" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Vanilla Cloud</span>
+            <h3 class="text-xl font-bold mb-2">Sweet & Creamy</h3>
+            <p class="text-gray-300 text-sm mb-3">Soft, comforting vanilla dreamscape</p>
+            <div class="scent-profile">
+              <span class="scent-note">Vanilla</span>
+              <span class="scent-note">Tonka</span>
+              <span class="scent-note">Milk</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Candle 14 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
+          <img src="./assets/images/havens/beyond-pic-14.jpg" alt="Fig & Laurel" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Fig & Laurel</span>
+            <h3 class="text-xl font-bold mb-2">Fruity & Green</h3>
+            <p class="text-gray-300 text-sm mb-3">Mediterranean garden in full bloom</p>
+            <div class="scent-profile">
+              <span class="scent-note">Fig</span>
+              <span class="scent-note">Laurel</span>
+              <span class="scent-note">Cypress</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Candle 15 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+          <img src="./assets/images/havens/beyond-pic-15.jpg" alt="Ember Glow" />
+          <div class="gallery-overlay">
+            <span class="candle-tag">Ember Glow</span>
+            <h3 class="text-xl font-bold mb-2">Smoky & Sweet</h3>
+            <p class="text-gray-300 text-sm mb-3">The last embers of a dying fire</p>
+            <div class="scent-profile">
+              <span class="scent-note">Birch</span>
+              <span class="scent-note">Leather</span>
+              <span class="scent-note">Vanilla</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect -->
+    <section id="connect" class="section">
+      <div class="quote-box" data-aos="fade-up">
+        <div class="relative z-10">
+          <div class="quote-mark">"</div>
+          <blockquote class="text-2xl md:text-3xl font-semibold mb-6">
+            Creativity flows where passion leads — from pixels to wax, the journey continues.
+          </blockquote>
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div>
-              <blockquote class="text-xl md:text-2xl font-semibold">
-                "Creativity has no boundaries, only new ways to express itself."
-              </blockquote>
-              <p class="text-gray-400 mt-3">
-                To see more of my handcrafted work, visit
+              <p class="text-gray-300 text-lg">
+                Follow the creative journey and discover new creations
                 <a
                   href="https://instagram.com/mrhavens.co"
                   target="_blank"
                   rel="noopener"
-                  class="text-amber-300 underline"
+                  class="text-amber-300 underline hover:text-amber-200 transition"
                 >
-                  @mrhavens.co
+                  @mrhavens.co on Instagram
                 </a>
-                on Instagram.
               </p>
             </div>
-
-            <div class="mt-4 md:mt-0">
-              <a
-                href="https://instagram.com/mrhavens.co"
-                target="_blank"
-                rel="noopener"
-                class="inline-block px-6 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-semibold shadow"
-              >
-                View more on Instagram
-              </a>
-            </div>
+            <a
+              href="https://instagram.com/mrhavens.co"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+            >
+              <i class="fab fa-instagram"></i> Follow the Journey
+            </a>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer></footer>
-    <!-- JS -->
+    <footer>
+    </footer>
+
+    <!-- JS Includes -->
     <script src="assets/js/include.js"></script>
     <script src="assets/js/script.js"></script>
 
-    <div class="watermark"></div>
-
-    <!-- Scripts -->
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      // ---------------------------
-      // HERO SLIDESHOW (simple JS cycle + Ken Burns feel)
-      // ---------------------------
-      (function () {
-        const slides = Array.from(document.querySelectorAll(".hero-slide"));
-        if (!slides.length) return;
-
-        let idx = 0;
-        let playing = true;
-        const interval = 4800; // time per slide
-        const playPauseBtn = document.getElementById("playPause");
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-
-        function show(i) {
-          slides.forEach((s, j) => {
-            s.classList.toggle("active", j === i);
+      // Initialize AOS animations
+      AOS.init({
+        duration: 1000,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 50
+      });
+      
+      // Smooth scroll functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+        const navDots = document.querySelectorAll('.nav-dot');
+        const exploreBtn = document.querySelector('.explore-btn');
+        
+        // Smooth scroll for Explore button
+        if (exploreBtn) {
+          exploreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
           });
         }
-
-        function next() {
-          idx = (idx + 1) % slides.length;
-          show(idx);
-        }
-
-        function prev() {
-          idx = (idx - 1 + slides.length) % slides.length;
-          show(idx);
-        }
-
-        show(idx);
-        let timer = setInterval(next, interval);
-
-        function togglePlay() {
-          playing = !playing;
-          if (playing) {
-            timer = setInterval(next, interval);
-            playPauseBtn.textContent = "Pause";
-          } else {
-            clearInterval(timer);
-            playPauseBtn.textContent = "Play";
-          }
-        }
-
-        playPauseBtn?.addEventListener("click", togglePlay);
-        prevBtn?.addEventListener("click", () => {
-          prev();
-          if (playing) {
-            clearInterval(timer);
-            timer = setInterval(next, interval);
-          }
-        });
-        nextBtn?.addEventListener("click", () => {
-          next();
-          if (playing) {
-            clearInterval(timer);
-            timer = setInterval(next, interval);
-          }
-        });
-
-        // pause on hover for accessibility
-        document.querySelector(".hero")?.addEventListener("mouseenter", () => {
-          if (playing) {
-            clearInterval(timer);
-          }
-        });
-        document.querySelector(".hero")?.addEventListener("mouseleave", () => {
-          if (playing) {
-            timer = setInterval(next, interval);
-          }
-        });
-      })();
-
-      // ---------------------------
-      // LAZY LOAD + REVEAL ON SCROLL (IntersectionObserver)
-      // ---------------------------
-      (function () {
-        const reveals = Array.from(document.querySelectorAll(".reveal"));
-        const images = Array.from(document.querySelectorAll("img.lozad"));
-
-        const io = new IntersectionObserver(
-          (entries, obs) => {
-            entries.forEach((ent) => {
-              if (ent.isIntersecting) {
-                ent.target.classList.add("visible");
-                obs.unobserve(ent.target);
-              }
-            });
-          },
-          {
-            rootMargin: "0px 0px -80px 0px",
-            threshold: 0.12,
-          },
-        );
-
-        reveals.forEach((r) => io.observe(r));
-
-        // lazy images - swap data-src -> src when near viewport
-        const imgObserver = new IntersectionObserver(
-          (entries, obs) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                const img = e.target;
-                const src = img.getAttribute("data-src");
-                if (src) {
-                  img.src = src;
-                  img.removeAttribute("data-src");
-                }
-                obs.unobserve(img);
-              }
-            });
-          },
-          {
-            rootMargin: "0px 0px 200px 0px",
-            threshold: 0.01,
-          },
-        );
-
-        images.forEach((img) => imgObserver.observe(img));
-      })();
-
-      // ---------------------------
-      // TILT / SUBTLE 3D on pointer move for each masonry item
-      // ---------------------------
-      (function () {
-        const containers = document.querySelectorAll(".tilt");
-        containers.forEach((c) => {
-          c.addEventListener("pointermove", (ev) => {
-            const rect = c.getBoundingClientRect();
-            const px = (ev.clientX - rect.left) / rect.width;
-            const py = (ev.clientY - rect.top) / rect.height;
-            const rx = (py - 0.5) * 6; // rotateX degrees
-            const ry = (px - 0.5) * -8; // rotateY degrees
-            c.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`;
+        
+        // Update active nav dot on scroll
+        window.addEventListener('scroll', function() {
+          let current = '';
+          
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 200)) {
+              current = section.getAttribute('id');
+            }
           });
-          c.addEventListener("pointerleave", () => {
-            c.style.transform = "";
+          
+          navDots.forEach(dot => {
+            dot.classList.remove('active');
+            if (dot.getAttribute('href').substring(1) === current) {
+              dot.classList.add('active');
+            }
           });
         });
-      })();
-
-      // ---------------------------
-      // small parallax for hero content on scroll
-      // ---------------------------
-      (function () {
-        const heroContent = document.querySelector(".hero-content");
-        window.addEventListener(
-          "scroll",
-          () => {
-            const y = Math.min(window.scrollY, window.innerHeight);
-            if (heroContent)
-              heroContent.style.transform = `translateY(${y * 0.06}px)`;
-          },
-          {
-            passive: true,
-          },
-        );
-      })();
-
-      // Respect prefers-reduced-motion by disabling animations where appropriate
-      if (
-        window.matchMedia &&
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      ) {
-        document
-          .getElementById("playPause")
-          ?.setAttribute("aria-disabled", "true");
-        document
-          .querySelectorAll(".hero-slide")
-          .forEach((s) => (s.style.transition = "none"));
-      }
-    </script>
-    <script>
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
+        
+        // Smooth scrolling for nav dots
+        navDots.forEach(dot => {
+          dot.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
         });
       });
     </script>
