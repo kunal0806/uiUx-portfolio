@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Beyond UX – Jagriti Sood Portfolio</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -11,825 +10,940 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        :root {
-            --bg: #0f0e10;
-            --panel: #121214;
-            --accent: #ffb86b;
-            --muted: #9aa0a6;
+      :root {
+        --bg: #0f0e10;
+        --panel: #121214;
+        --accent: #ffb86b;
+        --muted: #9aa0a6;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background: var(--bg);
+        color: #fff;
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.4;
+        overflow-y: scroll;
+      }
+
+      .font-Modak {
+        font-family: "Modak", cursive;
+      }
+
+      /* ========== HERO ========== */
+      .hero {
+        position: relative;
+        height: min(92vh, 920px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      }
+
+      /* slideshow container */
+      .hero-slides {
+        position: absolute;
+        inset: 0;
+        display: block;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transform: scale(1.04);
+        transition:
+          opacity 1.2s ease,
+          transform 6s ease;
+        filter: contrast(0.95) saturate(0.9) brightness(0.85);
+        will-change: opacity, transform;
+      }
+
+      .hero-slide.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* cinematic vignette + glow */
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 50% 35%,
+          rgba(255, 200, 150, 0.06) 0%,
+          rgba(0, 0, 0, 0.55) 40%,
+          rgba(0, 0, 0, 0.85) 100%
+        );
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* flicker overlay (subtle) */
+      .flicker {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 210, 160, 0.02),
+          rgba(0, 0, 0, 0)
+        );
+        mix-blend-mode: screen;
+        animation: softFlicker 6s linear infinite;
+        opacity: 0.28;
+      }
+
+      @keyframes softFlicker {
+        0% {
+          opacity: 0.26;
         }
 
-        html,
-        body {
-            height: 100%;
+        20% {
+          opacity: 0.34;
         }
 
-        body {
-            background: var(--bg);
-            color: #fff;
-            font-family:
-                Inter,
-                system-ui,
-                -apple-system,
-                "Segoe UI",
-                Roboto,
-                "Helvetica Neue",
-                Arial;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            line-height: 1.4;
-            overflow-y: scroll;
+        40% {
+          opacity: 0.22;
         }
 
-        .font-Modak {
-            font-family: "Modak", cursive;
+        60% {
+          opacity: 0.3;
         }
 
-        /* ========== HERO ========== */
-        .hero {
-            position: relative;
-            height: min(92vh, 920px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        80% {
+          opacity: 0.24;
         }
 
-        /* slideshow container */
-        .hero-slides {
-            position: absolute;
-            inset: 0;
-            display: block;
-            z-index: 0;
-            pointer-events: none;
+        100% {
+          opacity: 0.26;
         }
+      }
 
-        .hero-slide {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transform: scale(1.04);
-            transition:
-                opacity 1.2s ease,
-                transform 6s ease;
-            filter: contrast(0.95) saturate(0.9) brightness(0.85);
-            will-change: opacity, transform;
+      /* headline surface (content) */
+      .hero-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        max-width: 1100px;
+        padding: 2rem;
+        margin: 0 1rem;
+      }
+
+      .tag {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.35);
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 0.95rem;
+        backdrop-filter: blur(6px);
+        margin-bottom: 1rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.1rem, 5vw, 3.6rem);
+        line-height: 1.02;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.6rem;
+        background: linear-gradient(90deg, #fff 0%, #fffbf5 40%, #ffddb8 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+      }
+
+      .hero p.lead {
+        color: #d1d5db;
+        font-size: clamp(1rem, 1.4vw, 1.15rem);
+        max-width: 820px;
+        margin: 0 auto;
+      }
+
+      /* subtle pseudo-line shimmer on title */
+      .title-shimmer {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+      }
+
+      .title-shimmer::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        transform: translateX(-110%);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0.25),
+          rgba(255, 255, 255, 0)
+        );
+        animation: shimmer 3.6s linear infinite;
+        mix-blend-mode: overlay;
+        pointer-events: none;
+      }
+
+      @keyframes shimmer {
+        to {
+          transform: translateX(110%);
         }
+      }
 
-        .hero-slide.active {
-            opacity: 1;
-            transform: scale(1);
-        }
+      /* slideshow controls */
+      .slideshow-controls {
+        position: absolute;
+        z-index: 4;
+        right: 2rem;
+        bottom: 1.6rem;
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.24);
+        padding: 0.35rem;
+        border-radius: 999px;
+        backdrop-filter: blur(6px);
+      }
 
-        /* cinematic vignette + glow */
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 50% 35%,
-                    rgba(255, 200, 150, 0.06) 0%,
-                    rgba(0, 0, 0, 0.55) 40%,
-                    rgba(0, 0, 0, 0.85) 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
+      .control-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        border: 0;
+        display: inline-grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.04);
+        cursor: pointer;
+        color: #fff;
+        font-weight: 600;
+      }
 
-        /* flicker overlay (subtle) */
-        .flicker {
-            position: absolute;
-            inset: 0;
-            z-index: 2;
-            pointer-events: none;
-            background: linear-gradient(180deg,
-                    rgba(255, 210, 160, 0.02),
-                    rgba(0, 0, 0, 0));
-            mix-blend-mode: screen;
-            animation: softFlicker 6s linear infinite;
-            opacity: 0.28;
-        }
+      .control-btn:hover {
+        transform: translateY(-2px);
+      }
 
-        @keyframes softFlicker {
-            0% {
-                opacity: 0.26;
-            }
+      /* ========== GALLERY ========== */
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+      }
 
-            20% {
-                opacity: 0.34;
-            }
+      /* masonry-like stack using columns */
+      .masonry {
+        column-count: 2;
+        column-gap: 1rem;
+      }
 
-            40% {
-                opacity: 0.22;
-            }
-
-            60% {
-                opacity: 0.3;
-            }
-
-            80% {
-                opacity: 0.24;
-            }
-
-            100% {
-                opacity: 0.26;
-            }
-        }
-
-        /* headline surface (content) */
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            max-width: 1100px;
-            padding: 2rem;
-            margin: 0 1rem;
-        }
-
-        .tag {
-            display: inline-block;
-            background: rgba(0, 0, 0, 0.35);
-            padding: 0.35rem 0.75rem;
-            border-radius: 999px;
-            color: var(--muted);
-            font-weight: 600;
-            font-size: 0.95rem;
-            backdrop-filter: blur(6px);
-            margin-bottom: 1rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.1rem, 5vw, 3.6rem);
-            line-height: 1.02;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin: 0 0 0.6rem;
-            background: linear-gradient(90deg, #fff 0%, #fffbf5 40%, #ffddb8 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
-        }
-
-        .hero p.lead {
-            color: #d1d5db;
-            font-size: clamp(1rem, 1.4vw, 1.15rem);
-            max-width: 820px;
-            margin: 0 auto;
-        }
-
-        /* subtle pseudo-line shimmer on title */
-        .title-shimmer {
-            position: relative;
-            display: inline-block;
-            overflow: hidden;
-        }
-
-        .title-shimmer::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            transform: translateX(-110%);
-            background: linear-gradient(90deg,
-                    rgba(255, 255, 255, 0),
-                    rgba(255, 255, 255, 0.25),
-                    rgba(255, 255, 255, 0));
-            animation: shimmer 3.6s linear infinite;
-            mix-blend-mode: overlay;
-            pointer-events: none;
-        }
-
-        @keyframes shimmer {
-            to {
-                transform: translateX(110%);
-            }
-        }
-
-        /* slideshow controls */
-        .slideshow-controls {
-            position: absolute;
-            z-index: 4;
-            right: 2rem;
-            bottom: 1.6rem;
-            display: flex;
-            gap: 0.6rem;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.24);
-            padding: 0.35rem;
-            border-radius: 999px;
-            backdrop-filter: blur(6px);
-        }
-
-        .control-btn {
-            width: 38px;
-            height: 38px;
-            border-radius: 8px;
-            border: 0;
-            display: inline-grid;
-            place-items: center;
-            background: rgba(255, 255, 255, 0.04);
-            cursor: pointer;
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .control-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        /* ========== GALLERY ========== */
-        .wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
-        }
-
-        /* masonry-like stack using columns */
+      @media (min-width: 1100px) {
         .masonry {
-            column-count: 2;
-            column-gap: 1rem;
+          column-count: 2;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .masonry {
+          column-count: 1;
+        }
+      }
+
+      .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        transform-origin: center center;
+        transition:
+          transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1),
+          box-shadow 0.35s ease;
+        will-change: transform;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.03),
+          rgba(0, 0, 0, 0.06)
+        );
+      }
+
+      .masonry-item img {
+        width: 100%;
+        display: block;
+        height: auto;
+        transition:
+          transform 0.9s ease,
+          filter 0.45s ease;
+        transform-origin: center center;
+      }
+
+      .masonry-item:hover {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      }
+
+      .masonry-item .caption {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+        z-index: 6;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.48),
+          rgba(0, 0, 0, 0.36)
+        );
+        padding: 0.5rem 0.9rem;
+        border-radius: 999px;
+        font-weight: 700;
+        color: #fff;
+        opacity: 0;
+        transform: translateY(8px);
+        transition:
+          opacity 0.35s ease,
+          transform 0.35s ease;
+        backdrop-filter: blur(6px);
+      }
+
+      .masonry-item:hover .caption {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* small tilt effect tracked with pointermove */
+      .tilt {
+        transform-style: preserve-3d;
+        perspective: 1200px;
+      }
+
+      /* fade-in from below when entering viewport */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px) scale(0.995);
+        transition:
+          opacity 0.9s ease,
+          transform 0.9s cubic-bezier(0.2, 0.9, 0.3, 1);
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      /* CTA / quote box */
+      .quote-box {
+        background: linear-gradient(
+          180deg,
+          rgba(20, 16, 12, 0.4),
+          rgba(16, 14, 12, 0.6)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        padding: 2rem;
+        border-radius: 14px;
+      }
+
+      /* moving watermark */
+      .watermark {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 8vh;
+        z-index: 0;
+        font-size: 6.4rem;
+        color: rgba(255, 255, 255, 0.03);
+        font-weight: 900;
+        letter-spacing: 0.9rem;
+        pointer-events: none;
+        animation: pan 24s linear infinite;
+      }
+
+      @keyframes pan {
+        0% {
+          transform: translate3d(-50%, -2px, 0);
         }
 
-        @media (min-width: 1100px) {
-            .masonry {
-                column-count: 2;
-            }
+        50% {
+          transform: translate3d(-50%, 6px, 0);
         }
 
-        @media (max-width: 900px) {
-            .masonry {
-                column-count: 1;
-            }
+        100% {
+          transform: translate3d(-50%, -2px, 0);
+        }
+      }
+
+      /* tiny responsive tweaks */
+      @media (max-width: 640px) {
+        .slideshow-controls {
+          right: 1rem;
+          bottom: 0.9rem;
         }
 
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 1rem;
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            transform-origin: center center;
-            transition:
-                transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1),
-                box-shadow 0.35s ease;
-            will-change: transform;
-            background: linear-gradient(180deg,
-                    rgba(0, 0, 0, 0.03),
-                    rgba(0, 0, 0, 0.06));
-        }
-
-        .masonry-item img {
-            width: 100%;
-            display: block;
-            height: auto;
-            transition:
-                transform 0.9s ease,
-                filter 0.45s ease;
-            transform-origin: center center;
-        }
-
-        .masonry-item:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-        }
-
-        .masonry-item .caption {
-            position: absolute;
-            left: 1rem;
-            bottom: 1rem;
-            z-index: 6;
-            background: linear-gradient(90deg,
-                    rgba(0, 0, 0, 0.48),
-                    rgba(0, 0, 0, 0.36));
-            padding: 0.5rem 0.9rem;
-            border-radius: 999px;
-            font-weight: 700;
-            color: #fff;
-            opacity: 0;
-            transform: translateY(8px);
-            transition:
-                opacity 0.35s ease,
-                transform 0.35s ease;
-            backdrop-filter: blur(6px);
-        }
-
-        .masonry-item:hover .caption {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* small tilt effect tracked with pointermove */
-        .tilt {
-            transform-style: preserve-3d;
-            perspective: 1200px;
-        }
-
-        /* fade-in from below when entering viewport */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px) scale(0.995);
-            transition:
-                opacity 0.9s ease,
-                transform 0.9s cubic-bezier(0.2, 0.9, 0.3, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
-        /* CTA / quote box */
-        .quote-box {
-            background: linear-gradient(180deg,
-                    rgba(20, 16, 12, 0.4),
-                    rgba(16, 14, 12, 0.6));
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 2rem;
-            border-radius: 14px;
-        }
-
-        /* moving watermark */
         .watermark {
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 8vh;
-            z-index: 0;
-            font-size: 6.4rem;
-            color: rgba(255, 255, 255, 0.03);
-            font-weight: 900;
-            letter-spacing: 0.9rem;
-            pointer-events: none;
-            animation: pan 24s linear infinite;
+          font-size: 3.2rem;
+          bottom: 6vh;
+          letter-spacing: 0.35rem;
         }
+      }
 
-        @keyframes pan {
-            0% {
-                transform: translate3d(-50%, -2px, 0);
-            }
-
-            50% {
-                transform: translate3d(-50%, 6px, 0);
-            }
-
-            100% {
-                transform: translate3d(-50%, -2px, 0);
-            }
+      /* reduced motion protection */
+      @media (prefers-reduced-motion: reduce) {
+        .hero-slide,
+        .flicker,
+        .title-shimmer,
+        .watermark {
+          animation: none !important;
+          transition: none !important;
         }
-
-        /* tiny responsive tweaks */
-        @media (max-width: 640px) {
-            .slideshow-controls {
-                right: 1rem;
-                bottom: 0.9rem;
-            }
-
-            .watermark {
-                font-size: 3.2rem;
-                bottom: 6vh;
-                letter-spacing: 0.35rem;
-            }
-        }
-
-        /* reduced motion protection */
-        @media (prefers-reduced-motion: reduce) {
-
-            .hero-slide,
-            .flicker,
-            .title-shimmer,
-            .watermark {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <!-- Header -->
-    <header class="w-full flex items-center justify-between px-8 py-4 bg-[#151417] sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
-        <a href="./index.html">
-            <div class="font-Modak text-white text-2xl font-bold">
-                Jagriti Sood
-            </div>
-        </a>
-        <nav class="flex items-center gap-8">
-            <a href="./work.html" class="text-white hover:underline">Work</a>
-            <a href="./about.html" class="text-white hover:underline">About</a>
-            <a href="./resume.html" class="text-white hover:underline">Resume</a>
-            <a href="./beyond-uiux.html" class="text-white hover:underline">Beyond UX</a>
-            <a href="./contact.html" class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition">Contact</a>
-        </nav>
-    </header>
+  <body>
+    <header></header>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-slides" aria-hidden="true">
-            <!-- using the first six images for cinematic hero -->
-            <div class="hero-slide" style="
+      <div class="hero-slides" aria-hidden="true">
+        <!-- using the first six images for cinematic hero -->
+        <div
+          class="hero-slide"
+          style="
             background-image: url(&quot;./assets/images/havens/beyond-pic-1.jpg&quot;);
-          "></div>
-            <div class="hero-slide" style="
+          "
+        ></div>
+        <div
+          class="hero-slide"
+          style="
             background-image: url(&quot;./assets/images/havens/beyond-pic-2.jpg&quot;);
-          "></div>
-            <div class="hero-slide" style="
+          "
+        ></div>
+        <div
+          class="hero-slide"
+          style="
             background-image: url(&quot;./assets/images/havens/beyond-pic-3.jpg&quot;);
-          "></div>
-            <div class="hero-slide" style="
+          "
+        ></div>
+        <div
+          class="hero-slide"
+          style="
             background-image: url(&quot;./assets/images/havens/beyond-pic-4.jpg&quot;);
-          "></div>
-            <div class="hero-slide" style="
+          "
+        ></div>
+        <div
+          class="hero-slide"
+          style="
             background-image: url(&quot;./assets/images/havens/beyond-pic-5.jpg&quot;);
-          "></div>
-            <div class="hero-slide" style="
+          "
+        ></div>
+        <div
+          class="hero-slide"
+          style="
             background-image: url(&quot;./assets/images/havens/beyond-pic-6.jpg&quot;);
-          "></div>
+          "
+        ></div>
+      </div>
+
+      <div class="flicker" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="tag">Beyond UX — Handcrafted Objects</div>
+        <h1 class="title-shimmer">
+          Beyond UX
+          <span class="sr-only">— Jagriti Sood</span>
+        </h1>
+        <p class="lead mt-4 max-w-3xl mx-auto">
+          Because creativity doesn’t end at UX — it continues in color, scent,
+          and form. I take the same design care to make handcrafted candles and
+          objects that carry a story.
+        </p>
+
+        <div class="mt-6 flex items-center justify-center gap-3">
+          <a
+            href="#gallery"
+            class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-[#2d2b2f] to-[#1a1a1c] border border-white/6 text-sm font-semibold hover:scale-[1.01] transition-shadow"
+          >
+            Explore the Collection
+          </a>
+          <button
+            id="playPause"
+            class="ml-2 inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white/6 hover:bg-white/9 transition"
+          >
+            Pause
+          </button>
         </div>
+      </div>
 
-        <div class="flicker" aria-hidden="true"></div>
-
-        <div class="hero-content">
-            <div class="tag">Beyond UX — Handcrafted Objects</div>
-            <h1 class="title-shimmer">
-                Beyond UX<span class="sr-only"> — Jagriti Sood</span>
-            </h1>
-            <p class="lead mt-4 max-w-3xl mx-auto">
-                Because creativity doesn’t end at UX — it continues in color, scent,
-                and form. I take the same design care to make handcrafted candles and
-                objects that carry a story.
-            </p>
-
-            <div class="mt-6 flex items-center justify-center gap-3">
-                <a href="#gallery" class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-[#2d2b2f] to-[#1a1a1c] border border-white/6 text-sm font-semibold hover:scale-[1.01] transition-shadow">Explore the Collection</a>
-                <button id="playPause" class="ml-2 inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white/6 hover:bg-white/9 transition">
-                    Pause
-                </button>
-            </div>
-        </div>
-
-        <!-- controls -->
-        <div class="slideshow-controls" aria-hidden="false">
-            <button id="prevBtn" class="control-btn" title="Previous">◀</button>
-            <button id="nextBtn" class="control-btn" title="Next">▶</button>
-        </div>
+      <!-- controls -->
+      <div class="slideshow-controls" aria-hidden="false">
+        <button id="prevBtn" class="control-btn" title="Previous">◀</button>
+        <button id="nextBtn" class="control-btn" title="Next">▶</button>
+      </div>
     </section>
 
     <!-- WRAP -->
     <main class="wrap">
-        <!-- Story -->
-        <section class="grid md:grid-cols-2 gap-8 items-center mb-10">
-            <div class="reveal">
-                <h2 class="text-3xl font-semibold">The Other Side of My Craft</h2>
-                <p class="mt-4 text-gray-300">
-                    I pour, mix, and sculpt by hand, every piece one of a kind. What
-                    started as a quiet hobby became a reflection of how I see design:
-                    thoughtful, detailed, and full of feeling. Each object is considered
-                    — from scent maps to material balance — the same thinking I bring to
-                    interface design.
-                </p>
+      <!-- Story -->
+      <section class="grid md:grid-cols-2 gap-8 items-center mb-10">
+        <div class="reveal">
+          <h2 class="text-3xl font-semibold">The Other Side of My Craft</h2>
+          <p class="mt-4 text-gray-300">
+            I pour, mix, and sculpt by hand, every piece one of a kind. What
+            started as a quiet hobby became a reflection of how I see design:
+            thoughtful, detailed, and full of feeling. Each object is considered
+            — from scent maps to material balance — the same thinking I bring to
+            interface design.
+          </p>
+        </div>
+
+        <div class="reveal">
+          <!-- small stacked photographic animation using CSS transform -->
+          <div
+            class="relative w-full h-80 rounded-2xl overflow-hidden"
+            aria-hidden="true"
+          >
+            <img
+              src="./assets/images/havens/beyond-pic-7.jpg"
+              loading="lazy"
+              alt=""
+              class="absolute left-6 top-8 w-[78%] h-[78%] object-cover rounded-xl shadow-lg transform rotate-1"
+            />
+            <img
+              src="./assets/images/havens/beyond-pic-8.jpg"
+              loading="lazy"
+              alt=""
+              class="absolute right-6 bottom-6 w-[82%] h-[82%] object-cover rounded-xl shadow-2xl transform -rotate-1"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery" class="mb-12">
+        <div class="mb-6">
+          <h3 class="text-3xl font-bold">Selected Handcrafted Candles</h3>
+          <p class="text-gray-400 mt-2">
+            Large, cinematic images — hover to reveal the candle name.
+          </p>
+        </div>
+
+        <div class="masonry">
+          <!-- I built each item to use your provided filenames. They lazy-load and reveal when scrolled into view -->
+          <!-- 1 -->
+          <figure class="masonry-item reveal tilt" data-name="Amber Drift">
+            <img
+              data-src="./assets/images/havens/beyond-pic-1.jpg"
+              alt="Amber Drift"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Amber Drift</figcaption>
+          </figure>
+
+          <!-- 2 -->
+          <figure class="masonry-item reveal tilt" data-name="Sea Glass">
+            <img
+              data-src="./assets/images/havens/beyond-pic-2.jpg"
+              alt="Sea Glass"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Sea Glass</figcaption>
+          </figure>
+
+          <!-- 3 -->
+          <figure class="masonry-item reveal tilt" data-name="Citrus Bloom">
+            <img
+              data-src="./assets/images/havens/beyond-pic-3.jpg"
+              alt="Citrus Bloom"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Citrus Bloom</figcaption>
+          </figure>
+
+          <!-- 4 -->
+          <figure class="masonry-item reveal tilt" data-name="Winter Hearth">
+            <img
+              data-src="./assets/images/havens/beyond-pic-4.jpg"
+              alt="Winter Hearth"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Winter Hearth</figcaption>
+          </figure>
+
+          <!-- 5 -->
+          <figure class="masonry-item reveal tilt" data-name="Sandalwood Noir">
+            <img
+              data-src="./assets/images/havens/beyond-pic-5.jpg"
+              alt="Sandalwood Noir"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Sandalwood Noir</figcaption>
+          </figure>
+
+          <!-- 6 -->
+          <figure class="masonry-item reveal tilt" data-name="Herbal Garden">
+            <img
+              data-src="./assets/images/havens/beyond-pic-6.jpg"
+              alt="Herbal Garden"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Herbal Garden</figcaption>
+          </figure>
+
+          <!-- 7 -->
+          <figure class="masonry-item reveal tilt" data-name="Porcelain Glow">
+            <img
+              data-src="./assets/images/havens/beyond-pic-7.jpg"
+              alt="Porcelain Glow"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Porcelain Glow</figcaption>
+          </figure>
+
+          <!-- 8 -->
+          <figure class="masonry-item reveal tilt" data-name="Forest Ember">
+            <img
+              data-src="./assets/images/havens/beyond-pic-8.jpg"
+              alt="Forest Ember"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Forest Ember</figcaption>
+          </figure>
+
+          <!-- 9 -->
+          <figure class="masonry-item reveal tilt" data-name="Porcelain Glow 2">
+            <img
+              data-src="./assets/images/havens/beyond-pic-9.jpg"
+              alt="Porcelain Glow 2"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Porcelain Glow 2</figcaption>
+          </figure>
+
+          <!-- 10 -->
+          <figure class="masonry-item reveal tilt" data-name="Amber Drift 2">
+            <img
+              data-src="./assets/images/havens/beyond-pic-11.jpg"
+              alt="Amber Drift 2"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Amber Drift 2</figcaption>
+          </figure>
+
+          <!-- 11 -->
+          <figure class="masonry-item reveal tilt" data-name="Sea Glass 2">
+            <img
+              data-src="./assets/images/havens/beyond-pic-12.jpg"
+              alt="Sea Glass 2"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Sea Glass 2</figcaption>
+          </figure>
+
+          <!-- 12 -->
+          <figure class="masonry-item reveal tilt" data-name="Citrus Bloom 2">
+            <img
+              data-src="./assets/images/havens/beyond-pic-13.jpg"
+              alt="Citrus Bloom 2"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Citrus Bloom 2</figcaption>
+          </figure>
+
+          <!-- 13 -->
+          <figure class="masonry-item reveal tilt" data-name="Winter Hearth 2">
+            <img
+              data-src="./assets/images/havens/beyond-pic-14.jpg"
+              alt="Winter Hearth 2"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Winter Hearth 2</figcaption>
+          </figure>
+
+          <!-- 14 -->
+          <figure
+            class="masonry-item reveal tilt"
+            data-name="Sandalwood Noir 2"
+          >
+            <img
+              data-src="./assets/images/havens/beyond-pic-15.jpg"
+              alt="Sandalwood Noir 2"
+              class="lozad"
+              loading="lazy"
+            />
+            <figcaption class="caption">Sandalwood Noir 2</figcaption>
+          </figure>
+
+          <!-- you can add more items here if needed -->
+        </div>
+
+        <!-- Quote + CTA -->
+        <div class="mt-10 quote-box reveal">
+          <div class="md:flex md:justify-between md:items-center">
+            <div>
+              <blockquote class="text-xl md:text-2xl font-semibold">
+                "Creativity has no boundaries, only new ways to express itself."
+              </blockquote>
+              <p class="text-gray-400 mt-3">
+                To see more of my handcrafted work, visit
+                <a
+                  href="https://instagram.com/mrhavens.co"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-amber-300 underline"
+                >
+                  @mrhavens.co
+                </a>
+                on Instagram.
+              </p>
             </div>
 
-            <div class="reveal">
-                <!-- small stacked photographic animation using CSS transform -->
-                <div class="relative w-full h-80 rounded-2xl overflow-hidden" aria-hidden="true">
-                    <img src="./assets/images/havens/beyond-pic-7.jpg" loading="lazy" alt="" class="absolute left-6 top-8 w-[78%] h-[78%] object-cover rounded-xl shadow-lg transform rotate-1" />
-                    <img src="./assets/images/havens/beyond-pic-8.jpg" loading="lazy" alt="" class="absolute right-6 bottom-6 w-[82%] h-[82%] object-cover rounded-xl shadow-2xl transform -rotate-1" />
-                </div>
+            <div class="mt-4 md:mt-0">
+              <a
+                href="https://instagram.com/mrhavens.co"
+                target="_blank"
+                rel="noopener"
+                class="inline-block px-6 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-semibold shadow"
+              >
+                View more on Instagram
+              </a>
             </div>
-        </section>
-
-        <!-- GALLERY -->
-        <section id="gallery" class="mb-12">
-            <div class="mb-6">
-                <h3 class="text-3xl font-bold">Selected Handcrafted Candles</h3>
-                <p class="text-gray-400 mt-2">
-                    Large, cinematic images — hover to reveal the candle name.
-                </p>
-            </div>
-
-            <div class="masonry">
-                <!-- I built each item to use your provided filenames. They lazy-load and reveal when scrolled into view -->
-                <!-- 1 -->
-                <figure class="masonry-item reveal tilt" data-name="Amber Drift">
-                    <img data-src="./assets/images/havens/beyond-pic-1.jpg" alt="Amber Drift" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Amber Drift</figcaption>
-                </figure>
-
-                <!-- 2 -->
-                <figure class="masonry-item reveal tilt" data-name="Sea Glass">
-                    <img data-src="./assets/images/havens/beyond-pic-2.jpg" alt="Sea Glass" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Sea Glass</figcaption>
-                </figure>
-
-                <!-- 3 -->
-                <figure class="masonry-item reveal tilt" data-name="Citrus Bloom">
-                    <img data-src="./assets/images/havens/beyond-pic-3.jpg" alt="Citrus Bloom" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Citrus Bloom</figcaption>
-                </figure>
-
-                <!-- 4 -->
-                <figure class="masonry-item reveal tilt" data-name="Winter Hearth">
-                    <img data-src="./assets/images/havens/beyond-pic-4.jpg" alt="Winter Hearth" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Winter Hearth</figcaption>
-                </figure>
-
-                <!-- 5 -->
-                <figure class="masonry-item reveal tilt" data-name="Sandalwood Noir">
-                    <img data-src="./assets/images/havens/beyond-pic-5.jpg" alt="Sandalwood Noir" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Sandalwood Noir</figcaption>
-                </figure>
-
-                <!-- 6 -->
-                <figure class="masonry-item reveal tilt" data-name="Herbal Garden">
-                    <img data-src="./assets/images/havens/beyond-pic-6.jpg" alt="Herbal Garden" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Herbal Garden</figcaption>
-                </figure>
-
-                <!-- 7 -->
-                <figure class="masonry-item reveal tilt" data-name="Porcelain Glow">
-                    <img data-src="./assets/images/havens/beyond-pic-7.jpg" alt="Porcelain Glow" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Porcelain Glow</figcaption>
-                </figure>
-
-                <!-- 8 -->
-                <figure class="masonry-item reveal tilt" data-name="Forest Ember">
-                    <img data-src="./assets/images/havens/beyond-pic-8.jpg" alt="Forest Ember" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Forest Ember</figcaption>
-                </figure>
-
-                <!-- 9 -->
-                <figure class="masonry-item reveal tilt" data-name="Porcelain Glow 2">
-                    <img data-src="./assets/images/havens/beyond-pic-9.jpg" alt="Porcelain Glow 2" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Porcelain Glow 2</figcaption>
-                </figure>
-
-                <!-- 10 -->
-                <figure class="masonry-item reveal tilt" data-name="Amber Drift 2">
-                    <img data-src="./assets/images/havens/beyond-pic-11.jpg" alt="Amber Drift 2" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Amber Drift 2</figcaption>
-                </figure>
-
-                <!-- 11 -->
-                <figure class="masonry-item reveal tilt" data-name="Sea Glass 2">
-                    <img data-src="./assets/images/havens/beyond-pic-12.jpg" alt="Sea Glass 2" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Sea Glass 2</figcaption>
-                </figure>
-
-                <!-- 12 -->
-                <figure class="masonry-item reveal tilt" data-name="Citrus Bloom 2">
-                    <img data-src="./assets/images/havens/beyond-pic-13.jpg" alt="Citrus Bloom 2" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Citrus Bloom 2</figcaption>
-                </figure>
-
-                <!-- 13 -->
-                <figure class="masonry-item reveal tilt" data-name="Winter Hearth 2">
-                    <img data-src="./assets/images/havens/beyond-pic-14.jpg" alt="Winter Hearth 2" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Winter Hearth 2</figcaption>
-                </figure>
-
-                <!-- 14 -->
-                <figure class="masonry-item reveal tilt" data-name="Sandalwood Noir 2">
-                    <img data-src="./assets/images/havens/beyond-pic-15.jpg" alt="Sandalwood Noir 2" class="lozad" loading="lazy" />
-                    <figcaption class="caption">Sandalwood Noir 2</figcaption>
-                </figure>
-
-                <!-- you can add more items here if needed -->
-            </div>
-
-            <!-- Quote + CTA -->
-            <div class="mt-10 quote-box reveal">
-                <div class="md:flex md:justify-between md:items-center">
-                    <div>
-                        <blockquote class="text-xl md:text-2xl font-semibold">
-                            "Creativity has no boundaries, only new ways to express itself."
-                        </blockquote>
-                        <p class="text-gray-400 mt-3">
-                            To see more of my handcrafted work, visit
-                            <a href="https://instagram.com/mrhavens.co" target="_blank" rel="noopener" class="text-amber-300 underline">@mrhavens.co</a>
-                            on Instagram.
-                        </p>
-                    </div>
-
-                    <div class="mt-4 md:mt-0">
-                        <a href="https://instagram.com/mrhavens.co" target="_blank" rel="noopener" class="inline-block px-6 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-semibold shadow">View more on Instagram</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
 
-    \
     <!-- Footer -->
-    <footer class="w-full bg-[#18171A] border-t border-[#23232a] py-10">
-        <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
-            <nav class="flex gap-8 mb-4 text-gray-300 text-base">
-                <a href="./index.html">Home</a>
-                <a href="./work.html">Work</a>
-                <a href="./about.html">About</a>
-                <a href="./resume.html">Resume</a>
-                <a href="./beyond-uiux.html">Beyond UX</a>
-            </nav>
-            <div class="relative w-full flex justify-center mb-2 opacity-10 text-[5rem] tracking-widest font-bold">
-                JAGRITI SOOD
-            </div>
-            <p class="text-gray-500 text-sm mt-2">
-                &copy; 2025 All rights reserved.
-            </p>
-        </div>
-    </footer>
+    <footer></footer>
+    <!-- JS -->
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
 
     <div class="watermark"></div>
 
     <!-- Scripts -->
     <script>
-        // ---------------------------
-        // HERO SLIDESHOW (simple JS cycle + Ken Burns feel)
-        // ---------------------------
-        (function() {
-            const slides = Array.from(document.querySelectorAll(".hero-slide"));
-            if (!slides.length) return;
+      // ---------------------------
+      // HERO SLIDESHOW (simple JS cycle + Ken Burns feel)
+      // ---------------------------
+      (function () {
+        const slides = Array.from(document.querySelectorAll(".hero-slide"));
+        if (!slides.length) return;
 
-            let idx = 0;
-            let playing = true;
-            const interval = 4800; // time per slide
-            const playPauseBtn = document.getElementById("playPause");
-            const prevBtn = document.getElementById("prevBtn");
-            const nextBtn = document.getElementById("nextBtn");
+        let idx = 0;
+        let playing = true;
+        const interval = 4800; // time per slide
+        const playPauseBtn = document.getElementById("playPause");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
 
-            function show(i) {
-                slides.forEach((s, j) => {
-                    s.classList.toggle("active", j === i);
-                });
-            }
-
-            function next() {
-                idx = (idx + 1) % slides.length;
-                show(idx);
-            }
-
-            function prev() {
-                idx = (idx - 1 + slides.length) % slides.length;
-                show(idx);
-            }
-
-            show(idx);
-            let timer = setInterval(next, interval);
-
-            function togglePlay() {
-                playing = !playing;
-                if (playing) {
-                    timer = setInterval(next, interval);
-                    playPauseBtn.textContent = "Pause";
-                } else {
-                    clearInterval(timer);
-                    playPauseBtn.textContent = "Play";
-                }
-            }
-
-            playPauseBtn?.addEventListener("click", togglePlay);
-            prevBtn?.addEventListener("click", () => {
-                prev();
-                if (playing) {
-                    clearInterval(timer);
-                    timer = setInterval(next, interval);
-                }
-            });
-            nextBtn?.addEventListener("click", () => {
-                next();
-                if (playing) {
-                    clearInterval(timer);
-                    timer = setInterval(next, interval);
-                }
-            });
-
-            // pause on hover for accessibility
-            document.querySelector(".hero")?.addEventListener("mouseenter", () => {
-                if (playing) {
-                    clearInterval(timer);
-                }
-            });
-            document.querySelector(".hero")?.addEventListener("mouseleave", () => {
-                if (playing) {
-                    timer = setInterval(next, interval);
-                }
-            });
-        })();
-
-        // ---------------------------
-        // LAZY LOAD + REVEAL ON SCROLL (IntersectionObserver)
-        // ---------------------------
-        (function() {
-            const reveals = Array.from(document.querySelectorAll(".reveal"));
-            const images = Array.from(document.querySelectorAll("img.lozad"));
-
-            const io = new IntersectionObserver(
-                (entries, obs) => {
-                    entries.forEach((ent) => {
-                        if (ent.isIntersecting) {
-                            ent.target.classList.add("visible");
-                            obs.unobserve(ent.target);
-                        }
-                    });
-                }, {
-                    rootMargin: "0px 0px -80px 0px",
-                    threshold: 0.12
-                },
-            );
-
-            reveals.forEach((r) => io.observe(r));
-
-            // lazy images - swap data-src -> src when near viewport
-            const imgObserver = new IntersectionObserver(
-                (entries, obs) => {
-                    entries.forEach((e) => {
-                        if (e.isIntersecting) {
-                            const img = e.target;
-                            const src = img.getAttribute("data-src");
-                            if (src) {
-                                img.src = src;
-                                img.removeAttribute("data-src");
-                            }
-                            obs.unobserve(img);
-                        }
-                    });
-                }, {
-                    rootMargin: "0px 0px 200px 0px",
-                    threshold: 0.01
-                },
-            );
-
-            images.forEach((img) => imgObserver.observe(img));
-        })();
-
-        // ---------------------------
-        // TILT / SUBTLE 3D on pointer move for each masonry item
-        // ---------------------------
-        (function() {
-            const containers = document.querySelectorAll(".tilt");
-            containers.forEach((c) => {
-                c.addEventListener("pointermove", (ev) => {
-                    const rect = c.getBoundingClientRect();
-                    const px = (ev.clientX - rect.left) / rect.width;
-                    const py = (ev.clientY - rect.top) / rect.height;
-                    const rx = (py - 0.5) * 6; // rotateX degrees
-                    const ry = (px - 0.5) * -8; // rotateY degrees
-                    c.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`;
-                });
-                c.addEventListener("pointerleave", () => {
-                    c.style.transform = "";
-                });
-            });
-        })();
-
-        // ---------------------------
-        // small parallax for hero content on scroll
-        // ---------------------------
-        (function() {
-            const heroContent = document.querySelector(".hero-content");
-            window.addEventListener(
-                "scroll",
-                () => {
-                    const y = Math.min(window.scrollY, window.innerHeight);
-                    if (heroContent)
-                        heroContent.style.transform = `translateY(${y * 0.06}px)`;
-                }, {
-                    passive: true
-                },
-            );
-        })();
-
-        // Respect prefers-reduced-motion by disabling animations where appropriate
-        if (
-            window.matchMedia &&
-            window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ) {
-            document
-                .getElementById("playPause")
-                ?.setAttribute("aria-disabled", "true");
-            document
-                .querySelectorAll(".hero-slide")
-                .forEach((s) => (s.style.transition = "none"));
+        function show(i) {
+          slides.forEach((s, j) => {
+            s.classList.toggle("active", j === i);
+          });
         }
+
+        function next() {
+          idx = (idx + 1) % slides.length;
+          show(idx);
+        }
+
+        function prev() {
+          idx = (idx - 1 + slides.length) % slides.length;
+          show(idx);
+        }
+
+        show(idx);
+        let timer = setInterval(next, interval);
+
+        function togglePlay() {
+          playing = !playing;
+          if (playing) {
+            timer = setInterval(next, interval);
+            playPauseBtn.textContent = "Pause";
+          } else {
+            clearInterval(timer);
+            playPauseBtn.textContent = "Play";
+          }
+        }
+
+        playPauseBtn?.addEventListener("click", togglePlay);
+        prevBtn?.addEventListener("click", () => {
+          prev();
+          if (playing) {
+            clearInterval(timer);
+            timer = setInterval(next, interval);
+          }
+        });
+        nextBtn?.addEventListener("click", () => {
+          next();
+          if (playing) {
+            clearInterval(timer);
+            timer = setInterval(next, interval);
+          }
+        });
+
+        // pause on hover for accessibility
+        document.querySelector(".hero")?.addEventListener("mouseenter", () => {
+          if (playing) {
+            clearInterval(timer);
+          }
+        });
+        document.querySelector(".hero")?.addEventListener("mouseleave", () => {
+          if (playing) {
+            timer = setInterval(next, interval);
+          }
+        });
+      })();
+
+      // ---------------------------
+      // LAZY LOAD + REVEAL ON SCROLL (IntersectionObserver)
+      // ---------------------------
+      (function () {
+        const reveals = Array.from(document.querySelectorAll(".reveal"));
+        const images = Array.from(document.querySelectorAll("img.lozad"));
+
+        const io = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((ent) => {
+              if (ent.isIntersecting) {
+                ent.target.classList.add("visible");
+                obs.unobserve(ent.target);
+              }
+            });
+          },
+          {
+            rootMargin: "0px 0px -80px 0px",
+            threshold: 0.12,
+          },
+        );
+
+        reveals.forEach((r) => io.observe(r));
+
+        // lazy images - swap data-src -> src when near viewport
+        const imgObserver = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                const img = e.target;
+                const src = img.getAttribute("data-src");
+                if (src) {
+                  img.src = src;
+                  img.removeAttribute("data-src");
+                }
+                obs.unobserve(img);
+              }
+            });
+          },
+          {
+            rootMargin: "0px 0px 200px 0px",
+            threshold: 0.01,
+          },
+        );
+
+        images.forEach((img) => imgObserver.observe(img));
+      })();
+
+      // ---------------------------
+      // TILT / SUBTLE 3D on pointer move for each masonry item
+      // ---------------------------
+      (function () {
+        const containers = document.querySelectorAll(".tilt");
+        containers.forEach((c) => {
+          c.addEventListener("pointermove", (ev) => {
+            const rect = c.getBoundingClientRect();
+            const px = (ev.clientX - rect.left) / rect.width;
+            const py = (ev.clientY - rect.top) / rect.height;
+            const rx = (py - 0.5) * 6; // rotateX degrees
+            const ry = (px - 0.5) * -8; // rotateY degrees
+            c.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`;
+          });
+          c.addEventListener("pointerleave", () => {
+            c.style.transform = "";
+          });
+        });
+      })();
+
+      // ---------------------------
+      // small parallax for hero content on scroll
+      // ---------------------------
+      (function () {
+        const heroContent = document.querySelector(".hero-content");
+        window.addEventListener(
+          "scroll",
+          () => {
+            const y = Math.min(window.scrollY, window.innerHeight);
+            if (heroContent)
+              heroContent.style.transform = `translateY(${y * 0.06}px)`;
+          },
+          {
+            passive: true,
+          },
+        );
+      })();
+
+      // Respect prefers-reduced-motion by disabling animations where appropriate
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        document
+          .getElementById("playPause")
+          ?.setAttribute("aria-disabled", "true");
+        document
+          .querySelectorAll(".hero-slide")
+          .forEach((s) => (s.style.transition = "none"));
+      }
     </script>
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener("click", function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute("href"));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                    });
-                }
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
         });
+      });
     </script>
-</body>
-
+  </body>
 </html>

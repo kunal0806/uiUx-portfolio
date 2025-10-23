@@ -1,135 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Contact — Jagriti Sood</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <style>
-        .font-Modak {
-            font-family: 'Modak', cursive;
+      .font-Modak {
+        font-family: "Modak", cursive;
+      }
+
+      .font-inter {
+        font-family: "Inter", Arial, sans-serif;
+      }
+
+      /* Soft gradient shimmer background */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 30% 30%,
+            rgba(0, 0, 255, 0.08),
+            transparent 60%
+          ),
+          radial-gradient(
+            circle at 70% 70%,
+            rgba(255, 255, 255, 0.04),
+            transparent 60%
+          );
+        z-index: -1;
+        animation: float 12s ease-in-out infinite alternate;
+      }
+
+      @keyframes float {
+        from {
+          transform: translateY(0px);
         }
 
-        .font-inter {
-            font-family: 'Inter', Arial, sans-serif;
+        to {
+          transform: translateY(-30px);
         }
+      }
 
-        /* Soft gradient shimmer background */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(0, 0, 255, 0.08), transparent 60%),
-                radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.04), transparent 60%);
-            z-index: -1;
-            animation: float 12s ease-in-out infinite alternate;
-        }
+      /* Icon hover glow */
+      .social-icon {
+        transition: all 0.4s ease;
+      }
 
-        @keyframes float {
-            from {
-                transform: translateY(0px);
-            }
-
-            to {
-                transform: translateY(-30px);
-            }
-        }
-
-        /* Icon hover glow */
-        .social-icon {
-            transition: all 0.4s ease;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.15);
-            color: #60a5fa;
-            text-shadow: 0 0 12px rgba(96, 165, 250, 0.7);
-        }
+      .social-icon:hover {
+        transform: scale(1.15);
+        color: #60a5fa;
+        text-shadow: 0 0 12px rgba(96, 165, 250, 0.7);
+      }
     </style>
-</head>
+  </head>
 
-<body class="bg-[#18171A] text-white font-inter">
-
-    <!-- Header -->
-    <header class="w-full flex items-center justify-between px-8 py-4 bg-[#151417] sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
-        <a href="./index.html">
-            <div class="font-Modak text-white text-2xl font-bold">Jagriti Sood</div>
-        </a>
-        <nav class="flex items-center gap-8">
-            <a href="./work.html" class="text-white text-base hover:underline">Work</a>
-            <a href="./about.html" class="text-white text-base hover:underline">About</a>
-            <a href="./resume.html" class="text-white text-base hover:underline">Resume</a>
-            <a href="./beyond-uiux.html" class="text-white text-base hover:underline">Beyond UX</a>
-            <a href="./contact.html" class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95">Contact</a>
-        </nav>
-    </header>
+  <body class="bg-[#18171A] text-white font-inter">
+    <!-- Header (included dynamically) -->
+    <header></header>
 
     <!-- Contact Section -->
-    <section class="flex flex-col items-center justify-center text-center min-h-[80vh] px-6">
-        <div data-aos="fade-up">
-            <h1 class="text-5xl md:text-6xl font-Modak mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">Let's Connect</h1>
-            <p class="text-gray-400 max-w-md mx-auto mb-10 text-lg leading-relaxed">
-                Designer • Storyteller • Dreamer
-                <br>Based in India — crafting digital experiences with emotion & clarity.
-            </p>
-        </div>
+    <section
+      class="flex flex-col items-center justify-center text-center min-h-[80vh] px-6"
+    >
+      <div data-aos="fade-up">
+        <h1
+          class="text-5xl md:text-6xl font-Modak mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text"
+        >
+          Let's Connect
+        </h1>
+        <p class="text-gray-400 max-w-md mx-auto mb-10 text-lg leading-relaxed">
+          Designer • Storyteller • Dreamer
+          <br />
+          Based in India — crafting digital experiences with emotion & clarity.
+        </p>
+      </div>
 
-        <!-- Animated Social Icons -->
-        <div class="flex flex-wrap justify-center gap-10 mt-6" data-aos="fade-up" data-aos-delay="300">
-            <!-- Email -->
-            <a href="mailto:hello@jagritisood.com" class="group relative text-gray-300 social-icon">
-                <i class="ph ph-envelope-simple text-4xl"></i>
-                <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition">Email</span>
-            </a>
-            <!-- LinkedIn -->
-            <a href="https://linkedin.com/in/" target="_blank" class="group relative text-gray-300 social-icon">
-                <i class="ph ph-linkedin-logo text-4xl"></i>
-                <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition">LinkedIn</span>
-            </a>
-            <!-- Twitter -->
-            <a href="https://twitter.com/" target="_blank" class="group relative text-gray-300 social-icon">
-                <i class="ph ph-twitter-logo text-4xl"></i>
-                <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition">Twitter</span>
-            </a>
-            <!-- Behance -->
-            <a href="https://www.behance.net/jagritisood03" target="_blank" class="group relative text-gray-300 social-icon">
-                <i class="ph ph-behance-logo text-4xl"></i>
-                <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition">Behance</span>
-            </a>
-        </div>
-
-        <!-- Floating subtle name -->
-        <div class="mt-24 opacity-10 text-[4.5rem] tracking-[0.4em] font-bold select-none animate-pulse">JAGRITI SOOD</div>
+      <!-- Animated Social Icons -->
+      <div
+        class="flex flex-wrap justify-center gap-10 mt-6"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <!-- Email -->
+        <a
+          href="mailto:hello@jagritisood.com"
+          class="group relative text-gray-300 social-icon"
+        >
+          <i class="ph ph-envelope-simple text-4xl"></i>
+          <span
+            class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition"
+          >
+            Email
+          </span>
+        </a>
+        <!-- LinkedIn -->
+        <a
+          href="https://linkedin.com/in/"
+          target="_blank"
+          class="group relative text-gray-300 social-icon"
+        >
+          <i class="ph ph-linkedin-logo text-4xl"></i>
+          <span
+            class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition"
+          >
+            LinkedIn
+          </span>
+        </a>
+        <!-- Twitter -->
+        <a
+          href="https://twitter.com/"
+          target="_blank"
+          class="group relative text-gray-300 social-icon"
+        >
+          <i class="ph ph-twitter-logo text-4xl"></i>
+          <span
+            class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition"
+          >
+            Twitter
+          </span>
+        </a>
+        <!-- Behance -->
+        <a
+          href="https://www.behance.net/jagritisood03"
+          target="_blank"
+          class="group relative text-gray-300 social-icon"
+        >
+          <i class="ph ph-behance-logo text-4xl"></i>
+          <span
+            class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-gray-400 transition"
+          >
+            Behance
+          </span>
+        </a>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="w-full bg-[#18171A] border-t border-[#23232a] py-10">
-        <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
-            <nav class="flex gap-8 mb-4 text-gray-300 text-base">
-                <a href="./index.html">Home</a>
-                <a href="./work.html">Work</a>
-                <a href="./about.html">About</a>
-                <a href="./resume.html">Resume</a>
-                <a href="./beyond-uiux.html">Beyond UX</a>
-            </nav>
-            <p class="text-gray-500 text-sm mt-2">&copy; 2025 All rights reserved.</p>
+    <footer class="w-full bg-[#18171A] border-t border-[#23232a] py-10 mt-10">
+      <div
+        class="max-w-4xl mx-auto flex flex-col items-center gap-4 px-6 text-center"
+      >
+        <nav
+          class="flex flex-wrap justify-center gap-6 mb-4 text-gray-300 text-sm md:text-base"
+        >
+          <a href="./index.html" class="hover:text-white transition">Home</a>
+          <a href="./work.html" class="hover:text-white transition">Work</a>
+          <a href="./about.html" class="hover:text-white transition">About</a>
+          <a href="./resume.html" class="hover:text-white transition">Resume</a>
+          <a href="./beyond-uiux.html" class="hover:text-white transition">
+            Beyond UX
+          </a>
+        </nav>
+        <div
+          class="relative w-full flex justify-center mb-2 opacity-10 text-3xl md:text-[3.5rem] tracking-widest font-bold"
+        >
+          JAGRITI SOOD
         </div>
+        <p class="text-gray-500 text-sm">&copy; 2025 All rights reserved.</p>
+      </div>
     </footer>
 
-    <!-- JS -->
+    <!-- JS Includes -->
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            easing: 'ease-out-cubic',
-            once: true
-        });
+      AOS.init({
+        duration: 1000,
+        easing: "ease-out-cubic",
+        once: true,
+      });
     </script>
-</body>
-
+  </body>
 </html>

@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Work – Jagriti Sood Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,165 +8,192 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <style>
-        .font-Modak {
-            font-family: "Modak", cursive;
+      .font-Modak {
+        font-family: "Modak", cursive;
+      }
+
+      .font-inter {
+        font-family: "Inter", Arial, sans-serif;
+      }
+
+      .project-card {
+        transition:
+          transform 0.5s ease,
+          box-shadow 0.4s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
         }
 
-        .font-inter {
-            font-family: "Inter", Arial, sans-serif;
+        100% {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        .project-card {
-            transition:
-                transform 0.5s ease,
-                box-shadow 0.4s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        @keyframes fadeUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-up {
-            animation: fadeUp 1s ease-out forwards;
-            opacity: 0;
-        }
+      .fade-up {
+        animation: fadeUp 1s ease-out forwards;
+        opacity: 0;
+      }
     </style>
-</head>
+  </head>
 
-<body class="bg-[#18171A] text-white font-inter">
+  <body class="bg-[#18171A] text-white font-inter">
     <!-- Header -->
-    <header class="w-full flex items-center justify-between px-8 py-4 bg-[#151417] sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
-        <a href="./index.html">
-            <div class="font-Modak text-white text-2xl font-bold">
-                Jagriti Sood
-            </div>
-        </a>
-        <nav class="flex items-center gap-8">
-            <a href="./work.html" class="text-blue-400 font-semibold">Work</a>
-            <a href="./about.html" class="text-white hover:underline">About</a>
-            <a href="./resume.html" class="text-white hover:underline">Resume</a>
-            <a href="./beyond-uiux.html" class="text-white hover:underline">Beyond UX</a>
-            <a href="./contact.html" class="ml-8 px-4 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95">Contact</a>
-        </nav>
-    </header>
+    <header></header>
 
     <!-- Hero Section -->
     <section class="px-8 py-24 text-center max-w-4xl mx-auto fade-up">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6">
-            Work That Solves <span class="text-blue-400">Real Problems</span>
-        </h1>
-        <p class="text-gray-400 text-lg">
-            From healthcare to digital innovation, I design systems that empower
-            people and simplify complexity — blending empathy, usability, and
-            purpose.
-        </p>
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">
+        Work That Solves
+        <span class="text-blue-400">Real Problems</span>
+      </h1>
+      <p class="text-gray-400 text-lg">
+        From healthcare to digital innovation, I design systems that empower
+        people and simplify complexity — blending empathy, usability, and
+        purpose.
+      </p>
     </section>
 
     <!-- Case Studies -->
     <section class="max-w-6xl mx-auto px-6 pb-24 flex flex-col gap-20">
-        <!-- Project 1 -->
-        <div class="flex flex-col md:flex-row items-center gap-10 project-card bg-[#1b1b1f] p-8 rounded-2xl shadow-lg" data-aos="fade-up">
-            <img src="./assets/images/projects/101-preview.png" alt="101 Healthcare" class="w-full md:w-[45%] h-[320px] object-cover rounded-2xl border border-[#23232a]" />
-            <div class="flex-1">
-                <span class="inline-block mb-3 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">CASE STUDY</span>
-                <h2 class="text-3xl font-bold mb-3">101 Healthcare Website Design</h2>
-                <p class="text-gray-300 mb-4">
-                    Designed a compassionate, accessible home healthcare platform for
-                    families and seniors in Canada. Focused on empathy, trust, and
-                    seamless usability across devices.
-                </p>
-                <ul class="text-gray-400 text-sm mb-6 list-disc ml-5">
-                    <li>Empathetic design for seniors and caregivers</li>
-                    <li>43% increase in consultation inquiries</li>
-                    <li>Reduced user journey time by 35%</li>
-                </ul>
-                <a href="./case-101healthcare.html" class="inline-block px-6 py-3 rounded bg-blue-500 text-white font-medium hover:bg-blue-600 transition">View Case Study</a>
-            </div>
+      <!-- Project 1 -->
+      <div
+        class="flex flex-col md:flex-row items-center gap-10 project-card bg-[#1b1b1f] p-8 rounded-2xl shadow-lg"
+        data-aos="fade-up"
+      >
+        <img
+          src="./assets/images/projects/101-preview.png"
+          alt="101 Healthcare"
+          class="w-full md:w-[45%] h-[320px] object-cover rounded-2xl border border-[#23232a]"
+        />
+        <div class="flex-1">
+          <span
+            class="inline-block mb-3 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200"
+          >
+            CASE STUDY
+          </span>
+          <h2 class="text-3xl font-bold mb-3">101 Healthcare Website Design</h2>
+          <p class="text-gray-300 mb-4">
+            Designed a compassionate, accessible home healthcare platform for
+            families and seniors in Canada. Focused on empathy, trust, and
+            seamless usability across devices.
+          </p>
+          <ul class="text-gray-400 text-sm mb-6 list-disc ml-5">
+            <li>Empathetic design for seniors and caregivers</li>
+            <li>43% increase in consultation inquiries</li>
+            <li>Reduced user journey time by 35%</li>
+          </ul>
+          <a
+            href="./case-101healthcare.html"
+            class="inline-block px-6 py-3 rounded bg-blue-500 text-white font-medium hover:bg-blue-600 transition"
+          >
+            View Case Study
+          </a>
         </div>
+      </div>
 
-        <!-- Project 2 -->
-        <div class="flex flex-col md:flex-row-reverse items-center gap-10 project-card bg-[#1b1b1f] p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
-            <img src="./assets/images/projects/mapple-preview.png" alt="MapleCode Innovations" class="w-full md:w-[45%] h-[320px] object-cover rounded-2xl border border-[#23232a]" />
-            <div class="flex-1">
-                <span class="inline-block mb-3 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">CASE STUDY</span>
-                <h2 class="text-3xl font-bold mb-3">MapleCode Innovations Website</h2>
-                <p class="text-gray-300 mb-4">
-                    A modern, performance-driven site that redefined MapleCode’s digital
-                    identity — combining trust, speed, and clarity for clients across
-                    industries.
-                </p>
-                <ul class="text-gray-400 text-sm mb-6 list-disc ml-5">
-                    <li>Improved engagement by 32%</li>
-                    <li>Boosted inquiries by 38%</li>
-                    <li>Clear, modern and high-performing design</li>
-                </ul>
-                <a href="./case-maplecode.html" class="inline-block px-6 py-3 rounded bg-blue-500 text-white font-medium hover:bg-blue-600 transition">View Case Study</a>
-            </div>
+      <!-- Project 2 -->
+      <div
+        class="flex flex-col md:flex-row-reverse items-center gap-10 project-card bg-[#1b1b1f] p-8 rounded-2xl shadow-lg"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <img
+          src="./assets/images/projects/mapple-preview.png"
+          alt="MapleCode Innovations"
+          class="w-full md:w-[45%] h-[320px] object-cover rounded-2xl border border-[#23232a]"
+        />
+        <div class="flex-1">
+          <span
+            class="inline-block mb-3 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200"
+          >
+            CASE STUDY
+          </span>
+          <h2 class="text-3xl font-bold mb-3">MapleCode Innovations Website</h2>
+          <p class="text-gray-300 mb-4">
+            A modern, performance-driven site that redefined MapleCode’s digital
+            identity — combining trust, speed, and clarity for clients across
+            industries.
+          </p>
+          <ul class="text-gray-400 text-sm mb-6 list-disc ml-5">
+            <li>Improved engagement by 32%</li>
+            <li>Boosted inquiries by 38%</li>
+            <li>Clear, modern and high-performing design</li>
+          </ul>
+          <a
+            href="./case-maplecode.html"
+            class="inline-block px-6 py-3 rounded bg-blue-500 text-white font-medium hover:bg-blue-600 transition"
+          >
+            View Case Study
+          </a>
         </div>
+      </div>
 
-        <div class="flex flex-col md:flex-row items-center gap-10 project-card bg-[#1b1b1f] p-8 rounded-2xl shadow-lg" data-aos="fade-up">
-            <img src="./assets/images/projects/campaign.png" alt="101 Healthcare" class="w-full md:w-[45%] h-[320px] object-cover rounded-2xl border border-[#23232a]" />
-            <div class="flex-1">
-                <span class="inline-block mb-3 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200">CASE STUDY</span>
-                <h2 class="text-3xl font-bold mb-3">Campaign</h2>
-                <p class="text-gray-300 mb-4">
-The Campaigns project aimed to simplify the process of creating marketing campaigns in a SaaS product. <br>
-The challenge was to design a dashboard where marketers could easily configure campaign types, pacing, budgets, and creative assets — all
- while maintaining full visibility of performance in real time.
-
-
-                </p>
-                <a href="./case-campaign.html" class="inline-block px-6 py-3 rounded bg-blue-500 text-white font-medium hover:bg-blue-600 transition">View Case Study</a>
-            </div>
+      <div
+        class="flex flex-col md:flex-row items-center gap-10 project-card bg-[#1b1b1f] p-8 rounded-2xl shadow-lg"
+        data-aos="fade-up"
+      >
+        <img
+          src="./assets/images/projects/campaign.png"
+          alt="101 Healthcare"
+          class="w-full md:w-[45%] h-[320px] object-cover rounded-2xl border border-[#23232a]"
+        />
+        <div class="flex-1">
+          <span
+            class="inline-block mb-3 px-3 py-1 text-xs rounded bg-[#23232a] text-blue-200"
+          >
+            CASE STUDY
+          </span>
+          <h2 class="text-3xl font-bold mb-3">Campaign</h2>
+          <p class="text-gray-300 mb-4">
+            The Campaigns project aimed to simplify the process of creating
+            marketing campaigns in a SaaS product.
+            <br />
+            The challenge was to design a dashboard where marketers could easily
+            configure campaign types, pacing, budgets, and creative assets — all
+            while maintaining full visibility of performance in real time.
+          </p>
+          <a
+            href="./case-campaign.html"
+            class="inline-block px-6 py-3 rounded bg-blue-500 text-white font-medium hover:bg-blue-600 transition"
+          >
+            View Case Study
+          </a>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="w-full bg-[#18171A] border-t border-[#23232a] py-10">
-        <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
-            <nav class="flex gap-8 mb-4 text-gray-300 text-base">
-                <a href="./index.html">Home</a>
-                <a href="./work.html">Work</a>
-                <a href="./about.html">About</a>
-                <a href="./resume.html">Resume</a>
-                <a href="./beyond-uiux.html">Beyond UX</a>
-            </nav>
-            <div class="relative w-full flex justify-center mb-2 opacity-10 text-[5rem] tracking-widest font-bold">
-                JAGRITI SOOD
-            </div>
-            <p class="text-gray-500 text-sm mt-2">
-                &copy; 2025 All rights reserved.
-            </p>
-        </div>
-    </footer>
+    <footer></footer>
 
     <!-- JS -->
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            easing: "ease-out-cubic",
-            once: true,
-        });
+      AOS.init({
+        duration: 1000,
+        easing: "ease-out-cubic",
+        once: true,
+      });
     </script>
-</body>
-
+  </body>
 </html>
