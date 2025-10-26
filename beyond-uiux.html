@@ -385,35 +385,70 @@
     <!-- Header -->
     <header></header>
 
-    <!-- Hero -->
-    <section id="hero" class="hero-bg px-8 py-32 text-center relative min-h-screen flex items-center justify-center">
-      <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-      </div>
+<!-- Beyond UX Hero -->
+<section id="hero" class="hero-bg px-6 md:px-8 py-20 md:py-28 relative min-h-screen flex items-center justify-center">
+  <!-- Subtle Floating Shapes -->
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  
+  <div class="max-w-4xl mx-auto text-center relative z-10" data-aos="fade-up" data-aos-duration="1000">
+    <!-- Clean Badge -->
+    <div class="inline-block mb-6 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-400/20 backdrop-blur-sm">
+      <span class="text-amber-300 text-sm font-medium tracking-wide flex items-center justify-center gap-2">
+        <i class="fas fa-fire text-amber-400"></i>
+        Handcrafted Candles
+      </span>
+    </div>
+    
+    <!-- Main Heading -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+      Beyond 
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-green-400 block md:inline">
+        UX
+      </span>
+    </h1>
+
+    <!-- Description -->
+    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">
+      Where digital design meets tangible craft. Each hand-poured candle tells a story of scent, 
+      texture, and emotion, created with the same thoughtful approach I bring to user experiences.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="#gallery" class="group btn btn-primary">
+        <i class="fas fa-eye mr-3"></i>
+        Explore Collection
+        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+      </a>
       
-      <div class="hero-content max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
-        <span class="candle-tag">
-          <i class="fas fa-fire mr-2"></i> Handcrafted Candles & Objects
-        </span>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight title-shimmer">
-          Beyond <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-green-400">UX</span>
-        </h1>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
-          Where digital design meets tangible craft. Each hand-poured candle tells a story of scent, texture, and emotion, created with the same thoughtful approach I bring to user experiences.
-        </p>
-        <div class="flex flex-wrap gap-4 justify-center">
-          <a href="#gallery" class="btn btn-primary explore-btn">
-            <i class="fas fa-eye"></i> Explore Collection
-          </a>
-          <a href="#story" class="btn btn-outline">
-            <i class="fas fa-book-open"></i> The Story
-          </a>
-        </div>
+      <a href="#story" class="group btn btn-outline">
+        <i class="fas fa-book-open mr-3"></i>
+        The Story
+      </a>
+    </div>
+
+    <!-- Stats Bar - Candle Making -->
+    <div class="flex justify-center gap-8 md:gap-12 mt-16 pt-8 border-t border-gray-800/50">
+      <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-xl md:text-2xl font-bold text-amber-300">50+</div>
+        <div class="text-gray-400 text-sm">Scents Created</div>
       </div>
-      
-       <!-- Simple Scroll Indicator -->
+      <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-xl md:text-2xl font-bold text-green-300">100%</div>
+        <div class="text-gray-400 text-sm">Natural Wax</div>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="text-xl md:text-2xl font-bold text-amber-300">3Y</div>
+        <div class="text-gray-400 text-sm">Crafting</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simple Scroll Indicator -->
   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
     <div class="flex flex-col items-center">
       <span class="text-gray-500 text-sm mb-2">Scroll to explore</span>
@@ -422,7 +457,7 @@
       </div>
     </div>
   </div>
-    </section>
+</section>
 
     <!-- Story -->
     <section id="story" class="section">
@@ -476,7 +511,7 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
           <img src="./assets/images/havens/beyond-pic-1.jpg" alt="Amber Drift" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Amber Drift</span>
+
             <h3 class="text-xl font-bold mb-2">Warm & Earthy</h3>
             <p class="text-gray-300 text-sm mb-3">A comforting blend that feels like coming home</p>
             <div class="scent-profile">
@@ -491,7 +526,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
           <img src="./assets/images/havens/beyond-pic-2.jpg" alt="Sea Glass" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Sea Glass</span>
             <h3 class="text-xl font-bold mb-2">Fresh & Oceanic</h3>
             <p class="text-gray-300 text-sm mb-3">Evokes coastal mornings and salty breezes</p>
             <div class="scent-profile">
@@ -506,7 +540,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
           <img src="./assets/images/havens/beyond-pic-3.jpg" alt="Citrus Bloom" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Citrus Bloom</span>
             <h3 class="text-xl font-bold mb-2">Zesty & Uplifting</h3>
             <p class="text-gray-300 text-sm mb-3">Brightens any space with vibrant energy</p>
             <div class="scent-profile">
@@ -521,7 +554,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
           <img src="./assets/images/havens/beyond-pic-4.jpg" alt="Winter Hearth" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Winter Hearth</span>
             <h3 class="text-xl font-bold mb-2">Cozy & Spiced</h3>
             <p class="text-gray-300 text-sm mb-3">The scent of crackling fires and warm blankets</p>
             <div class="scent-profile">
@@ -536,7 +568,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
           <img src="./assets/images/havens/beyond-pic-5.jpg" alt="Sandalwood Noir" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Sandalwood Noir</span>
             <h3 class="text-xl font-bold mb-2">Mysterious & Rich</h3>
             <p class="text-gray-300 text-sm mb-3">Deep, complex, and utterly captivating</p>
             <div class="scent-profile">
@@ -551,7 +582,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="350">
           <img src="./assets/images/havens/beyond-pic-6.jpg" alt="Herbal Garden" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Herbal Garden</span>
             <h3 class="text-xl font-bold mb-2">Green & Revitalizing</h3>
             <p class="text-gray-300 text-sm mb-3">Fresh-picked herbs and earthy tones</p>
             <div class="scent-profile">
@@ -567,7 +597,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
           <img src="./assets/images/havens/beyond-pic-7.jpg" alt="Porcelain Glow" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Porcelain Glow</span>
             <h3 class="text-xl font-bold mb-2">Clean & Delicate</h3>
             <p class="text-gray-300 text-sm mb-3">Subtle elegance in scent and form</p>
             <div class="scent-profile">
@@ -582,7 +611,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
           <img src="./assets/images/havens/beyond-pic-8.jpg" alt="Forest Ember" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Forest Ember</span>
             <h3 class="text-xl font-bold mb-2">Woodsy & Warm</h3>
             <p class="text-gray-300 text-sm mb-3">Campfire memories and pine forests</p>
             <div class="scent-profile">
@@ -597,7 +625,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
           <img src="./assets/images/havens/beyond-pic-9.jpg" alt="Golden Hour" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Golden Hour</span>
             <h3 class="text-xl font-bold mb-2">Warm & Honeyed</h3>
             <p class="text-gray-300 text-sm mb-3">The golden light of sunset captured in scent</p>
             <div class="scent-profile">
@@ -612,7 +639,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
           <img src="./assets/images/havens/beyond-pic-10.jpg" alt="Midnight Bloom" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Midnight Bloom</span>
             <h3 class="text-xl font-bold mb-2">Floral & Mysterious</h3>
             <p class="text-gray-300 text-sm mb-3">Night-blooming flowers under moonlight</p>
             <div class="scent-profile">
@@ -627,7 +653,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
           <img src="./assets/images/havens/beyond-pic-11.jpg" alt="Coastal Mist" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Coastal Mist</span>
             <h3 class="text-xl font-bold mb-2">Fresh & Aquatic</h3>
             <p class="text-gray-300 text-sm mb-3">Ocean spray and morning fog</p>
             <div class="scent-profile">
@@ -642,7 +667,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="350">
           <img src="./assets/images/havens/beyond-pic-12.jpg" alt="Spiced Chai" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Spiced Chai</span>
             <h3 class="text-xl font-bold mb-2">Warm & Spiced</h3>
             <p class="text-gray-300 text-sm mb-3">Comforting blend of tea and spices</p>
             <div class="scent-profile">
@@ -657,7 +681,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
           <img src="./assets/images/havens/beyond-pic-13.jpg" alt="Vanilla Cloud" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Vanilla Cloud</span>
             <h3 class="text-xl font-bold mb-2">Sweet & Creamy</h3>
             <p class="text-gray-300 text-sm mb-3">Soft, comforting vanilla dreamscape</p>
             <div class="scent-profile">
@@ -672,7 +695,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
           <img src="./assets/images/havens/beyond-pic-14.jpg" alt="Fig & Laurel" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Fig & Laurel</span>
             <h3 class="text-xl font-bold mb-2">Fruity & Green</h3>
             <p class="text-gray-300 text-sm mb-3">Mediterranean garden in full bloom</p>
             <div class="scent-profile">
@@ -687,7 +709,6 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
           <img src="./assets/images/havens/beyond-pic-15.jpg" alt="Ember Glow" />
           <div class="gallery-overlay">
-            <span class="candle-tag">Ember Glow</span>
             <h3 class="text-xl font-bold mb-2">Smoky & Sweet</h3>
             <p class="text-gray-300 text-sm mb-3">The last embers of a dying fire</p>
             <div class="scent-profile">
@@ -718,8 +739,9 @@
                   rel="noopener"
                   class="text-amber-300 underline hover:text-amber-200 transition"
                 >
-                  @mrhavens.co on Instagram
+                  @mrhavens.co
                 </a>
+                 on Instagram
               </p>
             </div>
             <a
