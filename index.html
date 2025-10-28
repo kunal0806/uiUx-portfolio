@@ -41,96 +41,97 @@
       html {
         scroll-behavior: smooth;
       }
+      
       /* Clean Hero Background */
-.hero-bg {
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08), transparent 25%),
-    radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.05), transparent 25%),
-    linear-gradient(to bottom, #0a0a0c, #18171A);
-  position: relative;
-  overflow: hidden;
-}
+      .hero-bg {
+        background: 
+          radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08), transparent 25%),
+          radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.05), transparent 25%),
+          linear-gradient(to bottom, #0a0a0c, #18171A);
+        position: relative;
+        overflow: hidden;
+      }
 
-/* More Subtle Floating Shapes */
-.shape {
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(45deg, var(--primary), var(--accent));
-  opacity: 0.05;
-  filter: blur(30px);
-}
+      /* More Subtle Floating Shapes */
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(45deg, var(--primary), var(--accent));
+        opacity: 0.05;
+        filter: blur(30px);
+      }
 
-.shape-1 {
-  width: 200px;
-  height: 200px;
-  top: 15%;
-  left: 10%;
-  animation: float-subtle 20s ease-in-out infinite;
-}
+      .shape-1 {
+        width: 200px;
+        height: 200px;
+        top: 15%;
+        left: 10%;
+        animation: float-subtle 20s ease-in-out infinite;
+      }
 
-.shape-2 {
-  width: 150px;
-  height: 150px;
-  top: 65%;
-  right: 15%;
-  animation: float-subtle 25s ease-in-out infinite reverse;
-}
+      .shape-2 {
+        width: 150px;
+        height: 150px;
+        top: 65%;
+        right: 15%;
+        animation: float-subtle 25s ease-in-out infinite reverse;
+      }
 
-.shape-3 {
-  width: 180px;
-  height: 180px;
-  bottom: 25%;
-  left: 25%;
-  animation: float-subtle 30s ease-in-out infinite;
-}
+      .shape-3 {
+        width: 180px;
+        height: 180px;
+        bottom: 25%;
+        left: 25%;
+        animation: float-subtle 30s ease-in-out infinite;
+      }
 
-@keyframes float-subtle {
-  0%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(10px, -10px, 0);
-  }
-}
+      @keyframes float-subtle {
+        0%, 100% {
+          transform: translate3d(0, 0, 0);
+        }
+        50% {
+          transform: translate3d(10px, -10px, 0);
+        }
+      }
 
-/* Professional Button Styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.875rem 1.75rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-}
+      /* Professional Button Styles */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.875rem 1.75rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+      }
 
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: white;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
-}
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        color: white;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+      }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
-}
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+      }
 
-.btn-outline {
-  background: rgba(30, 30, 36, 0.7);
-  color: var(--light);
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-}
+      .btn-outline {
+        background: rgba(30, 30, 36, 0.7);
+        color: var(--light);
+        border: 1.5px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+      }
 
-.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
       
       @keyframes float-3d {
         0%, 100% {
@@ -274,86 +275,189 @@
         transform: scale(1.05) rotate(1deg);
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
       }
+
+      /* Mobile-specific fixes */
+      @media (max-width: 768px) {
+        /* Hero section mobile fixes */
+        .hero-bg {
+          padding: 3rem 1rem;
+        }
+        
+        .hero-bg h1 {
+          font-size: 2.5rem !important;
+          line-height: 1.2 !important;
+        }
+        
+        .hero-bg p {
+          font-size: 1.1rem !important;
+          padding: 0 0.5rem;
+        }
+        
+        /* Project preview section mobile fixes */
+        .project-preview {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        
+        .project-preview img {
+          width: 100% !important;
+          max-width: 300px;
+          height: auto !important;
+        }
+        
+        /* Work section mobile fixes */
+        .work-card {
+          flex-direction: column !important;
+        }
+        
+        .work-card .flex-1:last-child {
+          margin-top: 1.5rem;
+        }
+        
+        /* About section mobile fixes */
+        .about-section {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .about-section img {
+          margin-top: 2rem;
+          width: 280px !important;
+          height: 280px !important;
+        }
+        
+        /* Process section mobile fixes */
+        .process-grid {
+          grid-template-columns: 1fr !important;
+        }
+        
+        /* Testimonials mobile fixes */
+        .testimonials-grid {
+          grid-template-columns: 1fr !important;
+        }
+        
+        /* General mobile spacing */
+        section {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+        
+        .enhanced-card {
+          padding: 1.5rem !important;
+        }
+        
+        /* Stats bar mobile fixes */
+        .stats-bar {
+          gap: 2rem !important;
+          flex-wrap: wrap;
+        }
+        
+        .stats-bar > div {
+          flex: 1 0 30%;
+          min-width: 100px;
+        }
+      }
+
+      /* Additional mobile optimizations for very small screens */
+      @media (max-width: 480px) {
+        .hero-bg h1 {
+          font-size: 2rem !important;
+        }
+        
+        .btn {
+          padding: 0.75rem 1.5rem;
+          font-size: 0.9rem;
+        }
+        
+        .stats-bar {
+          gap: 1.5rem !important;
+        }
+        
+        .stats-bar > div {
+          flex: 1 0 45%;
+        }
+      }
     </style>
   </head>
 
   <body class="bg-[#18171A] text-white font-inter">
     <header></header>
 
-<!-- Enhanced Hero Section -->
-<section class="px-8 py-20 md:py-28 flex flex-col items-center text-center relative overflow-hidden hero-bg">
-  <!-- Subtle Floating Shapes -->
-  <div class="floating-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-  </div>
-  
-  <div class="max-w-4xl mx-auto relative z-10" data-aos="fade-up" data-aos-duration="1000">
-    <!-- Clean Badge -->
-    <div class="inline-block mb-6 px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700 backdrop-blur-sm">
-      <span class="text-gray-300 text-sm font-medium tracking-wide">WHO I AM</span>
-    </div>
-    
-    <!-- Main Heading -->
-    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-      <span class="block text-white mb-2">Hi, I'm Jagriti,</span>
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-300">
-        and I design like it's my superpower.
-      </span>
-    </h1>
-
-    <!-- Description -->
-    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
-      From zero-to-system, I build digital tools that work hard and feel simple. 
-      If users love it and the devs don't cry, that's my kind of success.
-    </p>
-
-    <!-- CTA Buttons -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a href="./work.html" class="group btn btn-primary">
-        <i class="fas fa-briefcase mr-3"></i>
-        View Work
-        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
-      </a>
+    <!-- Enhanced Hero Section -->
+    <section class="px-4 md:px-8 py-16 md:py-28 flex flex-col items-center text-center relative overflow-hidden hero-bg">
+      <!-- Subtle Floating Shapes -->
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
       
-      <a href="./assets/files/Jagriti-Sood-Resume.pdf" download 
-         class="group btn btn-outline">
-        <i class="fas fa-download mr-3"></i>
-        Download CV
-      </a>
-    </div>
+      <div class="max-w-4xl mx-auto relative z-10" data-aos="fade-up" data-aos-duration="1000">
+        <!-- Clean Badge -->
+        <div class="inline-block mb-6 px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700 backdrop-blur-sm">
+          <span class="text-gray-300 text-sm font-medium tracking-wide">WHO I AM</span>
+        </div>
+        
+        <!-- Main Heading -->
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+          <span class="block text-white mb-2">Hi, I'm Jagriti,</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-300">
+            and I design like it's my superpower.
+          </span>
+        </h1>
 
-    <!-- Stats Bar - More Subtle -->
-    <div class="flex justify-center gap-12 mt-16 pt-8 border-t border-gray-800">
-      <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="text-2xl font-bold text-white">5+</div>
-        <div class="text-sm text-gray-400">Years Experience</div>
-      </div>
-      <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="text-2xl font-bold text-white">50+</div>
-        <div class="text-sm text-gray-400">Projects</div>
-      </div>
-      <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-        <div class="text-2xl font-bold text-white">100%</div>
-        <div class="text-sm text-gray-400">Satisfaction</div>
-      </div>
-    </div>
-  </div>
+        <!-- Description -->
+        <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
+          From zero-to-system, I build digital tools that work hard and feel simple. 
+          If users love it and the devs don't cry, that's my kind of success.
+        </p>
 
-  <!-- Simple Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-    <div class="flex flex-col items-center">
-      <span class="text-gray-500 text-sm mb-2">Scroll to explore</span>
-      <div class="w-5 h-8 border border-gray-600 rounded-full flex justify-center">
-        <div class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"></div>
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="./work.html" class="group btn btn-primary">
+            <i class="fas fa-briefcase mr-3"></i>
+            View Work
+            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+          </a>
+          
+          <a href="./assets/files/Jagriti-Sood-Resume.pdf" download 
+             class="group btn btn-outline">
+            <i class="fas fa-download mr-3"></i>
+            Download CV
+          </a>
+        </div>
+
+        <!-- Stats Bar - More Subtle -->
+        <div class="flex justify-center gap-8 md:gap-12 mt-12 md:mt-16 pt-6 md:pt-8 border-t border-gray-800 stats-bar">
+          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-2xl font-bold text-white">5+</div>
+            <div class="text-sm text-gray-400">Years Experience</div>
+          </div>
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-2xl font-bold text-white">50+</div>
+            <div class="text-sm text-gray-400">Projects</div>
+          </div>
+          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-2xl font-bold text-white">100%</div>
+            <div class="text-sm text-gray-400">Satisfaction</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+
+      <!-- Simple Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div class="flex flex-col items-center">
+          <span class="text-gray-500 text-sm mb-2">Scroll to explore</span>
+          <div class="w-5 h-8 border border-gray-600 rounded-full flex justify-center">
+            <div class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Sneak Peek Projects (Images row)-->
     <section
-      class="px-8 pt-8 pb-12 bg-[#18171A] max-w-4xl mx-auto"
+      class="px-4 md:px-8 pt-8 pb-12 bg-[#18171A] max-w-4xl mx-auto"
       data-aos="fade-up"
     >
       <h2 class="text-xl font-bold mb-2">A sneak peek into my Projects</h2>
@@ -362,10 +466,10 @@
         full case studies to explore the details behind each design.
       </p>
       <section class="w-full flex justify-center items-center mt-10">
-        <div class="relative flex gap-8 items-center">
+        <div class="relative flex flex-col md:flex-row gap-4 md:gap-8 items-center project-preview">
           <!-- Left -->
           <img id="leftImg"
-            class="w-[260px] h-[160px] rounded-xl object-cover opacity-70 scale-90 transition-all duration-700 shadow-lg enhanced-image"
+            class="w-full max-w-[260px] h-auto rounded-xl object-cover opacity-70 scale-90 transition-all duration-700 shadow-lg enhanced-image"
             src="./assets/images/projects/Maplecode-Thumbnail.png" alt="Left Image" />
 
           <!-- Center -->
@@ -374,13 +478,13 @@
               class="absolute -inset-1 rounded-xl blur opacity-75 animate-pulse">
             </div>
             <img id="centerImg"
-              class="relative w-[300px] h-[180px] rounded-xl object-cover scale-110 transition-all duration-700 shadow-2xl border border-gray-600 enhanced-image"
+              class="relative w-full max-w-[300px] h-auto rounded-xl object-cover scale-110 transition-all duration-700 shadow-2xl border border-gray-600 enhanced-image"
               src="./assets/images/projects/101-Thumbnail.png" alt="Center Image" />
           </div>
 
           <!-- Right -->
           <img id="rightImg"
-            class="w-[260px] h-[160px] rounded-xl object-cover opacity-70 scale-90 transition-all duration-700 shadow-lg enhanced-image"
+            class="w-full max-w-[260px] h-auto rounded-xl object-cover opacity-70 scale-90 transition-all duration-700 shadow-lg enhanced-image"
             src="./assets/images/projects/campaign.png" alt="Right Image" />
         </div>
       </section>
@@ -388,7 +492,7 @@
 
     <!-- Work Problem-Solving Adventures + Projects Grid -->
     <section
-      class="px-8 pb-14 bg-[#18171A] max-w-4xl mx-auto"
+      class="px-4 md:px-8 pb-14 bg-[#18171A] max-w-4xl mx-auto"
       data-aos="fade-up"
     >
       <span
@@ -397,7 +501,7 @@
         WORK
       </span>
 
-      <div class="flex items-center justify-between mb-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-4">
         <h2 class="text-2xl font-bold">
           My Favourite Problem-
           <br class="sm:hidden" />
@@ -413,13 +517,13 @@
       <p class="text-gray-400 text-lg max-w-2xl mb-10">
         Get a closer look at the projects where I rolled up my sleeves, asked
         the
-        <br />
+        <br class="hidden sm:block" />
         right Questions, and made complexity feed simple
       </p>
       <div class="max-w-3xl w-full mx-auto flex flex-col gap-8">
         <!-- Card 1 -->
         <div
-          class="enhanced-card flex flex-col md:flex-row gap-6"
+          class="enhanced-card flex flex-col md:flex-row gap-6 work-card"
           data-aos="fade-up"
         >
           <div class="flex-1 flex flex-col gap-4 justify-between">
@@ -466,7 +570,7 @@
                   <img
                     src="./assets/images/projects/101-Thumbnail.png"
                     alt="101 Healthcare Website Preview"
-                    class="w-[300px] h-[160px] object-cover rounded-xl shadow enhanced-image"
+                    class="w-full max-w-[300px] h-auto object-cover rounded-xl shadow enhanced-image"
                   />
                 </a>
               </div>
@@ -476,7 +580,7 @@
 
         <!-- Card 2 -->
         <div
-          class="enhanced-card flex flex-col md:flex-row gap-6"
+          class="enhanced-card flex flex-col md:flex-row gap-6 work-card"
           data-aos="fade-up"
           data-aos-delay="100"
         >
@@ -520,7 +624,7 @@
                   <img
                     src="./assets/images/projects/Maplecode-Thumbnail.png"
                     alt="101 Healthcare Website Preview"
-                    class="w-[300px] h-[160px] object-cover rounded-xl shadow enhanced-image"
+                    class="w-full max-w-[300px] h-auto object-cover rounded-xl shadow enhanced-image"
                   />
                 </a>
               </div>
@@ -530,7 +634,7 @@
 
         <!-- Card 3 -->
         <div
-          class="enhanced-card flex flex-col md:flex-row gap-6"
+          class="enhanced-card flex flex-col md:flex-row gap-6 work-card"
           data-aos="fade-up"
           data-aos-delay="200"
         >
@@ -574,7 +678,7 @@
                   <img
                     src="./assets/images/projects/campaign.png"
                     alt="101 Healthcare Website Preview"
-                    class="w-[300px] h-[160px] object-cover rounded-xl shadow enhanced-image"
+                    class="w-full max-w-[300px] h-auto object-cover rounded-xl shadow enhanced-image"
                   />
                 </a>
               </div>
@@ -586,7 +690,7 @@
 
     <!-- Design Process -->
     <section
-      class="px-8 py-14 bg-[#18171A] max-w-4xl mx-auto"
+      class="px-4 md:px-8 py-14 bg-[#18171A] max-w-4xl mx-auto"
       data-aos="fade-up"
     >
       <span
@@ -601,7 +705,7 @@
         Every project is unique, but the path to great design is built on a
         clear and thoughtful approach.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 process-grid">
         <div class="enhanced-card" data-aos="fade-up" data-aos-delay="100">
           <span class="block text-lg font-bold mb-2 text-blue-300">01. DISCOVER</span>
           <p class="text-gray-400">
@@ -635,7 +739,7 @@
 
     <!-- About Section -->
     <section
-      class="px-8 py-16 bg-[#18171A] flex flex-col md:flex-row gap-10 items-center max-w-4xl mx-auto"
+      class="px-4 md:px-8 py-16 bg-[#18171A] flex flex-col md:flex-row gap-10 items-center max-w-4xl mx-auto about-section"
       data-aos="fade-up"
     >
       <div class="flex-1">
@@ -678,7 +782,7 @@
 
     <!-- Recommendations -->
     <section
-      class="px-8 py-14 bg-[#18171A] max-w-4xl mx-auto"
+      class="px-4 md:px-8 py-14 bg-[#18171A] max-w-4xl mx-auto"
       data-aos="fade-up"
     >
       <span
@@ -691,7 +795,7 @@
         Recommendations from my previous employers who've seen my work in
         action.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 testimonials-grid">
         <!-- Testimonial 1 -->
         <div class="enhanced-card" data-aos="fade-up" data-aos-delay="100">
           <span class="text-gray-500 text-2xl mb-4 block">"</span>
@@ -761,6 +865,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/include.js"></script>
     <script src="assets/js/script.js"></script>
+    
+        <!-- AI Bot (Optional - Remove to disable) -->
+    <link rel="stylesheet" href="assets/css/ai-bot.css">
+    <script src="assets/js/ai-bot.js"></script>
 
     <script>
       AOS.init({

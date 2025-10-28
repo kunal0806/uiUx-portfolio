@@ -1,81 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jagriti Sood</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+    .font-Modak { font-family: 'Modak', cursive; }
+
+    /* ── Arrow to X Hamburger ── */
+    .hamburger-arrow {
+      width: 30px; height: 20px; position: relative; cursor: pointer;
+    }
+    .hamburger-arrow span {
+      display: block; height: 3px; background: #fff; border-radius: 2px;
+      position: absolute; left: 0;
+      transition: all .35s cubic-bezier(.68,-.55,.27,1.55);
+    }
+    .hamburger-arrow span:nth-child(1) { top: 0; width: 60%; left: 40%; }
+    .hamburger-arrow span:nth-child(2) { top: 8px; }
+    .hamburger-arrow span:nth-child(3) { top: 16px; width: 60%; }
+
+    .hamburger-arrow.active span:nth-child(1) {
+      width: 100%; left: 0; transform: rotate(45deg); top: 8px;
+    }
+    .hamburger-arrow.active span:nth-child(2) { opacity: 0; }
+    .hamburger-arrow.active span:nth-child(3) {
+      width: 100%; left: 0; transform: rotate(-45deg); top: 8px;
+    }
+
+    /* ── Enhanced Right Drawer Menu with Gradient ── */
+    #mobile-menu {
+      position: fixed; top: 0; right: 0;
+      width: 85%; max-width: 340px; height: 100%;
+      background: linear-gradient(135deg, 
+        rgba(5, 5, 43, 0.98) 0%,
+        rgba(3, 2, 20, 0.95) 30%,
+        rgba(11, 11, 11, 0.97) 70%,
+        rgba(1, 9, 33, 0.98) 100%);
+      backdrop-filter: blur(25px);
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: -12px 0 40px rgba(0,0,0,0.4);
+      z-index: 999;
+      padding: 2rem 1.5rem;
+      display: flex; flex-direction: column;
+      overflow-y: auto;
+      border-left: 1px solid rgba(255,255,255,0.1);
+    }
+    #mobile-menu.open { transform: translateX(0); }
+
+    /* ── SMOOTH ANIMATED CLOSE BUTTON ── */
+    #close-menu {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .close-icon {
+      position: relative;
+      width: 20px;
+      height: 20px;
+    }
+
+    .close-icon span {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      border-radius: 1px;
+      top: 50%;
+      left: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: center;
+    }
+
+    .close-icon span:nth-child(1) {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .close-icon span:nth-child(2) {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+    #close-menu:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    #close-menu:hover .close-icon span {
+      background: #fff;
+      transform: translateY(-50%) rotate(0deg);
+    }
+
+    #close-menu:hover .close-icon span:nth-child(1) {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    /* ── Backdrop ── */
+    #menu-backdrop {
+      position: fixed; inset: 0; 
+      background: linear-gradient(135deg, 
+        rgba(0,0,0,0.7) 0%,
+        rgba(0,0,0,0.5) 100%);
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.4s, visibility 0.4s;
+      z-index: 998;
+      backdrop-filter: blur(8px);
+    }
+    #menu-backdrop.open { opacity: 1; visibility: visible; }
+
+    /* ── Profile Section ── */
+    .profile-section {
+      background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.15) 0%,
+        rgba(51, 100, 197, 0.15) 100%);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(121, 88, 227, 0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(180deg); }
+    }
+
+    .profile-logo {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      border: 3px solid rgba(255,255,255,0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── Enhanced Menu Links ── */
+    .menu-link {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      color: #e5e7eb;
+      font-size: 1.125rem;
+      font-weight: 500;
+      border-radius: 14px;
+      transition: all 0.3s ease;
+      margin-bottom: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-link::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .menu-link:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      transform: translateX(8px);
+    }
+
+    .menu-link:hover::before {
+      transform: scaleY(1);
+    }
+
+    /* ── Enhanced Contact Button ── */
+    #mobile-contact-btn {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border: none;
+      border-radius: 16px;
+      padding: 1.25rem 2rem;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+    }
+
+    #mobile-contact-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    #mobile-contact-btn:hover::before {
+      left: 100%;
+    }
+
+    #mobile-contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(59, 130, 246, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-[#0f0f12]">
+
 <!-- Header -->
-<header
-  class="w-full flex items-center justify-between px-8 py-4 bg-[#151417] sticky top-0 z-50 backdrop-blur-md bg-opacity-90"
->
-  <!-- Logo with text stroke -->
-  <a href="./index.html">
-    <div
-      class="font-Modak text-3xl font-bold text-white italic"
-      style="-webkit-text-stroke: 1px #2b2b2f; color:white transparent;"
-    >
+<header class="w-full flex items-center justify-between px-6 py-4 bg-[#151417]/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/5">
+  <a href="./index.html" class="group">
+    <div class="font-Modak text-3xl font-bold text-white italic tracking-tight"
+         style="-webkit-text-stroke: 1px #2b2b2f; color: white;">
       Jagriti Sood
     </div>
   </a>
 
   <!-- Desktop Nav -->
   <nav class="hidden md:flex items-center gap-8">
-    <a href="./work.html" class="text-white text-base hover:underline">Work</a>
-    <a href="./about.html" class="text-white text-base hover:underline">About</a>
-    <a href="./resume.html" class="text-white text-base hover:underline">Resume</a>
-    <a href="./beyond-uiux.html" class="text-white text-base hover:underline">Beyond UX</a>
-   <button
-  class="ml-8 px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold tracking-wide shadow-md hover:from-blue-600 hover:to-blue-800 transition-transform active:scale-95 focus:ring-2 focus:ring-blue-300 outline-none"
-  id="contact-btn"
->
-  Contact
-</button>
-
+    <a href="./work.html" class="text-gray-300 hover:text-white text-base font-medium transition-colors duration-200 hover:underline underline-offset-4">Work</a>
+    <a href="./about.html" class="text-gray-300 hover:text-white text-base font-medium transition-colors duration-200 hover:underline underline-offset-4">About</a>
+    <a href="./resume.html" class="text-gray-300 hover:text-white text-base font-medium transition-colors duration-200 hover:underline underline-offset-4">Resume</a>
+    <a href="./beyond-uiux.html" class="text-gray-300 hover:text-white text-base font-medium transition-colors duration-200 hover:underline underline-offset-4">Beyond UX</a>
+    
+    <button class="ml-6 px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold text-sm tracking-wide shadow-lg hover:shadow-blue-500/25 hover:from-blue-600 hover:to-blue-700 transform transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#151417]"
+            id="contact-btn">
+      Contact
+    </button>
   </nav>
 
-  <!-- Mobile Menu Button -->
-  <button
-    id="menu-btn"
-    class="md:hidden text-white text-3xl focus:outline-none"
-  >
-    ☰
+  <!-- Mobile Menu Toggle (Arrow to X) -->
+  <button id="menu-btn" class="md:hidden z-50" aria-label="Open menu">
+    <div class="hamburger-arrow">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </button>
 </header>
 
-<!-- Mobile Menu -->
-<div
-  id="mobile-menu"
-  class="fixed top-0 left-0 w-full h-full bg-[#151417]/95 backdrop-blur-md flex flex-col items-center justify-center gap-6 text-white text-lg hidden z-[999]"
->
-  <a href="./work.html" class="hover:underline">Work</a>
-  <a href="./about.html" class="hover:underline">About</a>
-  <a href="./resume.html" class="hover:underline">Resume</a>
-  <a href="./beyond-uiux.html" class="hover:underline">Beyond UX</a>
-  <button
-    class="px-5 py-2 rounded bg-blue-500 text-white font-medium shadow hover:bg-blue-600 transition active:scale-95"
-    id="mobile-contact-btn"
-  >
-    Contact
+<!-- Backdrop -->
+<div id="menu-backdrop"></div>
+
+<!-- Enhanced Right Drawer Menu -->
+<nav id="mobile-menu" class="hidden">
+  <!-- SMOOTH ANIMATED CLOSE BUTTON -->
+  <button id="close-menu" aria-label="Close menu">
+    <div class="close-icon">
+      <span></span>
+      <span></span>
+    </div>
   </button>
 
-  <!-- Close Button -->
-  <button
-    id="close-menu"
-    class="absolute top-6 right-6 text-3xl text-gray-300 hover:text-white z-[1000]"
-  >
-    ✕
-  </button>
-</div>
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <div class="profile-logo">JS</div>
+    <h3 class="text-white text-xl font-semibold mb-2 relative z-2">Jagriti Sood</h3>
+    <p class="text-gray-300 text-sm relative z-2">UX/UI Designer & Creative Thinker</p>
+  </div>
 
-<!-- Script -->
+  <!-- Enhanced Menu Links -->
+  <a href="./work.html" class="menu-link">
+    <span>🎨 Work</span>
+  </a>
+  <a href="./about.html" class="menu-link">
+    <span>👤 About</span>
+  </a>
+  <a href="./resume.html" class="menu-link">
+    <span>📄 Resume</span>
+  </a>
+  <a href="./beyond-uiux.html" class="menu-link">
+    <span>✨ Beyond UX</span>
+  </a>
+  
+  <!-- Enhanced Contact Button -->
+  <button id="mobile-contact-btn">
+    Let's Connect
+  </button>
+
+  <!-- Footer Note -->
+  <div class="mt-auto pt-6 text-center">
+    <p class="text-gray-400 text-xs">Crafting beautiful experiences</p>
+  </div>
+</nav>
+
+<!-- JavaScript -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.getElementById("menu-btn");
-    const closeBtn = document.getElementById("close-menu");
+    const hamburger = menuBtn.querySelector(".hamburger-arrow");
     const mobileMenu = document.getElementById("mobile-menu");
+    const backdrop = document.getElementById("menu-backdrop");
+    const closeBtn = document.getElementById("close-menu");
 
-    menuBtn.addEventListener("click", () => {
+    const openMenu = () => {
       mobileMenu.classList.remove("hidden");
+      requestAnimationFrame(() => {
+        mobileMenu.classList.add("open");
+        backdrop.classList.add("open");
+      });
+      hamburger.classList.add("active");
       document.body.style.overflow = "hidden";
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove("open");
+      backdrop.classList.remove("open");
+      hamburger.classList.remove("active");
+      setTimeout(() => {
+        mobileMenu.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }, 350);
+    };
+
+    menuBtn.addEventListener("click", openMenu);
+    closeBtn.addEventListener("click", closeMenu);
+    backdrop.addEventListener("click", closeMenu);
+
+    // Close on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobileMenu.classList.contains("open")) closeMenu();
     });
 
-    closeBtn.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
-      document.body.style.overflow = "auto";
+    // Auto-close on link click
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Contact buttons
+    document.getElementById("contact-btn")?.addEventListener("click", () => {
+      window.location.href = "./contact.html";
+    });
+    document.getElementById("mobile-contact-btn")?.addEventListener("click", () => {
+      window.location.href = "./contact.html";
     });
   });
 </script>
+
+</body>
+</html>
