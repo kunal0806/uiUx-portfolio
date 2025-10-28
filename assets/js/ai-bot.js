@@ -29,10 +29,15 @@ class AIBot {
                 </button>
                 
                 <div class="ai-bot-window">
+                    <div class="texture-bg"></div>
+                    <div class="hello-animation">Hello! I'm Jagriti's AI assistant</div>
+                    
                     <div class="ai-bot-header">
                         <div class="ai-bot-title">
-                            <i class="fas fa-robot"></i>
-                            <span>Design Assistant</span>
+                            <div class="female-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span>Jagriti's AI assistant</span>
                         </div>
                         <button class="ai-bot-close">
                             <i class="fas fa-times"></i>
@@ -78,13 +83,17 @@ class AIBot {
             messages: document.getElementById('aiBotMessages'),
             input: document.getElementById('aiBotInput'),
             send: document.getElementById('aiBotSend'),
-            typing: document.getElementById('typingIndicator')
+            typing: document.getElementById('typingIndicator'),
+            helloAnimation: document.querySelector('.hello-animation')
         };
     }
 
     addEventListeners() {
         // Toggle bot window
-        this.elements.toggle.addEventListener('click', () => this.toggleWindow());
+        this.elements.toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleWindow();
+        });
         
         // Close bot window
         this.elements.close.addEventListener('click', () => this.closeWindow());
@@ -107,12 +116,29 @@ class AIBot {
             });
         });
         
-        // Close bot when clicking outside
-        document.addEventListener('click', (e) => {
-            if (this.isOpen && !e.target.closest('.ai-bot-container')) {
-                this.closeWindow();
-            }
-        });
+        // Close bot when clicking outside (only on mobile)
+        if (this.isMobile()) {
+            document.addEventListener('click', (e) => {
+                if (this.isOpen && !e.target.closest('.ai-bot-container')) {
+                    this.closeWindow();
+                }
+            });
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', () => this.handleResize());
+    }
+
+    isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    handleResize() {
+        if (this.isMobile() && this.isOpen) {
+            // Adjust window position for mobile
+            this.elements.window.style.right = '0';
+            this.elements.window.style.width = 'calc(100vw - 40px)';
+        }
     }
 
     toggleWindow() {
@@ -123,12 +149,34 @@ class AIBot {
         if (this.isOpen) {
             document.querySelector('.notification-dot').style.display = 'none';
             this.elements.input.focus();
+            
+            // Show hello animation
+            this.showHelloAnimation();
+            
+            // Adjust for mobile
+            if (this.isMobile()) {
+                document.body.style.overflow = 'hidden';
+            }
+        } else {
+            if (this.isMobile()) {
+                document.body.style.overflow = '';
+            }
         }
+    }
+
+    showHelloAnimation() {
+        this.elements.helloAnimation.style.display = 'block';
+        setTimeout(() => {
+            this.elements.helloAnimation.style.display = 'none';
+        }, 2000);
     }
 
     closeWindow() {
         this.isOpen = false;
         this.elements.window.classList.remove('active');
+        if (this.isMobile()) {
+            document.body.style.overflow = '';
+        }
     }
 
     showWelcomeMessage() {
@@ -139,7 +187,10 @@ class AIBot {
     addMessage(text, sender) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${sender}`;
-        messageDiv.textContent = text;
+        
+        // Format the text with proper HTML for line breaks and lists
+        const formattedText = this.formatMessage(text);
+        messageDiv.innerHTML = formattedText;
         
         this.elements.messages.appendChild(messageDiv);
         this.scrollToBottom();
@@ -147,6 +198,19 @@ class AIBot {
         // Add to conversation history
         this.conversation.push({ sender, text, timestamp: new Date() });
         this.saveConversation();
+    }
+
+    formatMessage(text) {
+        // Replace line breaks with <br>
+        let formatted = text.replace(/\n/g, '<br>');
+        
+        // Format bullet points
+        formatted = formatted.replace(/•\s*(.*?)(?=<br>|$)/g, '<span class="bullet-point">• $1</span>');
+        
+        // Format numbered lists
+        formatted = formatted.replace(/(\d+)\.\s*(.*?)(?=<br>|$)/g, '<span class="numbered-item"><span class="number">$1.</span> $2</span>');
+        
+        return formatted;
     }
 
     showTypingIndicator() {
@@ -159,7 +223,9 @@ class AIBot {
     }
 
     scrollToBottom() {
-        this.elements.messages.scrollTop = this.elements.messages.scrollHeight;
+        setTimeout(() => {
+            this.elements.messages.scrollTop = this.elements.messages.scrollHeight;
+        }, 100);
     }
 
     sendMessage() {
@@ -177,7 +243,7 @@ class AIBot {
         setTimeout(() => {
             this.generateResponse(message);
             this.hideTypingIndicator();
-        }, 1000 + Math.random() * 1000); // Simulate thinking time
+        }, 1000 + Math.random() * 1000);
     }
 
     generateResponse(userMessage) {
@@ -188,19 +254,51 @@ class AIBot {
         if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
             response = "Hello! I'm here to help you explore Jagriti's portfolio. You can ask me about her projects, design process, or experience.";
         } else if (message.includes('project') || message.includes('work')) {
-            response = "Jagriti has worked on several exciting projects including:\n\n• 101 Healthcare Website - UX research and visual design\n• MapleCode Innovations - Complete UX/UI design\n• Campaigns by Source Digital - Ad scheduling system\n\nYou can view all projects in the 'Work' section or use the quick action buttons above.";
+            response = `Jagriti has worked on several exciting projects including:
+
+• 101 Healthcare Website - UX research and visual design
+• MapleCode Innovations - Complete UX/UI design  
+• Campaigns by Source Digital - Ad scheduling system
+
+You can view all projects in the 'Work' section or use the quick action buttons above.`;
         } else if (message.includes('process') || message.includes('design process')) {
-            response = "Jagriti follows a structured 4-step design process:\n\n1. DISCOVER - Research and understand user needs\n2. DEFINE - Synthesize insights and define problems\n3. DREAM - Brainstorm creative solutions\n4. DESIGN - Create wireframes and final designs\n\nYou can learn more in the 'Process' section of her portfolio.";
+            response = `Jagriti follows a structured 4-step design process:
+
+1. DISCOVER - Research and understand user needs
+2. DEFINE - Synthesize insights and define problems
+3. DREAM - Brainstorm creative solutions
+4. DESIGN - Create wireframes and final designs
+
+You can learn more in the 'Process' section of her portfolio.`;
         } else if (message.includes('experience') || message.includes('year')) {
             response = "Jagriti has 5+ years of experience in UX/UI design across healthcare, ad tech, and digital platforms. She's completed 50+ projects with 100% client satisfaction.";
         } else if (message.includes('contact') || message.includes('get in touch')) {
-            response = "You can contact Jagriti through:\n\n• The contact form on her website\n• LinkedIn profile\n• Email\n\nUse the 'Get in Touch' quick action above or visit the Contact page.";
+            response = `You can contact Jagriti through:
+
+• The contact form on her website
+• LinkedIn profile
+• Email
+
+Use the 'Get in Touch' quick action above or visit the Contact page.`;
         } else if (message.includes('about') || message.includes('jagriti')) {
             response = "Jagriti Sood is a UX/UI designer who turns complex systems into simple, human-centered interfaces. Beyond design, she enjoys crafting hand-poured candles - another form of creative expression!";
         } else if (message.includes('skill') || message.includes('expert')) {
-            response = "Jagriti's expertise includes:\n\n• UX Research & Strategy\n• Wireframing & Prototyping\n• Visual UI Design\n• Interaction Design\n• User Testing & Handoff\n\nShe specializes in creating digital tools that are both functional and beautiful.";
+            response = `Jagriti's expertise includes:
+
+• UX Research & Strategy
+• Wireframing & Prototyping
+• Visual UI Design
+• Interaction Design
+• User Testing & Handoff
+
+She specializes in creating digital tools that are both functional and beautiful.`;
         } else {
-            response = "I'm not sure I understand. You can ask me about:\n• Jagriti's projects and work\n• Her design process\n• Professional experience\n• How to contact her\n• Or use the quick action buttons above for specific topics.";
+            response = `I'm not sure I understand. You can ask me about:
+• Jagriti's projects and work
+• Her design process
+• Professional experience
+• How to contact her
+• Or use the quick action buttons above for specific topics.`;
         }
         
         this.addMessage(response, 'bot');
@@ -231,7 +329,6 @@ class AIBot {
     }
 
     saveConversation() {
-        // Save conversation to localStorage (optional)
         try {
             localStorage.setItem('aiBotConversation', JSON.stringify(this.conversation));
         } catch (e) {
@@ -240,7 +337,6 @@ class AIBot {
     }
 
     loadConversation() {
-        // Load conversation from localStorage (optional)
         try {
             const saved = localStorage.getItem('aiBotConversation');
             if (saved) {
@@ -253,14 +349,21 @@ class AIBot {
 }
 
 // Initialize AI Bot when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+function initAIBot() {
     // Only initialize if the bot container doesn't exist
     if (!document.querySelector('.ai-bot-container')) {
         window.aiBot = new AIBot();
     }
-});
+}
+
+// Auto-initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAIBot);
+} else {
+    initAIBot();
+}
 
 // Export for use in other files
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = AIBot;
+    module.exports = { AIBot, initAIBot };
 }

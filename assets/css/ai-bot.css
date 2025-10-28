@@ -5,6 +5,8 @@
     --ai-accent: #06D6A0;
     --ai-dark: #1a1a2e;
     --ai-light: #f8fafc;
+    --ai-blue: #3B82F6;
+    --ai-green: #10B981;
 }
 
 .ai-bot-container {
@@ -177,44 +179,51 @@
     font-size: 1.1rem;
 }
 
-.ai-bot-avatar {
-    width: 40px;
-    height: 40px;
+/* Female Avatar Styles */
+.female-avatar {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--ai-primary), var(--ai-secondary));
+    background: linear-gradient(135deg, var(--ai-blue), var(--ai-green));
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    animation: avatarPulse 3s infinite;
 }
 
-.ai-bot-avatar::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    top: 5px;
-    left: 5px;
+@keyframes avatarPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
-.ai-bot-avatar::after {
+.female-avatar::before {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 25px;
+    height: 25px;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    bottom: 5px;
-    right: 5px;
+    top: 8px;
+    left: 8px;
 }
 
-.ai-bot-avatar i {
+.female-avatar::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    bottom: 8px;
+    right: 8px;
+}
+
+.female-avatar i {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
@@ -450,6 +459,57 @@
     background: linear-gradient(135deg, var(--ai-secondary), var(--ai-primary));
 }
 
+/* Hello Animation */
+.hello-animation {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ai-dark);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: none;
+    animation: helloFloat 2s ease-in-out;
+    z-index: 1001;
+}
+
+@keyframes helloFloat {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Background Texture */
+.texture-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    background: 
+        radial-gradient(circle at 20% 80%, var(--ai-blue) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, var(--ai-green) 0%, transparent 50%);
+    pointer-events: none;
+}
+
 /* Mobile Responsive */
 @media (max-width: 480px) {
     .ai-bot-container {
@@ -493,4 +553,60 @@
 @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
+}
+
+/* Message Formatting Styles */
+.message.bot .bullet-point {
+    display: block;
+    margin: 4px 0;
+    padding-left: 8px;
+    position: relative;
+}
+
+.message.bot .bullet-point:before {
+    content: "•";
+    position: absolute;
+    left: -8px;
+    color: var(--ai-primary);
+    font-weight: bold;
+}
+
+.message.bot .numbered-item {
+    display: block;
+    margin: 6px 0;
+    padding-left: 12px;
+}
+
+.message.bot .number {
+    font-weight: 600;
+    color: var(--ai-primary);
+    margin-right: 4px;
+}
+
+/* Ensure proper spacing for formatted messages */
+.message.bot {
+    line-height: 1.5;
+}
+
+.message.bot br {
+    display: block;
+    content: "";
+    margin-bottom: 6px;
+}
+
+/* Mobile responsive formatting */
+@media (max-width: 768px) {
+    .message.bot .bullet-point {
+        margin: 3px 0;
+        padding-left: 6px;
+    }
+    
+    .message.bot .numbered-item {
+        margin: 4px 0;
+        padding-left: 8px;
+    }
+    
+    .message.bot br {
+        margin-bottom: 4px;
+    }
 }
