@@ -314,13 +314,14 @@
         }
       }
 
+      /* Mobile Optimizations */
       @media (max-width: 768px) {
         .section-title {
           font-size: 2.2rem;
         }
         
         .section {
-          padding: 4rem 1.5rem;
+          padding: 3rem 1.5rem;
         }
         
         .nav-dots {
@@ -328,14 +329,133 @@
         }
         
         .hero-bg {
-          padding: 4rem 1.5rem;
+          padding: 3rem 1.5rem;
+          min-height: 80vh;
+          display: flex;
+          align-items: center;
         }
         
         .social-icon {
-          width: 70px;
-          height: 70px;
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+        
+        /* Hero section mobile adjustments */
+        .hero-bg h1 {
+          font-size: 2.5rem;
+          line-height: 1.2;
+          margin-bottom: 1.5rem;
+        }
+        
+        .hero-bg p {
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+        
+        .hero-bg .btn {
+          padding: 0.875rem 1.5rem;
+          font-size: 0.9rem;
+          width: 100%;
+          justify-content: center;
+          margin-bottom: 0.5rem;
+        }
+        
+        /* Contact section mobile adjustments */
+        .card {
+          padding: 1.5rem;
+        }
+        
+        .contact-card {
+          padding: 1.5rem 1rem;
+        }
+        
+        .contact-icon {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+        
+        /* Social icons spacing */
+        .social-icons-container {
+          gap: 1.5rem !important;
+          margin-bottom: 2rem !important;
+        }
+        
+        /* Info cards grid */
+        .info-cards {
+          grid-template-columns: 1fr !important;
+          gap: 1rem !important;
+        }
+        
+        .info-cards > div {
+          padding: 1.25rem;
+        }
+        
+        /* Floating shapes adjustments */
+        .shape-1, .shape-2, .shape-3 {
+          width: 150px;
+          height: 150px;
+          filter: blur(30px);
+        }
+        
+        .shape-1 {
+          top: 5%;
+          left: -10%;
+        }
+        
+        .shape-2 {
+          top: 70%;
+          right: -10%;
+        }
+        
+        .shape-3 {
+          bottom: 10%;
+          left: 10%;
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+          bottom: 1.5rem;
+        }
+        
+        .scroll-indicator span {
+          font-size: 0.75rem;
+        }
+      }
+      
+      /* Extra small devices */
+      @media (max-width: 480px) {
+        .hero-bg h1 {
+          font-size: 2rem;
+        }
+        
+        .section-title {
           font-size: 1.8rem;
         }
+        
+        .card {
+          padding: 1.25rem;
+        }
+        
+        .social-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 1.25rem;
+        }
+        
+        .hero-bg .btn {
+          padding: 0.75rem 1.25rem;
+          font-size: 0.85rem;
+        }
+      }
+      
+      /* Prevent horizontal scrolling */
+      html, body {
+        max-width: 100%;
+        overflow-x: hidden;
       }
     </style>
   </head>
@@ -351,7 +471,7 @@
     <header></header>
 
     <!-- Hero -->
-    <section id="hero" class="hero-bg px-8 py-32 text-center relative">
+    <section id="hero" class="hero-bg px-4 md:px-8 py-16 md:py-32 text-center relative">
       <div class="floating-shapes">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
@@ -359,20 +479,20 @@
       </div>
       
       <div class="max-w-4xl mx-auto relative z-10" data-aos="fade-up" data-aos-duration="1000">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <h1 class="text-3xl md:text-7xl font-bold mb-4 md:mb-6 leading-tight">
           Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Connect</span>
         </h1>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-6">
+        <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-4 md:mb-6">
           Designer • Storyteller • Dreamer
         </p>
-        <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
+        <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-6 md:mb-10">
           Based in Canada, crafting digital experiences with emotion & clarity. I'm currently 
           <span class="text-green-400 font-medium">
             <span class="availability-dot"></span>available
           </span> 
           for new projects and collaborations.
         </p>
-        <div class="flex flex-wrap gap-4 justify-center">
+        <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
           <a href="#connect" class="btn btn-primary explore-btn">
             <i class="fas fa-paper-plane"></i> Get In Touch
           </a>
@@ -382,29 +502,29 @@
         </div>
       </div>
       
-       <!-- Simple Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-    <div class="flex flex-col items-center">
-      <span class="text-gray-500 text-sm mb-2">Scroll to explore</span>
-      <div class="w-5 h-8 border border-gray-600 rounded-full flex justify-center">
-        <div class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"></div>
+      <!-- Simple Scroll Indicator -->
+      <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+        <div class="flex flex-col items-center">
+          <span class="text-gray-500 text-xs md:text-sm mb-2">Scroll to explore</span>
+          <div class="w-5 h-8 border border-gray-600 rounded-full flex justify-center">
+            <div class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
     </section>
 
     <!-- Social Connect -->
     <section id="connect" class="section">
       <div class="card">
-        <h2 class="section-title text-center mb-16">Let's Connect</h2>
+        <h2 class="section-title text-center mb-12 md:mb-16">Let's Connect</h2>
         
         <div class="max-w-3xl mx-auto">
-          <p class="text-gray-300 text-center text-lg leading-relaxed mb-12">
+          <p class="text-gray-300 text-center text-base md:text-lg leading-relaxed mb-8 md:mb-12">
             Reach out through any of these platforms. I'd love to hear about your project, discuss potential collaborations, or just chat about design!
           </p>
           
           <!-- Social Icons - Only LinkedIn, Behance, and Email -->
-          <div class="flex flex-wrap justify-center gap-12 mb-16">
+          <div class="flex flex-wrap justify-center gap-6 md:gap-12 mb-12 md:mb-16 social-icons-container">
             <!-- LinkedIn -->
             <a
               href="https://linkedin.com/in/jagriti-sood"
@@ -436,21 +556,21 @@
           </div>
           
           <!-- Contact Info -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700/50">
-              <h3 class="text-xl font-bold mb-4 text-blue-300 flex items-center">
-                <i class="fas fa-clock mr-3"></i> Response Time
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 info-cards">
+            <div class="bg-gray-800/30 p-4 md:p-6 rounded-xl border border-gray-700/50">
+              <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-blue-300 flex items-center">
+                <i class="fas fa-clock mr-2 md:mr-3"></i> Response Time
               </h3>
-              <p class="text-gray-300">
+              <p class="text-gray-300 text-sm md:text-base">
                 I typically respond to emails within <span class="text-green-400 font-medium">24 hours</span>. For LinkedIn messages, I'll get back to you within 1-2 business days.
               </p>
             </div>
             
-            <div class="bg-gray-800/30 p-6 rounded-xl border border-gray-700/50">
-              <h3 class="text-xl font-bold mb-4 text-green-300 flex items-center">
-                <i class="fas fa-calendar-check mr-3"></i> Availability
+            <div class="bg-gray-800/30 p-4 md:p-6 rounded-xl border border-gray-700/50">
+              <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-green-300 flex items-center">
+                <i class="fas fa-calendar-check mr-2 md:mr-3"></i> Availability
               </h3>
-              <p class="text-gray-300">
+              <p class="text-gray-300 text-sm md:text-base">
                 Currently <span class="text-green-400 font-medium">available</span> for freelance projects and new opportunities. Let's discuss how we can work together!
               </p>
             </div>
@@ -459,7 +579,7 @@
       </div>
     </section>
 
- <footer></footer>
+    <footer></footer>
 
     <!-- JS Includes -->
     <script src="assets/js/include.js"></script>
