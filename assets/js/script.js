@@ -121,3 +121,47 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScripts();
   initCarousel();
 });
+
+// Counting animation for stats
+function startCountAnimation() {
+  const counters = document.querySelectorAll('.count-up');
+  
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-target'));
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    
+    const updateCount = () => {
+      current += step;
+      if (current < target) {
+        counter.textContent = Math.ceil(current) + '+';
+        requestAnimationFrame(updateCount);
+      } else {
+        counter.textContent = target + '+';
+      }
+    };
+    
+    // Start animation when element is in viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateCount();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    
+    observer.observe(counter);
+  });
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  startCountAnimation();
+  
+  // Add hover-lift class to all enhanced cards
+  document.querySelectorAll('.enhanced-card').forEach(card => {
+    card.classList.add('hover-lift');
+  });
+});

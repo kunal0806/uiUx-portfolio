@@ -4,27 +4,33 @@
     <meta charset="UTF-8" />
     <title>Beyond UX – Jagriti Sood Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Jagriti Sood's handcrafted candle collection - where creativity extends beyond digital design" />
+    <meta
+      name="description"
+      content="Jagriti Sood's handcrafted candle collection - where creativity extends beyond digital design"
+    />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    
+
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <style>
       :root {
         --primary: #3b82f6;
-       --primary-dark: #8b5cf6;
+        --primary-dark: #8b5cf6;
         --accent: #8021d3;
         --blue: #3b82f6;
         --dark: #0f0f13;
@@ -32,7 +38,7 @@
         --light: #f8fafc;
         --gray: #94a3b8;
       }
-      
+
       body {
         font-family: "Inter", Arial, sans-serif;
         background-color: var(--darker);
@@ -66,7 +72,7 @@
       }
 
       .section-title::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -10px;
         left: 50%;
@@ -78,10 +84,22 @@
       }
 
       .hero-bg {
-        background: 
-          radial-gradient(circle at 20% 80%, rgba(169, 57, 243, 0.08), transparent 25%),
-          radial-gradient(circle at 80% 20%, rgba(150, 20, 193, 0.15), transparent 25%),
-          radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.1), transparent 25%),
+        background:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(169, 57, 243, 0.08),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(150, 20, 193, 0.15),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(139, 92, 246, 0.1),
+            transparent 25%
+          ),
           linear-gradient(var(--darker), var(--dark));
         position: relative;
         overflow: hidden;
@@ -133,7 +151,8 @@
       }
 
       @keyframes float {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0) rotate(0deg);
         }
         50% {
@@ -148,7 +167,9 @@
         padding: 1.5rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
         margin: 0 auto;
       }
 
@@ -240,7 +261,8 @@
         margin: 0 auto;
       }
 
-      .gallery-item:hover, .gallery-item:active {
+      .gallery-item:hover,
+      .gallery-item:active {
         transform: translateY(-5px) scale(1.02);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         border-color: rgba(59, 130, 246, 0.3);
@@ -253,7 +275,8 @@
         transition: transform 0.8s ease;
       }
 
-      .gallery-item:hover img, .gallery-item:active img {
+      .gallery-item:hover img,
+      .gallery-item:active img {
         transform: scale(1.05);
       }
 
@@ -304,7 +327,11 @@
       }
 
       .quote-box {
-        background: linear-gradient(135deg, rgba(146, 59, 246, 0.1), rgba(16, 185, 129, 0.1));
+        background: linear-gradient(
+          135deg,
+          rgba(146, 59, 246, 0.1),
+          rgba(16, 185, 129, 0.1)
+        );
         border: 1px solid rgba(255, 255, 255, 0.1);
         padding: 2rem;
         border-radius: 16px;
@@ -314,13 +341,17 @@
       }
 
       .quote-box::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.05), transparent 50%);
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(59, 130, 246, 0.05),
+          transparent 50%
+        );
         z-index: 0;
       }
 
@@ -359,7 +390,8 @@
         transition: transform 0.3s ease;
       }
 
-      .carousel-slide:hover, .carousel-slide:active {
+      .carousel-slide:hover,
+      .carousel-slide:active {
         transform: translateY(-3px);
       }
 
@@ -392,7 +424,8 @@
         touch-action: manipulation;
       }
 
-      .carousel-btn:hover, .carousel-btn:active {
+      .carousel-btn:hover,
+      .carousel-btn:active {
         background: rgba(59, 130, 246, 0.4);
         transform: scale(1.05);
       }
@@ -445,7 +478,8 @@
         transform: translateY(0);
       }
 
-      .back-to-top:hover, .back-to-top:active {
+      .back-to-top:hover,
+      .back-to-top:active {
         background: var(--primary-dark);
         transform: translateY(-3px);
       }
@@ -493,45 +527,47 @@
         .section-title {
           font-size: 2rem;
         }
-        
+
         .section {
           padding: 3rem 1rem;
         }
-        
+
         .nav-dots {
           display: none;
         }
-        
+
         .carousel-slide {
           flex: 0 0 250px;
         }
-        
+
         .carousel-slide img {
           height: 300px;
         }
-        
+
         .btn {
           padding: 0.75rem 1.25rem;
           font-size: 0.85rem;
         }
-        
+
         .card {
           padding: 1.25rem;
         }
-        
+
         .quote-box {
           padding: 1.5rem;
         }
-        
+
         blockquote {
           font-size: 1.25rem !important;
         }
-        
+
         /* Improve touch targets */
-        .gallery-item, .carousel-slide, .btn {
+        .gallery-item,
+        .carousel-slide,
+        .btn {
           -webkit-tap-highlight-color: transparent;
         }
-        
+
         /* Prevent horizontal scroll */
         body {
           overflow-x: hidden;
@@ -544,11 +580,11 @@
         .section {
           padding: 4rem 1.5rem;
         }
-        
+
         .gallery-container {
           grid-template-columns: repeat(2, 1fr);
         }
-        
+
         .mobile-nav {
           display: none;
         }
@@ -559,25 +595,25 @@
         .section {
           padding: 6rem 2rem;
         }
-        
+
         .gallery-container {
           grid-template-columns: repeat(3, 1fr);
         }
-        
+
         .mobile-nav {
           display: none;
         }
-        
+
         .section-title {
           font-size: 3rem;
           text-align: left;
         }
-        
+
         .section-title::after {
           left: 0;
           transform: none;
         }
-        
+
         .section-title.text-center::after {
           left: 50%;
           transform: translateX(-50%);
@@ -669,38 +705,55 @@
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
       </div>
-      
-      <div class="max-w-4xl mx-auto text-center relative z-10" data-aos="fade-up" data-aos-duration="1000">
+
+      <div
+        class="max-w-4xl mx-auto text-center relative z-10"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <!-- Clean Badge -->
-        <div class="inline-block mb-6 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 backdrop-blur-sm">
-          <span class="text-purple-300 text-sm font-medium tracking-wide flex items-center justify-center gap-2">
+        <div
+          class="inline-block mb-6 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20 backdrop-blur-sm"
+        >
+          <span
+            class="text-purple-300 text-sm font-medium tracking-wide flex items-center justify-center gap-2"
+          >
             <i class="fas fa-fire text-purple-400"></i>
             Handcrafted Candles
           </span>
         </div>
-        
+
         <!-- Main Heading -->
         <h1 class="text-3xl md:text-6xl font-bold mb-6 leading-tight">
-          Beyond 
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 block md:inline">
+          Beyond
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 block md:inline"
+          >
             UX
           </span>
         </h1>
 
         <!-- Description -->
-        <p class="text-base md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
-          Where digital design meets tangible craft. Each hand-poured candle tells a story of scent, 
-          texture, and emotion, created with the same thoughtful approach I bring to user experiences.
+        <p
+          class="text-base md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8"
+        >
+          Where digital design meets tangible craft. Each hand-poured candle
+          tells a story of scent, texture, and emotion, created with the same
+          thoughtful approach I bring to user experiences.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <div
+          class="flex flex-col sm:flex-row gap-3 justify-center items-center"
+        >
           <a href="#gallery" class="group btn btn-primary explore-btn">
             <i class="fas fa-eye mr-2"></i>
             Explore Collection
-            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+            <i
+              class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"
+            ></i>
           </a>
-          
+
           <a href="#story" class="group btn btn-outline story-btn">
             <i class="fas fa-book-open mr-2"></i>
             The Story
@@ -708,7 +761,9 @@
         </div>
 
         <!-- Stats Bar - Candle Making -->
-        <div class="flex justify-center gap-6 md:gap-12 mt-12 pt-6 border-t border-gray-800/50">
+        <div
+          class="flex justify-center gap-6 md:gap-12 mt-12 pt-6 border-t border-gray-800/50"
+        >
           <div class="text-center" data-aos="fade-up" data-aos-delay="100">
             <div class="text-lg md:text-2xl font-bold text-purple-300">50+</div>
             <div class="text-gray-400 text-xs md:text-sm">Scents Created</div>
@@ -728,8 +783,12 @@
       <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
         <div class="flex flex-col items-center">
           <span class="text-gray-500 text-xs mb-2">Scroll to explore</span>
-          <div class="w-5 h-8 border border-gray-600 rounded-full flex justify-center">
-            <div class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"></div>
+          <div
+            class="w-5 h-8 border border-gray-600 rounded-full flex justify-center"
+          >
+            <div
+              class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"
+            ></div>
           </div>
         </div>
       </div>
@@ -742,32 +801,61 @@
           <div data-aos="fade-right">
             <h2 class="section-title">From Pixels to Wax</h2>
             <p class="text-gray-300 mb-4 text-base md:text-lg leading-relaxed">
-              My journey into candle making began as a creative escape from screens, a way to engage my senses in the physical world. What started as a hobby quickly evolved into a parallel creative practice.
+              My journey into candle making began as a creative escape from
+              screens, a way to engage my senses in the physical world. What
+              started as a hobby quickly evolved into a parallel creative
+              practice.
             </p>
             <p class="text-gray-300 mb-6 text-base md:text-lg leading-relaxed">
-              I approach each candle with the same design thinking I apply to digital products: understanding the user (or in this case, the experiencer), mapping emotional journeys through scent, and crafting beautiful, functional objects that bring joy and comfort.
+              I approach each candle with the same design thinking I apply to
+              digital products: understanding the user (or in this case, the
+              experiencer), mapping emotional journeys through scent, and
+              crafting beautiful, functional objects that bring joy and comfort.
             </p>
-            <div class="bg-gray-800/50 p-4 md:p-6 rounded-xl border-l-4 border-blue-500">
+            <div
+              class="bg-gray-800/50 p-4 md:p-6 rounded-xl border-l-4 border-blue-500"
+            >
               <p class="text-gray-300 italic text-base md:text-lg">
-                "In both interfaces and candles, I design for emotion, creating experiences that resonate beyond the visual."
+                "In both interfaces and candles, I design for emotion, creating
+                experiences that resonate beyond the visual."
               </p>
             </div>
           </div>
-          <div class="grid grid-cols-2 gap-3" data-aos="fade-left" data-aos-delay="200">
+          <div
+            class="grid grid-cols-2 gap-3"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             <div class="space-y-3">
               <div class="rounded-2xl overflow-hidden aspect-square">
-                <img src="./assets/images/havens/beyond-pic-7.jpg" alt="Candle making process" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+                <img
+                  src="./assets/images/havens/beyond-pic-7.jpg"
+                  alt="Candle making process"
+                  class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
               </div>
               <div class="rounded-2xl overflow-hidden aspect-square">
-                <img src="./assets/images/havens/beyond-pic-8.jpg" alt="Candle details" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+                <img
+                  src="./assets/images/havens/beyond-pic-8.jpg"
+                  alt="Candle details"
+                  class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
               </div>
             </div>
             <div class="space-y-3 mt-6">
               <div class="rounded-2xl overflow-hidden aspect-square">
-                <img src="./assets/images/havens/beyond-pic-9.jpg" alt="Candle collection" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+                <img
+                  src="./assets/images/havens/beyond-pic-9.jpg"
+                  alt="Candle collection"
+                  class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
               </div>
               <div class="rounded-2xl overflow-hidden aspect-square">
-                <img src="./assets/images/havens/beyond-pic-10.jpg" alt="Candle lighting" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+                <img
+                  src="./assets/images/havens/beyond-pic-10.jpg"
+                  alt="Candle lighting"
+                  class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
               </div>
             </div>
           </div>
@@ -778,10 +866,13 @@
     <!-- Gallery -->
     <section id="gallery" class="section">
       <h2 class="section-title text-center">The Collection</h2>
-      <p class="text-gray-300 text-center text-base md:text-lg max-w-2xl mx-auto mb-8">
-        Fifteen unique candles, each with its own personality and scent story. Tap to discover their character.
+      <p
+        class="text-gray-300 text-center text-base md:text-lg max-w-2xl mx-auto mb-8"
+      >
+        Fifteen unique candles, each with its own personality and scent story.
+        Tap to discover their character.
       </p>
-      
+
       <!-- Carousel Section -->
       <div class="carousel-container" data-aos="fade-up">
         <div class="carousel-track" id="carouselTrack">
@@ -799,15 +890,20 @@
           <!-- Indicators will be populated by JavaScript -->
         </div>
       </div>
-      
+
       <!-- Grid Gallery -->
       <div class="gallery-container">
         <!-- Candle 1 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-          <img src="./assets/images/havens/beyond-pic-1.jpg" alt="Amber Drift" />
+          <img
+            src="./assets/images/havens/beyond-pic-1.jpg"
+            alt="Amber Drift"
+          />
           <div class="gallery-overlay">
-            <h3 class="text-xl font-bold mb-2">Warm & Earthy</h3>
-            <p class="text-gray-300 text-sm mb-3">A comforting blend that feels like coming home</p>
+            <h3 class="text-xl font-bold mb-2">Pastel bliss candle</h3>
+            <p class="text-gray-300 text-sm mb-3">
+              A comforting blend that feels like coming home
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Amber</span>
               <span class="scent-note">Sandalwood</span>
@@ -815,13 +911,15 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Candle 2 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
           <img src="./assets/images/havens/beyond-pic-2.jpg" alt="Sea Glass" />
           <div class="gallery-overlay">
-            <h3 class="text-xl font-bold mb-2">Fresh & Oceanic</h3>
-            <p class="text-gray-300 text-sm mb-3">Evokes coastal mornings and salty breezes</p>
+            <h3 class="text-xl font-bold mb-2">merry christmas candle</h3>
+            <p class="text-gray-300 text-sm mb-3">
+              Evokes coastal mornings and salty breezes
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Sea Salt</span>
               <span class="scent-note">Driftwood</span>
@@ -829,13 +927,18 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Candle 3 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-          <img src="./assets/images/havens/beyond-pic-3.jpg" alt="Citrus Bloom" />
+          <img
+            src="./assets/images/havens/beyond-pic-3.jpg"
+            alt="Citrus Bloom"
+          />
           <div class="gallery-overlay">
-            <h3 class="text-xl font-bold mb-2">Zesty & Uplifting</h3>
-            <p class="text-gray-300 text-sm mb-3">Brightens any space with vibrant energy</p>
+            <h3 class="text-xl font-bold mb-2">lavender delight candle</h3>
+            <p class="text-gray-300 text-sm mb-3">
+              Brightens any space with vibrant energy
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Bergamot</span>
               <span class="scent-note">Lemon</span>
@@ -843,13 +946,18 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Candle 4 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
-          <img src="./assets/images/havens/beyond-pic-4.jpg" alt="Winter Hearth" />
+          <img
+            src="./assets/images/havens/beyond-pic-4.jpg"
+            alt="Winter Hearth"
+          />
           <div class="gallery-overlay">
-            <h3 class="text-xl font-bold mb-2">Cozy & Spiced</h3>
-            <p class="text-gray-300 text-sm mb-3">The scent of crackling fires and warm blankets</p>
+            <h3 class="text-xl font-bold mb-2">golden glow candle</h3>
+            <p class="text-gray-300 text-sm mb-3">
+              The scent of crackling fires and warm blankets
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Cinnamon</span>
               <span class="scent-note">Clove</span>
@@ -857,13 +965,18 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Candle 5 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-          <img src="./assets/images/havens/beyond-pic-5.jpg" alt="Sandalwood Noir" />
+          <img
+            src="./assets/images/havens/beyond-pic-5.jpg"
+            alt="Sandalwood Noir"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Mysterious & Rich</h3>
-            <p class="text-gray-300 text-sm mb-3">Deep, complex, and utterly captivating</p>
+            <p class="text-gray-300 text-sm mb-3">
+              Deep, complex, and utterly captivating
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Sandalwood</span>
               <span class="scent-note">Patchouli</span>
@@ -871,13 +984,18 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Candle 6 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="350">
-          <img src="./assets/images/havens/beyond-pic-6.jpg" alt="Herbal Garden" />
+          <img
+            src="./assets/images/havens/beyond-pic-6.jpg"
+            alt="Herbal Garden"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Green & Revitalizing</h3>
-            <p class="text-gray-300 text-sm mb-3">Fresh-picked herbs and earthy tones</p>
+            <p class="text-gray-300 text-sm mb-3">
+              Fresh-picked herbs and earthy tones
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Lavender</span>
               <span class="scent-note">Rosemary</span>
@@ -889,10 +1007,15 @@
         <!-- Continue with remaining 9 candles in similar pattern -->
         <!-- Candle 7 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-          <img src="./assets/images/havens/beyond-pic-7.jpg" alt="Porcelain Glow" />
+          <img
+            src="./assets/images/havens/beyond-pic-7.jpg"
+            alt="Porcelain Glow"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Clean & Delicate</h3>
-            <p class="text-gray-300 text-sm mb-3">Subtle elegance in scent and form</p>
+            <p class="text-gray-300 text-sm mb-3">
+              Subtle elegance in scent and form
+            </p>
             <div class="scent-profile">
               <span class="scent-note">White Tea</span>
               <span class="scent-note">Pear</span>
@@ -903,10 +1026,15 @@
 
         <!-- Candle 8 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
-          <img src="./assets/images/havens/beyond-pic-8.jpg" alt="Forest Ember" />
+          <img
+            src="./assets/images/havens/beyond-pic-8.jpg"
+            alt="Forest Ember"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Woodsy & Warm</h3>
-            <p class="text-gray-300 text-sm mb-3">Campfire memories and pine forests</p>
+            <p class="text-gray-300 text-sm mb-3">
+              Campfire memories and pine forests
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Pine</span>
               <span class="scent-note">Cedar</span>
@@ -917,10 +1045,15 @@
 
         <!-- Candle 9 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-          <img src="./assets/images/havens/beyond-pic-9.jpg" alt="Golden Hour" />
+          <img
+            src="./assets/images/havens/beyond-pic-9.jpg"
+            alt="Golden Hour"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Warm & Honeyed</h3>
-            <p class="text-gray-300 text-sm mb-3">The golden light of sunset captured in scent</p>
+            <p class="text-gray-300 text-sm mb-3">
+              The golden light of sunset captured in scent
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Honey</span>
               <span class="scent-note">Amber</span>
@@ -931,10 +1064,15 @@
 
         <!-- Candle 10 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
-          <img src="./assets/images/havens/beyond-pic-10.jpg" alt="Midnight Bloom" />
+          <img
+            src="./assets/images/havens/beyond-pic-10.jpg"
+            alt="Midnight Bloom"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Floral & Mysterious</h3>
-            <p class="text-gray-300 text-sm mb-3">Night-blooming flowers under moonlight</p>
+            <p class="text-gray-300 text-sm mb-3">
+              Night-blooming flowers under moonlight
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Jasmine</span>
               <span class="scent-note">Tuberose</span>
@@ -945,10 +1083,15 @@
 
         <!-- Candle 11 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-          <img src="./assets/images/havens/beyond-pic-11.jpg" alt="Coastal Mist" />
+          <img
+            src="./assets/images/havens/beyond-pic-11.jpg"
+            alt="Coastal Mist"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Fresh & Aquatic</h3>
-            <p class="text-gray-300 text-sm mb-3">Ocean spray and morning fog</p>
+            <p class="text-gray-300 text-sm mb-3">
+              Ocean spray and morning fog
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Sea Breeze</span>
               <span class="scent-note">Mineral</span>
@@ -959,10 +1102,15 @@
 
         <!-- Candle 12 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="350">
-          <img src="./assets/images/havens/beyond-pic-12.jpg" alt="Spiced Chai" />
+          <img
+            src="./assets/images/havens/beyond-pic-12.jpg"
+            alt="Spiced Chai"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Warm & Spiced</h3>
-            <p class="text-gray-300 text-sm mb-3">Comforting blend of tea and spices</p>
+            <p class="text-gray-300 text-sm mb-3">
+              Comforting blend of tea and spices
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Black Tea</span>
               <span class="scent-note">Cardamom</span>
@@ -973,10 +1121,15 @@
 
         <!-- Candle 13 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-          <img src="./assets/images/havens/beyond-pic-13.jpg" alt="Vanilla Cloud" />
+          <img
+            src="./assets/images/havens/beyond-pic-13.jpg"
+            alt="Vanilla Cloud"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Sweet & Creamy</h3>
-            <p class="text-gray-300 text-sm mb-3">Soft, comforting vanilla dreamscape</p>
+            <p class="text-gray-300 text-sm mb-3">
+              Soft, comforting vanilla dreamscape
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Vanilla</span>
               <span class="scent-note">Tonka</span>
@@ -987,10 +1140,15 @@
 
         <!-- Candle 14 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
-          <img src="./assets/images/havens/beyond-pic-14.jpg" alt="Fig & Laurel" />
+          <img
+            src="./assets/images/havens/beyond-pic-14.jpg"
+            alt="Fig & Laurel"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Fruity & Green</h3>
-            <p class="text-gray-300 text-sm mb-3">Mediterranean garden in full bloom</p>
+            <p class="text-gray-300 text-sm mb-3">
+              Mediterranean garden in full bloom
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Fig</span>
               <span class="scent-note">Laurel</span>
@@ -1001,10 +1159,15 @@
 
         <!-- Candle 15 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-          <img src="./assets/images/havens/beyond-pic-15.jpg" alt="Ember Glow" />
+          <img
+            src="./assets/images/havens/beyond-pic-15.jpg"
+            alt="Ember Glow"
+          />
           <div class="gallery-overlay">
             <h3 class="text-xl font-bold mb-2">Smoky & Sweet</h3>
-            <p class="text-gray-300 text-sm mb-3">The last embers of a dying fire</p>
+            <p class="text-gray-300 text-sm mb-3">
+              The last embers of a dying fire
+            </p>
             <div class="scent-profile">
               <span class="scent-note">Birch</span>
               <span class="scent-note">Leather</span>
@@ -1017,17 +1180,28 @@
 
     <!-- Connect -->
     <section id="connect" class="section">
-      <div class="quote-box " data-aos="fade-up">
+      <div class="quote-box" data-aos="fade-up">
         <div class="relative z-10">
           <div class="quote-mark">"</div>
           <blockquote class="text-xl md:text-3xl font-semibold mb-6">
-            Creativity flows where passion leads, from pixels to wax, the journey continues.
+            Creativity flows where passion leads, from pixels to wax, the
+            journey continues.
           </blockquote>
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+          >
             <div>
               <p class="text-gray-300 text-base md:text-lg">
                 Follow the creative journey and discover new creations
-                <a href="https://instagram.com/mrhavens.co" target="_blank" rel="noopener" class="text-purple-300 underline hover:text-purple-200 transition">mrhavens.co</a> on Instagram.
+                <a
+                  href="https://instagram.com/mrhavens.co"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-purple-300 underline hover:text-purple-200 transition"
+                >
+                  mrhavens.co
+                </a>
+                on Instagram.
               </p>
             </div>
             <a
@@ -1036,7 +1210,8 @@
               rel="noopener"
               class="btn btn-primary"
             >
-              <i class="fab fa-instagram"></i> Follow the Journey
+              <i class="fab fa-instagram"></i>
+              Follow the Journey
             </a>
           </div>
         </div>
@@ -1047,7 +1222,7 @@
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/include.js"></script>
-        <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 
     <script>
       // Initialize AOS animations with mobile optimization
@@ -1056,109 +1231,137 @@
         easing: "ease-out-cubic",
         once: true,
         offset: 100,
-        disable: window.innerWidth < 768
+        disable: window.innerWidth < 768,
       });
-      
+
       // Refresh AOS on window resize
-      window.addEventListener('resize', function() {
+      window.addEventListener("resize", function () {
         AOS.refresh();
       });
-      
+
       // Carousel functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const carouselTrack = document.getElementById('carouselTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const indicatorsContainer = document.getElementById('carouselIndicators');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const carouselTrack = document.getElementById("carouselTrack");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const indicatorsContainer =
+          document.getElementById("carouselIndicators");
+
         // Candle data for the carousel
         const candles = [
-          { id: 1, name: "Warm & Earthy", image: "./assets/images/havens/beyond-pic-1.jpg" },
-          { id: 2, name: "Fresh & Oceanic", image: "./assets/images/havens/beyond-pic-2.jpg" },
-          { id: 3, name: "Zesty & Uplifting", image: "./assets/images/havens/beyond-pic-3.jpg" },
-          { id: 4, name: "Cozy & Spiced", image: "./assets/images/havens/beyond-pic-4.jpg" },
-          { id: 5, name: "Mysterious & Rich", image: "./assets/images/havens/beyond-pic-5.jpg" },
-          { id: 6, name: "Green & Revitalizing", image: "./assets/images/havens/beyond-pic-6.jpg" }
+          {
+            id: 1,
+            name: "Pastel bliss candle",
+            image: "./assets/images/havens/beyond-pic-1.jpg",
+          },
+          {
+            id: 2,
+            name: "merry christmas candle",
+            image: "./assets/images/havens/beyond-pic-2.jpg",
+          },
+          {
+            id: 3,
+            name: "lavender delight candle",
+            image: "./assets/images/havens/beyond-pic-3.jpg",
+          },
+          {
+            id: 4,
+            name: "golden glow candle",
+            image: "./assets/images/havens/beyond-pic-4.jpg",
+          },
+          {
+            id: 5,
+            name: "Mysterious & Rich",
+            image: "./assets/images/havens/beyond-pic-5.jpg",
+          },
+          {
+            id: 6,
+            name: "Green & Revitalizing",
+            image: "./assets/images/havens/beyond-pic-6.jpg",
+          },
         ];
-        
+
         let currentSlide = 0;
         let startX = 0;
         let currentX = 0;
         let isDragging = false;
-        
+
         // Create carousel slides
         candles.forEach((candle, index) => {
-          const slide = document.createElement('div');
-          slide.className = 'carousel-slide';
+          const slide = document.createElement("div");
+          slide.className = "carousel-slide";
           slide.innerHTML = `
             <img src="${candle.image}" alt="${candle.name}" />
           `;
           carouselTrack.appendChild(slide);
-          
+
           // Create indicator
-          const indicator = document.createElement('div');
-          indicator.className = 'carousel-indicator';
-          if (index === 0) indicator.classList.add('active');
-          indicator.addEventListener('click', () => {
+          const indicator = document.createElement("div");
+          indicator.className = "carousel-indicator";
+          if (index === 0) indicator.classList.add("active");
+          indicator.addEventListener("click", () => {
             goToSlide(index);
           });
           indicatorsContainer.appendChild(indicator);
         });
-        
+
         // Carousel navigation
         function goToSlide(slideIndex) {
           currentSlide = slideIndex;
-          const slideWidth = document.querySelector('.carousel-slide').offsetWidth + 24;
+          const slideWidth =
+            document.querySelector(".carousel-slide").offsetWidth + 24;
           carouselTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-          
+
           // Update indicators
-          document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === currentSlide);
-          });
+          document
+            .querySelectorAll(".carousel-indicator")
+            .forEach((indicator, index) => {
+              indicator.classList.toggle("active", index === currentSlide);
+            });
         }
-        
-        prevBtn.addEventListener('click', () => {
+
+        prevBtn.addEventListener("click", () => {
           currentSlide = (currentSlide - 1 + candles.length) % candles.length;
           goToSlide(currentSlide);
         });
-        
-        nextBtn.addEventListener('click', () => {
+
+        nextBtn.addEventListener("click", () => {
           currentSlide = (currentSlide + 1) % candles.length;
           goToSlide(currentSlide);
         });
-        
+
         // Touch events for mobile carousel
-        carouselTrack.addEventListener('touchstart', (e) => {
+        carouselTrack.addEventListener("touchstart", (e) => {
           startX = e.touches[0].clientX;
           isDragging = true;
         });
-        
-        carouselTrack.addEventListener('touchmove', (e) => {
+
+        carouselTrack.addEventListener("touchmove", (e) => {
           if (!isDragging) return;
           currentX = e.touches[0].clientX;
           const diff = startX - currentX;
-          
+
           if (Math.abs(diff) > 10) {
             e.preventDefault();
           }
         });
-        
-        carouselTrack.addEventListener('touchend', () => {
+
+        carouselTrack.addEventListener("touchend", () => {
           if (!isDragging) return;
-          
+
           const diff = startX - currentX;
           const threshold = 50;
-          
+
           if (diff > threshold) {
             currentSlide = (currentSlide + 1) % candles.length;
           } else if (diff < -threshold) {
             currentSlide = (currentSlide - 1 + candles.length) % candles.length;
           }
-          
+
           goToSlide(currentSlide);
           isDragging = false;
         });
-        
+
         // Auto-advance carousel (only on desktop)
         if (window.innerWidth > 768) {
           setInterval(() => {
@@ -1166,99 +1369,101 @@
             goToSlide(currentSlide);
           }, 5000);
         }
-        
+
         // Back to top button
-        const backToTopBtn = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', () => {
+        const backToTopBtn = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
           if (window.pageYOffset > 300) {
-            backToTopBtn.classList.add('visible');
+            backToTopBtn.classList.add("visible");
           } else {
-            backToTopBtn.classList.remove('visible');
+            backToTopBtn.classList.remove("visible");
           }
         });
-        
-        backToTopBtn.addEventListener('click', (e) => {
+
+        backToTopBtn.addEventListener("click", (e) => {
           e.preventDefault();
           window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         });
-        
+
         // Mobile navigation
-        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
-        
-        mobileNavItems.forEach(item => {
-          item.addEventListener('click', function(e) {
+        const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
+
+        mobileNavItems.forEach((item) => {
+          item.addEventListener("click", function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
+            const targetId = this.getAttribute("href");
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
               document.activeElement.blur();
-              
+
               targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth",
+                block: "start",
               });
-              
-              mobileNavItems.forEach(navItem => navItem.classList.remove('active'));
-              this.classList.add('active');
+
+              mobileNavItems.forEach((navItem) =>
+                navItem.classList.remove("active"),
+              );
+              this.classList.add("active");
             }
           });
         });
-        
+
         // Update active nav on scroll
-        const sections = document.querySelectorAll('section');
-        const navDots = document.querySelectorAll('.nav-dot');
-        
+        const sections = document.querySelectorAll("section");
+        const navDots = document.querySelectorAll(".nav-dot");
+
         function updateActiveNav() {
-          let current = '';
-          
-          sections.forEach(section => {
+          let current = "";
+
+          sections.forEach((section) => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 200)) {
-              current = section.getAttribute('id');
+            if (pageYOffset >= sectionTop - 200) {
+              current = section.getAttribute("id");
             }
           });
-          
-          navDots.forEach(dot => {
-            dot.classList.remove('active');
-            if (dot.getAttribute('href').substring(1) === current) {
-              dot.classList.add('active');
+
+          navDots.forEach((dot) => {
+            dot.classList.remove("active");
+            if (dot.getAttribute("href").substring(1) === current) {
+              dot.classList.add("active");
             }
           });
-          
-          mobileNavItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('href').substring(1) === current) {
-              item.classList.add('active');
+
+          mobileNavItems.forEach((item) => {
+            item.classList.remove("active");
+            if (item.getAttribute("href").substring(1) === current) {
+              item.classList.add("active");
             }
           });
         }
-        
-        window.addEventListener('scroll', updateActiveNav);
-        
+
+        window.addEventListener("scroll", updateActiveNav);
+
         // Smooth scrolling for all navigation
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-          link.addEventListener('click', function(e) {
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+          link.addEventListener("click", function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
+            const targetId = this.getAttribute("href");
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
               document.activeElement.blur();
-              
+
               targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth",
+                block: "start",
               });
             }
           });
         });
-        
+
         // Initialize carousel
         goToSlide(0);
       });

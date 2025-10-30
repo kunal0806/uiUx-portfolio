@@ -4,26 +4,32 @@
     <meta charset="UTF-8" />
     <title>MapleCode Innovations – Case Study | Jagriti Sood</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A cinematic case study of MapleCode Innovations website redesign by Jagriti Sood" />
+    <meta
+      name="description"
+      content="A cinematic case study of MapleCode Innovations website redesign by Jagriti Sood"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <style>
       :root {
         --primary: #3b82f6;
-       --primary-dark: #8b5cf6;
+        --primary-dark: #8b5cf6;
         --accent: #8021d3;
         --dark: #0f0f13;
         --darker: #0a0a0c;
         --light: #f8fafc;
         --gray: #94a3b8;
       }
-      
+
       body {
         font-family: "Inter", Arial, sans-serif;
         background-color: var(--darker);
@@ -54,7 +60,7 @@
       }
 
       .section-title::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -10px;
         left: 0;
@@ -65,7 +71,7 @@
       }
 
       .project-hero {
-        background: 
+        background:
           linear-gradient(rgba(15, 15, 19, 0.7), rgba(15, 15, 19, 0.9)),
           url("PROJECT2.jpg") center/cover no-repeat;
         height: 100vh;
@@ -79,13 +85,17 @@
       }
 
       .project-hero::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.2), transparent 70%);
+        background: radial-gradient(
+          circle at 70% 50%,
+          rgba(59, 130, 246, 0.2),
+          transparent 70%
+        );
       }
 
       .hero-content {
@@ -121,7 +131,11 @@
       }
 
       @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
           transform: translateY(0) translateX(-50%);
         }
         40% {
@@ -139,7 +153,9 @@
         padding: 2.5rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
       }
 
       .card:hover {
@@ -158,7 +174,11 @@
         text-align: center;
         padding: 2rem;
         border-radius: 12px;
-        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.1),
+          rgba(16, 185, 129, 0.1)
+        );
         border: 1px solid rgba(59, 130, 246, 0.2);
       }
 
@@ -212,7 +232,7 @@
       }
 
       .process-step:not(:last-child)::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 60px;
         left: 30px;
@@ -225,7 +245,11 @@
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
         display: flex;
         align-items: center;
         justify-content: center;
@@ -330,15 +354,15 @@
         .hero-title {
           font-size: 2.5rem;
         }
-        
+
         .section-title {
           font-size: 2.2rem;
         }
-        
+
         .section {
           padding: 4rem 1.5rem;
         }
-        
+
         .nav-dots {
           display: none;
         }
@@ -358,49 +382,65 @@
       <a href="#learnings" class="nav-dot"></a>
     </div>
 
-      <!-- Hero -->
-      <div class="project-hero">
-        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-          <h1 class="hero-title">MapleCode Innovations</h1>
-          <p class="hero-subtitle">Elevating digital presence for modern businesses</p>
-          <div class="flex flex-wrap gap-4 justify-center mt-8">
-            <a href="#overview" class="btn btn-primary">Explore Case Study</a>
-            <a href="./work.html" class="btn btn-outline">Back to Portfolio</a>
-          </div>
-        </div>
-        <div class="scroll-indicator">
-          <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+    <!-- Hero -->
+    <div class="project-hero">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="hero-title">MapleCode Innovations</h1>
+        <p class="hero-subtitle">
+          Elevating digital presence for modern businesses
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center mt-8">
+          <a href="#overview" class="btn btn-primary">Explore Case Study</a>
+          <a href="./work.html" class="btn btn-outline">Back to Portfolio</a>
         </div>
       </div>
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+      </div>
+    </div>
 
     <!-- Overview -->
     <section id="overview" class="section" data-aos="fade-up">
       <h2 class="section-title">Project Overview</h2>
       <div class="card">
         <p class="text-gray-300 mb-6 text-lg leading-relaxed">
-          MapleCode Innovations is a digital solutions company helping businesses grow their online presence. I led the UX and UI design to build a sleek, modern, and credible website that positions MapleCode as a reliable partner in design, development, and digital marketing.
+          MapleCode Innovations is a digital solutions company helping
+          businesses grow their online presence. I led the UX and UI design to
+          build a sleek, modern, and credible website that positions MapleCode
+          as a reliable partner in design, development, and digital marketing.
         </p>
         <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-blue-500">
-          <p class="text-white font-semibold">Goal: Simplify their multi-service offerings into a clear, engaging digital experience that converts visitors into clients.</p>
+          <p class="text-white font-semibold">
+            Goal: Simplify their multi-service offerings into a clear, engaging
+            digital experience that converts visitors into clients.
+          </p>
         </div>
-        
+
         <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="text-center p-4">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-900/30 flex items-center justify-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-900/30 flex items-center justify-center"
+            >
               <i class="fas fa-pen-fancy text-purple-400 text-2xl"></i>
             </div>
             <h3 class="font-bold text-lg mb-2">Role</h3>
             <p class="text-gray-400">Lead UX/UI Designer</p>
           </div>
           <div class="text-center p-4">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-900/30 flex items-center justify-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-900/30 flex items-center justify-center"
+            >
               <i class="fas fa-tasks text-purple-400 text-2xl"></i>
             </div>
             <h3 class="font-bold text-lg mb-2">Responsibilities</h3>
-            <p class="text-gray-400">UX Strategy, Visual Design, Content Strategy</p>
+            <p class="text-gray-400">
+              UX Strategy, Visual Design, Content Strategy
+            </p>
           </div>
           <div class="text-center p-4">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-900/30 flex items-center justify-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-900/30 flex items-center justify-center"
+            >
               <i class="fas fa-calendar-alt text-purple-400 text-2xl"></i>
             </div>
             <h3 class="font-bold text-lg mb-2">Timeline</h3>
@@ -415,14 +455,18 @@
       <h2 class="section-title">Target Users</h2>
       <div class="card">
         <p class="text-gray-300 mb-6 text-lg">
-          All users valued credibility, results, and simplicity over technical jargon.
+          All users valued credibility, results, and simplicity over technical
+          jargon.
         </p>
-        
+
         <div class="user-persona">
           <div class="persona-card" data-aos="fade-right" data-aos-delay="100">
             <div class="persona-name">Small & Mid-Sized Business Owners</div>
             <div class="persona-role">Seeking modern websites & branding</div>
-            <p class="text-gray-300 mb-4">Typically time-constrained entrepreneurs who need effective digital solutions to grow their business.</p>
+            <p class="text-gray-300 mb-4">
+              Typically time-constrained entrepreneurs who need effective
+              digital solutions to grow their business.
+            </p>
             <div class="bg-blue-900/20 p-3 rounded">
               <h4 class="font-semibold text-purple-300 mb-1">Key Needs</h4>
               <ul class="text-gray-300 list-disc ml-5">
@@ -432,11 +476,14 @@
               </ul>
             </div>
           </div>
-          
+
           <div class="persona-card" data-aos="fade-right" data-aos-delay="200">
             <div class="persona-name">Corporate Clients</div>
             <div class="persona-role">Needing digital transformation</div>
-            <p class="text-gray-300 mb-4">Established businesses looking to modernize their digital infrastructure and optimize operations.</p>
+            <p class="text-gray-300 mb-4">
+              Established businesses looking to modernize their digital
+              infrastructure and optimize operations.
+            </p>
             <div class="bg-blue-900/20 p-3 rounded">
               <h4 class="font-semibold text-purple-300 mb-1">Key Needs</h4>
               <ul class="text-gray-300 list-disc ml-5">
@@ -446,11 +493,14 @@
               </ul>
             </div>
           </div>
-          
+
           <div class="persona-card" data-aos="fade-right" data-aos-delay="300">
             <div class="persona-name">Startup Founders</div>
             <div class="persona-role">Wanting fast, scalable solutions</div>
-            <p class="text-gray-300 mb-4">Innovators seeking agile development partners to bring their vision to market quickly.</p>
+            <p class="text-gray-300 mb-4">
+              Innovators seeking agile development partners to bring their
+              vision to market quickly.
+            </p>
             <div class="bg-blue-900/20 p-3 rounded">
               <h4 class="font-semibold text-purple-300 mb-1">Key Needs</h4>
               <ul class="text-gray-300 list-disc ml-5">
@@ -471,42 +521,62 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-blue-900/20 p-5 rounded-lg border border-blue-800/30">
             <div class="flex items-center mb-3">
-              <div class="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center mr-3">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center mr-3"
+              >
                 <i class="fas fa-code text-red-400"></i>
               </div>
               <h3 class="font-bold text-lg">Technical Translation</h3>
             </div>
-            <p class="text-gray-300">Translating a wide range of technical services into clear, relatable business value for non-technical users.</p>
+            <p class="text-gray-300">
+              Translating a wide range of technical services into clear,
+              relatable business value for non-technical users.
+            </p>
           </div>
-          
+
           <div class="bg-blue-900/20 p-5 rounded-lg border border-blue-800/30">
             <div class="flex items-center mb-3">
-              <div class="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center mr-3">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center mr-3"
+              >
                 <i class="fas fa-users text-yellow-400"></i>
               </div>
               <h3 class="font-bold text-lg">Diverse Audience</h3>
             </div>
-            <p class="text-gray-300">Designing for both small business owners with limited budgets and enterprise clients with complex needs.</p>
+            <p class="text-gray-300">
+              Designing for both small business owners with limited budgets and
+              enterprise clients with complex needs.
+            </p>
           </div>
-          
+
           <div class="bg-blue-900/20 p-5 rounded-lg border border-blue-800/30">
             <div class="flex items-center mb-3">
-              <div class="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center mr-3">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center mr-3"
+              >
                 <i class="fas fa-handshake text-purple-400"></i>
               </div>
               <h3 class="font-bold text-lg">Establishing Trust</h3>
             </div>
-            <p class="text-gray-300">Building credibility and trust for a relatively new company in a competitive digital services market.</p>
+            <p class="text-gray-300">
+              Building credibility and trust for a relatively new company in a
+              competitive digital services market.
+            </p>
           </div>
-          
+
           <div class="bg-blue-900/20 p-5 rounded-lg border border-blue-800/30">
             <div class="flex items-center mb-3">
-              <div class="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center mr-3">
+              <div
+                class="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center mr-3"
+              >
                 <i class="fas fa-tachometer-alt text-purple-400"></i>
               </div>
               <h3 class="font-bold text-lg">Performance Balance</h3>
             </div>
-            <p class="text-gray-300">Balancing aesthetic appeal with website performance and SEO optimization requirements.</p>
+            <p class="text-gray-300">
+              Balancing aesthetic appeal with website performance and SEO
+              optimization requirements.
+            </p>
           </div>
         </div>
       </div>
@@ -519,64 +589,98 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <div class="flex items-start mb-6">
-              <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0"
+              >
                 <i class="fas fa-sitemap text-purple-400"></i>
               </div>
               <div>
                 <h3 class="font-bold text-xl mb-2">Simplified Navigation</h3>
-                <p class="text-gray-300">Created intuitive navigation grouped by service categories rather than technical specifications.</p>
+                <p class="text-gray-300">
+                  Created intuitive navigation grouped by service categories
+                  rather than technical specifications.
+                </p>
               </div>
             </div>
-            
+
             <div class="flex items-start mb-6">
-              <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0"
+              >
                 <i class="fas fa-palette text-purple-400"></i>
               </div>
               <div>
-                <h3 class="font-bold text-xl mb-2">Professional Visual Identity</h3>
-                <p class="text-gray-300">Used a refined blue-white color palette to establish a modern, trustworthy brand presence.</p>
+                <h3 class="font-bold text-xl mb-2">
+                  Professional Visual Identity
+                </h3>
+                <p class="text-gray-300">
+                  Used a refined blue-white color palette to establish a modern,
+                  trustworthy brand presence.
+                </p>
               </div>
             </div>
-            
+
             <div class="flex items-start">
-              <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0"
+              >
                 <i class="fas fa-comments text-purple-400"></i>
               </div>
               <div>
                 <h3 class="font-bold text-xl mb-2">Value-Driven Messaging</h3>
-                <p class="text-gray-300">Reframed technical copy into human-centered, benefit-focused language that resonates with business goals.</p>
+                <p class="text-gray-300">
+                  Reframed technical copy into human-centered, benefit-focused
+                  language that resonates with business goals.
+                </p>
               </div>
             </div>
           </div>
-          
+
           <div>
             <div class="flex items-start mb-6">
-              <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0"
+              >
                 <i class="fas fa-chart-line text-yellow-400"></i>
               </div>
               <div>
                 <h3 class="font-bold text-xl mb-2">Trust Building Elements</h3>
-                <p class="text-gray-300">Added social proof through case studies, testimonials, and performance metrics to establish credibility.</p>
+                <p class="text-gray-300">
+                  Added social proof through case studies, testimonials, and
+                  performance metrics to establish credibility.
+                </p>
               </div>
             </div>
-            
+
             <div class="flex items-start mb-6">
-              <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0"
+              >
                 <i class="fas fa-bolt text-red-400"></i>
               </div>
               <div>
                 <h3 class="font-bold text-xl mb-2">Performance Optimization</h3>
-                <p class="text-gray-300">Designed responsive, SEO-optimized structure prioritizing speed and accessibility across devices.</p>
+                <p class="text-gray-300">
+                  Designed responsive, SEO-optimized structure prioritizing
+                  speed and accessibility across devices.
+                </p>
               </div>
             </div>
-            
+
             <div class="flex items-start">
-              <div class="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+              <div
+                class="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center mr-4 flex-shrink-0"
+              >
                 <i class="fas fa-mobile text-indigo-400"></i>
               </div>
               <div>
-                <h3 class="font-bold text-xl mb-2">Conversion-Focused Design</h3>
-                <p class="text-gray-300">Implemented strategic CTAs and contact points to guide users toward conversion at every stage.</p>
+                <h3 class="font-bold text-xl mb-2">
+                  Conversion-Focused Design
+                </h3>
+                <p class="text-gray-300">
+                  Implemented strategic CTAs and contact points to guide users
+                  toward conversion at every stage.
+                </p>
               </div>
             </div>
           </div>
@@ -592,55 +696,85 @@
           <div class="step-number">1</div>
           <div class="step-content">
             <h3 class="step-title">Discovery & Competitive Analysis</h3>
-            <p class="text-gray-300 mb-4">Analyzed the digital services landscape and identified key opportunities to differentiate MapleCode from competitors.</p>
+            <p class="text-gray-300 mb-4">
+              Analyzed the digital services landscape and identified key
+              opportunities to differentiate MapleCode from competitors.
+            </p>
             <div class="bg-gray-800 p-4 rounded-lg">
               <h4 class="font-semibold text-white mb-2">Key Insights</h4>
               <ul class="text-gray-300 list-disc ml-5">
-                <li>Most competitors used technical jargon that confused potential clients</li>
-                <li>Visual design in the industry was often outdated or overly complex</li>
-                <li>Clear pricing and service packages were rare but highly valued</li>
+                <li>
+                  Most competitors used technical jargon that confused potential
+                  clients
+                </li>
+                <li>
+                  Visual design in the industry was often outdated or overly
+                  complex
+                </li>
+                <li>
+                  Clear pricing and service packages were rare but highly valued
+                </li>
               </ul>
             </div>
           </div>
         </div>
-        
+
         <div class="process-step">
           <div class="step-number">2</div>
           <div class="step-content">
-            <h3 class="step-title">Content Strategy & Information Architecture</h3>
-            <p class="text-gray-300 mb-4">Developed a content-first approach that prioritized clarity and value proposition over technical details.</p>
+            <h3 class="step-title">
+              Content Strategy & Information Architecture
+            </h3>
+            <p class="text-gray-300 mb-4">
+              Developed a content-first approach that prioritized clarity and
+              value proposition over technical details.
+            </p>
             <div class="bg-gray-800 p-4 rounded-lg">
               <h4 class="font-semibold text-white mb-2">Approach</h4>
               <ul class="text-gray-300 list-disc ml-5">
-                <li>Grouped services by business outcomes rather than technologies</li>
-                <li>Created multiple pathways to contact based on user readiness</li>
-                <li>Developed clear service packages with transparent pricing</li>
+                <li>
+                  Grouped services by business outcomes rather than technologies
+                </li>
+                <li>
+                  Created multiple pathways to contact based on user readiness
+                </li>
+                <li>
+                  Developed clear service packages with transparent pricing
+                </li>
               </ul>
             </div>
           </div>
         </div>
-        
+
         <div class="process-step">
           <div class="step-number">3</div>
           <div class="step-content">
             <h3 class="step-title">Wireframing & User Testing</h3>
-            <p class="text-gray-300 mb-4">Created and tested interactive prototypes with representative users to validate navigation and content clarity.</p>
+            <p class="text-gray-300 mb-4">
+              Created and tested interactive prototypes with representative
+              users to validate navigation and content clarity.
+            </p>
             <div class="bg-gray-800 p-4 rounded-lg">
               <h4 class="font-semibold text-white mb-2">Tools & Methods</h4>
               <ul class="text-gray-300 list-disc ml-5">
                 <li>Figma for prototyping and collaborative design</li>
-                <li>User testing with small business owners and startup founders</li>
+                <li>
+                  User testing with small business owners and startup founders
+                </li>
                 <li>A/B testing on key conversion elements</li>
               </ul>
             </div>
           </div>
         </div>
-        
+
         <div class="process-step">
           <div class="step-number">4</div>
           <div class="step-content">
             <h3 class="step-title">Visual Design & Development Handoff</h3>
-            <p class="text-gray-300 mb-4">Developed a comprehensive design system and provided detailed specifications for development implementation.</p>
+            <p class="text-gray-300 mb-4">
+              Developed a comprehensive design system and provided detailed
+              specifications for development implementation.
+            </p>
             <div class="bg-gray-800 p-4 rounded-lg">
               <h4 class="font-semibold text-white mb-2">Design System</h4>
               <ul class="text-gray-300 list-disc ml-5">
@@ -658,8 +792,11 @@
     <section id="outcomes" class="section" data-aos="fade-up">
       <h2 class="section-title">Outcomes & Impact</h2>
       <div class="card">
-        <p class="text-gray-300 mb-8 text-lg text-center">The redesigned website delivered measurable business growth and established MapleCode as a credible industry player</p>
-        
+        <p class="text-gray-300 mb-8 text-lg text-center">
+          The redesigned website delivered measurable business growth and
+          established MapleCode as a credible industry player
+        </p>
+
         <div class="stats-grid">
           <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
             <div class="stat-number">32%</div>
@@ -675,37 +812,58 @@
           </div>
           <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
             <div class="stat-number">100%</div>
-            <div class="stat-label">Client satisfaction with new brand identity</div>
+            <div class="stat-label">
+              Client satisfaction with new brand identity
+            </div>
           </div>
         </div>
-        
+
         <div class="mt-12">
           <h3 class="text-2xl font-bold mb-6 text-center">Client Feedback</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-gray-800 p-6 rounded-lg">
               <div class="flex items-center mb-4">
-                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4"
+                >
                   <i class="fas fa-user text-purple-400"></i>
                 </div>
                 <div>
                   <h4 class="font-bold">Michael, Small Business Owner</h4>
-                  <p class="text-gray-400 text-sm">Restaurant chain expanding online</p>
+                  <p class="text-gray-400 text-sm">
+                    Restaurant chain expanding online
+                  </p>
                 </div>
               </div>
-              <p class="text-gray-300 italic">"The website made it so easy to understand exactly what MapleCode could do for my business. I wasn't confused by technical terms, and the design felt premium yet approachable. We signed up for their web development package within a week."</p>
+              <p class="text-gray-300 italic">
+                "The website made it so easy to understand exactly what
+                MapleCode could do for my business. I wasn't confused by
+                technical terms, and the design felt premium yet approachable.
+                We signed up for their web development package within a week."
+              </p>
             </div>
-            
+
             <div class="bg-gray-800 p-6 rounded-lg">
               <div class="flex items-center mb-4">
-                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4"
+                >
                   <i class="fas fa-user text-purple-400"></i>
                 </div>
                 <div>
                   <h4 class="font-bold">Sarah, Startup Founder</h4>
-                  <p class="text-gray-400 text-sm">Tech startup needing MVP development</p>
+                  <p class="text-gray-400 text-sm">
+                    Tech startup needing MVP development
+                  </p>
                 </div>
               </div>
-              <p class="text-gray-300 italic">"As a non-technical founder, I appreciated how MapleCode's website spoke to business outcomes rather than just features. The clear pricing and project examples gave me confidence to reach out. The redesign perfectly captures their expertise and approachability."</p>
+              <p class="text-gray-300 italic">
+                "As a non-technical founder, I appreciated how MapleCode's
+                website spoke to business outcomes rather than just features.
+                The clear pricing and project examples gave me confidence to
+                reach out. The redesign perfectly captures their expertise and
+                approachability."
+              </p>
             </div>
           </div>
         </div>
@@ -717,38 +875,61 @@
       <h2 class="section-title">What I Learned</h2>
       <div class="card">
         <p class="text-gray-300 mb-6 text-lg leading-relaxed">
-          Simplicity is the ultimate sophistication. Designing for growth means balancing empathy, structure, and measurable results.
+          Simplicity is the ultimate sophistication. Designing for growth means
+          balancing empathy, structure, and measurable results.
         </p>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="bg-gray-800 p-5 rounded-lg">
-            <div class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center mb-4">
+            <div
+              class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center mb-4"
+            >
               <i class="fas fa-heart text-purple-400 text-xl"></i>
             </div>
             <h3 class="font-bold text-xl mb-3">Empathy Drives Value</h3>
-            <p class="text-gray-300">Understanding user perspectives transforms technical offerings into relatable business solutions that drive conversions.</p>
+            <p class="text-gray-300">
+              Understanding user perspectives transforms technical offerings
+              into relatable business solutions that drive conversions.
+            </p>
           </div>
-          
+
           <div class="bg-gray-800 p-5 rounded-lg">
-            <div class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center mb-4">
+            <div
+              class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center mb-4"
+            >
               <i class="fas fa-sitemap text-purple-400 text-xl"></i>
             </div>
             <h3 class="font-bold text-xl mb-3">Clarity Converts</h3>
-            <p class="text-gray-300">Clear information hierarchy and straightforward navigation significantly increase engagement and lead generation.</p>
+            <p class="text-gray-300">
+              Clear information hierarchy and straightforward navigation
+              significantly increase engagement and lead generation.
+            </p>
           </div>
-          
+
           <div class="bg-gray-800 p-5 rounded-lg">
-            <div class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center mb-4">
+            <div
+              class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center mb-4"
+            >
               <i class="fas fa-gem text-purple-400 text-xl"></i>
             </div>
             <h3 class="font-bold text-xl mb-3">Consistency Builds Trust</h3>
-            <p class="text-gray-300">Maintaining consistency across visual design, tone, and performance establishes credibility and professional reputation.</p>
+            <p class="text-gray-300">
+              Maintaining consistency across visual design, tone, and
+              performance establishes credibility and professional reputation.
+            </p>
           </div>
         </div>
-        
-        <div class="mt-8 p-5 bg-blue-900/20 rounded-lg border border-blue-800/30">
+
+        <div
+          class="mt-8 p-5 bg-blue-900/20 rounded-lg border border-blue-800/30"
+        >
           <h3 class="font-bold text-xl mb-3 text-purple-300">Key Takeaway</h3>
-          <p class="text-gray-300">In B2B digital services, the website isn't just a marketing tool—it's the first deliverable. A well-designed site demonstrates the quality of work clients can expect, making design credibility directly proportional to business credibility.</p>
+          <p class="text-gray-300">
+            In B2B digital services, the website isn't just a marketing
+            tool—it's the first deliverable. A well-designed site demonstrates
+            the quality of work clients can expect, making design credibility
+            directly proportional to business credibility.
+          </p>
         </div>
       </div>
     </section>
@@ -756,14 +937,21 @@
     <!-- CTA -->
     <section class="section text-center" data-aos="fade-up">
       <div class="card max-w-2xl mx-auto">
-        <h2 class="text-3xl font-bold mb-4">Ready to transform your digital presence?</h2>
-        <p class="text-gray-300 mb-8">Let's collaborate to create impactful digital experiences that drive business growth.</p>
+        <h2 class="text-3xl font-bold mb-4">
+          Ready to transform your digital presence?
+        </h2>
+        <p class="text-gray-300 mb-8">
+          Let's collaborate to create impactful digital experiences that drive
+          business growth.
+        </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="./work.html" class="btn btn-outline">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Portfolio
+            <i class="fas fa-arrow-left mr-2"></i>
+            Back to Portfolio
           </a>
           <a href="./contact.html" class="btn btn-primary">
-            <i class="fas fa-envelope mr-2"></i> Start a Project
+            <i class="fas fa-envelope mr-2"></i>
+            Start a Project
           </a>
         </div>
       </div>
@@ -778,43 +966,43 @@
         duration: 1000,
         easing: "ease-out-cubic",
         once: true,
-        offset: 50
+        offset: 50,
       });
-      
+
       // Navigation dots functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const sections = document.querySelectorAll('section');
-        const navDots = document.querySelectorAll('.nav-dot');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+        const navDots = document.querySelectorAll(".nav-dot");
+
         // Update active nav dot on scroll
-        window.addEventListener('scroll', function() {
-          let current = '';
-          
-          sections.forEach(section => {
+        window.addEventListener("scroll", function () {
+          let current = "";
+
+          sections.forEach((section) => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 200)) {
-              current = section.getAttribute('id');
+            if (pageYOffset >= sectionTop - 200) {
+              current = section.getAttribute("id");
             }
           });
-          
-          navDots.forEach(dot => {
-            dot.classList.remove('active');
-            if (dot.getAttribute('href').substring(1) === current) {
-              dot.classList.add('active');
+
+          navDots.forEach((dot) => {
+            dot.classList.remove("active");
+            if (dot.getAttribute("href").substring(1) === current) {
+              dot.classList.add("active");
             }
           });
         });
-        
+
         // Smooth scrolling for nav dots
-        navDots.forEach(dot => {
-          dot.addEventListener('click', function(e) {
+        navDots.forEach((dot) => {
+          dot.addEventListener("click", function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
+            const targetId = this.getAttribute("href");
             const targetSection = document.querySelector(targetId);
             window.scrollTo({
               top: targetSection.offsetTop - 50,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
           });
         });

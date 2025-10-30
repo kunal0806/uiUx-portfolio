@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <title>Work — Jagriti Sood Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Jagriti Sood's portfolio of design work - transforming ideas into delightful, functional experiences" />
+    <meta
+      name="description"
+      content="Jagriti Sood's portfolio of design work - transforming ideas into delightful, functional experiences"
+    />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,21 +20,24 @@
 
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <style>
       :root {
         --primary: #3b82f6;
-       --primary-dark: #8b5cf6;
-         --accent: #8021d3;
+        --primary-dark: #8b5cf6;
+        --accent: #8021d3;
         --dark: #0f0f13;
         --darker: #0a0a0c;
         --light: #f8fafc;
         --gray: #94a3b8;
       }
-      
+
       body {
         font-family: "Inter", Arial, sans-serif;
         background-color: var(--darker);
@@ -65,13 +71,17 @@
       }
 
       .project-card::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(16, 185, 129, 0.05));
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.05),
+          rgba(16, 185, 129, 0.05)
+        );
         opacity: 0;
         transition: opacity 0.5s ease;
         z-index: -1;
@@ -116,7 +126,7 @@
       }
 
       .section-title::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -10px;
         left: 0;
@@ -127,10 +137,22 @@
       }
 
       .hero-bg {
-        background: 
-          radial-gradient(circle at 20% 80%, rgba(169, 57, 243, 0.08), transparent 25%),
-          radial-gradient(circle at 80% 20%, rgba(156, 34, 200, 0.15), transparent 25%),
-          radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.1), transparent 25%),
+        background:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(169, 57, 243, 0.08),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(156, 34, 200, 0.15),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(139, 92, 246, 0.1),
+            transparent 25%
+          ),
           linear-gradient(var(--darker), var(--dark));
         position: relative;
         overflow: hidden;
@@ -178,7 +200,8 @@
       }
 
       @keyframes float {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0) rotate(0deg);
         }
         50% {
@@ -298,11 +321,11 @@
         .section-title {
           font-size: 2.2rem;
         }
-        
+
         .nav-dots {
           display: none;
         }
-        
+
         .hero-bg {
           padding: 4rem 1.5rem;
         }
@@ -328,42 +351,64 @@
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
       </div>
-      
-      <div class="max-w-4xl mx-auto relative z-10" data-aos="fade-up" data-aos-duration="1000">
+
+      <div
+        class="max-w-4xl mx-auto relative z-10"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Work That <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Solves</span> Real Problems
+          Work That
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400"
+          >
+            Solves
+          </span>
+          Real Problems
         </h1>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">
-          A curated collection of design projects where empathy meets strategy, transforming complex challenges into intuitive, impactful experiences.
+        <p
+          class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10"
+        >
+          A curated collection of design projects where empathy meets strategy,
+          transforming complex challenges into intuitive, impactful experiences.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="#work" class="btn btn-primary explore-btn">
-            <i class="fas fa-eye"></i> Explore Projects
+            <i class="fas fa-eye"></i>
+            Explore Projects
           </a>
           <a href="./contact.html" class="btn btn-outline">
-            <i class="fas fa-paper-plane"></i> Get In Touch
+            <i class="fas fa-paper-plane"></i>
+            Get In Touch
           </a>
         </div>
       </div>
-      
-       <!-- Simple Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-    <div class="flex flex-col items-center">
-      <span class="text-gray-500 text-sm mb-2">Scroll to explore</span>
-      <div class="w-5 h-8 border border-gray-600 rounded-full flex justify-center">
-        <div class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"></div>
+
+      <!-- Simple Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div class="flex flex-col items-center">
+          <span class="text-gray-500 text-sm mb-2">Scroll to explore</span>
+          <div
+            class="w-5 h-8 border border-gray-600 rounded-full flex justify-center"
+          >
+            <div
+              class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"
+            ></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
     </section>
 
     <!-- Work Section -->
     <section id="work" class="max-w-6xl mx-auto px-6 py-24 text-center">
       <h2 class="section-title text-center mb-16">Featured Projects</h2>
-      
+
       <div class="flex flex-col gap-16">
         <!-- Project 1 -->
-        <div class="project-card rounded-2xl overflow-hidden" data-aos="fade-up">
+        <div
+          class="project-card rounded-2xl overflow-hidden"
+          data-aos="fade-up"
+        >
           <div class="flex flex-col lg:flex-row">
             <div class="lg:w-1/2 relative overflow-hidden">
               <img
@@ -373,39 +418,57 @@
               />
               <div class="project-overlay">
                 <div class="flex flex-wrap gap-2 mb-3">
-                  <span class="px-3 py-1 text-xs rounded-full bg-blue-500/20 text-purple-300 border border-blue-500/30">UX Design</span>
-                  <span class="px-3 py-1 text-xs rounded-full bg-green-500/20 text-green-300 border border-green-500/30">Web Design</span>
-                  <span class="px-3 py-1 text-xs rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">Accessibility</span>
+                  <span
+                    class="px-3 py-1 text-xs rounded-full bg-blue-500/20 text-purple-300 border border-blue-500/30"
+                  >
+                    UX Design
+                  </span>
+                  <span
+                    class="px-3 py-1 text-xs rounded-full bg-green-500/20 text-green-300 border border-green-500/30"
+                  >
+                    Web Design
+                  </span>
+                  <span
+                    class="px-3 py-1 text-xs rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                  >
+                    Accessibility
+                  </span>
                 </div>
                 <a
-  href="https://www.101healthcare.com"
-  target="_blank"
-  class="inline-flex items-center text-purple-400 font-medium hover:text-purple-300 transition underline"
->
-  www.101healthcare.com
-  <i class="fas fa-arrow-up-right-from-square ml-2 text-sm"></i>
-</a>
-
+                  href="https://www.101healthcare.com"
+                  target="_blank"
+                  class="inline-flex items-center text-purple-400 font-medium hover:text-purple-300 transition underline"
+                >
+                  www.101healthcare.com
+                  <i class="fas fa-arrow-up-right-from-square ml-2 text-sm"></i>
+                </a>
               </div>
             </div>
             <div class="lg:w-1/2 p-8 lg:p-12">
               <span class="project-tag">
-                <i class="fas fa-star mr-2"></i> CASE STUDY
+                <i class="fas fa-star mr-2"></i>
+                CASE STUDY
               </span>
               <h2 class="text-3xl lg:text-4xl font-bold mb-4">
                 101 Healthcare Website
               </h2>
               <p class="text-gray-300 mb-6 leading-relaxed">
-                A compassionate digital platform for Canadian home healthcare, designed to be accessible, warm, and easy to navigate, centered around seniors and families in need of care solutions.
+                A compassionate digital platform for Canadian home healthcare,
+                designed to be accessible, warm, and easy to navigate, centered
+                around seniors and families in need of care solutions.
               </p>
               <div class="grid grid-cols-2 gap-4 mb-8">
                 <div>
                   <h4 class="font-semibold text-white mb-2">Challenge</h4>
-                  <p class="text-gray-400 text-sm">Building trust and clarity for vulnerable users</p>
+                  <p class="text-gray-400 text-sm">
+                    Building trust and clarity for vulnerable users
+                  </p>
                 </div>
                 <div>
                   <h4 class="font-semibold text-white mb-2">Solution</h4>
-                  <p class="text-gray-400 text-sm">Empathetic design with clear information hierarchy</p>
+                  <p class="text-gray-400 text-sm">
+                    Empathetic design with clear information hierarchy
+                  </p>
                 </div>
               </div>
               <ul class="text-gray-400 text-sm mb-8 space-y-2">
@@ -422,18 +485,20 @@
                   28% drop in bounce rate
                 </li>
               </ul>
-              <a
-                href="./case-101healthcare.html"
-                class="btn btn-primary"
-              >
-                <i class="fas fa-external-link-alt"></i> View Case Study
+              <a href="./case-101healthcare.html" class="btn btn-primary">
+                <i class="fas fa-external-link-alt"></i>
+                View Case Study
               </a>
             </div>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="project-card rounded-2xl overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <div class="flex flex-col lg:flex-row-reverse">
             <div class="lg:w-1/2 relative overflow-hidden">
               <img
@@ -443,38 +508,57 @@
               />
               <div class="project-overlay">
                 <div class="flex flex-wrap gap-2 mb-3">
-                  <span class="px-3 py-1 text-xs rounded-full bg-blue-500/20 text-purple-300 border border-blue-500/30">UI Design</span>
-                  <span class="px-3 py-1 text-xs rounded-full bg-green-500/20 text-green-300 border border-green-500/30">Brand Identity</span>
-                  <span class="px-3 py-1 text-xs rounded-full bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">SaaS</span>
+                  <span
+                    class="px-3 py-1 text-xs rounded-full bg-blue-500/20 text-purple-300 border border-blue-500/30"
+                  >
+                    UI Design
+                  </span>
+                  <span
+                    class="px-3 py-1 text-xs rounded-full bg-green-500/20 text-green-300 border border-green-500/30"
+                  >
+                    Brand Identity
+                  </span>
+                  <span
+                    class="px-3 py-1 text-xs rounded-full bg-yellow-500/20 text-yellow-300 border border-yellow-500/30"
+                  >
+                    SaaS
+                  </span>
                 </div>
                 <a
-  href="https://www.mapleinnovate.io"
-  target="_blank"
-  class="inline-flex items-center text-purple-400 font-medium hover:text-purple-300 transition underline"
->
-  www.mapleinnovate.io
-  <i class="fas fa-arrow-up-right-from-square ml-2 text-sm"></i>
-</a>
+                  href="https://www.mapleinnovate.io"
+                  target="_blank"
+                  class="inline-flex items-center text-purple-400 font-medium hover:text-purple-300 transition underline"
+                >
+                  www.mapleinnovate.io
+                  <i class="fas fa-arrow-up-right-from-square ml-2 text-sm"></i>
+                </a>
               </div>
             </div>
             <div class="lg:w-1/2 p-8 lg:p-12">
               <span class="project-tag">
-                <i class="fas fa-star mr-2"></i> CASE STUDY
+                <i class="fas fa-star mr-2"></i>
+                CASE STUDY
               </span>
               <h2 class="text-3xl lg:text-4xl font-bold mb-4">
                 MapleCode Innovations
               </h2>
               <p class="text-gray-300 mb-6 leading-relaxed">
-                A minimal yet high-impact design system redefining MapleCode's brand presence with bold typography, fluid motion, and trust-driven UX for a digital solutions company.
+                A minimal yet high-impact design system redefining MapleCode's
+                brand presence with bold typography, fluid motion, and
+                trust-driven UX for a digital solutions company.
               </p>
               <div class="grid grid-cols-2 gap-4 mb-8">
                 <div>
                   <h4 class="font-semibold text-white mb-2">Challenge</h4>
-                  <p class="text-gray-400 text-sm">Establishing credibility for a new company</p>
+                  <p class="text-gray-400 text-sm">
+                    Establishing credibility for a new company
+                  </p>
                 </div>
                 <div>
                   <h4 class="font-semibold text-white mb-2">Solution</h4>
-                  <p class="text-gray-400 text-sm">Professional visual identity with clear value proposition</p>
+                  <p class="text-gray-400 text-sm">
+                    Professional visual identity with clear value proposition
+                  </p>
                 </div>
               </div>
               <ul class="text-gray-400 text-sm mb-8 space-y-2">
@@ -491,18 +575,20 @@
                   45% improvement in page load speed
                 </li>
               </ul>
-              <a
-                href="./case-maplecode.html"
-                class="btn btn-primary"
-              >
-                <i class="fas fa-external-link-alt"></i> View Case Study
+              <a href="./case-maplecode.html" class="btn btn-primary">
+                <i class="fas fa-external-link-alt"></i>
+                View Case Study
               </a>
             </div>
           </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="project-card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="project-card rounded-2xl overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <div class="flex flex-col lg:flex-row">
             <div class="lg:w-1/2 relative overflow-hidden">
               <img
@@ -512,38 +598,57 @@
               />
               <div class="project-overlay">
                 <div class="flex flex-wrap gap-2 mb-3">
-                  <span class="px-3 py-1 text-xs rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">Product Design</span>
-                  <span class="px-3 py-1 text-xs rounded-full bg-blue-500/20 text-purple-300 border border-blue-500/30">Dashboard</span>
-                  <span class="px-3 py-1 text-xs rounded-full bg-green-500/20 text-green-300 border border-green-500/30">Automation</span>
+                  <span
+                    class="px-3 py-1 text-xs rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                  >
+                    Product Design
+                  </span>
+                  <span
+                    class="px-3 py-1 text-xs rounded-full bg-blue-500/20 text-purple-300 border border-blue-500/30"
+                  >
+                    Dashboard
+                  </span>
+                  <span
+                    class="px-3 py-1 text-xs rounded-full bg-green-500/20 text-green-300 border border-green-500/30"
+                  >
+                    Automation
+                  </span>
                 </div>
-                    <a
-  href="https://www.mapleinnovate.io"
-  target="_blank"
-  class="inline-flex items-center text-purple-400 font-medium hover:text-purple-300 transition underline"
->
-  www.mapleinnovate.io
-  <i class="fas fa-arrow-up-right-from-square ml-2 text-sm"></i>
-</a>
+                <a
+                  href="https://www.mapleinnovate.io"
+                  target="_blank"
+                  class="inline-flex items-center text-purple-400 font-medium hover:text-purple-300 transition underline"
+                >
+                  www.mapleinnovate.io
+                  <i class="fas fa-arrow-up-right-from-square ml-2 text-sm"></i>
+                </a>
               </div>
             </div>
             <div class="lg:w-1/2 p-8 lg:p-12">
               <span class="project-tag">
-                <i class="fas fa-star mr-2"></i> CASE STUDY
+                <i class="fas fa-star mr-2"></i>
+                CASE STUDY
               </span>
               <h2 class="text-3xl lg:text-4xl font-bold mb-4">
                 Campaigns Dashboard
               </h2>
               <p class="text-gray-300 mb-6 leading-relaxed">
-                A sophisticated SaaS platform that simplifies marketing campaign management with intelligent automation, visual timelines, and flexible scheduling for modern marketing teams.
+                A sophisticated SaaS platform that simplifies marketing campaign
+                management with intelligent automation, visual timelines, and
+                flexible scheduling for modern marketing teams.
               </p>
               <div class="grid grid-cols-2 gap-4 mb-8">
                 <div>
                   <h4 class="font-semibold text-white mb-2">Challenge</h4>
-                  <p class="text-gray-400 text-sm">Fragmented workflows across multiple tools</p>
+                  <p class="text-gray-400 text-sm">
+                    Fragmented workflows across multiple tools
+                  </p>
                 </div>
                 <div>
                   <h4 class="font-semibold text-white mb-2">Solution</h4>
-                  <p class="text-gray-400 text-sm">Centralized hub with smart automation</p>
+                  <p class="text-gray-400 text-sm">
+                    Centralized hub with smart automation
+                  </p>
                 </div>
               </div>
               <ul class="text-gray-400 text-sm mb-8 space-y-2">
@@ -560,11 +665,9 @@
                   15+ hours saved weekly per team
                 </li>
               </ul>
-              <a
-                href="./case-campaign.html"
-                class="btn btn-primary"
-              >
-                <i class="fas fa-external-link-alt"></i> View Case Study
+              <a href="./case-campaign.html" class="btn btn-primary">
+                <i class="fas fa-external-link-alt"></i>
+                View Case Study
               </a>
             </div>
           </div>
@@ -575,7 +678,7 @@
     <!-- Stats Section -->
     <section id="stats" class="max-w-4xl mx-auto px-6 py-24 text-center">
       <h2 class="section-title mb-16">Design Impact</h2>
-      
+
       <div class="stats-grid">
         <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
           <div class="stat-number">45%</div>
@@ -594,14 +697,21 @@
           <div class="stat-label">User Satisfaction Score</div>
         </div>
       </div>
-      
-      <div class="mt-16 bg-gray-800/50 p-8 rounded-2xl border border-gray-700/50" data-aos="fade-up">
-        <h3 class="text-2xl font-bold mb-4">Ready to create something amazing?</h3>
+
+      <div
+        class="mt-16 bg-gray-800/50 p-8 rounded-2xl border border-gray-700/50"
+        data-aos="fade-up"
+      >
+        <h3 class="text-2xl font-bold mb-4">
+          Ready to create something amazing?
+        </h3>
         <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
-          Let's collaborate to transform your ideas into intuitive, impactful experiences that drive real business results.
+          Let's collaborate to transform your ideas into intuitive, impactful
+          experiences that drive real business results.
         </p>
         <a href="./contact.html" class="btn btn-primary">
-          <i class="fas fa-paper-plane mr-2"></i> Start a Project
+          <i class="fas fa-paper-plane mr-2"></i>
+          Start a Project
         </a>
       </div>
     </section>
@@ -621,62 +731,62 @@
         duration: 1000,
         easing: "ease-out-cubic",
         once: true,
-        offset: 50
+        offset: 50,
       });
-      
+
       // Smooth scroll functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const sections = document.querySelectorAll('section');
-        const navDots = document.querySelectorAll('.nav-dot');
-        const exploreBtn = document.querySelector('.explore-btn');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+        const navDots = document.querySelectorAll(".nav-dot");
+        const exploreBtn = document.querySelector(".explore-btn");
+
         // Smooth scroll for Explore Projects button
         if (exploreBtn) {
-          exploreBtn.addEventListener('click', function(e) {
+          exploreBtn.addEventListener("click", function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
+            const targetId = this.getAttribute("href");
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
               targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth",
+                block: "start",
               });
             }
           });
         }
-        
+
         // Update active nav dot on scroll
-        window.addEventListener('scroll', function() {
-          let current = '';
-          
-          sections.forEach(section => {
+        window.addEventListener("scroll", function () {
+          let current = "";
+
+          sections.forEach((section) => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 200)) {
-              current = section.getAttribute('id');
+            if (pageYOffset >= sectionTop - 200) {
+              current = section.getAttribute("id");
             }
           });
-          
-          navDots.forEach(dot => {
-            dot.classList.remove('active');
-            if (dot.getAttribute('href').substring(1) === current) {
-              dot.classList.add('active');
+
+          navDots.forEach((dot) => {
+            dot.classList.remove("active");
+            if (dot.getAttribute("href").substring(1) === current) {
+              dot.classList.add("active");
             }
           });
         });
-        
+
         // Smooth scrolling for nav dots
-        navDots.forEach(dot => {
-          dot.addEventListener('click', function(e) {
+        navDots.forEach((dot) => {
+          dot.addEventListener("click", function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
+            const targetId = this.getAttribute("href");
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
               targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth",
+                block: "start",
               });
             }
           });

@@ -15,7 +15,10 @@
     />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -31,7 +34,7 @@
         --light: #f8fafc;
         --gray: #94a3b8;
       }
-      
+
       .font-Modak {
         font-family: "Modak", cursive;
       }
@@ -41,13 +44,34 @@
       html {
         scroll-behavior: smooth;
       }
-      
+
       /* Clean Hero Background */
       .hero-bg {
-        background: 
-          radial-gradient(circle at 20% 30%, rgba(169, 57, 243, 0.08), transparent 25%),
-          radial-gradient(circle at 80% 70%, rgba(31, 34, 198, 0.05), transparent 25%),
-          linear-gradient(to bottom, #0c0b0d, #1f1d2f);
+        background:
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(169, 57, 243, 0.08),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(31, 34, 198, 0.05),
+            transparent 25%
+          ),
+          linear-gradient(to bottom, #0c0b0d, #1f1d2f),
+          /* Subtle grid pattern */
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px
+          );
+        background-size:
+          cover,
+          cover,
+          cover,
+          50px 50px,
+          50px 50px;
         position: relative;
         overflow: hidden;
       }
@@ -86,7 +110,8 @@
       }
 
       @keyframes float-subtle {
-        0%, 100% {
+        0%,
+        100% {
           transform: translate3d(0, 0, 0);
         }
         50% {
@@ -110,7 +135,11 @@
       }
 
       .btn-primary {
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
         color: white;
         box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
       }
@@ -132,9 +161,10 @@
         border-color: rgba(255, 255, 255, 0.3);
         transform: translateY(-2px);
       }
-      
+
       @keyframes float-3d {
-        0%, 100% {
+        0%,
+        100% {
           transform: translate3d(0, 0, 0) rotate(0deg);
         }
         33% {
@@ -144,7 +174,7 @@
           transform: translate3d(-15px, 15px, -10px) rotate(240deg);
         }
       }
-      
+
       /* Enhanced Button Designs */
       .btn {
         display: inline-flex;
@@ -160,62 +190,72 @@
         position: relative;
         overflow: hidden;
       }
-      
+
       .btn-primary {
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
         color: white;
         box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
       }
-      
+
       .btn-primary:hover {
         transform: translateY(-5px) scale(1.05);
         box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
       }
-      
+
       .btn-primary::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
         transition: left 0.7s;
       }
-      
+
       .btn-primary:hover::before {
         left: 100%;
       }
-      
+
       .btn-outline {
         background: rgba(30, 30, 36, 0.7);
         color: var(--light);
         border: 2px solid rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(10px);
       }
-      
+
       .btn-outline:hover {
         background: rgba(255, 255, 255, 0.1);
         border-color: rgba(255, 255, 255, 0.4);
         transform: translateY(-5px);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       }
-      
+
       /* Gradient Text Animation */
       .animate-gradient {
         background-size: 200% 200%;
         animation: gradient-shift 4s ease infinite;
       }
-      
+
       @keyframes gradient-shift {
-        0%, 100% {
+        0%,
+        100% {
           background-position: 0% 50%;
         }
         50% {
           background-position: 100% 50%;
         }
       }
-      
+
       /* Enhanced Card Hover Effects */
       .enhanced-card {
         background: rgba(30, 30, 36, 0.7);
@@ -226,30 +266,37 @@
         border: 1px solid rgba(255, 255, 255, 0.05);
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
-      
+
       .enhanced-card:hover {
         transform: translateY(-10px) scale(1.02);
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         border-color: rgba(59, 130, 246, 0.3);
       }
-      
+
       /* Pulse Animation */
       .pulse-glow {
         animation: pulse-glow 2s infinite;
       }
-      
+
       @keyframes pulse-glow {
-        0%, 100% {
+        0%,
+        100% {
           box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
         }
         50% {
-          box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.4);
+          box-shadow:
+            0 0 20px rgba(59, 130, 246, 0.8),
+            0 0 30px rgba(59, 130, 246, 0.4);
         }
       }
-      
+
       /* Bounce Animation for Icons */
       @keyframes bounce-soft {
-        0%, 20%, 50%, 80%, 100% {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
           transform: translateY(0);
         }
         40% {
@@ -259,18 +306,18 @@
           transform: translateY(-4px);
         }
       }
-      
+
       .bounce-soft {
         animation: bounce-soft 2s infinite;
       }
-      
+
       /* Enhanced Image Hover */
       .enhanced-image {
         transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         border-radius: 16px;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
       }
-      
+
       .enhanced-image:hover {
         transform: scale(1.05) rotate(1deg);
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
@@ -282,76 +329,76 @@
         .hero-bg {
           padding: 3rem 1rem;
         }
-        
+
         .hero-bg h1 {
           font-size: 2.5rem !important;
           line-height: 1.2 !important;
         }
-        
+
         .hero-bg p {
           font-size: 1.1rem !important;
           padding: 0 0.5rem;
         }
-        
+
         /* Project preview section mobile fixes */
         .project-preview {
           flex-direction: column;
           gap: 1rem;
         }
-        
+
         .project-preview img {
           width: 100% !important;
           max-width: 300px;
           height: auto !important;
         }
-        
+
         /* Work section mobile fixes */
         .work-card {
           flex-direction: column !important;
         }
-        
+
         .work-card .flex-1:last-child {
           margin-top: 1.5rem;
         }
-        
+
         /* About section mobile fixes */
         .about-section {
           flex-direction: column;
           text-align: center;
         }
-        
+
         .about-section img {
           margin-top: 2rem;
           width: 280px !important;
           height: 280px !important;
         }
-        
+
         /* Process section mobile fixes */
         .process-grid {
           grid-template-columns: 1fr !important;
         }
-        
+
         /* Testimonials mobile fixes */
         .testimonials-grid {
           grid-template-columns: 1fr !important;
         }
-        
+
         /* General mobile spacing */
         section {
           padding-left: 1rem !important;
           padding-right: 1rem !important;
         }
-        
+
         .enhanced-card {
           padding: 1.5rem !important;
         }
-        
+
         /* Stats bar mobile fixes */
         .stats-bar {
           gap: 2rem !important;
           flex-wrap: wrap;
         }
-        
+
         .stats-bar > div {
           flex: 1 0 30%;
           min-width: 100px;
@@ -363,16 +410,16 @@
         .hero-bg h1 {
           font-size: 2rem !important;
         }
-        
+
         .btn {
           padding: 0.75rem 1.5rem;
           font-size: 0.9rem;
         }
-        
+
         .stats-bar {
           gap: 1.5rem !important;
         }
-        
+
         .stats-bar > div {
           flex: 1 0 45%;
         }
@@ -384,72 +431,114 @@
     <header></header>
 
     <!-- Enhanced Hero Section -->
-    <section class="px-4 md:px-8 py-16 md:py-28 flex flex-col items-center text-center relative overflow-hidden hero-bg">
+    <section
+      class="px-4 md:px-8 py-16 md:py-28 flex flex-col items-center text-center relative overflow-hidden hero-bg"
+    >
       <!-- Subtle Floating Shapes -->
       <div class="floating-shapes">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
       </div>
-      
-      <div class="max-w-4xl mx-auto relative z-10" data-aos="fade-up" data-aos-duration="1000">
+
+      <div
+        class="max-w-4xl mx-auto relative z-10"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <!-- Clean Badge -->
-        <div class="inline-block mb-6 px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700 backdrop-blur-sm">
-          <span class="text-gray-300 text-sm font-medium tracking-wide">WHO I AM</span>
+        <div
+          class="inline-block mb-6 px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700 backdrop-blur-sm"
+        >
+          <span class="text-gray-300 text-sm font-medium tracking-wide">
+            WHO I AM
+          </span>
         </div>
-        
+
         <!-- Main Heading -->
-        <h1 class="text-4xl md:text-6xl font-bold font-Modak leading-tight mb-6" style="-webkit-text-stroke: 1px #2b2b2f;">
+        <h1
+          class="text-4xl md:text-6xl font-bold font-Modak leading-tight mb-6"
+          style="-webkit-text-stroke: 1px #2b2b2f"
+        >
           <span class="block text-white mb-2">Hi, I'm Jagriti,</span>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-300">
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-300"
+          >
             and I design like it's my superpower.
           </span>
         </h1>
 
         <!-- Description -->
-        <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
-          From zero-to-system, I build digital tools that work hard and feel simple. 
-          If users love it and the devs don't cry, that's my kind of success.
+        <p
+          class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10"
+        >
+          From zero-to-system, I build digital tools that work hard and feel
+          simple. If users love it and the devs don't cry, that's my kind of
+          success.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
           <a href="./work.html" class="group btn btn-primary">
             <i class="fas fa-briefcase mr-3"></i>
             View Work
-            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+            <i
+              class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"
+            ></i>
           </a>
-          
-          <a href="./assets/files/Jagriti-Sood-Resume.pdf" download 
-             class="group btn btn-outline">
+
+          <a
+            href="./assets/files/Jagriti-Sood-Resume.pdf"
+            download
+            class="group btn btn-outline"
+          >
             <i class="fas fa-download mr-3"></i>
             Download CV
           </a>
         </div>
 
-        <!-- Stats Bar - More Subtle -->
-        <div class="flex justify-center gap-8 md:gap-12 mt-12 md:mt-16 pt-6 md:pt-8 border-t border-gray-800 stats-bar">
-          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-            <div class="text-2xl font-bold text-white">5+</div>
+        <!-- Stats Bar with Counting Animation -->
+        <div
+          class="flex justify-center gap-6 md:gap-12 mt-12 md:mt-16 pt-6 md:pt-8 border-t border-gray-800 stats-bar"
+        >
+          <div class="text-center fade-in-up delay-100">
+            <div class="text-2xl font-bold text-white count-up" data-target="5">
+              0+
+            </div>
             <div class="text-sm text-gray-400">Years Experience</div>
           </div>
-          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="text-2xl font-bold text-white">50+</div>
+          <div class="text-center fade-in-up delay-200">
+            <div
+              class="text-2xl font-bold text-white count-up"
+              data-target="50"
+            >
+              0+
+            </div>
             <div class="text-sm text-gray-400">Projects</div>
           </div>
-          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-center fade-in-up delay-300">
             <div class="text-2xl font-bold text-white">100%</div>
             <div class="text-sm text-gray-400">Satisfaction</div>
           </div>
         </div>
       </div>
 
-      <!-- Simple Scroll Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <!-- Simple Scroll Indicator - Fixed for Mobile -->
+      <div
+        class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+      >
         <div class="flex flex-col items-center">
-          <span class="text-gray-500 text-sm mb-2">Scroll to explore</span>
-          <div class="w-5 h-8 border border-gray-600 rounded-full flex justify-center">
-            <div class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"></div>
+          <span class="text-gray-500 text-xs md:text-sm mb-2">
+            Scroll to explore
+          </span>
+          <div
+            class="w-4 h-6 md:w-5 md:h-8 border border-gray-600 rounded-full flex justify-center"
+          >
+            <div
+              class="w-1 h-1 md:h-2 bg-gray-500 rounded-full mt-1 md:mt-2 animate-pulse"
+            ></div>
           </div>
         </div>
       </div>
@@ -460,32 +549,48 @@
       class="px-4 md:px-8 pt-8 pb-12 bg-[#18171A] max-w-4xl mx-auto"
       data-aos="fade-up"
     >
-      <h1 class="text-xl font-bold font-Modak mb-2" style="-webkit-text-stroke: 1px #2b2b2f;">A sneak peek into my Projects</h2>
+      <h1
+        class="text-xl font-bold font-Modak mb-2"
+        style="-webkit-text-stroke: 1px #2b2b2f"
+      >
+        A sneak peek into my Projects
+      </h1>
       <p class="text-gray-300 text-base mb-6 max-w-xl">
         Curious to see what I've been building? Here's a glimpse. Dive into my
         full case studies to explore the details behind each design.
       </p>
       <section class="w-full flex justify-center items-center mt-10">
-        <div class="relative flex flex-col md:flex-row gap-4 md:gap-8 items-center project-preview">
+        <div
+          class="relative flex flex-col md:flex-row gap-4 md:gap-8 items-center project-preview"
+        >
           <!-- Left -->
-          <img id="leftImg"
+          <img
+            id="leftImg"
             class="w-full max-w-[260px] h-auto rounded-xl object-cover opacity-70 scale-90 transition-all duration-700 shadow-lg enhanced-image"
-            src="./assets/images/projects/Maplecode-Thumbnail.png" alt="Left Image" />
+            src="./assets/images/projects/Maplecode-Thumbnail.png"
+            alt="Left Image"
+          />
 
           <!-- Center -->
           <div class="relative">
             <div
-              class="absolute -inset-1 rounded-xl blur opacity-75 animate-pulse">
-            </div>
-            <img id="centerImg"
+              class="absolute -inset-1 rounded-xl blur opacity-75 animate-pulse"
+            ></div>
+            <img
+              id="centerImg"
               class="relative w-full max-w-[300px] h-auto rounded-xl object-cover scale-110 transition-all duration-700 shadow-2xl border border-gray-600 enhanced-image"
-              src="./assets/images/projects/101-Thumbnail.png" alt="Center Image" />
+              src="./assets/images/projects/101-Thumbnail.png"
+              alt="Center Image"
+            />
           </div>
 
           <!-- Right -->
-          <img id="rightImg"
+          <img
+            id="rightImg"
             class="w-full max-w-[260px] h-auto rounded-xl object-cover opacity-70 scale-90 transition-all duration-700 shadow-lg enhanced-image"
-            src="./assets/images/projects/campaign.png" alt="Right Image" />
+            src="./assets/images/projects/campaign.png"
+            alt="Right Image"
+          />
         </div>
       </section>
     </section>
@@ -501,25 +606,34 @@
         WORK
       </span>
 
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-4">
-        <h2 class="text-2xl font-bold font-Modak" style="-webkit-text-stroke: 1px #2b2b2f;">
+      <div
+        class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-4"
+      >
+        <h2
+          class="text-2xl font-bold font-Modak mb-4 sm:mb-0"
+          style="-webkit-text-stroke: 1px #2b2b2f"
+        >
           My Favourite Problem-
           <br class="sm:hidden" />
           Solving Adventures
         </h2>
         <a
           href="./work.html"
-          class="btn btn-primary"
+          class="btn btn-primary w-full sm:w-auto text-center justify-center"
         >
-          <i class="fas fa-eye mr-2"></i> View All
+          <i class="fas fa-eye mr-2"></i>
+          View All
         </a>
       </div>
+
       <p class="text-gray-400 text-lg max-w-2xl mb-10">
         Get a closer look at the projects where I rolled up my sleeves, asked
         the
         <br class="hidden sm:block" />
         right Questions, and made complexity feed simple
       </p>
+
+      <!-- Rest of your work cards remain the same -->
       <div class="max-w-3xl w-full mx-auto flex flex-col gap-8">
         <!-- Card 1 -->
         <div
@@ -550,11 +664,9 @@
               Designed a responsive website for a healthcare startup, focused on
               clarity, trust, and patient-first navigation.
             </p>
-            <a
-              href="./case-101healthcare.html"
-              class="btn btn-outline w-max"
-            >
-              <i class="fas fa-book-open mr-2"></i> View Case Study
+            <a href="./case-101healthcare.html" class="btn btn-outline w-max">
+              <i class="fas fa-book-open mr-2"></i>
+              View Case Study
             </a>
           </div>
           <div class="flex-1 flex items-center justify-center">
@@ -604,11 +716,9 @@
               Built a modern, clean digital identity for a tech-forward company,
               blending visual storytelling with functional design.
             </p>
-            <a
-              href="./case-maplecode.html"
-              class="btn btn-outline w-max"
-            >
-              <i class="fas fa-book-open mr-2"></i> View Case Study
+            <a href="./case-maplecode.html" class="btn btn-outline w-max">
+              <i class="fas fa-book-open mr-2"></i>
+              View Case Study
             </a>
           </div>
           <div class="flex-1 flex items-center justify-center">
@@ -658,11 +768,9 @@
               Architected a first-ever ad scheduling system from scratch,
               turning complex campaign logic into a user-friendly experience.
             </p>
-            <a
-              href="./case-campaign.html"
-              class="btn btn-outline w-max"
-            >
-              <i class="fas fa-book-open mr-2"></i> View Case Study
+            <a href="./case-campaign.html" class="btn btn-outline w-max">
+              <i class="fas fa-book-open mr-2"></i>
+              View Case Study
             </a>
           </div>
           <div class="flex-1 flex items-center justify-center">
@@ -698,7 +806,10 @@
       >
         PROCESS
       </span>
-      <h2 class="text-2xl font-bold font-Modak mb-4" style="-webkit-text-stroke: 1px #2b2b2f;">
+      <h2
+        class="text-2xl font-bold font-Modak mb-4"
+        style="-webkit-text-stroke: 1px #2b2b2f"
+      >
         My Design Process: From Concept to Completion
       </h2>
       <p class="text-gray-300 mb-10">
@@ -707,28 +818,36 @@
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 process-grid">
         <div class="enhanced-card" data-aos="fade-up" data-aos-delay="100">
-          <span class="block text-lg font-bold mb-2 text-purple-300">01. DISCOVER</span>
+          <span class="block text-lg font-bold mb-2 text-purple-300">
+            01. DISCOVER
+          </span>
           <p class="text-gray-400">
             I dive deep into user needs, business goals, and industry context
             through research and interviews.
           </p>
         </div>
         <div class="enhanced-card" data-aos="fade-up" data-aos-delay="200">
-          <span class="block text-lg font-bold mb-2 text-purple-300">02. DEFINE</span>
+          <span class="block text-lg font-bold mb-2 text-purple-300">
+            02. DEFINE
+          </span>
           <p class="text-gray-400">
             I synthesize insights to craft a clear problem statement, identify
             pain points, and outline key user journeys.
           </p>
         </div>
         <div class="enhanced-card" data-aos="fade-up" data-aos-delay="300">
-          <span class="block text-lg font-bold mb-2 text-purple-300">03. DREAM</span>
+          <span class="block text-lg font-bold mb-2 text-purple-300">
+            03. DREAM
+          </span>
           <p class="text-gray-400">
             This is where ideas spark. I explore creative solutions and
             brainstorm features that elevate the experience.
           </p>
         </div>
         <div class="enhanced-card" data-aos="fade-up" data-aos-delay="400">
-          <span class="block text-lg font-bold mb-2 text-purple-300">04. DESIGN</span>
+          <span class="block text-lg font-bold mb-2 text-purple-300">
+            04. DESIGN
+          </span>
           <p class="text-gray-400">
             I translate concepts into wireframes, flows, and UI designs,
             balancing functionality and aesthetics.
@@ -766,11 +885,9 @@
           believe in creating experiences that feel intuitive, thoughtful, and
           beautiful.
         </p>
-        <a
-          href="./contact.html"
-          class="btn btn-primary mt-4"
-        >
-          <i class="fas fa-paper-plane mr-2"></i> Get in Touch
+        <a href="./contact.html" class="btn btn-primary mt-4">
+          <i class="fas fa-paper-plane mr-2"></i>
+          Get in Touch
         </a>
       </div>
       <img
@@ -790,7 +907,12 @@
       >
         RECOMMENDATIONS
       </span>
-      <h2 class="text-2xl font-bold mb-4 font-Modak" style="-webkit-text-stroke: 1px #2b2b2f;">Professional Endorsements</h2>
+      <h2
+        class="text-2xl font-bold mb-4 font-Modak"
+        style="-webkit-text-stroke: 1px #2b2b2f"
+      >
+        Professional Endorsements
+      </h2>
       <p class="text-gray-300 mb-8">
         Recommendations from my previous employers who've seen my work in
         action.
@@ -865,9 +987,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/include.js"></script>
     <script src="assets/js/script.js"></script>
-    
-        <!-- AI Bot (Optional - Remove to disable) -->
-    <link rel="stylesheet" href="assets/css/ai-bot.css">
+
+    <!-- AI Bot (Optional - Remove to disable) -->
+    <link rel="stylesheet" href="assets/css/ai-bot.css" />
     <script src="assets/js/ai-bot.js"></script>
 
     <script>

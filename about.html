@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <title>About – Jagriti Sood Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Learn about Jagriti Sood - UX/UI designer who turns complexity into clarity through human-centered design" />
+    <meta
+      name="description"
+      content="Learn about Jagriti Sood - UX/UI designer who turns complexity into clarity through human-centered design"
+    />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,19 +19,23 @@
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <style>
       :root {
         --primary: #413bf6;
---accent: #8021d3;       --primary-dark: #8b5cf6;
-        
+        --accent: #8021d3;
+        --primary-dark: #8b5cf6;
+
         --dark: #0f0f13;
         --darker: #0a0a0c;
         --light: #f8fafc;
         --gray: #94a3b8;
       }
-      
+
       body {
         font-family: "Inter", Arial, sans-serif;
         background-color: var(--darker);
@@ -60,7 +67,7 @@
       }
 
       .section-title::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -10px;
         left: 0;
@@ -71,10 +78,22 @@
       }
 
       .hero-bg {
-        background: 
-          radial-gradient(circle at 20% 80%, rgba(169, 57, 243, 0.08), transparent 25%),
-          radial-gradient(circle at 80% 20%, rgba(140, 31, 199, 0.15), transparent 25%),
-          radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.1), transparent 25%),
+        background:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(169, 57, 243, 0.08),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(140, 31, 199, 0.15),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(139, 92, 246, 0.1),
+            transparent 25%
+          ),
           linear-gradient(var(--darker), var(--dark));
         position: relative;
         overflow: hidden;
@@ -122,7 +141,8 @@
       }
 
       @keyframes float {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0) rotate(0deg);
         }
         50% {
@@ -137,7 +157,9 @@
         padding: 2.5rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
       }
 
       .card:hover {
@@ -242,7 +264,11 @@
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
         display: flex;
         align-items: center;
         justify-content: center;
@@ -274,15 +300,15 @@
         .section-title {
           font-size: 2.2rem;
         }
-        
+
         .section {
           padding: 4rem 1.5rem;
         }
-        
+
         .nav-dots {
           display: none;
         }
-        
+
         .hero-bg {
           padding: 4rem 1.5rem;
         }
@@ -311,33 +337,51 @@
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
       </div>
-      
-      <div class="max-w-4xl mx-auto relative z-10" data-aos="fade-up" data-aos-duration="1000">
+
+      <div
+        class="max-w-4xl mx-auto relative z-10"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Hello, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Jagriti</span>
+          Hello, I'm
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400"
+          >
+            Jagriti
+          </span>
         </h1>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
-          I'm a UX/UI designer who turns complexity into clarity, creating digital products that feel human, beautiful, and effortless to use.
+        <p
+          class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10"
+        >
+          I'm a UX/UI designer who turns complexity into clarity, creating
+          digital products that feel human, beautiful, and effortless to use.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
           <a href="#story" class="btn btn-primary explore-btn">
-            <i class="fas fa-user"></i> My Story
+            <i class="fas fa-user"></i>
+            My Story
           </a>
           <a href="./work.html" class="btn btn-outline">
-            <i class="fas fa-briefcase"></i> View Work
+            <i class="fas fa-briefcase"></i>
+            View Work
           </a>
         </div>
       </div>
-      
-        <!-- Simple Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-    <div class="flex flex-col items-center">
-      <span class="text-gray-500 text-sm mb-2">Scroll to explore</span>
-      <div class="w-5 h-8 border border-gray-600 rounded-full flex justify-center">
-        <div class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"></div>
+
+      <!-- Simple Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div class="flex flex-col items-center">
+          <span class="text-gray-500 text-sm mb-2">Scroll to explore</span>
+          <div
+            class="w-5 h-8 border border-gray-600 rounded-full flex justify-center"
+          >
+            <div
+              class="w-1 h-2 bg-gray-500 rounded-full mt-2 animate-pulse"
+            ></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
     </section>
 
     <!-- Story Section -->
@@ -354,15 +398,24 @@
           <div class="lg:w-3/5" data-aos="fade-left" data-aos-delay="200">
             <h2 class="section-title">My Journey</h2>
             <p class="text-gray-300 mb-4 text-lg leading-relaxed">
-              I started my design journey out of curiosity for how people interact with technology, why some products feel natural, while others frustrate us. Over the past 5+ years, that curiosity evolved into a deep passion for creating experiences that empower people and drive business results.
+              I started my design journey out of curiosity for how people
+              interact with technology, why some products feel natural, while
+              others frustrate us. Over the past 5+ years, that curiosity
+              evolved into a deep passion for creating experiences that empower
+              people and drive business results.
             </p>
             <p class="text-gray-300 mb-4 text-lg leading-relaxed">
-              I've worked across diverse industries, from healthcare to ad tech, helping brands translate strategy into clear, intuitive digital products. Every project starts with empathy, and ends with impact.
+              I've worked across diverse industries, from healthcare to ad tech,
+              helping brands translate strategy into clear, intuitive digital
+              products. Every project starts with empathy, and ends with impact.
             </p>
-            <div class="bg-gray-800/50 p-6 rounded-xl border-l-4 border-blue-500 mt-6">
+            <div
+              class="bg-gray-800/50 p-6 rounded-xl border-l-4 border-blue-500 mt-6"
+            >
               <div class="quote-mark">"</div>
               <p class="text-gray-300 text-xl italic mb-2">
-                I believe good design isn't just what it looks like, it's how it makes people feel.
+                I believe good design isn't just what it looks like, it's how it
+                makes people feel.
               </p>
               <p class="text-gray-500">— My Design Mantra</p>
             </div>
@@ -381,25 +434,35 @@
           </div>
           <h3 class="text-xl font-bold mb-4 text-purple-300">Empathy First</h3>
           <p class="text-gray-300 leading-relaxed">
-            I design by understanding people, their emotions, struggles, and goals. Every interaction begins with listening to users and stakeholders to create solutions that truly resonate.
+            I design by understanding people, their emotions, struggles, and
+            goals. Every interaction begins with listening to users and
+            stakeholders to create solutions that truly resonate.
           </p>
         </div>
         <div class="philosophy-card" data-aos="fade-up" data-aos-delay="200">
           <div class="philosophy-icon">
             <i class="fas fa-bullseye text-white"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4 text-purple-300">Clarity Over Complexity</h3>
+          <h3 class="text-xl font-bold mb-4 text-purple-300">
+            Clarity Over Complexity
+          </h3>
           <p class="text-gray-300 leading-relaxed">
-            I simplify information without dumbing it down, ensuring users always feel confident and in control. Complex systems should feel intuitive, not intimidating.
+            I simplify information without dumbing it down, ensuring users
+            always feel confident and in control. Complex systems should feel
+            intuitive, not intimidating.
           </p>
         </div>
         <div class="philosophy-card" data-aos="fade-up" data-aos-delay="300">
           <div class="philosophy-icon">
             <i class="fas fa-palette text-white"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4 text-purple-300">Purpose in Every Pixel</h3>
+          <h3 class="text-xl font-bold mb-4 text-purple-300">
+            Purpose in Every Pixel
+          </h3>
           <p class="text-gray-300 leading-relaxed">
-            Every design choice I make, color, layout, type, serves a reason: to guide, to inform, to inspire. Beauty emerges from intentionality, not decoration.
+            Every design choice I make, color, layout, type, serves a reason: to
+            guide, to inform, to inspire. Beauty emerges from intentionality,
+            not decoration.
           </p>
         </div>
       </div>
@@ -411,31 +474,39 @@
       <div class="card">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div class="skill-tag" data-aos="zoom-in" data-aos-delay="100">
-            <i class="fas fa-pen-nib mr-2"></i> Figma
+            <i class="fas fa-pen-nib mr-2"></i>
+            Figma
           </div>
           <div class="skill-tag" data-aos="zoom-in" data-aos-delay="150">
-            <i class="fas fa-pencil-alt mr-2"></i> Adobe XD
+            <i class="fas fa-pencil-alt mr-2"></i>
+            Adobe XD
           </div>
           <div class="skill-tag" data-aos="zoom-in" data-aos-delay="200">
-            <i class="fas fa-pen-fancy mr-2"></i> Illustrator
+            <i class="fas fa-pen-fancy mr-2"></i>
+            Illustrator
           </div>
           <div class="skill-tag" data-aos="zoom-in" data-aos-delay="250">
-            <i class="fas fa-image mr-2"></i> Photoshop
+            <i class="fas fa-image mr-2"></i>
+            Photoshop
           </div>
           <div class="skill-tag" data-aos="zoom-in" data-aos-delay="300">
-            <i class="fas fa-project-diagram mr-2"></i> Wireframing
+            <i class="fas fa-project-diagram mr-2"></i>
+            Wireframing
           </div>
           <div class="skill-tag" data-aos="zoom-in" data-aos-delay="350">
-            <i class="fas fa-search mr-2"></i> User Research
+            <i class="fas fa-search mr-2"></i>
+            User Research
           </div>
           <div class="skill-tag" data-aos="zoom-in" data-aos-delay="400">
-            <i class="fas fa-mobile-alt mr-2"></i> Prototyping
+            <i class="fas fa-mobile-alt mr-2"></i>
+            Prototyping
           </div>
           <div class="skill-tag" data-aos="zoom-in" data-aos-delay="450">
-            <i class="fas fa-vial mr-2"></i> Usability Testing
+            <i class="fas fa-vial mr-2"></i>
+            Usability Testing
           </div>
         </div>
-        
+
         <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div data-aos="fade-right">
             <h3 class="text-xl font-bold mb-4 text-white">Design Process</h3>
@@ -498,16 +569,19 @@
           <div class="lg:w-3/5" data-aos="fade-right">
             <h2 class="section-title">Beyond UX</h2>
             <p class="text-gray-300 mb-4 text-lg leading-relaxed">
-              When I'm not designing, I love experimenting with creative hobbies that keep my hands busy and my mind calm, from candle-making to photography and exploring new culinary experiences.
+              When I'm not designing, I love experimenting with creative hobbies
+              that keep my hands busy and my mind calm, from candle-making to
+              photography and exploring new culinary experiences.
             </p>
             <p class="text-gray-300 mb-6 text-lg leading-relaxed">
-              I believe creativity is a lifestyle, it shapes how we see the world, not just what we make. These personal projects remind me that good design has soul and that inspiration can come from anywhere.
+              I believe creativity is a lifestyle, it shapes how we see the
+              world, not just what we make. These personal projects remind me
+              that good design has soul and that inspiration can come from
+              anywhere.
             </p>
-            <a
-              href="./beyond-uiux.html"
-              class="btn btn-primary"
-            >
-              <i class="fas fa-external-link-alt"></i> Explore Beyond UX
+            <a href="./beyond-uiux.html" class="btn btn-primary">
+              <i class="fas fa-external-link-alt"></i>
+              Explore Beyond UX
             </a>
           </div>
           <div class="lg:w-2/5" data-aos="fade-left" data-aos-delay="200">
@@ -528,20 +602,18 @@
           Let's Create Something Meaningful Together
         </h2>
         <p class="text-gray-300 mb-8 text-lg leading-relaxed">
-          I'm always open to collaborations, freelance projects, or full-time roles where thoughtful design can make an impact. Let's discuss how we can bring your vision to life.
+          I'm always open to collaborations, freelance projects, or full-time
+          roles where thoughtful design can make an impact. Let's discuss how we
+          can bring your vision to life.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <a
-            href="./contact.html"
-            class="btn btn-primary"
-          >
-            <i class="fas fa-paper-plane"></i> Get in Touch
+          <a href="./contact.html" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i>
+            Get in Touch
           </a>
-          <a
-            href="./work.html"
-            class="btn btn-outline"
-          >
-            <i class="fas fa-briefcase"></i> View My Work
+          <a href="./work.html" class="btn btn-outline">
+            <i class="fas fa-briefcase"></i>
+            View My Work
           </a>
         </div>
       </div>
@@ -549,7 +621,7 @@
 
     <!-- Footer -->
     <footer></footer>
-    
+
     <!-- JS -->
     <script src="assets/js/include.js"></script>
     <script src="assets/js/script.js"></script>
@@ -562,62 +634,62 @@
         duration: 1000,
         easing: "ease-out-cubic",
         once: true,
-        offset: 50
+        offset: 50,
       });
-      
+
       // Smooth scroll functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const sections = document.querySelectorAll('section');
-        const navDots = document.querySelectorAll('.nav-dot');
-        const exploreBtn = document.querySelector('.explore-btn');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+        const navDots = document.querySelectorAll(".nav-dot");
+        const exploreBtn = document.querySelector(".explore-btn");
+
         // Smooth scroll for Explore button
         if (exploreBtn) {
-          exploreBtn.addEventListener('click', function(e) {
+          exploreBtn.addEventListener("click", function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
+            const targetId = this.getAttribute("href");
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
               targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth",
+                block: "start",
               });
             }
           });
         }
-        
+
         // Update active nav dot on scroll
-        window.addEventListener('scroll', function() {
-          let current = '';
-          
-          sections.forEach(section => {
+        window.addEventListener("scroll", function () {
+          let current = "";
+
+          sections.forEach((section) => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 200)) {
-              current = section.getAttribute('id');
+            if (pageYOffset >= sectionTop - 200) {
+              current = section.getAttribute("id");
             }
           });
-          
-          navDots.forEach(dot => {
-            dot.classList.remove('active');
-            if (dot.getAttribute('href').substring(1) === current) {
-              dot.classList.add('active');
+
+          navDots.forEach((dot) => {
+            dot.classList.remove("active");
+            if (dot.getAttribute("href").substring(1) === current) {
+              dot.classList.add("active");
             }
           });
         });
-        
+
         // Smooth scrolling for nav dots
-        navDots.forEach(dot => {
-          dot.addEventListener('click', function(e) {
+        navDots.forEach((dot) => {
+          dot.addEventListener("click", function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
+            const targetId = this.getAttribute("href");
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
               targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth",
+                block: "start",
               });
             }
           });
