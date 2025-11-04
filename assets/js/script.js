@@ -111,6 +111,198 @@ function initCarousel() {
   // Optional: expose controls globally if needed
   window.carouselAPI = { next, pause: () => clearInterval(interval) };
 }
+/**
+ * -------------------------------------------------
+ * 2. SMOOTH CAROUSEL (Hero / Projects)
+ * -------------------------------------------------
+ */
+function initCarousel() {
+  const images = [
+    './assets/images/projects/Maplecode-Thumbnail.png',
+    './assets/images/projects/101-Thumbnail.png',
+    './assets/images/projects/campaign.png',
+  ];
+
+  const carouselTrack = document.querySelector('.carousel-track');
+  const dotsContainer = document.querySelector('.carousel-container .flex.space-x-2');
+  const prevButton = document.querySelector('.carousel-prev');
+  const nextButton = document.querySelector('.carousel-next');
+
+  if (!carouselTrack || !dotsContainer) {
+    console.warn('Carousel: Required elements not found');
+    return;
+  }
+
+  let currentIndex = 0;
+  let autoPlayInterval;
+  let isAnimating = false;
+
+  // Initialize carousel
+  function init() {
+    createSlides();
+    createDots();
+    updateCarousel();
+    startAutoPlay();
+    addEventListeners();
+    addTouchSupport();
+  }
+
+  // Create slides
+  function createSlides() {
+    carouselTrack.innerHTML = '';
+    images.forEach((image, index) => {
+      const slide = document.createElement('div');
+      slide.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
+      slide.innerHTML = `
+        <img 
+          src="${image}" 
+          alt="Project ${index + 1}" 
+          class="enhanced-image"
+          loading="lazy"
+        />
+      `;
+      carouselTrack.appendChild(slide);
+    });
+  }
+
+  // Create dots
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    images.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  // Update carousel state
+  function updateCarousel() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    slides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === currentIndex);
+    });
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+
+    // Update transform for mobile
+    if (window.innerWidth < 768) {
+      const slideWidth = carouselTrack.children[0].offsetWidth + 8; // width + gap
+      carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+  }
+
+  // Navigate to specific slide
+  function goToSlide(index) {
+    if (isAnimating) return;
+    
+    isAnimating = true;
+    currentIndex = (index + images.length) % images.length;
+    updateCarousel();
+    
+    // Reset animation lock
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
+  }
+
+  // Next slide
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+
+  // Previous slide
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+
+  // Auto-play
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 4000);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  // Touch support for mobile
+  function addTouchSupport() {
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    carouselTrack.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      stopAutoPlay();
+    });
+
+    carouselTrack.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      currentX = e.touches[0].clientX;
+    });
+
+    carouselTrack.addEventListener('touchend', () => {
+      if (!isDragging) return;
+      
+      const diff = startX - currentX;
+      const threshold = 50;
+      
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+      
+      isDragging = false;
+      startAutoPlay();
+    });
+  }
+
+  // Event listeners
+  function addEventListeners() {
+    if (prevButton) {
+      prevButton.addEventListener('click', () => {
+        stopAutoPlay();
+        prevSlide();
+        startAutoPlay();
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        stopAutoPlay();
+        nextSlide();
+        startAutoPlay();
+      });
+    }
+
+    // Pause auto-play on hover
+    carouselTrack.addEventListener('mouseenter', stopAutoPlay);
+    carouselTrack.addEventListener('mouseleave', startAutoPlay);
+
+    // Handle window resize
+    window.addEventListener('resize', updateCarousel);
+  }
+
+  // Initialize
+  init();
+
+  // Public API
+  return {
+    next: nextSlide,
+    prev: prevSlide,
+    goTo: goToSlide,
+    pause: stopAutoPlay,
+    play: startAutoPlay
+  };
+}
 
 /**
  * -------------------------------------------------
@@ -119,7 +311,11 @@ function initCarousel() {
  */
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScripts();
-  initCarousel();
+  const carousel = initCarousel();
+  
+  // Optional: Expose to global scope if needed
+  window.projectCarousel = carousel;
+
 });
 
 // Counting animation for stats
