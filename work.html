@@ -317,19 +317,237 @@
         margin-bottom: 1rem;
       }
 
-      @media (max-width: 768px) {
-        .section-title {
-          font-size: 2.2rem;
-        }
+      /* Mobile Optimizations - Add to your existing styles */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
 
-        .nav-dots {
-          display: none;
-        }
+  .section {
+    padding: 3rem 1.5rem;
+  }
 
-        .hero-bg {
-          padding: 4rem 1.5rem;
-        }
-      }
+  .nav-dots {
+    display: none;
+  }
+
+  .hero-bg {
+    padding: 3rem 1.5rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Hero section mobile adjustments */
+  .hero-bg h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-bg p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-bg .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Project cards mobile adjustments */
+  .project-card {
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+
+  .flex.flex-col.lg\\:flex-row,
+  .flex.flex-col.lg\\:flex-row-reverse {
+    flex-direction: column;
+  }
+
+  .lg\\:w-1\\/2 {
+    width: 100%;
+  }
+
+  .project-card img {
+    height: 250px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .p-8.lg\\:p-12,
+  .p-8.lg\\:p-12 {
+    padding: 1.5rem;
+  }
+
+  .project-card h2 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Project overlay adjustments */
+  .project-overlay {
+    padding: 1.5rem;
+    transform: translateY(10px);
+  }
+
+  /* Stats grid adjustments */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .stat-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  /* Grid adjustments */
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Button adjustments */
+  .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Project tags adjustments */
+  .flex.flex-wrap.gap-2 {
+    gap: 0.5rem;
+  }
+
+  .px-3.py-1.text-xs {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  /* Lists adjustments */
+  .space-y-2 > * + * {
+    margin-top: 0.75rem;
+  }
+
+  /* CTA section */
+  .bg-gray-800\\/50.p-8 {
+    padding: 1.5rem;
+  }
+
+  .bg-gray-800\\/50 h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Floating shapes adjustments */
+  .shape-1,
+  .shape-2,
+  .shape-3 {
+    width: 150px;
+    height: 150px;
+    filter: blur(30px);
+  }
+
+  .shape-1 {
+    top: 5%;
+    left: -10%;
+  }
+
+  .shape-2 {
+    top: 70%;
+    right: -10%;
+  }
+
+  .shape-3 {
+    bottom: 10%;
+    left: 10%;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    bottom: 1.5rem;
+  }
+
+  .scroll-indicator span {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .hero-bg h1 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card img {
+    height: 200px;
+  }
+
+  .project-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  /* Reduce project card padding further */
+  .p-8.lg\\:p-12 {
+    padding: 1.25rem;
+  }
+
+  /* Adjust project tag sizes */
+  .project-tag {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  /* Adjust lists font size */
+  .text-sm {
+    font-size: 0.8rem;
+  }
+}
+
+/* Prevent horizontal scrolling */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Add scroll-indicator class to your existing scroll indicator */
+.scroll-indicator {
+  bottom: 1.5rem;
+}
     </style>
   </head>
 
@@ -345,7 +563,7 @@
     <header></header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-bg px-8 py-32 text-center relative">
+<section id="hero" class="hero-bg px-4 md:px-8 py-16 md:py-32 text-center relative">
       <div class="floating-shapes">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
@@ -385,7 +603,7 @@
       </div>
 
       <!-- Simple Scroll Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
         <div class="flex flex-col items-center">
           <span class="text-gray-500 text-sm mb-2">Scroll to explore</span>
           <div
@@ -400,7 +618,7 @@
     </section>
 
     <!-- Work Section -->
-    <section id="work" class="max-w-6xl mx-auto px-6 py-24 text-center">
+<section id="work" class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-24 text-center">
       <h2 class="section-title text-center mb-16">Featured Projects</h2>
 
       <div class="flex flex-col gap-16">
@@ -676,7 +894,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section id="stats" class="max-w-4xl mx-auto px-6 py-24 text-center">
+<section id="stats" class="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-24 text-center">
       <h2 class="section-title mb-16">Design Impact</h2>
 
       <div class="stats-grid">
