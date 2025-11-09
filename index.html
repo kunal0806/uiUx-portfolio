@@ -141,12 +141,12 @@
           var(--primary-dark)
         );
         color: white;
-        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+        box-shadow: 0 3px 8px rgba(59, 130, 246, 0.15); 
       }
 
       .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
       }
 
       .btn-outline {
@@ -198,12 +198,12 @@
           var(--primary-dark)
         );
         color: white;
-        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        box-shadow: 0 8px 10px rgba(59, 130, 246, 0.3);
       }
 
       .btn-primary:hover {
         transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        box-shadow: 0 8px 8px rgba(59, 130, 246, 0.4);
       }
 
       .btn-primary::before {
@@ -617,7 +617,7 @@
         <div
           class="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <a href="./work.html" class="group btn btn-primary">
+          <a href="./work.html" class="group btn btn-primary w-full sm:w-auto items-center justify-center">
             <i class="fas fa-briefcase mr-3"></i>
             View Work
             <i
@@ -628,7 +628,7 @@
           <a
             href="./assets/files/Jagriti-Sood-Resume.pdf"
             download
-            class="group btn btn-outline"
+            class="group btn btn-outline w-full sm:w-auto items-center justify-center"
           >
             <i class="fas fa-download mr-3"></i>
             Download CV
@@ -742,13 +742,14 @@
           <br class="sm:hidden" />
           Solving Adventures
         </h2>
-        <a
-          href="./work.html"
-          class="btn btn-primary w-full sm:w-auto text-center justify-center"
-        >
-          <i class="fas fa-eye mr-2"></i>
-          View All
-        </a>
+      <a
+  href="./work.html"
+  class="btn btn-primary w-full sm:w-auto text-center flex items-center justify-center gap-2"
+>
+  <i class="fas fa-eye"></i>
+  View All
+</a>
+
       </div>
 
       <p class="text-gray-400 text-lg max-w-2xl mb-10">
@@ -1026,7 +1027,7 @@
           believe in creating experiences that feel intuitive, thoughtful, and
           beautiful.
         </p>
-        <a href="./contact.html" class="btn btn-primary mt-4">
+        <a href="./contact.html" class="btn btn-primary mt-4 w-full sm:w-auto items-center justify-center">
           <i class="fas fa-paper-plane mr-2"></i>
           Get in Touch
         </a>
