@@ -18,29 +18,28 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-        <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#0a0a0c',
-                        darker: '#0f0f13',
-                        primary: '#3b82f6',
-                        accent: '#8021d3',
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
-                        'slide-in': 'slideIn 0.8s ease-out forwards',
-                    }
-                }
-            }
-        }
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: "#0a0a0c",
+              darker: "#0f0f13",
+              primary: "#3b82f6",
+              accent: "#8021d3",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "pulse-glow": "pulse-glow 2s ease-in-out infinite alternate",
+              "slide-in": "slideIn 0.8s ease-out forwards",
+            },
+          },
+        },
+      };
     </script>
-
 
     <style>
       :root {
@@ -257,16 +256,6 @@
         position: relative;
       }
 
-      /* .process-step:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        top: 60px;
-        left: 30px;
-        width: 2px;
-        height: calc(100% - 40px);
-        background: rgba(59, 130, 246, 0.3);
-      } */
-
       .step-number {
         width: 60px;
         height: 60px;
@@ -376,249 +365,447 @@
         background: var(--primary);
         transform: scale(1.3);
       }
-/* Website Preview Styles */
-.website-preview {
-  margin-top: 4rem;
-  text-align: center;
-}
 
-.preview-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-}
+      /* Website Preview Styles */
+      .website-preview {
+        margin-top: 4rem;
+        text-align: center;
+      }
 
-.preview-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  border-radius: 2px;
-}
+      .preview-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+      }
 
-.preview-showcase {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
+      .preview-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        border-radius: 2px;
+      }
 
-/* Featured Preview Card */
-.featured-preview {
-  background: rgba(30, 30, 36, 0.8);
-  border-radius: 20px;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
+      .preview-showcase {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
 
-.featured-preview:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-  border-color: rgba(59, 130, 246, 0.3);
-}
+      /* Featured Preview Card */
+      .featured-preview {
+        background: rgba(30, 30, 36, 0.8);
+        border-radius: 20px;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
 
-.preview-frame {
-  background: #1a1a1a;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  position: relative;
-}
+      .featured-preview:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        border-color: rgba(59, 130, 246, 0.3);
+      }
 
-.browser-bar {
-  background: #2d2d2d;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-}
+      .preview-frame {
+        background: #1a1a1a;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+      }
 
-.browser-dots {
-  display: flex;
-  gap: 6px;
-}
+      .browser-bar {
+        background: #2d2d2d;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+      }
 
-.browser-dots span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ff5f57;
-}
+      .browser-dots {
+        display: flex;
+        gap: 6px;
+      }
 
-.browser-dots span:nth-child(2) {
-  background: #ffbd2e;
-}
+      .browser-dots span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ff5f57;
+      }
 
-.browser-dots span:nth-child(3) {
-  background: #28ca42;
-}
+      .browser-dots span:nth-child(2) {
+        background: #ffbd2e;
+      }
 
-.mobile-frame {
-  max-width: 300px;
-  margin: 0 auto;
-  border-radius: 24px;
-  padding: 12px;
-  background: #1a1a1a;
-  position: relative;
-}
+      .browser-dots span:nth-child(3) {
+        background: #28ca42;
+      }
 
-.mobile-notch {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 25px;
-  background: #2d2d2d;
-  border-radius: 0 0 12px 12px;
-  z-index: 2;
-}
+      .mobile-frame {
+        max-width: 300px;
+        margin: 0 auto;
+        border-radius: 24px;
+        padding: 12px;
+        background: #1a1a1a;
+        position: relative;
+      }
 
-.preview-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
+      .mobile-notch {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 25px;
+        background: #2d2d2d;
+        border-radius: 0 0 12px 12px;
+        z-index: 2;
+      }
 
-.featured-preview:hover .preview-image {
-  transform: scale(1.02);
-}
+      .preview-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+      }
 
-.preview-content h4 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--light);
-}
+      .featured-preview:hover .preview-image {
+        transform: scale(1.02);
+      }
 
-.preview-content p {
-  color: var(--gray);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
+      .preview-content h4 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--light);
+      }
 
-.preview-features {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
+      .preview-content p {
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
 
-.feature-tag {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
+      .preview-features {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
 
-/* Mini Preview Grid */
-.preview-grid-mini {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
+      .feature-tag {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
 
-.mini-preview {
-  background: rgba(30, 30, 36, 0.6);
-  border-radius: 16px;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-  text-align: center;
-}
+      /* Mini Preview Grid */
+      .preview-grid-mini {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
 
-.mini-preview:hover {
-  transform: translateY(-5px);
-  background: rgba(30, 30, 36, 0.8);
-  border-color: rgba(59, 130, 246, 0.2);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
+      .mini-preview {
+        background: rgba(30, 30, 36, 0.6);
+        border-radius: 16px;
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+        text-align: center;
+      }
 
-.mini-preview .preview-frame {
-  margin-bottom: 1rem;
-}
+      .mini-preview:hover {
+        transform: translateY(-5px);
+        background: rgba(30, 30, 36, 0.8);
+        border-color: rgba(59, 130, 246, 0.2);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
 
-.preview-info h5 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--light);
-}
+      .mini-preview .preview-frame {
+        margin-bottom: 1rem;
+      }
 
-.preview-info p {
-  color: var(--gray);
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
+      .preview-info h5 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--light);
+      }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .featured-preview {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .preview-grid-mini {
-    grid-template-columns: 1fr;
-  }
-  
-  .mobile-frame {
-    max-width: 250px;
-  }
-}
+      .preview-info p {
+        color: var(--gray);
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
 
-@media (max-width: 480px) {
-  .preview-showcase {
-    gap: 2rem;
-  }
-  
-  .featured-preview {
-    padding: 1.5rem;
-  }
-  
-  .preview-features {
-    justify-content: center;
-  }
-}
+      /* Centered text utility */
+      .centered-text {
+        text-align: center;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .section {
+          padding: 5rem 2rem;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .hero-title {
+          font-size: 3.5rem;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+        }
+
+        .featured-preview {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+      }
+
       @media (max-width: 768px) {
+        .section {
+          padding: 4rem 1.5rem;
+        }
+
         .hero-title {
           font-size: 2.5rem;
         }
 
-        .section-title {
-          font-size: 2.2rem;
+        .hero-subtitle {
+          font-size: 1.25rem;
         }
 
-        .section {
-          padding: 4rem 1.5rem;
+        .section-title {
+          font-size: 2.2rem;
+          text-align: center;
+        }
+
+        .section-title::after {
+          left: 50%;
+          transform: translateX(-50%);
         }
 
         .nav-dots {
           display: none;
         }
 
-        .preview-grid {
+        .preview-grid-mini {
           grid-template-columns: 1fr;
         }
+
+        .card {
+          padding: 1.5rem;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .user-persona {
+          flex-direction: column;
+        }
+
+        .persona-card {
+          min-width: 100%;
+        }
+
+        .process-step {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .step-number {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+
+        .step-title {
+          text-align: center;
+        }
+
+        .mobile-frame {
+          max-width: 250px;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .featured-preview {
+          padding: 1.5rem;
+        }
+
+        .preview-features {
+          justify-content: center;
+        }
+
+        .cinematic-border {
+          padding: 1rem !important;
+        }
+
+        .tablet-frame {
+          max-width: 350px !important;
+        }
+
+        .mobile-frame {
+          max-width: 280px !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .stat-number {
+          font-size: 2.5rem;
+        }
+
+        .btn {
+          padding: 0.8rem 1.5rem;
+          font-size: 0.9rem;
+        }
+
+        .preview-showcase {
+          gap: 2rem;
+        }
+
+        .featured-preview {
+          padding: 1rem;
+        }
+
+        .grid-cols-2,
+        .grid-cols-3,
+        .grid-cols-4 {
+          grid-template-columns: 1fr;
+        }
+
+        .grid-cols-1 {
+          grid-template-columns: 1fr;
+        }
+
+        .md\\:grid-cols-2,
+        .md\\:grid-cols-3,
+        .md\\:grid-cols-4 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section {
+          padding: 3rem 1rem;
+        }
+
+        .hero-title {
+          font-size: 1.8rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .section-title {
+          font-size: 1.6rem;
+        }
+
+        .card {
+          padding: 1rem;
+        }
+
+        .stat-card {
+          padding: 1.5rem;
+        }
+
+        .persona-card {
+          padding: 1.5rem;
+        }
+
+        .preview-showcase {
+          gap: 1.5rem;
+        }
+
+        .featured-preview {
+          padding: 0.8rem;
+        }
+
+        .mobile-frame {
+          max-width: 220px !important;
+        }
+
+        .tablet-frame {
+          max-width: 300px !important;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .hero-title {
+          font-size: 1.6rem;
+        }
+
+        .section-title {
+          font-size: 1.4rem;
+        }
+
+        .btn {
+          padding: 0.7rem 1.2rem;
+          font-size: 0.8rem;
+        }
+
+        .stat-number {
+          font-size: 2rem;
+        }
+
+        .mobile-frame {
+          max-width: 200px !important;
+        }
+      }
+
+      /* Additional responsive utilities */
+      .text-responsive {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+      }
+
+      .heading-responsive {
+        font-size: clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .container-responsive {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
       }
     </style>
   </head>
 
   <body>
+    <!-- Your existing HTML content remains the same -->
+    <!-- I've only added responsive CSS above -->
+
     <header></header>
     <!-- Navigation Dots -->
     <div class="nav-dots">
@@ -681,9 +868,9 @@
 
         <!-- Project Description -->
         <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
-          A complete website design focused on building trust, improving
-          patient communication, and creating a seamless healthcare experience
-          for patients and providers.
+          A complete website design focused on building trust, improving patient
+          communication, and creating a seamless healthcare experience for
+          patients and providers.
         </p>
 
         <!-- CTA Buttons -->
@@ -747,7 +934,9 @@
           journeys, wireframes, and high-fidelity designs that communicated
           empathy and trust.
         </p>
-        <div class="bg-gray-1000 p-4 rounded-lg border-l-4 border-blue-500 centered-text">
+        <div
+          class="bg-gray-1000 p-4 rounded-lg border-l-4 border-blue-500 centered-text"
+        >
           <p class="text-white font-semibold">
             Goal: Build a digital presence that inspires confidence and
             simplifies service discovery for patients and families.
@@ -785,201 +974,298 @@
         </div>
       </div>
     </section>
- 
+
     <!-- Cinematic Website Preview Section -->
     <section id="website-preview" class="relative py-24 overflow-hidden">
-        <!-- Animated Background -->
-        <div class="absolute inset-0 z-0">
-            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-darker/80 to-darker"></div>
-            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl animate-float" style="animation-delay: 4s;"></div>
+      <!-- Animated Background -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-darker/80 to-darker"
+        ></div>
+        <div
+          class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-float"
+          style="animation-delay: 2s"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl animate-float"
+          style="animation-delay: 4s"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-16" data-aos="fade-up">
+          <div
+            class="inline-flex items-center gap-3 mb-4 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/30 backdrop-blur-sm"
+          >
+            <i class="fas fa-play text-purple-400"></i>
+            <span
+              class="text-purple-300 text-sm font-medium uppercase tracking-wider"
+            >
+              Design Showcase
+            </span>
+          </div>
+          <h2 class="text-5xl font-bold mb-4 gradient-text">Website Preview</h2>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Immersive showcase of the final website design across multiple
+            devices with cinematic presentation
+          </p>
         </div>
 
-        <div class="container mx-auto px-6 relative z-10">
-            <!-- Section Header -->
-            <div class="text-center mb-16" data-aos="fade-up">
-                <div class="inline-flex items-center gap-3 mb-4 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/30 backdrop-blur-sm">
-                    <i class="fas fa-play text-purple-400"></i>
-                    <span class="text-purple-300 text-sm font-medium uppercase tracking-wider">
-                        Design Showcase
-                    </span>
+        <!-- Main Preview with Device Frames -->
+        <div class="max-w-7xl mx-auto mb-20">
+          <!-- Desktop Preview - Center Stage -->
+          <div
+            class="cinematic-border rounded-3xl p-8 mb-16 bg-gradient-to-br from-gray-900/50 to-darker/80 backdrop-blur-sm border border-gray-800/50 shadow-2xl transform transition-all duration-700 hover:scale-[1.02]"
+          >
+            <div class="flex justify-between items-center mb-6">
+              <div class="flex gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-500 shadow-lg"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500 shadow-lg"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500 shadow-lg"></div>
+              </div>
+              <div class="text-gray-400 text-sm font-medium">
+                https://www.101healthcare.ca/
+              </div>
+              <div class="w-20"></div>
+              <!-- Spacer for balance -->
+            </div>
+            <div
+              class="rounded-xl overflow-hidden shadow-2xl device-glow animate-pulse-glow"
+            >
+              <img
+                src="./assets/images/CasesImages/Healthcare/case1.png"
+                alt="Healthcare Desktop Preview"
+                class="w-full h-auto transition-all duration-700 cursor-zoom-in hover:scale-105"
+                onclick="openLightbox(this.src, 'Desktop - Homepage')"
+              />
+            </div>
+            <div class="mt-6 text-center">
+              <h3 class="text-2xl font-bold text-white mb-2">
+                Homepage Experience
+              </h3>
+              <p class="text-gray-400">
+                Modern, accessible design with clear information hierarchy
+              </p>
+            </div>
+          </div>
+
+          <!-- Tablet & Mobile Previews -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-center"
+          >
+            <!-- Tablet Preview -->
+            <div
+              class="cinematic-border rounded-[2rem] p-6 bg-gradient-to-br from-gray-900/50 to-darker/80 backdrop-blur-sm border border-gray-800/50 shadow-2xl transform transition-all duration-700 hover:scale-105"
+            >
+              <div class="tablet-frame mx-auto" style="max-width: 450px">
+                <div class="bg-black rounded-3xl p-3 shadow-2xl">
+                  <img
+                    src="./assets/images/CasesImages/Healthcare/tabView.png"
+                    alt="Healthcare Tablet Preview"
+                    class="w-full h-auto rounded-2xl transition-all duration-700 cursor-zoom-in hover:scale-105"
+                    onclick="openLightbox(this.src, 'Tablet - Services Page')"
+                  />
                 </div>
-                <h2 class="text-5xl font-bold mb-4 gradient-text">Website Preview</h2>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                    Immersive showcase of the final website design across multiple devices with cinematic presentation
+              </div>
+              <div class="mt-6 text-center">
+                <h3 class="text-xl font-bold text-white mb-2">Tablet View</h3>
+                <p class="text-gray-400">
+                  Optimized for medium-screen interactions
                 </p>
+              </div>
             </div>
 
-            <!-- Main Preview with Device Frames -->
-            <div class="max-w-7xl mx-auto mb-20">
-                <!-- Desktop Preview - Center Stage -->
-                <div class="cinematic-border rounded-3xl p-8 mb-16 bg-gradient-to-br from-gray-900/50 to-darker/80 backdrop-blur-sm border border-gray-800/50 shadow-2xl transform transition-all duration-700 hover:scale-[1.02]">
-                    <div class="flex justify-between items-center mb-6">
-                        <div class="flex gap-2">
-                            <div class="w-3 h-3 rounded-full bg-red-500 shadow-lg"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500 shadow-lg"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500 shadow-lg"></div>
-                        </div>
-                        <div class="text-gray-400 text-sm font-medium">https://www.101healthcare.ca/</div>
-                        <div class="w-20"></div> <!-- Spacer for balance -->
-                    </div>
-                    <div class="rounded-xl overflow-hidden shadow-2xl device-glow animate-pulse-glow">
-                        <img src="./assets/images/CasesImages/Healthcare/case1.png"
-                             alt="Healthcare Desktop Preview"
-                             class="w-full h-auto transition-all duration-700 cursor-zoom-in hover:scale-105"
-                             onclick="openLightbox(this.src, 'Desktop - Homepage')" />
-                    </div>
-                    <div class="mt-6 text-center">
-                        <h3 class="text-2xl font-bold text-white mb-2">Homepage Experience</h3>
-                        <p class="text-gray-400">Modern, accessible design with clear information hierarchy</p>
-                    </div>
+            <!-- Mobile Preview -->
+            <div
+              class="cinematic-border rounded-[2.5rem] p-5 bg-gradient-to-br from-gray-900/50 to-darker/80 backdrop-blur-sm border border-gray-800/50 shadow-2xl transform transition-all duration-700 hover:scale-105 flex justify-center"
+            >
+              <div class="mobile-frame" style="max-width: 340px">
+                <div
+                  class="mobile-notch bg-black w-32 h-7 rounded-b-2xl mx-auto mb-3"
+                ></div>
+                <div class="bg-black rounded-[2rem] overflow-hidden shadow-2xl">
+                  <img
+                    src="./assets/images/CasesImages/Healthcare/mobView.png"
+                    alt="Healthcare Mobile Preview"
+                    class="w-full h-auto transition-all duration-700 cursor-zoom-in hover:scale-105"
+                    onclick="openLightbox(this.src, 'Mobile - Contact Page')"
+                  />
                 </div>
-
-                <!-- Tablet & Mobile Previews -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-center">
-                    <!-- Tablet Preview -->
-                    <div class="cinematic-border rounded-[2rem] p-6 bg-gradient-to-br from-gray-900/50 to-darker/80 backdrop-blur-sm border border-gray-800/50 shadow-2xl transform transition-all duration-700 hover:scale-105">
-                        <div class="tablet-frame mx-auto" style="max-width: 450px;">
-                            <div class="bg-black rounded-3xl p-3 shadow-2xl">
-                                <img src="./assets/images/CasesImages/Healthcare/tabView.png"
-                                     alt="Healthcare Tablet Preview"
-                                     class="w-full h-auto rounded-2xl transition-all duration-700 cursor-zoom-in hover:scale-105"
-                                     onclick="openLightbox(this.src, 'Tablet - Services Page')" />
-                            </div>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <h3 class="text-xl font-bold text-white mb-2">Tablet View</h3>
-                            <p class="text-gray-400">Optimized for medium-screen interactions</p>
-                        </div>
-                    </div>
-
-                    <!-- Mobile Preview -->
-                    <div class="cinematic-border rounded-[2.5rem] p-5 bg-gradient-to-br from-gray-900/50 to-darker/80 backdrop-blur-sm border border-gray-800/50 shadow-2xl transform transition-all duration-700 hover:scale-105 flex justify-center">
-                        <div class="mobile-frame" style="max-width: 340px;">
-                            <div class="mobile-notch bg-black w-32 h-7 rounded-b-2xl mx-auto mb-3"></div>
-                            <div class="bg-black rounded-[2rem] overflow-hidden shadow-2xl">
-                                <img src="./assets/images/CasesImages/Healthcare/mobView.png"
-                                     alt="Healthcare Mobile Preview"
-                                     class="w-full h-auto transition-all duration-700 cursor-zoom-in hover:scale-105"
-                                     onclick="openLightbox(this.src, 'Mobile - Contact Page')" />
-                            </div>
-                            <div class="mobile-home-indicator bg-black w-24 h-1 rounded-full mx-auto mt-3"></div>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <h3 class="text-xl font-bold text-white mb-2">Mobile View</h3>
-                            <p class="text-gray-400">Touch-optimized for on-the-go access</p>
-                        </div>
-                    </div>
-                </div>
+                <div
+                  class="mobile-home-indicator bg-black w-24 h-1 rounded-full mx-auto mt-3"
+                ></div>
+              </div>
+              <div class="mt-6 text-center">
+                <h3 class="text-xl font-bold text-white mb-2">Mobile View</h3>
+                <p class="text-gray-400">
+                  Touch-optimized for on-the-go access
+                </p>
+              </div>
             </div>
-
-            <!-- Thumbnail Gallery -->
-            <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-10">
-                    <h3 class="text-3xl font-bold mb-4 text-white">Additional Screens</h3>
-                    <p class="text-gray-400 max-w-2xl mx-auto">Explore the complete design system with key interface screens</p>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="group cursor-pointer transform transition-all duration-500 hover:scale-105" onclick="openLightbox('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80', 'Homepage')">
-                        <div class="bg-gray-800/50 rounded-2xl overflow-hidden shadow-lg border border-gray-700/50 transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-2xl">
-                            <div class="relative overflow-hidden">
-                                <img src="./assets/images/CasesImages/Healthcare/case1.png"
-                                     alt="Homepage"
-                                     class="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" />
-                            </div>
-                            <div class="p-4">
-                                <h4 class="font-semibold text-white mb-1">Homepage</h4>
-                                <p class="text-gray-400 text-xs">Main landing experience</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="group cursor-pointer transform transition-all duration-500 hover:scale-105" onclick="openLightbox('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80', 'Services')">
-                        <div class="bg-gray-800/50 rounded-2xl overflow-hidden shadow-lg border border-gray-700/50 transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-2xl">
-                            <div class="relative overflow-hidden">
-                                <img src="./assets/images/CasesImages/Healthcare/case2.png"
-                                     alt="Services"
-                                     class="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" />
-                            </div>
-                            <div class="p-4">
-                                <h4 class="font-semibold text-white mb-1">Services</h4>
-                                <p class="text-gray-400 text-xs">Care offerings overview</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="group cursor-pointer transform transition-all duration-500 hover:scale-105" onclick="openLightbox('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80', 'Contact')">
-                        <div class="bg-gray-800/50 rounded-2xl overflow-hidden shadow-lg border border-gray-700/50 transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-2xl">
-                            <div class="relative overflow-hidden">
-                                <img src="./assets/images/CasesImages/Healthcare/case4.png"
-                                     alt="Contact"
-                                     class="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" />
-                            </div>
-                            <div class="p-4">
-                                <h4 class="font-semibold text-white mb-1">Contact</h4>
-                                <p class="text-gray-400 text-xs">Get in touch page</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="group cursor-pointer transform transition-all duration-500 hover:scale-105" onclick="openLightbox('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 'About')">
-                        <div class="bg-gray-800/50 rounded-2xl overflow-hidden shadow-lg border border-gray-700/50 transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-2xl">
-                            <div class="relative overflow-hidden">
-                                <img src="./assets/images/CasesImages/Healthcare/case3.png"
-                                     alt="About"
-                                     class="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" />
-                            </div>
-                            <div class="p-4">
-                                <h4 class="font-semibold text-white mb-1">About</h4>
-                                <p class="text-gray-400 text-xs">Company information</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
 
+        <!-- Thumbnail Gallery -->
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-10">
+            <h3 class="text-3xl font-bold mb-4 text-white">
+              Additional Screens
+            </h3>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+              Explore the complete design system with key interface screens
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div
+              class="group cursor-pointer transform transition-all duration-500 hover:scale-105"
+              onclick="openLightbox('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80', 'Homepage')"
+            >
+              <div
+                class="bg-gray-800/50 rounded-2xl overflow-hidden shadow-lg border border-gray-700/50 transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-2xl"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src="./assets/images/CasesImages/Healthcare/case1.png"
+                    alt="Homepage"
+                    class="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+                <div class="p-4">
+                  <h4 class="font-semibold text-white mb-1">Homepage</h4>
+                  <p class="text-gray-400 text-xs">Main landing experience</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group cursor-pointer transform transition-all duration-500 hover:scale-105"
+              onclick="openLightbox('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80', 'Services')"
+            >
+              <div
+                class="bg-gray-800/50 rounded-2xl overflow-hidden shadow-lg border border-gray-700/50 transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-2xl"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src="./assets/images/CasesImages/Healthcare/case2.png"
+                    alt="Services"
+                    class="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+                <div class="p-4">
+                  <h4 class="font-semibold text-white mb-1">Services</h4>
+                  <p class="text-gray-400 text-xs">Care offerings overview</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group cursor-pointer transform transition-all duration-500 hover:scale-105"
+              onclick="openLightbox('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80', 'Contact')"
+            >
+              <div
+                class="bg-gray-800/50 rounded-2xl overflow-hidden shadow-lg border border-gray-700/50 transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-2xl"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src="./assets/images/CasesImages/Healthcare/case4.png"
+                    alt="Contact"
+                    class="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+                <div class="p-4">
+                  <h4 class="font-semibold text-white mb-1">Contact</h4>
+                  <p class="text-gray-400 text-xs">Get in touch page</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group cursor-pointer transform transition-all duration-500 hover:scale-105"
+              onclick="openLightbox('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 'About')"
+            >
+              <div
+                class="bg-gray-800/50 rounded-2xl overflow-hidden shadow-lg border border-gray-700/50 transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-2xl"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src="./assets/images/CasesImages/Healthcare/case3.png"
+                    alt="About"
+                    class="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+                <div class="p-4">
+                  <h4 class="font-semibold text-white mb-1">About</h4>
+                  <p class="text-gray-400 text-xs">Company information</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Enhanced Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
-        <div class="relative max-w-6xl max-h-full lightbox-enter">
-            <button onclick="closeLightbox()" class="absolute -top-16 right-0 text-white text-3xl hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center">
-                <i class="fas fa-times"></i>
-            </button>
-            
-            <div class="bg-gradient-to-br from-gray-900 to-darker rounded-2xl overflow-hidden shadow-2xl border border-gray-800/50">
-                <div class="p-4 bg-gray-900 flex justify-between items-center">
-                    <h3 id="lightbox-title" class="text-white font-semibold text-lg"></h3>
-                    <div class="flex gap-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                </div>
-                <img id="lightbox-img" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain" />
+    <div
+      id="lightbox"
+      class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-4 backdrop-blur-sm"
+    >
+      <div class="relative max-w-6xl max-h-full lightbox-enter">
+        <button
+          onclick="closeLightbox()"
+          class="absolute -top-16 right-0 text-white text-3xl hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div
+          class="bg-gradient-to-br from-gray-900 to-darker rounded-2xl overflow-hidden shadow-2xl border border-gray-800/50"
+        >
+          <div class="p-4 bg-gray-900 flex justify-between items-center">
+            <h3
+              id="lightbox-title"
+              class="text-white font-semibold text-lg"
+            ></h3>
+            <div class="flex gap-2">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
-            
-            <div class="flex justify-center mt-6 gap-4">
-                <button onclick="changeLightboxImage(-1)" class="px-6 py-2 bg-gray-800 rounded-full text-white hover:bg-gray-700 transition-colors flex items-center gap-2">
-                    <i class="fas fa-chevron-left"></i> Previous
-                </button>
-                <button onclick="changeLightboxImage(1)" class="px-6 py-2 bg-blue-600 rounded-full text-white hover:bg-blue-500 transition-colors flex items-center gap-2">
-                    Next <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
+          </div>
+          <img
+            id="lightbox-img"
+            src=""
+            alt=""
+            class="w-full h-auto max-h-[80vh] object-contain"
+          />
         </div>
+
+        <div class="flex justify-center mt-6 gap-4">
+          <button
+            onclick="changeLightboxImage(-1)"
+            class="px-6 py-2 bg-gray-800 rounded-full text-white hover:bg-gray-700 transition-colors flex items-center gap-2"
+          >
+            <i class="fas fa-chevron-left"></i>
+            Previous
+          </button>
+          <button
+            onclick="changeLightboxImage(1)"
+            class="px-6 py-2 bg-blue-600 rounded-full text-white hover:bg-blue-500 transition-colors flex items-center gap-2"
+          >
+            Next
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
     </div>
-
-
-
 
     <!-- Users -->
     <section id="users" class="section" data-aos="fade-up">
-      <h2 class="section-title  ">Users & Key Needs</h2>
+      <h2 class="section-title">Users & Key Needs</h2>
       <div class="card">
         <p class="text-gray mb-6 text-lg centered-text">
           The interface had to be inclusive and easy to navigate across all age
@@ -995,7 +1281,9 @@
               care options.
             </p>
             <div class="bg-blue-900/20 p-3 rounded">
-              <h4 class="font-semibold text-purple-300 mb-1 centered-text">Key Needs</h4>
+              <h4 class="font-semibold text-purple-300 mb-1 centered-text">
+                Key Needs
+              </h4>
               <ul class="text-gray list-disc ml-5">
                 <li>Establish trust in service quality</li>
                 <li>Quick access to contact information</li>
@@ -1012,7 +1300,9 @@
               medical care.
             </p>
             <div class="bg-blue-900/20 p-3 rounded">
-              <h4 class="font-semibold text-purple-300 mb-1 centered-text">Key Needs</h4>
+              <h4 class="font-semibold text-purple-300 mb-1 centered-text">
+                Key Needs
+              </h4>
               <ul class="text-gray list-disc ml-5">
                 <li>Clarity and reassurance</li>
                 <li>Accessible design with large text</li>
@@ -1029,7 +1319,9 @@
               duties.
             </p>
             <div class="bg-blue-900/20 p-3 rounded">
-              <h4 class="font-semibold text-purple-300 mb-1 centered-text">Key Needs</h4>
+              <h4 class="font-semibold text-purple-300 mb-1 centered-text">
+                Key Needs
+              </h4>
               <ul class="text-gray list-disc ml-5">
                 <li>Fast booking process</li>
                 <li>Transparent service details</li>
@@ -1122,9 +1414,7 @@
                 <i class="fas fa-sitemap text-purple-400"></i>
               </div>
               <div>
-                <h3 class="solution-title">
-                  Clear Information Architecture
-                </h3>
+                <h3 class="solution-title">Clear Information Architecture</h3>
                 <p class="text-gray">
                   Developed intuitive navigation and content hierarchy for easy
                   scanning and discovery.
@@ -1139,9 +1429,7 @@
                 <i class="fas fa-palette text-purple-400"></i>
               </div>
               <div>
-                <h3 class="solution-title">
-                  Trust-Building Visual Design
-                </h3>
+                <h3 class="solution-title">Trust-Building Visual Design</h3>
                 <p class="text-gray">
                   Used a calm color palette with balanced whitespace and clean,
                   readable typography.
@@ -1156,9 +1444,7 @@
                 <i class="fas fa-comments text-purple-400"></i>
               </div>
               <div>
-                <h3 class="solution-title">
-                  Empathetic Content Strategy
-                </h3>
+                <h3 class="solution-title">Empathetic Content Strategy</h3>
                 <p class="text-gray">
                   Created compassionate microcopy and imagery that humanized the
                   healthcare experience.
@@ -1190,9 +1476,7 @@
                 <i class="fas fa-universal-access text-red-400"></i>
               </div>
               <div>
-                <h3 class="solution-title">
-                  Accessibility-First Approach
-                </h3>
+                <h3 class="solution-title">Accessibility-First Approach</h3>
                 <p class="text-gray">
                   Optimized layout for screen readers, keyboard navigation, and
                   color contrast requirements.
@@ -1218,110 +1502,147 @@
         </div>
       </div>
     </section>
-<!-- Design Process -->
-<section id="process" class="py-20 bg-[#0d0d0f] text-gray" data-aos="fade-up">
-  <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-left text-white mb-16 relative inline-block">
-      Design Process
-      <span class="block w-24 h-1 bg-indigo-500 mx-auto mt-3 rounded-full"></span>
-    </h2>
-
-    <div class="relative border-l border-gray-700 pl-8 space-y-16">
-      <!-- Step 1 -->
-      <div class="relative group">
-        <div
-          class="absolute -left-[15px] top-1 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold text-sm group-hover:scale-110 transition-transform"
+    <!-- Design Process -->
+    <section
+      id="process"
+      class="py-20 bg-[#0d0d0f] text-gray"
+      data-aos="fade-up"
+    >
+      <div class="max-w-5xl mx-auto px-6">
+        <h2
+          class="text-4xl font-bold text-left text-white mb-16 relative inline-block"
         >
-          1
-        </div>
-        <div class="bg-[#151518] p-6 rounded-2xl border border-gray-800 hover:border-indigo-600 transition-all">
-          <h3 class="text-2xl font-semibold text-white mb-2">Research & Discovery</h3>
-          <p class="mb-4">
-            Conducted stakeholder interviews and competitive analysis to understand the healthcare landscape and user needs.
-          </p>
-          <div class="bg-gray-800/50 p-4 rounded-xl">
-            <h4 class="font-semibold text-white mb-2">Key Insights</h4>
-            <ul class="list-disc ml-5 space-y-1">
-              <li>Trust indicators are critical in healthcare decisions</li>
-              <li>Users prioritize clear service descriptions over marketing fluff</li>
-              <li>Accessibility needs vary significantly across user groups</li>
-            </ul>
+          Design Process
+          <span
+            class="block w-24 h-1 bg-indigo-500 mx-auto mt-3 rounded-full"
+          ></span>
+        </h2>
+
+        <div class="relative border-l border-gray-700 pl-8 space-y-16">
+          <!-- Step 1 -->
+          <div class="relative group">
+            <div
+              class="absolute -left-[15px] top-1 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold text-sm group-hover:scale-110 transition-transform"
+            >
+              1
+            </div>
+            <div
+              class="bg-[#151518] p-6 rounded-2xl border border-gray-800 hover:border-indigo-600 transition-all"
+            >
+              <h3 class="text-2xl font-semibold text-white mb-2">
+                Research & Discovery
+              </h3>
+              <p class="mb-4">
+                Conducted stakeholder interviews and competitive analysis to
+                understand the healthcare landscape and user needs.
+              </p>
+              <div class="bg-gray-800/50 p-4 rounded-xl">
+                <h4 class="font-semibold text-white mb-2">Key Insights</h4>
+                <ul class="list-disc ml-5 space-y-1">
+                  <li>Trust indicators are critical in healthcare decisions</li>
+                  <li>
+                    Users prioritize clear service descriptions over marketing
+                    fluff
+                  </li>
+                  <li>
+                    Accessibility needs vary significantly across user groups
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative group">
+            <div
+              class="absolute -left-[15px] top-1 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold text-sm group-hover:scale-110 transition-transform"
+            >
+              2
+            </div>
+            <div
+              class="bg-[#151518] p-6 rounded-2xl border border-gray-800 hover:border-indigo-600 transition-all"
+            >
+              <h3 class="text-2xl font-semibold text-white mb-2">
+                Information Architecture
+              </h3>
+              <p class="mb-4">
+                Developed sitemap and user flows to ensure logical content
+                organization and intuitive navigation paths.
+              </p>
+              <div class="bg-gray-800/50 p-4 rounded-xl">
+                <h4 class="font-semibold text-white mb-2">Approach</h4>
+                <ul class="list-disc ml-5 space-y-1">
+                  <li>
+                    Grouped services by care type rather than organizational
+                    structure
+                  </li>
+                  <li>Created multiple pathways to contact information</li>
+                  <li>
+                    Prioritized FAQ and resource sections for quick answers
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative group">
+            <div
+              class="absolute -left-[15px] top-1 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold text-sm group-hover:scale-110 transition-transform"
+            >
+              3
+            </div>
+            <div
+              class="bg-[#151518] p-6 rounded-2xl border border-gray-800 hover:border-indigo-600 transition-all"
+            >
+              <h3 class="text-2xl font-semibold text-white mb-2">
+                Wireframing & Prototyping
+              </h3>
+              <p class="mb-4">
+                Created low to high-fidelity wireframes and interactive
+                prototypes to test and refine the user experience.
+              </p>
+              <div class="bg-gray-800/50 p-4 rounded-xl">
+                <h4 class="font-semibold text-white mb-2">Tools & Methods</h4>
+                <ul class="list-disc ml-5 space-y-1">
+                  <li>Figma for wireframing and prototyping</li>
+                  <li>User testing with representative participants</li>
+                  <li>Iterative design based on feedback</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative group">
+            <div
+              class="absolute -left-[15px] top-1 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold text-sm group-hover:scale-110 transition-transform"
+            >
+              4
+            </div>
+            <div
+              class="bg-[#151518] p-6 rounded-2xl border border-gray-800 hover:border-indigo-600 transition-all"
+            >
+              <h3 class="text-2xl font-semibold text-white mb-2">
+                Visual Design & Branding
+              </h3>
+              <p class="mb-4">
+                Developed a visual language that balances professionalism with
+                warmth and approachability.
+              </p>
+              <div class="bg-gray-800/50 p-4 rounded-xl">
+                <h4 class="font-semibold text-white mb-2">Design System</h4>
+                <ul class="list-disc ml-5 space-y-1">
+                  <li>Color palette focused on trust and calmness</li>
+                  <li>Accessible typography scale with proper hierarchy</li>
+                  <li>Consistent component library for development handoff</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- Step 2 -->
-      <div class="relative group">
-        <div
-          class="absolute -left-[15px] top-1 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold text-sm group-hover:scale-110 transition-transform"
-        >
-          2
-        </div>
-        <div class="bg-[#151518] p-6 rounded-2xl border border-gray-800 hover:border-indigo-600 transition-all">
-          <h3 class="text-2xl font-semibold text-white mb-2">Information Architecture</h3>
-          <p class="mb-4">
-            Developed sitemap and user flows to ensure logical content organization and intuitive navigation paths.
-          </p>
-          <div class="bg-gray-800/50 p-4 rounded-xl">
-            <h4 class="font-semibold text-white mb-2">Approach</h4>
-            <ul class="list-disc ml-5 space-y-1">
-              <li>Grouped services by care type rather than organizational structure</li>
-              <li>Created multiple pathways to contact information</li>
-              <li>Prioritized FAQ and resource sections for quick answers</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="relative group">
-        <div
-          class="absolute -left-[15px] top-1 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold text-sm group-hover:scale-110 transition-transform"
-        >
-          3
-        </div>
-        <div class="bg-[#151518] p-6 rounded-2xl border border-gray-800 hover:border-indigo-600 transition-all">
-          <h3 class="text-2xl font-semibold text-white mb-2">Wireframing & Prototyping</h3>
-          <p class="mb-4">
-            Created low to high-fidelity wireframes and interactive prototypes to test and refine the user experience.
-          </p>
-          <div class="bg-gray-800/50 p-4 rounded-xl">
-            <h4 class="font-semibold text-white mb-2">Tools & Methods</h4>
-            <ul class="list-disc ml-5 space-y-1">
-              <li>Figma for wireframing and prototyping</li>
-              <li>User testing with representative participants</li>
-              <li>Iterative design based on feedback</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="relative group">
-        <div
-          class="absolute -left-[15px] top-1 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold text-sm group-hover:scale-110 transition-transform"
-        >
-          4
-        </div>
-        <div class="bg-[#151518] p-6 rounded-2xl border border-gray-800 hover:border-indigo-600 transition-all">
-          <h3 class="text-2xl font-semibold text-white mb-2">Visual Design & Branding</h3>
-          <p class="mb-4">
-            Developed a visual language that balances professionalism with warmth and approachability.
-          </p>
-          <div class="bg-gray-800/50 p-4 rounded-xl">
-            <h4 class="font-semibold text-white mb-2">Design System</h4>
-            <ul class="list-disc ml-5 space-y-1">
-              <li>Color palette focused on trust and calmness</li>
-              <li>Accessible typography scale with proper hierarchy</li>
-              <li>Consistent component library for development handoff</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- Outcomes -->
     <section id="outcomes" class="section" data-aos="fade-up">
@@ -1456,7 +1777,9 @@
         <div
           class="mt-8 p-5 bg-blue-900/20 rounded-lg border border-blue-800/30"
         >
-          <h3 class="font-bold text-xl mb-3 text-purple-300 centered-text">Key Takeaway</h3>
+          <h3 class="font-bold text-xl mb-3 text-purple-300 centered-text">
+            Key Takeaway
+          </h3>
           <p class="text-gray centered-text">
             In healthcare design, the emotional experience is part of the
             functional experience. A design that makes users feel safe and

@@ -1,4 +1,5 @@
 # uiUx-portfolio
+
 // ...existing code...
 
 # Jagriti Sood — Static Portfolio
@@ -12,15 +13,16 @@ A small static portfolio site built with plain HTML, Tailwind CSS (CDN), and a f
 
 ## Project structure
 
-- [index.html](index.html) — Home / landing page  
-- [work.html](work.html) — Portfolio overview and case links  
-- [about.html](about.html) — About / story / skills  
-- [resume.html](resume.html) — Resume download and preview  
-- [beyond-uiux.html](beyond-uiux.html) — Handcrafted collection / gallery  
-- [contact.html](contact.html) — Contact / social links  
+- [index.html](index.html) — Home / landing page
+- [work.html](work.html) — Portfolio overview and case links
+- [about.html](about.html) — About / story / skills
+- [resume.html](resume.html) — Resume download and preview
+- [beyond-uiux.html](beyond-uiux.html) — Handcrafted collection / gallery
+- [contact.html](contact.html) — Contact / social links
 - [case-101healthcare.html](case-101healthcare.html), [case-maplecode.html](case-maplecode.html), [case-campaign.html](case-campaign.html) — Case study pages
 
 Assets and scripts:
+
 - [assets/js/script.js](assets/js/script.js) — small script (handles `btn` and runs [`AOS.init`](assets/js/script.js)) and contains the [`btn`](assets/js/script.js) variable handler
 - [assets/files/images/](assets/files/images/) — image assets used across pages
 - [assets/files/Jagriti-Sood-Resume.pdf](assets/files/Jagriti-Sood-Resume.pdf) — resume file
