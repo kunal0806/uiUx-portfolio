@@ -10,6 +10,10 @@
       .font-Modak {
         font-family: "Modak", cursive;
       }
+       :root {
+        --primary: #413bf6;
+        --accent: #8021d3;
+      }
 
       /* ── Arrow to X Hamburger ── */
       .hamburger-arrow {
@@ -197,7 +201,25 @@
         );
         animation: float 6s ease-in-out infinite;
       }
+ .hdbton {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        gap: 0.5rem;
+      }
 
+      .hdbtonPrimary {
+        background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+        color: white;
+      }
+
+      
       @keyframes float {
         0%,
         100% {
@@ -346,7 +368,7 @@
         </a>
 
         <button
-          class="ml-6 px-6 py-2.5 rounded-full bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold text-sm tracking-wide shadow-lg hover:shadow-blue-500/25 hover:from-purple-600 hover:to-blue-700 transform transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#151417]"
+          class="ml-6 px-6 py-2.5 rounded-full bg-gradient-to-r hdbtonPrimary hdbton font-semibold text-sm tracking-wide shadow-lg hover:shadow-blue-500/25 hover:from-purple-600 hover:to-blue-700 transform transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#151417]"
           id="contact-btn"
         >
           Contact
