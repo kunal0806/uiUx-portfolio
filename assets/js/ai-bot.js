@@ -34,9 +34,9 @@ class AIBot {
                     
                     <div class="ai-bot-header">
                         <div class="ai-bot-title">
-                            <div class="female-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
+                           <div class="female-avatar">
+  <img src="./assets/images/about/my-pic.JPG" alt="Assistant Avatar" />
+</div>
                             <span>Jagriti's AI assistant</span>
                         </div>
                         <button class="ai-bot-close">
@@ -286,6 +286,8 @@ You can view all projects in the 'Work' section or use the quick action buttons 
 2. DEFINE - Synthesize insights and define problems
 3. DREAM - Brainstorm creative solutions
 4. DESIGN - Create wireframes and final designs
+5. DEVELOP -  Work closely with developers to ensure smooth handoff
+6. DELIVER - Final product delivers on both user and business goals
 
 You can learn more in the 'Process' section of her portfolio.`;
     } else if (message.includes("experience") || message.includes("year")) {

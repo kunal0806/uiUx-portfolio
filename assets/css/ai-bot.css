@@ -11,10 +11,10 @@
 
 .ai-bot-container {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 1000;
-  font-family: "Inter", Arial, sans-serif;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+
 }
 
 /* Enhanced Toggle Button */
@@ -208,17 +208,21 @@
 
 /* Female Avatar Styles */
 .female-avatar {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--ai-blue), var(--ai-green));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-  animation: avatarPulse 3s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.female-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes avatarPulse {
@@ -670,19 +674,97 @@
   margin-bottom: 6px;
 }
 
-/* Mobile responsive formatting */
+/* ✅ Improved Mobile Experience */
 @media (max-width: 768px) {
-  .message.bot .bullet-point {
-    margin: 3px 0;
-    padding-left: 6px;
+  .ai-bot-container {
+    bottom: 0;
+    right: 0;
   }
 
-  .message.bot .numbered-item {
-    margin: 4px 0;
-    padding-left: 8px;
+  .ai-bot-window {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: rgba(26, 26, 46, 0.97);
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
   }
 
-  .message.bot br {
-    margin-bottom: 4px;
+  /* ✅ Smooth slide-up animation */
+  .ai-bot-window.active {
+    transform: translateY(0);
+  }
+
+  .ai-bot-header {
+    padding: 1rem;
+    border-radius: 0;
+  }
+
+  /* ✅ Scrollable message area */
+ .ai-bot-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    padding-bottom: 6rem; /* ✅ Add extra space for input area */
+    box-sizing: border-box;
+  }
+
+  /* ✅ Quick actions below messages */
+  .quick-actions {
+    order: 2;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(26, 26, 46, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  /* ✅ Full-width quick actions */
+  .quick-action {
+    flex: 1 1 48%;
+    min-width: unset;
+  }
+
+  /* ✅ Input fixed at bottom */
+ .ai-bot-input {
+    position: sticky;
+    bottom: 0;
+    background: rgba(26, 26, 46, 1);
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 20;
+  }
+
+  .ai-bot-input input {
+    font-size: 1rem;
+  }
+
+  /* ✅ Adjust toggle button */
+  .ai-bot-toggle {
+    width: 60px;
+    height: 60px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .ai-bot-toggle i {
+    font-size: 1.5rem;
+  }
+    .ai-bot-messages::-webkit-scrollbar {
+    width: 4px;
+  }
+  .ai-bot-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
   }
 }
+
