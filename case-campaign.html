@@ -48,7 +48,7 @@
       .section {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 6rem 2rem;
+        padding: 3rem 2rem;
       }
 
       .section-title {
@@ -172,7 +172,7 @@
       }
 
       .stat-card {
-        text-align: center;
+        text-align: left;
         padding: 2rem;
         border-radius: 12px;
         background: rgba(59, 130, 246, 0.1);
@@ -605,7 +605,7 @@
 
       /* Centered text utility */
       .centered-text {
-        text-align: center;
+        text-align: left;
       }
 
       /* Responsive Design */
@@ -645,11 +645,11 @@
 
         .section-title {
           font-size: 2.2rem;
-          text-align: center;
+          text-align: left;
         }
         
         .section-title::after {
-          left: 50%;
+          left: 10%;
           transform: translateX(-50%);
         }
 
@@ -1358,99 +1358,99 @@
       </div>
     </section>
 
-    <!-- Design Process -->
-    <section id="process" class="section" data-aos="fade-up">
-      <h2 class="section-title">Design Process</h2>
-      <div class="card">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3 class="step-title">Research & Discovery</h3>
-            <p class="text-gray-300 mb-4">
-              Conducted user interviews with marketing professionals to
-              understand pain points in existing campaign management workflows.
-            </p>
-            <div class="bg-blue-500/20 p-4 rounded-lg">
-              <h4 class="font-semibold text-white mb-2">Key Insights</h4>
-              <ul class="text-gray-300 list-disc ml-5">
-                <li>
-                  Teams spent 15+ hours weekly on manual campaign adjustments
-                </li>
-                <li>
-                  40% of campaigns experienced delivery issues due to manual
-                  errors
-                </li>
-                <li>
-                  Users needed both automation and manual control in balance
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+ <!-- Design Process Section -->
+<section
+  id="process"
+  class="py-20 md:py-28 bg-[#0b0b0d] text-gray-300"
+  data-aos="fade-up"
+>
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Section Title -->
+     <h2 class="section-title">Design Process</h2>
 
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3 class="step-title">Wireframing & User Flows</h3>
-            <p class="text-gray-300 mb-4">
-              Mapped complex scheduling logic into intuitive user flows and
-              created wireframes to test the core concepts.
-            </p>
-            <div class="bg-blue-500/20 p-4 rounded-lg">
-              <h4 class="font-semibold text-white mb-2">Approach</h4>
-              <ul class="text-gray-300 list-disc ml-5">
-                <li>Focused on simplifying the campaign creation process</li>
-                <li>Designed flexible pacing options (daily/weekly)</li>
-                <li>Created visual timeline for at-a-glance campaign status</li>
-              </ul>
-            </div>
-          </div>
-        </div>
 
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3 class="step-title">Prototyping & Testing</h3>
-            <p class="text-gray-300 mb-4">
-              Built interactive prototypes and conducted usability testing with
-              target users to refine the automation logic and interface.
-            </p>
-            <div class="bg-blue-500/20 p-4 rounded-lg">
-              <h4 class="font-semibold text-white mb-2">Tools & Methods</h4>
-              <ul class="text-gray-300 list-disc ml-5">
-                <li>Figma for high-fidelity prototyping</li>
-                <li>User testing with marketing managers and strategists</li>
-                <li>
-                  Iterative design based on scheduling complexity feedback
-                </li>
-              </ul>
-            </div>
-          </div>
+    <!-- Steps Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Step 1 -->
+      <div
+        class="bg-[#151518]/70 border border-white/5 rounded-2xl p-8 backdrop-blur-sm hover:shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all duration-300"
+      >
+        <div
+          class="w-12 h-12 mx-auto mb-6 rounded-full border-2 border-transparent bg-gradient-to-r from-purple-400 to-blue-400 p-[2px]"
+        >
+          <div class="w-full h-full rounded-full bg-[#0b0b0d] flex items-center justify-center text-white font-semibold">1</div>
         </div>
-
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h3 class="step-title">Visual Design & Implementation</h3>
-            <p class="text-gray-300 mb-4">
-              Developed a comprehensive design system and worked closely with
-              developers to ensure accurate implementation of complex scheduling
-              logic.
-            </p>
-            <div class="bg-blue-500/20 p-4 rounded-lg">
-              <h4 class="font-semibold text-white mb-2">Design System</h4>
-              <ul class="text-gray-300 list-disc ml-5">
-                <li>Purple-accented color scheme for a premium SaaS feel</li>
-                <li>
-                  Clear typography hierarchy for complex data presentation
-                </li>
-                <li>Custom iconography for campaign status and actions</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <h3
+          class="text-xl font-semibold mb-3 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+        >
+          Research & Discovery
+        </h3>
+        <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+          Conducted user interviews with marketing professionals to understand pain points in existing campaign management workflows.
+        </p>
       </div>
-    </section>
+
+      <!-- Step 2 -->
+      <div
+        class="bg-[#151518]/70 border border-white/5 rounded-2xl p-8 backdrop-blur-sm hover:shadow-[0_0_20px_rgba(96,165,250,0.15)] transition-all duration-300"
+      >
+        <div
+          class="w-12 h-12 mx-auto mb-6 rounded-full border-2 border-transparent bg-gradient-to-r from-purple-400 to-blue-400 p-[2px]"
+        >
+          <div class="w-full h-full rounded-full bg-[#0b0b0d] flex items-center justify-center text-white font-semibold">2</div>
+        </div>
+        <h3
+          class="text-xl font-semibold mb-3 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+        >
+          Wireframing & User Flows
+        </h3>
+        <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+          Mapped complex scheduling logic into intuitive user flows and created wireframes to test the core concepts.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div
+        class="bg-[#151518]/70 border border-white/5 rounded-2xl p-8 backdrop-blur-sm hover:shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all duration-300"
+      >
+        <div
+          class="w-12 h-12 mx-auto mb-6 rounded-full border-2 border-transparent bg-gradient-to-r from-purple-400 to-blue-400 p-[2px]"
+        >
+          <div class="w-full h-full rounded-full bg-[#0b0b0d] flex items-center justify-center text-white font-semibold">3</div>
+        </div>
+        <h3
+          class="text-xl font-semibold mb-3 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+        >
+          Prototyping & Testing
+        </h3>
+        <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+Built interactive prototypes and conducted usability testing with target users to refine the automation logic and interface.
+
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div
+        class="bg-[#151518]/70 border border-white/5 rounded-2xl p-8 backdrop-blur-sm hover:shadow-[0_0_20px_rgba(96,165,250,0.15)] transition-all duration-300"
+      >
+        <div
+          class="w-12 h-12 mx-auto mb-6 rounded-full border-2 border-transparent bg-gradient-to-r from-purple-400 to-blue-400 p-[2px]"
+        >
+          <div class="w-full h-full rounded-full bg-[#0b0b0d] flex items-center justify-center text-white font-semibold">4</div>
+        </div>
+        <h3
+          class="text-xl font-semibold mb-3 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+        >
+          Visual Design & Implementation
+        </h3>
+        <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+Developed a comprehensive design system and worked closely with developers to ensure accurate implementation of complex scheduling logic.
+
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Outcomes -->
     <section id="outcomes" class="section" data-aos="fade-up">
@@ -1544,7 +1544,7 @@
             >
               <i class="fas fa-robot text-purple-400 text-xl"></i>
             </div>
-            <h3 class="font-bold text-xl mb-3">Automation with Control</h3>
+            <h3 class="font-bold text-xl mb-3 text-purple-300">Automation with Control</h3>
             <p class="text-gray-300 centered-text">
               Users embrace automation when they maintain ultimate control and
               can easily override system decisions.
@@ -1557,7 +1557,7 @@
             >
               <i class="fas fa-project-diagram text-purple-400 text-xl"></i>
             </div>
-            <h3 class="font-bold text-xl mb-3">Complexity Made Simple</h3>
+            <h3 class="font-bold text-xl mb-3 text-purple-300">Complexity Made Simple</h3>
             <p class="text-gray-300 centered-text">
               The most sophisticated systems should feel intuitive, hiding
               complexity while making powerful features accessible.
@@ -1570,7 +1570,7 @@
             >
               <i class="fas fa-eye text-purple-400 text-xl"></i>
             </div>
-            <h3 class="font-bold text-xl mb-3">Visual Communication</h3>
+            <h3 class="font-bold text-xl mb-3 text-purple-300">Visual Communication</h3>
             <p class="text-gray-300 centered-text">
               In data-heavy applications, visual timelines and status indicators
               dramatically improve user understanding and confidence.
@@ -1579,7 +1579,7 @@
         </div>
 
         <div
-          class="mt-8 p-5 bg-blue-900/20 rounded-lg border border-purple-800/30"
+          class="mt-8 p-5 bg-blue-500/20 rounded-lg border border-purple-800/30"
         >
           <h3 class="font-bold text-xl mb-3 text-purple-300 centered-text">Key Takeaway</h3>
           <p class="text-gray-300 centered-text">
