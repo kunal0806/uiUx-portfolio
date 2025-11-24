@@ -1282,6 +1282,16 @@
             name: "Green & Revitalizing",
             image: "./assets/images/havens/beyond-pic-6.jpg",
           },
+          {
+            id: 7,
+            name: "Green & Revitalizing",
+            image: "./assets/images/havens/beyond-pick-16.jpg",
+          },
+          {
+            id: 8,
+            name: "Green & Revitalizing",
+            image: "./assets/images/havens/beyond-pick-17.jpg",
+          },
         ];
 
         let currentSlide = 0;
@@ -1365,13 +1375,29 @@
           isDragging = false;
         });
 
-        // Auto-advance carousel (only on desktop)
-        if (window.innerWidth > 768) {
-          setInterval(() => {
-            currentSlide = (currentSlide + 1) % candles.length;
-            goToSlide(currentSlide);
-          }, 5000);
-        }
+       // Auto-advance carousel (only on desktop)
+let carouselInterval;
+
+function startCarousel() {
+  if (window.innerWidth > 768) {
+    // Clear existing interval
+    if (carouselInterval) {
+      clearInterval(carouselInterval);
+    }
+    
+    // Start new interval with 5 seconds (5000ms)
+    carouselInterval = setInterval(() => {
+      currentSlide = (currentSlide + 1) % candles.length;
+      goToSlide(currentSlide);
+    }, 5000); // 5000ms = 5 seconds
+  }
+}
+
+// Start carousel initially
+startCarousel();
+
+// Restart carousel on window resize (to handle desktop/mobile changes)
+window.addEventListener('resize', startCarousel);
 
         // Back to top button
         const backToTopBtn = document.querySelector(".back-to-top");
