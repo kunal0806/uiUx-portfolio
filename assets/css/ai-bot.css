@@ -140,6 +140,9 @@
   border-bottom: 1px solid rgba(255,255,255,0.06);
   position: relative;
   z-index: 3;
+      margin-top: env(safe-area-inset-top);
+    margin-top: constant(safe-area-inset-top);
+
 }
 
 .ai-bot-title{
@@ -229,6 +232,12 @@
   border-bottom-right-radius: 6px;
   color: white;
 }
+
+#ai-bot {
+    padding-top: constant(safe-area-inset-top); /* old iOS */
+    padding-top: env(safe-area-inset-top);      /* new iOS */
+}
+
 
 /* message slide-in */
 @keyframes messageSlide {
@@ -394,6 +403,9 @@
   /* header stays inside chat and is sticky to top of chat */
   .ai-bot-header{
     position: sticky;
+        margin-top: env(safe-area-inset-top);
+    margin-top: constant(safe-area-inset-top);
+
     top: 0;
     z-index: 20;
     background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
