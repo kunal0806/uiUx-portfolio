@@ -462,6 +462,9 @@
   box-shadow: 0 6px 18px rgba(139,92,246,0.08);
 }
 
+.ai-bot-messages {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
+}
 /* ------------------------------
    Small fixes for overlap & scroll behavior
    ------------------------------ */
