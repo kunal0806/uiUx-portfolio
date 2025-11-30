@@ -311,6 +311,9 @@
   align-items:center;
   gap:.75rem;
   background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
+      margin-bottom: env(safe-area-inset-bottom);
+    margin-bottom: constant(safe-area-inset-bottom);
+
 }
 
 .ai-bot-input input{
