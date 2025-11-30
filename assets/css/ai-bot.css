@@ -420,8 +420,9 @@
   /* messages fill space and have padding bottom for input */
   .ai-bot-messages{
     padding: 1rem;
-    padding-bottom: 5.75rem; /* space for input bar */
+    padding-bottom: 8rem; /* space for input bar */
     box-sizing: border-box;
+    
   }
 
   /* quick actions - full width stack on small phones */
@@ -430,14 +431,12 @@
 
   /* input sticky at bottom */
   .ai-bot-input{
-    position: sticky;
+    position: fixed;
     bottom: 0;
-    z-index: 30;
-    padding: .9rem 1rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    background: linear-gradient(180deg, rgba(26,26,46,0.98), rgba(26,26,46,1));
-          margin-bottom: env(safe-area-inset-bottom);
-    margin-bottom: constant(safe-area-inset-bottom);
+    left: 0;
+    right: 0;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    background: rgba(26,26,46,0.95);
 
   }
 
