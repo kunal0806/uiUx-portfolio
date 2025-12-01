@@ -424,8 +424,11 @@
   background: var(--ai-surface-2);
   flex-shrink: 0;
   position: relative;
-  z-index: 10; /* Increased z-index */
-  padding-bottom: calc(.85rem + env(safe-area-inset-bottom, 20px)); /* Safe area for mobile */
+  z-index: 10;
+  
+  /* Safe area handling for mobile browsers */
+  padding-bottom: max(.85rem, env(safe-area-inset-bottom, 20px));
+  margin-bottom: env(safe-area-inset-bottom, 0px);
 }
 
   /* Input area - FIXED position */
