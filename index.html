@@ -444,18 +444,12 @@
 
       .carousel-slide img {
         width: 100%;
-        height: auto;
         max-height: 500px;
         object-fit: contain; /* ensures full image is visible */
         object-position: center; /* centers the image nicely */
         background-color: #111; /* prevents black gap flicker on load */
       }
 
-      @media (min-width: 768px) {
-        .carousel-slide img {
-          height: 250px;
-        }
-      }
 
       .carousel-slide.active img {
         transform: scale(1.05);
@@ -545,9 +539,6 @@
           flex: 0 0 calc(100% - 1rem);
         }
 
-        .carousel-slide img {
-          height: 180px;
-        }
 
         .carousel-prev,
         .carousel-next {
@@ -557,12 +548,12 @@
         }
       }
 
-      /* Extra small devices */
+      /* Extra small devices
       @media (max-width: 480px) {
         .carousel-slide img {
           height: 150px;
         }
-      }
+      } */
     </style>
   </head>
 
