@@ -7,6 +7,10 @@
    ========================================================================== */
 
 /* ------ Theme variables ------ */
+body {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
 :root{
   --ai-primary: #8b5cf6;
   --ai-secondary: #ec4899;
@@ -386,52 +390,57 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    height: 100dvh; /* Use dynamic viewport height */
     border-radius: 0;
     transform: translateY(100%);
     transition: transform .36s cubic-bezier(.22,.9,.3,1);
     background: rgba(26,26,46,0.98);
     display: flex;
     flex-direction: column;
+    padding-bottom: env(safe-area-inset-bottom); /* Add safe area padding */
   }
   .ai-bot-window.active{ 
     transform: translateY(0); 
   }
 
-  /* Header */
+  /* Header - fixed with safe area */
   .ai-bot-header{
     position: sticky;
     top: 0;
     z-index: 20;
-    padding-top: env(safe-area-inset-top);
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-left: 1rem;
+    padding-right: 1rem;
     background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
     flex-shrink: 0;
-    margin-top: 20px;
   }
 
-  /* Messages area - FIXED for quick actions visibility */
+  /* Messages area - FIXED spacing */
   .ai-bot-messages{
     padding: 1rem;
-    padding-bottom: 0;
     flex: 1;
     overflow-y: auto;
     min-height: 0;
+    /* Remove the extra padding-bottom that was causing issues */
+    padding-bottom: 0;
   }
 
-  /* Quick actions - FIXED to be visible */
+  /* Quick actions - FIXED safe area */
   .quick-actions {
-  padding: .85rem;
-  gap: .6rem;
-  background: var(--ai-surface-2);
-  flex-shrink: 0;
-  position: relative;
-  z-index: 10;
-  
-  /* Safe area handling for mobile browsers */
-  padding-bottom: max(.85rem, env(safe-area-inset-bottom, 20px));
-  margin-bottom: env(safe-area-inset-bottom, 0px);
-}
+    padding: .85rem;
+    gap: .6rem;
+    background: var(--ai-surface-2);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+    
+    /* Safe area handling for mobile browsers */
+    padding-bottom: max(.85rem, calc(.85rem + env(safe-area-inset-bottom)));
+    margin-bottom: 0;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
 
-  /* Input area - FIXED position */
+  /* Input area - FIXED with safe area */
   .ai-bot-input{
     position: sticky;
     bottom: 0;
@@ -450,7 +459,7 @@
   .ai-bot-input input {
     margin-bottom: 0;
     padding: 12px 16px;
-    font-size: 16px;
+    font-size: 16px; /* Prevents zoom on iOS */
   }
 
   .hello-animation{ 
@@ -459,20 +468,22 @@
     display:none; 
   }
 
-  /* Adjust message padding to account for fixed elements */
-  .ai-bot-messages {
-    padding-bottom: calc(120px + env(safe-area-inset-bottom));
-  }
+  /* Remove the problematic messages padding-bottom */
 }
 
 /* ------------------------------
    Desktop tweaks (>=769px)
    ------------------------------ */
 @media (min-width: 769px){
-  .ai-bot-window{ right: 0; bottom: 85px; width: 380px; height: 520px; }
+  .ai-bot-window{ 
+    right: 0; 
+    bottom: 85px; 
+    width: 380px; 
+    height: 520px; 
+    padding-bottom: 0; /* Reset safe area on desktop */
+  }
   .ai-bot-input{ position: static; }
 }
-
 /* ------------------------------
    Accessibility helpers
    ------------------------------ */
