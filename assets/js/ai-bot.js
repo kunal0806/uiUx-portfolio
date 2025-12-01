@@ -47,16 +47,16 @@ class AIBot {
             </div>
           </div>
 
+
+          <div class="ai-bot-input">
+            <input type="text" id="aiBotInput" placeholder="Ask me anything...">
+            <button class="ai-bot-send" id="aiBotSend"><i class="fas fa-paper-plane"></i></button>
+          </div>
           <div class="quick-actions">
             <button class="quick-action" data-action="projects">View Projects</button>
             <button class="quick-action" data-action="process">Design Process</button>
             <button class="quick-action" data-action="contact">Get in Touch</button>
             <button class="quick-action" data-action="about">About Jagriti</button>
-          </div>
-
-          <div class="ai-bot-input">
-            <input type="text" id="aiBotInput" placeholder="Ask me anything...">
-            <button class="ai-bot-send" id="aiBotSend"><i class="fas fa-paper-plane"></i></button>
           </div>
         </div>
       </div>
